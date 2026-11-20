@@ -1,0 +1,15 @@
+# PolyCodeGPT — Python Dependencies
+# ==================================
+# PyTorch is installed separately from the official CUDA 13.2 wheel index
+# to preserve GPU support. Do NOT reinstall or downgrade the existing
+# PyTorch package using this requirements file.
+#
+# Install PyTorch with:
+#   .venv\Scripts\python.exe -m pip install torch==2.15.0 \
+#       --index-url https://download.pytorch.org/whl/cu132
+
+numpy==1.26.4
+tokenizers==0.22.2
+tqdm==4.67.3
+PyYAML>=6,<7
+pytest>=8,<10

@@ -1,0 +1,15 @@
+{
+  "benchmark": "independent_v1",
+  "files": {
+    "functional/independent/spec/python_specs.py": "dd55551e79f12821e2131e570e0e6a66b8cf17fb9d9fcf9723ecde139ba1389f",
+    "functional/independent/spec/javascript_specs.py": "137f53a325a087bb8d0abf40c1f3a293f6a73ab1bbf49bbc71dc0b41ee5f35c0",
+    "functional/independent/spec/build_manifest.py": "688a2801a6f8daf69d6d7e17375bbc739d432ec7c7cf04dd8160ac901abac5f9",
+    "functional/independent/manifest.json": "c657dbc5b343586a7466999a12ecccab3261e8d578846e9dcca3efed0d53d8d1",
+    "functional/independent/reference/python_refs.py": "5a0acb29995b7431b7f1d8b9c4e22f1651985748903ad78fc5d9e6f0febe4f59",
+    "functional/independent/reference/javascript_refs.js": "d689da63279c33c6d03cd8b75571694dd47e9b636dd54244b1b89bbf95030382",
+    "functional/independent/reference/validate_references.py": "257ed816cf23072beee4859d25be932b193398f7de91a7018f13371c3e6c8a21"
+  },
+  "tasks": 20,
+  "cases": 88,
+  "reference_validation": "20/20 tasks, 88/88 cases (sandbox)"
+}

@@ -1,0 +1,31 @@
+{
+  "by_group": {
+    "code:javascript": {
+      "kept": 538691,
+      "near": 7237,
+      "normalized": 5233
+    },
+    "code:python": {
+      "exact": 2,
+      "kept": 519986,
+      "near": 6467,
+      "normalized": 940
+    },
+    "documentation:en": {
+      "exact": 9037,
+      "kept": 177345,
+      "near": 3659,
+      "normalized": 614
+    }
+  },
+  "duplicate_rejections": {
+    "exact_duplicate": 9039,
+    "near_duplicate": 17363,
+    "normalized_duplicate": 6787
+  },
+  "exact_duplicates": 9039,
+  "kept": 1236022,
+  "near_duplicates": 17363,
+  "normalized_duplicates": 6787,
+  "seen": 1269211
+}

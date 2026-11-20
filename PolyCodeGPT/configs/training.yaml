@@ -1,0 +1,40 @@
+# PolyCodeGPT — Training Configuration
+# =====================================
+# These are initial experimental values.
+# Do not interpret them as final hyperparameters.
+# The actual settings will be validated through profiling and training experiments.
+
+training:
+  seed: 42
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  gradient_clip: 1.0
+  micro_batch_size: 4
+  gradient_accumulation_steps: 8
+  context_length: 512
+  precision: auto
+
+  validation_interval: 500
+  checkpoint_interval: 1000
+
+  # Learning-rate schedule: linear warmup then cosine decay.
+  # 8,129 optimizer steps is approximately one pass over the training split at
+  # the effective batch below (133,192,704 supervised targets / 16,384 per step).
+  schedule:
+    total_steps: 8129
+    warmup_fraction: 0.02
+    min_lr_ratio: 0.1
+
+  # Fixed validation subset: the same blocks are reused at every evaluation.
+  evaluation:
+    val_blocks: 64
+    val_batch_size: 8
+    steps: [50, 100, 150, 200]
+
+  checkpoint_steps: [50, 100, 150, 200]
+
+  pilot:
+    max_steps: 200
+    target_tokens_min: 10000000
+    target_tokens_max: 20000000

@@ -1,0 +1,5578 @@
+{
+  "phase": 11,
+  "timestamp": "2026-11-17T16:05:41+00:00",
+  "candidate_source": "C:\\Users\\UltraPc\\Desktop\\LLM FROM SCRATCH\\PolyCodeGPT\\reports\\phase10_generation_evaluation_20261117_153043.json",
+  "checkpoint_step": 8130,
+  "seed": 42,
+  "safety_probes": {
+    "passed": 16,
+    "total": 16
+  },
+  "sandbox": {
+    "images": {
+      "python": "polycodegpt-sandbox-python:v1",
+      "javascript": "polycodegpt-sandbox-node:v1"
+    },
+    "limits": {
+      "memory": "128m",
+      "memory_swap": "128m",
+      "cpus": "0.50",
+      "pids": "32",
+      "nofile": "64",
+      "fsize": "1048576"
+    },
+    "timeout_s": 10.0,
+    "network": "none"
+  },
+  "success_rule": "a task succeeds only if every case passes",
+  "metrics": {
+    "python": {
+      "tasks": 50,
+      "tasks_scored": 50,
+      "infrastructure_errors": 0,
+      "syntax_valid_rate": 0.82,
+      "functional_success_rate": 0.0,
+      "test_case_pass_rate": 0.0619,
+      "runtime_error_rate": 0.34,
+      "timeout_rate": 0.0,
+      "completion_rate": 0.82,
+      "edge_case_success_rate": 0.1064,
+      "missing_entry_rate": 0.0,
+      "resource_limit_rate": 0.0,
+      "syntax_failure_rate": 0.18,
+      "functional_success_rate_executed_only": 0.0,
+      "convention_sensitivity": {
+        "tasks_passing_all_non_convention_cases": 0,
+        "rate": 0.0
+      },
+      "case_counts": {
+        "total": 210,
+        "passed": 13,
+        "normal": 116,
+        "boundary": 92,
+        "error": 2,
+        "convention": 6
+      },
+      "outcome_counts": {
+        "syntax_failure": 9,
+        "missing_entry": 0,
+        "runtime_error": 17,
+        "timeout": 0,
+        "resource_limit": 0,
+        "incorrect_output": 24,
+        "success": 0
+      }
+    },
+    "javascript": {
+      "tasks": 50,
+      "tasks_scored": 50,
+      "infrastructure_errors": 0,
+      "syntax_valid_rate": 0.02,
+      "functional_success_rate": 0.0,
+      "test_case_pass_rate": 0.0,
+      "runtime_error_rate": 0.0,
+      "timeout_rate": 0.0,
+      "completion_rate": 0.02,
+      "edge_case_success_rate": 0.0,
+      "missing_entry_rate": 0.0,
+      "resource_limit_rate": 0.0,
+      "syntax_failure_rate": 0.98,
+      "functional_success_rate_executed_only": 0.0,
+      "convention_sensitivity": {
+        "tasks_passing_all_non_convention_cases": 0,
+        "rate": 0.0
+      },
+      "case_counts": {
+        "total": 210,
+        "passed": 0,
+        "normal": 116,
+        "boundary": 92,
+        "error": 2,
+        "convention": 6
+      },
+      "outcome_counts": {
+        "syntax_failure": 49,
+        "missing_entry": 0,
+        "runtime_error": 0,
+        "timeout": 0,
+        "resource_limit": 0,
+        "incorrect_output": 1,
+        "success": 0
+      }
+    }
+  },
+  "task_outcomes": [
+    {
+      "task_id": "py_01",
+      "language": "python",
+      "entry": "factorial",
+      "docstring": "Compute the factorial of n recursively.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.881,
+      "detail": "3 case(s) wrong, first: n=5 got 5 want 120",
+      "candidate_sha256": "ad42cca9e2313b06d00346dc5279de077d4a4bf1e6eb07e2888635a704fc205e",
+      "candidate_source": "def factorial(n):\n    \"\"\"Compute the factorial of n recursively.\"\"\"\n    if n < 1:\n        return n\n    else:\n        return n",
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "status": "fail",
+          "got": "5",
+          "expected": "120"
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "status": "fail",
+          "got": "7",
+          "expected": "5040"
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "1"
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "1",
+          "expected": "1"
+        }
+      ]
+    },
+    {
+      "task_id": "py_02",
+      "language": "python",
+      "entry": "fibonacci",
+      "docstring": "Return the nth Fibonacci number.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.807,
+      "detail": "UnboundLocalError on case n=0: cannot access local variable 'nth' where it is not associated with a value",
+      "candidate_sha256": "49a9dc33ceb9e878e96f7ae69c17668f23b5203854b4c472fa7eff67373aa184",
+      "candidate_source": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number.\"\"\"\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_03",
+      "language": "python",
+      "entry": "is_palindrome",
+      "docstring": "Check whether a string is a palindrome.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "dc574a2678434ac0fc14bb7fee7bf5add7519890f2a5897e67899b90fa9d5d52",
+      "candidate_source": "def is_palindrome(s):\n    \"\"\"Check whether a string is a palindrome.\"\"\"\n    if not isinstance(s, str):\n        raise ValueError('Invalid string')\n    if not isinstance(s, str):\n        raise ValueError('Invalid string')\n    if not isinstance(s, str):\n        raise ValueError('Invalid string')\n    if not",
+      "cases": [
+        {
+          "name": "racecar",
+          "kind": "normal",
+          "args": [
+            "racecar"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abba",
+          "kind": "normal",
+          "args": [
+            "abba"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single char",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_04",
+      "language": "python",
+      "entry": "merge_sorted",
+      "docstring": "Merge two sorted lists into one sorted list.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.759,
+      "detail": "AttributeError on case interleaved: 'list' object has no attribute 'split'",
+      "candidate_sha256": "cb0f9c90ec460cea6a5ad90b400119ff273cdc0cd8b653105dd9e236bdbc4150",
+      "candidate_source": "def merge_sorted(a, b):\n    \"\"\"Merge two sorted lists into one sorted list.\"\"\"\n    b = b.split()\n    b = b.split()\n    b = b.split()\n    b = b.split()\n    b = b.split()\n    b = b.split()\n    b = b.split()\n    b = b",
+      "cases": [
+        {
+          "name": "interleaved",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "empty + list",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_05",
+      "language": "python",
+      "entry": "binary_search",
+      "docstring": "Binary search on a sorted list.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.847,
+      "detail": "5 case(s) wrong, first: found middle got [] want 2",
+      "candidate_sha256": "c1d573e3007b0748ef9009ed88817364a476140e8d0640dd8e409f97fa48d321",
+      "candidate_source": "def binary_search(arr, target):\n    \"\"\"Binary search on a sorted list.\"\"\"\n    if not isinstance(arr, list):\n        return []\n    if isinstance(arr, list):\n        return []\n    if isinstance(arr, list):\n        return []\n    if isinstance(arr, list):\n        return []\n    if isinstance(arr, list):\n        return",
+      "cases": [
+        {
+          "name": "found middle",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "2"
+        },
+        {
+          "name": "found first",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "0"
+        },
+        {
+          "name": "found last",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "4"
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "-1",
+          "convention": true
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "-1",
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_06",
+      "language": "python",
+      "entry": "nth_prime",
+      "docstring": "Return the nth prime number.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.778,
+      "detail": "UnboundLocalError on case n=1: cannot access local variable 'nth_prime' where it is not associated with a value",
+      "candidate_sha256": "641baae4f2cc8e3491e0fccde91ff0bd5508bada3bec7080cdd5a997c136fbab",
+      "candidate_source": "def nth_prime(n):\n    \"\"\"Return the nth prime number.\"\"\"\n    nth_prime = nth_prime\n    nth_prime = nth_prime\n    nth_prime = nth_prime\n    nth_prime = nth_prime\n    nth_prime = nth_prime\n    nth_",
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_07",
+      "language": "python",
+      "entry": "reverse_string",
+      "docstring": "Reverse a string.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.873,
+      "detail": "2 case(s) wrong, first: hello got 'hello' want 'olleh'",
+      "candidate_sha256": "59c624e7a1e906e7758b70050392c74b6685d5734998d5e515a389f593fecefd",
+      "candidate_source": "def reverse_string(s):\n    \"\"\"Reverse a string.\"\"\"\n    if s.startswith(''):\n        return s.strip()\n    return s.strip()",
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'hello'",
+          "expected": "'olleh'"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "''",
+          "expected": "''"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "'a'",
+          "expected": "'a'"
+        },
+        {
+          "name": "two",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'ab'",
+          "expected": "'ba'"
+        }
+      ]
+    },
+    {
+      "task_id": "py_08",
+      "language": "python",
+      "entry": "is_anagram",
+      "docstring": "Check if two strings are anagrams.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "3397578f1bc4ae86b4bbec20f9e453490107c0ebf4390bd718977f93b915cf55",
+      "candidate_source": "def is_anagram(s1, s2):\n    \"\"\"Check if two strings are anagrams.\"\"\"\n    if not isinstance(s1, str):\n        raise ValueError('Invalid string')\n    if not isinstance(s1, str):\n        raise ValueError('Invalid string')\n    if not isinstance(s1, str):\n        raise ValueError('Invalid string')\n    if",
+      "cases": [
+        {
+          "name": "listen/silent",
+          "kind": "normal",
+          "args": [
+            "listen",
+            "silent"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello/world",
+          "kind": "normal",
+          "args": [
+            "hello",
+            "world"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abc/cba",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "cba"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "aab/abb",
+          "kind": "boundary",
+          "args": [
+            "aab",
+            "abb"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_09",
+      "language": "python",
+      "entry": "gcd",
+      "docstring": "Compute the greatest common divisor.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.813,
+      "detail": "AttributeError on case 12,18: 'int' object has no attribute 'get_gcd'",
+      "candidate_sha256": "486817e5282589b7246b043170f35205c9dae4dc31e6269ce431e4be21a7f9ca",
+      "candidate_source": "def gcd(a, b):\n    \"\"\"Compute the greatest common divisor.\"\"\"\n    gcd = b.get_gcd(a)\n    gcd = b.get_gcd(a)\n    gcd = b.get_gcd(a)\n    gcd = b.get_gcd(a)\n   ",
+      "cases": [
+        {
+          "name": "12,18",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "7,13",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "0,5",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "5,0",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "48,180",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_10",
+      "language": "python",
+      "entry": "format_date",
+      "docstring": "Format a date from YYYY-MM-DD to DD/MM/YYYY.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.797,
+      "detail": "TypeError on case 2024-01-05: replace() takes at least 2 positional arguments (1 given)",
+      "candidate_sha256": "0c76937c8e9d0019e173fbd8f680ce6390d8d0396fc8d5cee46bfcaeb2413b31",
+      "candidate_source": "def format_date(date_str):\n    \"\"\"Format a date from YYYY-MM-DD to DD/MM/YYYY.\"\"\"\n    date_str = date_str.replace(date_str)\n    date_str = date_str.replace(date_str)\n    date_str = date_str.replace(date_str)",
+      "cases": [
+        {
+          "name": "2024-01-05",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "1999-12-31",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "2026-11-17",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "0001-01-01",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_11",
+      "language": "python",
+      "entry": "is_prime",
+      "docstring": "Check if a number is prime.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.778,
+      "detail": "7 case(s) wrong, first: 2 got 2 want True",
+      "candidate_sha256": "64279058e15ca3b089a262e996a40404b21ea02905de693ff1a2d5b1d2cac15b",
+      "candidate_source": "def is_prime(n):\n    \"\"\"Check if a number is prime.\"\"\"\n    if n < 0:\n        return n\n    else:\n        return n",
+      "cases": [
+        {
+          "name": "2",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "2",
+          "expected": "True"
+        },
+        {
+          "name": "17",
+          "kind": "normal",
+          "status": "fail",
+          "got": "17",
+          "expected": "True"
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "1",
+          "expected": "False"
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "False"
+        },
+        {
+          "name": "9",
+          "kind": "normal",
+          "status": "fail",
+          "got": "9",
+          "expected": "False"
+        },
+        {
+          "name": "97",
+          "kind": "normal",
+          "status": "fail",
+          "got": "97",
+          "expected": "True"
+        },
+        {
+          "name": "-7",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "-7",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_12",
+      "language": "python",
+      "entry": "triangular_number",
+      "docstring": "Calculate the nth triangular number.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "0eb6d730153742990d4bbba908d0e2a5117a944a66cbae10f8d1e752c1e18631",
+      "candidate_source": "def triangular_number(n):\n    \"\"\"Calculate the nth triangular number.\"\"\"\n    nth = n - n\n    nth = n - n\n    nth = n - n\n    nth = n - nth\n    nth = nth - nth\n    nth = nth - nth - nth\n    nth =",
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_13",
+      "language": "python",
+      "entry": "linear_search",
+      "docstring": "Implement a linear search.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.774,
+      "detail": "4 case(s) wrong, first: last got [4, 2, 9] want 2",
+      "candidate_sha256": "5746890c6cb48d7046577328c509d782c9934845d0bb6f94c6e6484dc90b0105",
+      "candidate_source": "def linear_search(arr, target):\n    \"\"\"Implement a linear search.\"\"\"\n    if not isinstance(arr, (list, tuple)):\n        return\n    return [x for x in arr]",
+      "cases": [
+        {
+          "name": "last",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[4, 2, 9]",
+          "expected": "2"
+        },
+        {
+          "name": "first",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[4, 2, 9]",
+          "expected": "0"
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[4, 2, 9]",
+          "expected": "-1",
+          "convention": true
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "-1",
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_14",
+      "language": "python",
+      "entry": "find_max",
+      "docstring": "Find the maximum element in a list.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.788,
+      "detail": "AttributeError on case 1,5,3: 'list' object has no attribute 'is_empty'",
+      "candidate_sha256": "5a8f1a7b0328efdfeef6533085a904655e18fc24e99e4faf285d07339066f162",
+      "candidate_source": "def find_max(arr):\n    \"\"\"Find the maximum element in a list.\"\"\"\n    if arr.is_empty():\n        return arr\n    else:\n        return arr",
+      "cases": [
+        {
+          "name": "1,5,3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_15",
+      "language": "python",
+      "entry": "bubble_sort",
+      "docstring": "Implement a simple sort (bubble sort).",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.782,
+      "detail": "5 case(s) wrong, first: 3,1,2 got <built-in method sort of list object at 0x7d3add5a1380> want [1, 2, 3]",
+      "candidate_sha256": "6c70c728d5baf627ffd40a4807140f88770f662932487510ad425dfea5075e7e",
+      "candidate_source": "def bubble_sort(arr):\n    \"\"\"Implement a simple sort (bubble sort). \"\"\"\n    if arr.sort:\n        return arr.sort\n    else:\n        return arr.sort",
+      "cases": [
+        {
+          "name": "3,1,2",
+          "kind": "normal",
+          "status": "fail",
+          "got": "<built-in method sort of list object at 0x7d3add5a1380>",
+          "expected": "[1, 2, 3]"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "<built-in method sort of list object at 0x7d3add3e6e40>",
+          "expected": "[]"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "<built-in method sort of list object at 0x7d3add4121c0>",
+          "expected": "[5]"
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "status": "fail",
+          "got": "<built-in method sort of list object at 0x7d3add3c5e80>",
+          "expected": "[1, 2, 2]"
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "status": "fail",
+          "got": "<built-in method sort of list object at 0x7d3add4bff00>",
+          "expected": "[-5, -1, 3]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_16",
+      "language": "python",
+      "entry": "is_even",
+      "docstring": "Check if a number is even.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.841,
+      "detail": "5 case(s) wrong, first: 4 got None want True",
+      "candidate_sha256": "ae6939d0c84414595676759f06ba4ad59463be2cfef0709ef922d63d357fab39",
+      "candidate_source": "def is_even(n):\n    \"\"\"Check if a number is even.\"\"\"\n    if n < 0:\n        return n\n    if n < 0:\n        return n\n    if n < 0:\n        return n\n    if n < 0:\n        return n\n    if n < 0:\n        return n\n    if n < 0:\n        return n\n   ",
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "True"
+        },
+        {
+          "name": "7",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "False"
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "None",
+          "expected": "True"
+        },
+        {
+          "name": "-2",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "-2",
+          "expected": "True"
+        },
+        {
+          "name": "-3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "-3",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_17",
+      "language": "python",
+      "entry": "sum_list",
+      "docstring": "Compute the sum of list elements.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.762,
+      "detail": "4 case(s) wrong, first: 1,2,3 got [1, 2, 3] want 6",
+      "candidate_sha256": "253438104cc15b1ac6d4ecefb9a1a8aabea01b90bd03df53e43c8d8acd50d0cd",
+      "candidate_source": "def sum_list(lst):\n    \"\"\"Compute the sum of list elements.\"\"\"\n    for i in lst:\n        if len(lst) == 0:\n            return lst[i]\n    return lst",
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1, 2, 3]",
+          "expected": "6"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "0"
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[-1, 1]",
+          "expected": "0"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[10]",
+          "expected": "10"
+        }
+      ]
+    },
+    {
+      "task_id": "py_18",
+      "language": "python",
+      "entry": "factorial_iter",
+      "docstring": "Implement factorial iteratively.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.814,
+      "detail": "3 case(s) wrong, first: n=5 got 5 want 120",
+      "candidate_sha256": "3e448b5744f901fc1db3205b8c5939942a43f6536f77eb0fa544865a3d7e1941",
+      "candidate_source": "def factorial_iter(n):\n    \"\"\"Implement factorial iteratively.\"\"\"\n    if n < n:\n        return n\n    else:\n        return n",
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "status": "fail",
+          "got": "5",
+          "expected": "120"
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "1"
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "1",
+          "expected": "1"
+        },
+        {
+          "name": "n=6",
+          "kind": "normal",
+          "status": "fail",
+          "got": "6",
+          "expected": "720"
+        }
+      ]
+    },
+    {
+      "task_id": "py_19",
+      "language": "python",
+      "entry": "my_len",
+      "docstring": "Implement string length without len().",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.773,
+      "detail": "4 case(s) wrong, first: hello got 'hello' want 5",
+      "candidate_sha256": "138303547d487ea2ede469707f4e63646ce9c29834e64e1dfb1560d3ea0ea7b9",
+      "candidate_source": "def my_len(s):\n    \"\"\"Implement string length without len().\n    \"\"\"\n    if len(s) == 1:\n        return s\n    else:\n        return s",
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'hello'",
+          "expected": "5"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "''",
+          "expected": "0"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "'a'",
+          "expected": "1"
+        },
+        {
+          "name": "spaces",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'a b'",
+          "expected": "3"
+        }
+      ]
+    },
+    {
+      "task_id": "py_20",
+      "language": "python",
+      "entry": "is_leap_year",
+      "docstring": "Check if a year is a leap year.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "163f5b95e72145731628902fc589b296f75fba32e762eb0b5474aab884fe7dc6",
+      "candidate_source": "def is_leap_year(y):\n    \"\"\"Check if a year is a leap year.\"\"\"\n    if not isinstance(y, int):\n        return False\n    if not isinstance(y, int):\n        return False\n    if not isinstance(y, int):\n        return False\n    if not isinstance(y, int):\n        return False\n    if not isinstance",
+      "cases": [
+        {
+          "name": "2024",
+          "kind": "normal",
+          "args": [
+            2024
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1900",
+          "kind": "boundary",
+          "args": [
+            1900
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "2000",
+          "kind": "boundary",
+          "args": [
+            2000
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "2023",
+          "kind": "normal",
+          "args": [
+            2023
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1600",
+          "kind": "boundary",
+          "args": [
+            1600
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_21",
+      "language": "python",
+      "entry": "countdown",
+      "docstring": "Implement a countdown.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.781,
+      "detail": "4 case(s) wrong, first: 5 got 5 want [5, 4, 3, 2, 1]",
+      "candidate_sha256": "d8af1eb95142b138552535699d29d41e6fb8a2db6e6e1fe6aca0348c68a3d1aa",
+      "candidate_source": "def countdown(n):\n    \"\"\"Implement a countdown.\"\"\"\n    if n < 0:\n        return n\n    else:\n        return n",
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "status": "fail",
+          "got": "5",
+          "expected": "[5, 4, 3, 2, 1]"
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "1",
+          "expected": "[1]"
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "[]"
+        },
+        {
+          "name": "3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "3",
+          "expected": "[3, 2, 1]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_22",
+      "language": "python",
+      "entry": "safe_factorial",
+      "docstring": "Implement factorial with error checking.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.829,
+      "detail": "5 case(s) wrong, first: n=5 got 5 want 120",
+      "candidate_sha256": "0165e0223a151bfd371357c7a831c6280988dd4e50f65b2df939a902480eb547",
+      "candidate_source": "def safe_factorial(n):\n    \"\"\"Implement factorial with error checking.\"\"\"\n    if n < n:\n        return n\n    else:\n        return n",
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "status": "fail",
+          "got": "5",
+          "expected": "120"
+        },
+        {
+          "name": "n=3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "3",
+          "expected": "6"
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "1"
+        },
+        {
+          "name": "n=-1 raises ValueError",
+          "kind": "error",
+          "status": "fail",
+          "got": "-1",
+          "expected": "raises ValueError"
+        },
+        {
+          "name": "n=-5 raises ValueError",
+          "kind": "error",
+          "status": "fail",
+          "got": "-5",
+          "expected": "raises ValueError"
+        }
+      ]
+    },
+    {
+      "task_id": "py_23",
+      "language": "python",
+      "entry": "caesar_cipher",
+      "docstring": "Implement a simple cipher (shift by n).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "bf339227f293def3f88da487e5d37577e557bfebe41cadd82ec2347362316ee9",
+      "candidate_source": "def caesar_cipher(s, n):\n    \"\"\"Implement a simple cipher (shift by n). \"\"\"\n    if n < 0:\n        return s\n    elif n < 0:\n        return s\n    elif n < 0:\n        return s\n    elif n < 0:\n        return s\n    elif n < 0:\n        return s\n    elif n < 0:\n       ",
+      "cases": [
+        {
+          "name": "abc+1",
+          "kind": "normal",
+          "args": [
+            "abc",
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "args": [
+            "xyz",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "args": [
+            "hello",
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abc+25",
+          "kind": "normal",
+          "args": [
+            "abc",
+            25
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "mixed+1",
+          "kind": "normal",
+          "args": [
+            "Hello, World!",
+            1
+          ],
+          "expected": "",
+          "convention": true,
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_24",
+      "language": "python",
+      "entry": "fib_memo",
+      "docstring": "Implement Fibonacci with memoization.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.768,
+      "detail": "4 case(s) wrong, first: n=0 got None want 0",
+      "candidate_sha256": "8abda24060777c418c651d91fa226a2707439bee75176ce7b0043fd31937c183",
+      "candidate_source": "def fib_memo(n, memo={}):\n    \"\"\"Implement Fibonacci with memoization.\"\"\"\n    if not memo:\n        return None\n    return None",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "None",
+          "expected": "0"
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "None",
+          "expected": "1"
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "55"
+        },
+        {
+          "name": "n=25",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "75025"
+        }
+      ]
+    },
+    {
+      "task_id": "py_25",
+      "language": "python",
+      "entry": "get_evens",
+      "docstring": "Implement a function that returns list of even numbers.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "7bc312ce31ab6bce2e6e1a87c3112ddf9a33b9beba0bcdb83dcfeb8d15535ca8",
+      "candidate_source": "def get_evens(lst):\n    \"\"\"Implement a function that returns list of even numbers.\"\"\"\n    if lst is None:\n        return lst\n    elif lst is None:\n        return lst\n    elif lst is None:\n        return lst\n    elif lst is None:\n        return lst\n    elif lst is None:\n        return lst\n    elif lst is None:\n       ",
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "all even",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "no even",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_26",
+      "language": "python",
+      "entry": "get_odds",
+      "docstring": "Implement a function that returns list of odd numbers.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.76,
+      "detail": "AttributeError on case 1,2,3,4: 'list' object has no attribute 'is_all'",
+      "candidate_sha256": "ab6b826ff980727ea5afd207b2ab7faeb5e3de156dbdb19e8f7219dbe01e5e07",
+      "candidate_source": "def get_odds(lst):\n    \"\"\"Implement a function that returns list of odd numbers.\"\"\"\n    if lst.is_all():\n        return lst.get_odds(lst)\n    else:\n        return lst",
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "no odd",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "all odd",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_27",
+      "language": "python",
+      "entry": "filter_positives",
+      "docstring": "Implement a function that filters positive numbers.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "12d3542e8b273ac4fae2d0a66bf580b08c85df3cb7d67408c4f71b93edb30dd8",
+      "candidate_source": "def filter_positives(lst):\n    \"\"\"Implement a function that filters positive numbers.\"\"\"\n    if lst.is_valid(lst):\n        return lst\n    elif lst.is_valid(lst):\n        return lst\n    elif lst.is_valid(lst):\n        return lst\n    elif lst.is_valid(lst):\n        return lst\n    elif",
+      "cases": [
+        {
+          "name": "-2,0,3,5",
+          "kind": "normal",
+          "args": [
+            [
+              -2,
+              0,
+              3,
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "only zero",
+          "kind": "boundary",
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single positive",
+          "kind": "normal",
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_28",
+      "language": "python",
+      "entry": "string_lengths",
+      "docstring": "Implement a function that maps strings to their lengths.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.802,
+      "detail": "IndexError on case empty: list index out of range",
+      "candidate_sha256": "ec97aada51a668f4532b6908a35e06438485e4f448026427df267670f990abdc",
+      "candidate_source": "def string_lengths(lst):\n    \"\"\"Implement a function that maps strings to their lengths.\"\"\"\n    if len(lst) == 0:\n        return lst[0]\n    else:\n        return lst[0]",
+      "cases": [
+        {
+          "name": "a,bb,ccc",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'a'",
+          "expected": "[1, 2, 3]"
+        },
+        {
+          "name": "ab,c",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'ab'",
+          "expected": "[2, 1]"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "with empty string",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "''",
+          "expected": "[0, 2]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_29",
+      "language": "python",
+      "entry": "is_sorted",
+      "docstring": "Implement a function that checks if a list is sorted.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "9ddb1ca5ba684ba1f9c13501844a0a516cdf8aec8ff6e856f3bff47d0c89e762",
+      "candidate_source": "def is_sorted(lst):\n    \"\"\"Implement a function that checks if a list is sorted.\"\"\"\n    if not isinstance(lst, list):\n        return []\n    for i in lst:\n        if len(lst) == 1:\n            return []\n        for i in lst:\n            if len(lst) == 1:\n                return []\n            for i",
+      "cases": [
+        {
+          "name": "ascending",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "descending",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "equal pair",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_30",
+      "language": "python",
+      "entry": "fib_recursive",
+      "docstring": "Implement a function that returns the nth Fibonacci number using recursion.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.813,
+      "detail": "UnboundLocalError on case n=0: cannot access local variable 'nth' where it is not associated with a value",
+      "candidate_sha256": "cebc9027dd4c04dc7a1f4eca2a315d32183cbed299b7e400c682ad286c9300e3",
+      "candidate_source": "def fib_recursive(n):\n    \"\"\"Implement a function that returns the nth Fibonacci number using recursion.\"\"\"\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = n",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=15",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_31",
+      "language": "python",
+      "entry": "remove_duplicates",
+      "docstring": "Implement a function that removes duplicates from a list.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.804,
+      "detail": "2 case(s) wrong, first: 1,2,2,3,1 got [1, 2, 2, 3, 1] want [1, 2, 3]",
+      "candidate_sha256": "b59f1b73a84766ca5f00df201de5130edc2dacdf2544864104dfa4743f24b6e2",
+      "candidate_source": "def remove_duplicates(lst):\n    \"\"\"Implement a function that removes duplicates from a list.\"\"\"\n    for i in lst:\n        if len(lst) == 1:\n            return lst[i]\n    return lst",
+      "cases": [
+        {
+          "name": "1,2,2,3,1",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1, 2, 2, 3, 1]",
+          "expected": "[1, 2, 3]"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[]",
+          "expected": "[]"
+        },
+        {
+          "name": "all same",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[1, 1, 1]",
+          "expected": "[1]"
+        },
+        {
+          "name": "already unique",
+          "kind": "normal",
+          "status": "pass",
+          "got": "[3, 1, 2]",
+          "expected": "[3, 1, 2]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_32",
+      "language": "python",
+      "entry": "list_intersection",
+      "docstring": "Implement a function that finds the intersection of two lists.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.808,
+      "detail": "3 case(s) wrong, first: 1,2,3 & 2,3,4 got [1, 2, 3] want [2, 3]",
+      "candidate_sha256": "a4c03e771282e0a84a3cdcacf6d12e111f55282ba34d8b36115d7277b2f68a72",
+      "candidate_source": "def list_intersection(l1, l2):\n    \"\"\"Implement a function that finds the intersection of two lists.\"\"\"\n    if l1 == l2:\n        return l1\n    else:\n        return l1",
+      "cases": [
+        {
+          "name": "1,2,3 & 2,3,4",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1, 2, 3]",
+          "expected": "[2, 3]"
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[]",
+          "expected": "[]"
+        },
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1, 2]",
+          "expected": "[]"
+        },
+        {
+          "name": "duplicate in l1",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[1, 2, 2]",
+          "expected": "[2]",
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_33",
+      "language": "python",
+      "entry": "list_union",
+      "docstring": "Implement a function that finds the union of two lists.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "47a5f483140744ce38459254373ce5fd360042413c69a00beee4cb84c6022a1a",
+      "candidate_source": "def list_union(l1, l2):\n    \"\"\"Implement a function that finds the union of two lists.\"\"\"\n    if l1 == l2:\n        return l1\n    elif l2 == l2:\n        return l2\n    elif l2 == l2:\n        return l2\n    elif l2 == l2:\n        return l2\n    elif l",
+      "cases": [
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "overlap",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_34",
+      "language": "python",
+      "entry": "flatten",
+      "docstring": "Implement a function that flattens a nested list.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.875,
+      "detail": "4 case(s) wrong, first: nested got 1 want [1, 2, 3, 4, 5]",
+      "candidate_sha256": "1640482e3c851b0f05f6dbde4bae982c024e41eca4d61b87ce64de49e48b04f3",
+      "candidate_source": "def flatten(lst):\n    \"\"\"Implement a function that flattens a nested list.\"\"\"\n    if len(lst) == 1:\n        return lst[0]\n    else:\n        return lst[0]",
+      "cases": [
+        {
+          "name": "nested",
+          "kind": "normal",
+          "status": "fail",
+          "got": "1",
+          "expected": "[1, 2, 3, 4, 5]"
+        },
+        {
+          "name": "empty inner",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[1]"
+        },
+        {
+          "name": "already flat",
+          "kind": "normal",
+          "status": "fail",
+          "got": "1",
+          "expected": "[1, 2]"
+        },
+        {
+          "name": "deep",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[[1]]",
+          "expected": "[1, 2]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_35",
+      "language": "python",
+      "entry": "binary_search_simple",
+      "docstring": "Implement a function that checks if a value is in a sorted list.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.777,
+      "detail": "3 case(s) wrong, first: present got [1, 3, 5] want True",
+      "candidate_sha256": "f114461807e3090890ade0c3a5925e7433aefe10902042ab1117a485a06f55b7",
+      "candidate_source": "def binary_search_simple(arr, target):\n    \"\"\"Implement a function that checks if a value is in a sorted list.\"\"\"\n    if isinstance(arr, list):\n        return [x for x in arr]\n    else:\n        return [x for x in arr]",
+      "cases": [
+        {
+          "name": "present",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1, 3, 5]",
+          "expected": "True"
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1, 3, 5]",
+          "expected": "False"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_36",
+      "language": "python",
+      "entry": "running_total",
+      "docstring": "Implement a function that computes running total.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.783,
+      "detail": "AttributeError on case 1,2,3: 'list' object has no attribute 'get'",
+      "candidate_sha256": "bd097b244fc5f53704b77f327d30f8130a8d2111d211df5632ed609da342ecde",
+      "candidate_source": "def running_total(lst):\n    \"\"\"Implement a function that computes running total.\"\"\"\n    if lst is None:\n        lst = lst.get(lst)\n    else:\n        lst = lst.get(lst)\n    return lst",
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_37",
+      "language": "python",
+      "entry": "selection_sort",
+      "docstring": "Implement a function that sorts a list using selection sort.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.803,
+      "detail": "2 case(s) wrong, first: 64,25,12 got [64, 25, 12] want [12, 25, 64]",
+      "candidate_sha256": "914647a7f43175f8da8118f4747f627ff1a2490203e2769cd5f388faf94076f8",
+      "candidate_source": "def selection_sort(arr):\n    \"\"\"Implement a function that sorts a list using selection sort.\"\"\"\n    if arr.sort:\n        return arr\n    else:\n        return arr",
+      "cases": [
+        {
+          "name": "64,25,12",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[64, 25, 12]",
+          "expected": "[12, 25, 64]"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[]",
+          "expected": "[]"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[3]",
+          "expected": "[3]"
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[2, 2, 1]",
+          "expected": "[1, 2, 2]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_38",
+      "language": "python",
+      "entry": "caesar_wrap",
+      "docstring": "Implement a function that implements a simple Caesar cipher with wrap.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.807,
+      "detail": "TypeError on case xyz+3: s must be a list of strings",
+      "candidate_sha256": "dc1565e1fdccb3c3ee335150b5d456ed1c004eec514eae81802d3b3bd3fc5d2b",
+      "candidate_source": "def caesar_wrap(s, n):\n    \"\"\"Implement a function that implements a simple Caesar cipher with wrap.\"\"\"\n    if not isinstance(s, (list, tuple)):\n        raise TypeError(\"s must be a list of strings\")\n    if not isinstance(s, (list, tuple)):\n        raise TypeError(\"s must be a list of strings\")",
+      "cases": [
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "hello+2",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "abc+29",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "abc+52",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_39",
+      "language": "python",
+      "entry": "same_word",
+      "docstring": "Implement a function that checks if two words are the same case-insensitive.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.857,
+      "detail": "4 case(s) wrong, first: Hello/hello got None want True",
+      "candidate_sha256": "4b466b5ffbf9d570c8955a2be4d37a5cadcc3fe91ad76df770484b44b90502fe",
+      "candidate_source": "def same_word(w1, w2):\n    \"\"\"Implement a function that checks if two words are the same case-insensitive.\"\"\"\n    if not isinstance(w1, str):\n        raise ValueError(\"Invalid word\")\n    if not isinstance(w1, str):\n        raise ValueError(\"Invalid word\")\n    if not isinstance(w1, str):\n        raise ValueError",
+      "cases": [
+        {
+          "name": "Hello/hello",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "True"
+        },
+        {
+          "name": "abc/abd",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "False"
+        },
+        {
+          "name": "A/a",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "None",
+          "expected": "True"
+        },
+        {
+          "name": "same",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "True"
+        }
+      ]
+    },
+    {
+      "task_id": "py_40",
+      "language": "python",
+      "entry": "my_abs",
+      "docstring": "Implement a function that returns the absolute value.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.782,
+      "detail": "2 case(s) wrong, first: -5 got -5 want 5",
+      "candidate_sha256": "1de6a6c6ca55a96db433f27f2850bd41be1216c37f4b18cdfd200ef6a6a199ae",
+      "candidate_source": "def my_abs(x):\n    \"\"\"Implement a function that returns the absolute value.\"\"\"\n    if not isinstance(x, int):\n        return x\n    return x",
+      "cases": [
+        {
+          "name": "-5",
+          "kind": "normal",
+          "status": "fail",
+          "got": "-5",
+          "expected": "5"
+        },
+        {
+          "name": "5",
+          "kind": "normal",
+          "status": "pass",
+          "got": "5",
+          "expected": "5"
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        },
+        {
+          "name": "-3.5",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "-3.5",
+          "expected": "3.5"
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "status": "pass",
+          "got": "2.5",
+          "expected": "2.5"
+        }
+      ]
+    },
+    {
+      "task_id": "py_41",
+      "language": "python",
+      "entry": "power",
+      "docstring": "Implement a function that computes power (base^exp).",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.844,
+      "detail": "AttributeError on case 2^10: 'int' object has no attribute 'exp'",
+      "candidate_sha256": "46ab50bff81262226dbbfa35ca120413ffe05ac89674802a57002687438c793d",
+      "candidate_source": "def power(base, exp):\n    \"\"\"Implement a function that computes power (base^exp). \"\"\"\n    if exp is None:\n        exp = exp.exp\n    else:\n        exp = exp.exp\n    return exp",
+      "cases": [
+        {
+          "name": "2^10",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "5^0",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "3^3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "1^100",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_42",
+      "language": "python",
+      "entry": "is_digits",
+      "docstring": "Implement a function that checks if a string contains only digits.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.753,
+      "detail": "4 case(s) wrong, first: 123 got '123' want True",
+      "candidate_sha256": "3688b8dd824c18a1d57f7536c6d2f30a4acee142d7e489ffb31b6d36aa98ae06",
+      "candidate_source": "def is_digits(s):\n    \"\"\"Implement a function that checks if a string contains only digits.\"\"\"\n    if not isinstance(s, str):\n        return s\n    return s",
+      "cases": [
+        {
+          "name": "123",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'123'",
+          "expected": "True"
+        },
+        {
+          "name": "12a",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'12a'",
+          "expected": "False"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "''",
+          "expected": "False"
+        },
+        {
+          "name": "leading zero",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "'007'",
+          "expected": "True"
+        }
+      ]
+    },
+    {
+      "task_id": "py_43",
+      "language": "python",
+      "entry": "min_of_three",
+      "docstring": "Implement a function that finds the minimum of three numbers.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.853,
+      "detail": "TypeError on case 1,2,3: object of type 'int' has no len()",
+      "candidate_sha256": "b9070ec3c95049163f07bae845a5870d77b76ff153ea456a45d812776fe6e598",
+      "candidate_source": "def min_of_three(a, b, c):\n    \"\"\"Implement a function that finds the minimum of three numbers.\"\"\"\n    if len(a) == 0:\n        return 0\n    else:\n        return 0",
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "5,2,9",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "all negative",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_44",
+      "language": "python",
+      "entry": "c_to_f",
+      "docstring": "Implement a function that converts Celsius to Fahrenheit.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.843,
+      "detail": "AttributeError on case 0C: 'int' object has no attribute 'get_c_to_f'",
+      "candidate_sha256": "45ff63798e6f2e8b553bd2881cc2e77a78444db416c221753d2e0df35c271e86",
+      "candidate_source": "def c_to_f(c):\n    \"\"\"Implement a function that converts Celsius to Fahrenheit.\"\"\"\n    c = c.get_c_to_f(c)\n    c.set_c_to_f(c)\n    c.set_c_to_f(c)\n    c.set_c",
+      "cases": [
+        {
+          "name": "0C",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "100C",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "-40C",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "10C",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_45",
+      "language": "python",
+      "entry": "is_positive",
+      "docstring": "Implement a function that checks if a number is positive.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.814,
+      "detail": "3 case(s) wrong, first: 5 got 5 want True",
+      "candidate_sha256": "a63c1cae11455b93cef228fe69b3d779f6799fccb611da64fc2ee172a4ccb433",
+      "candidate_source": "def is_positive(n):\n    \"\"\"Implement a function that checks if a number is positive.\"\"\"\n    if n < 0:\n        return n\n    else:\n        return n",
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "status": "fail",
+          "got": "5",
+          "expected": "True"
+        },
+        {
+          "name": "-1",
+          "kind": "normal",
+          "status": "fail",
+          "got": "-1",
+          "expected": "False"
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_46",
+      "language": "python",
+      "entry": "nth_even",
+      "docstring": "Implement a function that returns the nth even number.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.837,
+      "detail": "UnboundLocalError on case n=1: cannot access local variable 'nth' where it is not associated with a value",
+      "candidate_sha256": "f1882e84e6dfa0ee0de0635c5fe71b10e81e82e14cdad8b1c8f367210abdb3ff",
+      "candidate_source": "def nth_even(n):\n    \"\"\"Implement a function that returns the nth even number.\"\"\"\n    nth = nth.nth\n    nth = nth.nth\n    nth = nth.nth\n    nth = nth.nth\n    nth = nth.nth\n    nth = nth",
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_47",
+      "language": "python",
+      "entry": "my_mod",
+      "docstring": "Implement a function that computes the modulus.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.798,
+      "detail": "3 case(s) wrong, first: 10%3 got 10 want 1",
+      "candidate_sha256": "aa118849b393f396e25830273171ffc5475fd49227392d4ec41b91b485a795fa",
+      "candidate_source": "def my_mod(a, b):\n    \"\"\"Implement a function that computes the modulus.\"\"\"\n    if not isinstance(a, str):\n        return a\n    return a",
+      "cases": [
+        {
+          "name": "10%3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "10",
+          "expected": "1"
+        },
+        {
+          "name": "9%3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "9",
+          "expected": "0"
+        },
+        {
+          "name": "7%4",
+          "kind": "normal",
+          "status": "fail",
+          "got": "7",
+          "expected": "3"
+        }
+      ]
+    },
+    {
+      "task_id": "py_48",
+      "language": "python",
+      "entry": "is_blank",
+      "docstring": "Implement a function that checks if a string is blank.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.836,
+      "detail": "NameError on case empty: name 'string_types' is not defined",
+      "candidate_sha256": "be5482ac468244850dd2b7bba61454f9a45a7dae4c8c0de6d47e41b77377036d",
+      "candidate_source": "def is_blank(s):\n    \"\"\"Implement a function that checks if a string is blank.\"\"\"\n    if not isinstance(s, string_types):\n        return s\n    return s",
+      "cases": [
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "spaces",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "padded text",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "text",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_49",
+      "language": "python",
+      "entry": "square",
+      "docstring": "Implement a function that returns the square of a number.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.751,
+      "detail": "3 case(s) wrong, first: 4 got 4 want 16",
+      "candidate_sha256": "163dd3139582f2a6fc8ef1471a90c3558caa866569813cef70e772d7dd616b8c",
+      "candidate_source": "def square(x):\n    \"\"\"Implement a function that returns the square of a number.\"\"\"\n    if isinstance(x, float):\n        return x\n    else:\n        return x",
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "status": "fail",
+          "got": "4",
+          "expected": "16"
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        },
+        {
+          "name": "-3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "-3",
+          "expected": "9"
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "status": "fail",
+          "got": "2.5",
+          "expected": "6.25"
+        }
+      ]
+    },
+    {
+      "task_id": "py_50",
+      "language": "python",
+      "entry": "fib_iter",
+      "docstring": "Implement a function that computes the nth Fibonacci iteratively.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 0.751,
+      "detail": "UnboundLocalError on case n=0: cannot access local variable 'nth' where it is not associated with a value",
+      "candidate_sha256": "29106a2013f7746ec82fd5d8483cbc24d679264dfeca59a65969d5fa0d02081c",
+      "candidate_source": "def fib_iter(n):\n    \"\"\"Implement a function that computes the nth Fibonacci iteratively.\"\"\"\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth.shape\n    nth = nth",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=30",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_01",
+      "language": "javascript",
+      "entry": "factorial",
+      "docstring": "Compute the factorial of n recursively.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "378678878bee41d9917f528f260f80af6a7702b4e32de9d70373516d1fb86bb3",
+      "candidate_source": "function factorial(n) {\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_02",
+      "language": "javascript",
+      "entry": "fibonacci",
+      "docstring": "Return the nth Fibonacci number.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "8d2a1bdcb76d0c269d5bb467b4a590caa024bfab109243fdc9fd4ed4625d3307",
+      "candidate_source": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "args": [
+            20
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_03",
+      "language": "javascript",
+      "entry": "isPalindrome",
+      "docstring": "Check whether a string is a palindrome.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "0c86d68deb5273f2d32fa06a9eced3bab49691c23d147227376a4d69fbd76661",
+      "candidate_source": "function isPalindrome(s) {\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.",
+      "cases": [
+        {
+          "name": "racecar",
+          "kind": "normal",
+          "args": [
+            "racecar"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abba",
+          "kind": "normal",
+          "args": [
+            "abba"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_04",
+      "language": "javascript",
+      "entry": "mergeSorted",
+      "docstring": "Merge two sorted arrays into one sorted array.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "8daaf2b1bde6043e113213a035b23a42b41b145d5815739223bb5e4fc020a98d",
+      "candidate_source": "function mergeSorted(a, b) {\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+      "cases": [
+        {
+          "name": "interleaved",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty + list",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_05",
+      "language": "javascript",
+      "entry": "binarySearch",
+      "docstring": "Binary search on a sorted array.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "7da9d494533aeeed2f0f442c25e595d55b2f4d43f8610c7e9288044b91a52e99",
+      "candidate_source": "function binarySearch(arr, target) {\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.",
+      "cases": [
+        {
+          "name": "found middle",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "found first",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "found last",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            9
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            4
+          ],
+          "expected": "",
+          "convention": true,
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": "",
+          "convention": true,
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_06",
+      "language": "javascript",
+      "entry": "nthPrime",
+      "docstring": "Return the nth prime number.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "78afc909ce4f3c416a6457035e634ea8e70400e8edf9bf3cb60e5abe15ca35d8",
+      "candidate_source": "function nthPrime(n) {\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth",
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "args": [
+            20
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_07",
+      "language": "javascript",
+      "entry": "reverseString",
+      "docstring": "Reverse a string.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "127023a614f7b2d31fc9f1763221775170a162a1f950a2b322fcda30fea75260",
+      "candidate_source": "function reverseString(s) {\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s =",
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "two",
+          "kind": "normal",
+          "args": [
+            "ab"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_08",
+      "language": "javascript",
+      "entry": "isAnagram",
+      "docstring": "Check if two strings are anagrams.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "d20ee7a0edbd2115383bef213f573790d465855a8ae3bb2f4419bbf7f1543d86",
+      "candidate_source": "function isAnagram(s1, s2) {\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)",
+      "cases": [
+        {
+          "name": "listen/silent",
+          "kind": "normal",
+          "args": [
+            "listen",
+            "silent"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello/world",
+          "kind": "normal",
+          "args": [
+            "hello",
+            "world"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abc/cba",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "cba"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "aab/abb",
+          "kind": "boundary",
+          "args": [
+            "aab",
+            "abb"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_09",
+      "language": "javascript",
+      "entry": "gcd",
+      "docstring": "Compute the greatest common divisor.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "5ff185798547dda6b13eef5fddb3e7ebf627c330f88210ae923555dd88cb7463",
+      "candidate_source": "function gcd(a, b) {\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(",
+      "cases": [
+        {
+          "name": "12,18",
+          "kind": "normal",
+          "args": [
+            12,
+            18
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "7,13",
+          "kind": "normal",
+          "args": [
+            7,
+            13
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0,5",
+          "kind": "boundary",
+          "args": [
+            0,
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "5,0",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "48,180",
+          "kind": "normal",
+          "args": [
+            48,
+            180
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_10",
+      "language": "javascript",
+      "entry": "formatDate",
+      "docstring": "Format a date from YYYY-MM-DD to DD/MM/YYYY.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "53db6e5a14b64c9f78c4a2dc8a17f830746feee4202fe4f0a62d801aa4dddd82",
+      "candidate_source": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+      "cases": [
+        {
+          "name": "2024-01-05",
+          "kind": "normal",
+          "args": [
+            "2024-01-05"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1999-12-31",
+          "kind": "normal",
+          "args": [
+            "1999-12-31"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "2026-11-17",
+          "kind": "normal",
+          "args": [
+            "2026-11-17"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0001-01-01",
+          "kind": "boundary",
+          "args": [
+            "0001-01-01"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_11",
+      "language": "javascript",
+      "entry": "isPrime",
+      "docstring": "Check if a number is prime.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "1f7233ab18f4793054dbe828bca8a22fdd5b8602cf723262a4ac8918348565ad",
+      "candidate_source": "function isPrime(n) {\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;",
+      "cases": [
+        {
+          "name": "2",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "17",
+          "kind": "normal",
+          "args": [
+            17
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "9",
+          "kind": "normal",
+          "args": [
+            9
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "97",
+          "kind": "normal",
+          "args": [
+            97
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-7",
+          "kind": "boundary",
+          "args": [
+            -7
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_12",
+      "language": "javascript",
+      "entry": "triangularNumber",
+      "docstring": "Calculate the nth triangular number.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "99346fb733903759de4d76eb309732b541f05bbae4abe3692940d6756cdded49",
+      "candidate_source": "function triangularNumber(n) {\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth",
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_13",
+      "language": "javascript",
+      "entry": "linearSearch",
+      "docstring": "Implement a linear search.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "ada3db9ef9288339273dd52599f23597185aa3c979f595c9fe0a767421795f68",
+      "candidate_source": "function linearSearch(arr, target) {\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.",
+      "cases": [
+        {
+          "name": "last",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            9
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "first",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            7
+          ],
+          "expected": "",
+          "convention": true,
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": "",
+          "convention": true,
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_14",
+      "language": "javascript",
+      "entry": "findMax",
+      "docstring": "Find the maximum element in an array.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "e266f4d26645d5b097d1091cbac17155d9709687f724c408c1224953100bf3d6",
+      "candidate_source": "function findMax(arr) {\n  var i = arr.length;\n  var i = arr.length;\n  var i = arr.length;\n  var i = arr.length;\n  var i = arr.length;\n  var i = arr.length;\n  var i = arr.length;\n  var i = arr.length;",
+      "cases": [
+        {
+          "name": "1,5,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "args": [
+            [
+              -4,
+              -2,
+              -9
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "args": [
+            [
+              2,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_15",
+      "language": "javascript",
+      "entry": "bubbleSort",
+      "docstring": "Implement a simple sort (bubble sort).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "a29c803b0aa1e5b18f710497e7ecf48260cc0c3d388069a553573f5754a07410",
+      "candidate_source": "function bubbleSort(arr) {\n  var sort = arr.sort(0, arr.sort(0, arr.sort(0, arr.sort(0, arr.sort(0, arr.sort(0, arr.sort(0, arr.sort(0, arr.sort(0, arr.sort(0,",
+      "cases": [
+        {
+          "name": "3,1,2",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              -5,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_16",
+      "language": "javascript",
+      "entry": "isEven",
+      "docstring": "Check if a number is even.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "0dbbe1174c156ed6a1ecd839044e290ddf0d2fe1430d9457c96fa9b8bf8b1d70",
+      "candidate_source": "function isEven(n) {\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;",
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "args": [
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-2",
+          "kind": "boundary",
+          "args": [
+            -2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-3",
+          "kind": "boundary",
+          "args": [
+            -3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_17",
+      "language": "javascript",
+      "entry": "sumArray",
+      "docstring": "Compute the sum of array elements.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "384e15981b115317d0ecf46fec23d36487850cb2ba8b69926c87d149a487183a",
+      "candidate_source": "function sumArray(arr) {\n    var i = arr.length;\n    var i = arr.length;\n    var i = arr.length;\n    var i = arr.length;\n    var i = arr.length;\n    var i = arr.length;\n    var i = arr.length;\n    var i = arr.length;",
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              10
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_18",
+      "language": "javascript",
+      "entry": "factorialIter",
+      "docstring": "Implement factorial iteratively.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "4a94ea70202dc6246e8bcfd930f5efc7e17183f52cdd770c0bf5892ddf5b65e1",
+      "candidate_source": "function factorialIter(n) {\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=6",
+          "kind": "normal",
+          "args": [
+            6
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_19",
+      "language": "javascript",
+      "entry": "myLen",
+      "docstring": "Implement string length without length.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "8ee534f1c0788bf9db9c5e9f56f5aadfc45e199f9eda3a505a37121727874399",
+      "candidate_source": "function myLen(s) {\n  var i = s.length;\n  var i = s.length;\n  var i = s.length;\n  var i = s.length;\n  var i = s.length;\n  var i = s.length;\n  var i = s.length;\n  var i = s.length;",
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "spaces",
+          "kind": "normal",
+          "args": [
+            "a b"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_20",
+      "language": "javascript",
+      "entry": "isLeapYear",
+      "docstring": "Check if a year is a leap year.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "323e94f4163806266279c78d90c30101a2aa3b976b512ae3585038dfed7c1881",
+      "candidate_source": "function isLeapYear(y) {\n    var year = Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.Math.floor(Math.",
+      "cases": [
+        {
+          "name": "2024",
+          "kind": "normal",
+          "args": [
+            2024
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1900",
+          "kind": "boundary",
+          "args": [
+            1900
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "2000",
+          "kind": "boundary",
+          "args": [
+            2000
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "2023",
+          "kind": "normal",
+          "args": [
+            2023
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1600",
+          "kind": "boundary",
+          "args": [
+            1600
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_21",
+      "language": "javascript",
+      "entry": "countdown",
+      "docstring": "Implement a countdown.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "7c043936f8781cf8c246015e706a1013aac342c46e838cb153691fcb982a1768",
+      "candidate_source": "function countdown(n) {\n    var countdown = n.length;\n    var countdown = n.length;\n    var countdown = n.length;\n    var countdown = n.length;\n    var countdown = n.length;\n    var countdown = n.length;\n    var countdown = n.length;\n   ",
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "3",
+          "kind": "normal",
+          "args": [
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_22",
+      "language": "javascript",
+      "entry": "safeFactorial",
+      "docstring": "Implement factorial with error checking.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "a88a60f65014ac6e1957a63219ff1586086cfc61380d76896f92957e36bacce1",
+      "candidate_source": "function safeFactorial(n) {\n  var n = n.length;\n  var n = n.length;\n  var n = n.length;\n  var n = n.length;\n  var n = n.length;\n  var n = n.length;\n  var n = n.length;\n  var n = n.length;",
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=3",
+          "kind": "normal",
+          "args": [
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=-1 throws",
+          "kind": "error",
+          "args": [
+            -1
+          ],
+          "expect_error": [
+            "Error",
+            "RangeError",
+            "TypeError"
+          ],
+          "status": "not_run",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "n=-5 throws",
+          "kind": "error",
+          "args": [
+            -5
+          ],
+          "expect_error": [
+            "Error",
+            "RangeError",
+            "TypeError"
+          ],
+          "status": "not_run",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_23",
+      "language": "javascript",
+      "entry": "caesarCipher",
+      "docstring": "Implement a simple cipher (shift by n).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "4cd4b6ae296cf56ccca931aa5f4e56919e419b4af8ff235cc4a33da90789c143",
+      "candidate_source": "function caesarCipher(s, n) {\n  var s = s.length;\n  var s = s.length;\n  var s = s.length;\n  var s = s.length;\n  var s = s.length;\n  var s = s.length;\n  var s = s.length;\n  var s = s.length;",
+      "cases": [
+        {
+          "name": "abc+1",
+          "kind": "normal",
+          "args": [
+            "abc",
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "args": [
+            "xyz",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "args": [
+            "hello",
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abc+25",
+          "kind": "normal",
+          "args": [
+            "abc",
+            25
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "mixed+1",
+          "kind": "normal",
+          "args": [
+            "Hello, World!",
+            1
+          ],
+          "expected": "",
+          "convention": true,
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_24",
+      "language": "javascript",
+      "entry": "fibMemo",
+      "docstring": "Implement Fibonacci with memoization.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "a8a5fa13824976eebec67664491abfae9a6587c9bb3e52eed48797a0d86991f5",
+      "candidate_source": "function fibMemo(n, memo) {\n  var fib = new Fib.Fib(n, memo);\n  var fib = new Fib.Fib(n, memo);\n  var fib = new Fib.Fib(n, memo);\n  var fib = new Fib.Fib(n, memo);",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0,
+            {}
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1,
+            {}
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10,
+            {}
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=25",
+          "kind": "normal",
+          "args": [
+            25,
+            {}
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_25",
+      "language": "javascript",
+      "entry": "getEvens",
+      "docstring": "Implement function that returns list of even numbers.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "b395aeefe2302057d68c19f3b45dbbbcbb5aeeade2d3fb50a8bcbdfaba91e03f",
+      "candidate_source": "function getEvens(arr) {\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;",
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "all even",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "no even",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_26",
+      "language": "javascript",
+      "entry": "getOdds",
+      "docstring": "Implement function that returns list of odd numbers.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "8ff8f620b03d666b7fe16ebcb10f5cf64896d6540e7fdde781c3c2b07722e037",
+      "candidate_source": "function getOdds(arr) {\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;",
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "no odd",
+          "kind": "boundary",
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "all odd",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_27",
+      "language": "javascript",
+      "entry": "filterPositives",
+      "docstring": "Implement function that filters positive numbers.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "55f1ae10e03d53815772c020dabc8ce8a34bb7606927ebd711af63f7c303a709",
+      "candidate_source": "function filterPositives(arr) {\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;",
+      "cases": [
+        {
+          "name": "-2,0,3,5",
+          "kind": "normal",
+          "args": [
+            [
+              -2,
+              0,
+              3,
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "only zero",
+          "kind": "boundary",
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single positive",
+          "kind": "normal",
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_28",
+      "language": "javascript",
+      "entry": "stringLengths",
+      "docstring": "Implement function that maps strings to lengths.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "74c24c9b4a0e2e3a4bfadb657b4cd6690261ac2b542d23d3016de5dd02b9def2",
+      "candidate_source": "function stringLengths(arr) {\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;",
+      "cases": [
+        {
+          "name": "a,bb,ccc",
+          "kind": "normal",
+          "args": [
+            [
+              "a",
+              "bb",
+              "ccc"
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "ab,c",
+          "kind": "normal",
+          "args": [
+            [
+              "ab",
+              "c"
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "with empty string",
+          "kind": "boundary",
+          "args": [
+            [
+              "",
+              "ab"
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_29",
+      "language": "javascript",
+      "entry": "isSorted",
+      "docstring": "Implement function that checks if a list is sorted.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "484978b376d705ceed70794fe090f7d0c61529481c28106db2d75c647a207886",
+      "candidate_source": "function isSorted(arr) {\n    var arr = arr.length;\n    var arr = arr.length;\n    var arr = arr.length;\n    var arr = arr.length;\n    var arr = arr.length;\n    var arr = arr.length;\n    var arr = arr.length;\n    var arr = arr.length;",
+      "cases": [
+        {
+          "name": "ascending",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "descending",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "equal pair",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_30",
+      "language": "javascript",
+      "entry": "fibRecursive",
+      "docstring": "Implement Fibonacci using recursion.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "9a40a5522fe280b8f9b066e0c1b1ff40fe2f989c415ce77494b213d7c6d9428e",
+      "candidate_source": "function fibRecursive(n) {\n  var fib = n.length;\n  var fib = n.length;\n  var fib = n.length;\n  var fib = n.length;\n  var fib = n.length;\n  var fib = n.length;\n  var fib = n.length;\n ",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=15",
+          "kind": "normal",
+          "args": [
+            15
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_31",
+      "language": "javascript",
+      "entry": "removeDuplicates",
+      "docstring": "Implement function that removes duplicates from array.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "2091dbed73078bd4a983f322cd40c0e8b2a42d913550150ded4073afafcdf112",
+      "candidate_source": "function removeDuplicates(arr) {\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;",
+      "cases": [
+        {
+          "name": "1,2,2,3,1",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              2,
+              3,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "all same",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "already unique",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_32",
+      "language": "javascript",
+      "entry": "listIntersection",
+      "docstring": "Implement function that finds intersection of two arrays.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "1e93ba8ed7dd2048c5f2cc562649db3c401bd5dbfe264863cf25fe685bcb566e",
+      "candidate_source": "function listIntersection(arr1, arr2) {\n  var arr2 = arr1.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2",
+      "cases": [
+        {
+          "name": "1,2,3 & 2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "duplicate in arr1",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          "expected": "",
+          "convention": true,
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_33",
+      "language": "javascript",
+      "entry": "listUnion",
+      "docstring": "Implement function that finds union of two arrays.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "b23aca16df68627b9397d416f43747f3043ed280faa99040e4a8eec9694c6953",
+      "candidate_source": "function listUnion(arr1, arr2) {\n  var arr2 = arr1.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2 = arr2.length;\n  var arr2",
+      "cases": [
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "overlap",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_34",
+      "language": "javascript",
+      "entry": "flatten",
+      "docstring": "Implement function that flattens nested array.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "3e7ab3fa0b4f76b03a9caeec4eacc14077196d1bf6948adc670018259e32a907",
+      "candidate_source": "function flatten(arr) {\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;",
+      "cases": [
+        {
+          "name": "nested",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              [
+                2,
+                [
+                  3,
+                  4
+                ]
+              ],
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty inner",
+          "kind": "boundary",
+          "args": [
+            [
+              [],
+              [
+                1
+              ]
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "already flat",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "deep",
+          "kind": "boundary",
+          "args": [
+            [
+              [
+                [
+                  1
+                ]
+              ],
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_35",
+      "language": "javascript",
+      "entry": "includesSorted",
+      "docstring": "Implement function that checks if value is in sorted array.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "4273e7806b803d46a476896b03fb81e3e14b9f08e3108dceea6f710ceecdfaf3",
+      "candidate_source": "function includesSorted(arr, target) {\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result = [];\n  var result =",
+      "cases": [
+        {
+          "name": "present",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_36",
+      "language": "javascript",
+      "entry": "runningTotal",
+      "docstring": "Implement function that computes running total.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "169d37a66420bb40bce96282c193360fd6ddf173b97fae7a20813f2e0a97303d",
+      "candidate_source": "function runningTotal(arr) {\n  var total = arr.length;\n  var total = arr.length;\n  var total = arr.length;\n  var total = arr.length;\n  var total = arr.length;\n  var total = arr.length;\n  var total = arr.length;\n  var total = arr.length;",
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_37",
+      "language": "javascript",
+      "entry": "selectionSort",
+      "docstring": "Implement selection sort.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "88f3ba0ad63063c6fa24f411db4517a2838aa06ca69295f60dcdc8aec7b4018d",
+      "candidate_source": "function selectionSort(arr) {\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;\n  var arr = arr.length;",
+      "cases": [
+        {
+          "name": "64,25,12",
+          "kind": "normal",
+          "args": [
+            [
+              64,
+              25,
+              12
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_38",
+      "language": "javascript",
+      "entry": "caesarWrap",
+      "docstring": "Implement Caesar cipher with wrap-around.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "014d0efaab714b9361e947b947f00d51ac9d2b54aacebe1e65bfae28611eb1b7",
+      "candidate_source": "function caesarWrap(s, n) {\n  var s = s.split(s);\n  var s = s.split(s);\n  var s = s.split(s);\n  var s = s.split(s);\n  var s = s.split(s);\n  var s = s.split(s);\n  var s =",
+      "cases": [
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "args": [
+            "xyz",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello+2",
+          "kind": "normal",
+          "args": [
+            "hello",
+            2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abc+29",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            29
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "args": [
+            "hello",
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abc+52",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            52
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_39",
+      "language": "javascript",
+      "entry": "sameWord",
+      "docstring": "Implement function that checks same word case-insensitive.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "243591067d12ac1222e3fc28885aaefd30deb26783f90866f9c6082b558de3e3",
+      "candidate_source": "function sameWord(w1, w2) {\n  var word = w1.split(w1, w2);\n  var word = w1.split(w1, w2);\n  var word = w1.split(w1, w2);\n  var word = w1.split(w1, w2);\n  var word =",
+      "cases": [
+        {
+          "name": "Hello/hello",
+          "kind": "normal",
+          "args": [
+            "Hello",
+            "hello"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "abc/abd",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "abd"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "A/a",
+          "kind": "boundary",
+          "args": [
+            "A",
+            "a"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "same",
+          "kind": "normal",
+          "args": [
+            "test",
+            "test"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_40",
+      "language": "javascript",
+      "entry": "myAbs",
+      "docstring": "Implement function that returns absolute value.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "60956efd46821a32ee829664778076bf3a5440e8b103c127a509dc48e512d0b2",
+      "candidate_source": "function myAbs(n) {\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i =",
+      "cases": [
+        {
+          "name": "-5",
+          "kind": "normal",
+          "args": [
+            -5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-3.5",
+          "kind": "boundary",
+          "args": [
+            -3.5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "args": [
+            2.5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_41",
+      "language": "javascript",
+      "entry": "power",
+      "docstring": "Implement function that computes power (base^exp).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "7316e847a8755a67b7741902f7d0ce9b4c5ee711ad9a6ec96ebd900c9fcd6e2a",
+      "candidate_source": "function power(base, exp) {\n  var m = this.m;\n  var m = this.m;\n  var m = this.m;\n  var m = this.m;\n  var m = this.m;\n  var m = this.m;\n  var m = this.m;\n  var m = this.m;",
+      "cases": [
+        {
+          "name": "2^10",
+          "kind": "normal",
+          "args": [
+            2,
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "5^0",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "3^3",
+          "kind": "normal",
+          "args": [
+            3,
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "1^100",
+          "kind": "boundary",
+          "args": [
+            1,
+            100
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_42",
+      "language": "javascript",
+      "entry": "isDigits",
+      "docstring": "Implement function that checks if string contains only digits.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.534,
+      "detail": "4 case(s) wrong, first: 123 got 3 want true",
+      "candidate_sha256": "8bc9bd63d07d69125a92c6023a23e1060b3cf566405a95967e3944894187a876",
+      "candidate_source": "function isDigits(s) {\n    return s.length === 0 ? s.length : s.length;\n  }",
+      "cases": [
+        {
+          "name": "123",
+          "kind": "normal",
+          "status": "fail",
+          "got": "3",
+          "expected": "true"
+        },
+        {
+          "name": "12a",
+          "kind": "normal",
+          "status": "fail",
+          "got": "3",
+          "expected": "false"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "false"
+        },
+        {
+          "name": "leading zero",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "3",
+          "expected": "true"
+        }
+      ]
+    },
+    {
+      "task_id": "js_43",
+      "language": "javascript",
+      "entry": "minOfThree",
+      "docstring": "Implement function that finds minimum of three numbers.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "9d6bb68ec7838f073af21ed6aba566e45aa439113901f63aef6f56b9860e073b",
+      "candidate_source": "function minOfThree(a, b, c) {\n  var a = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            1,
+            2,
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "5,2,9",
+          "kind": "normal",
+          "args": [
+            5,
+            2,
+            9
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "all negative",
+          "kind": "normal",
+          "args": [
+            -1,
+            -5,
+            -3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "args": [
+            2,
+            2,
+            2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_44",
+      "language": "javascript",
+      "entry": "cToF",
+      "docstring": "Implement function that converts Celsius to Fahrenheit.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "745ae24b8f5086c52c71d1a33356824c6b51f7d16c1980b3260b096d8858ba16",
+      "candidate_source": "function cToF(c) {\n  var c = c.c;\n  var c = c.c;\n  var c = c.c;\n  var c = c.c;\n  var c = c.c;\n  var c = c.c;\n  var c = c.c;\n  var c = c.c;",
+      "cases": [
+        {
+          "name": "0C",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "100C",
+          "kind": "normal",
+          "args": [
+            100
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-40C",
+          "kind": "boundary",
+          "args": [
+            -40
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "10C",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_45",
+      "language": "javascript",
+      "entry": "isPositive",
+      "docstring": "Implement function that checks if a number is positive.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "842bdf3df1b32f0d69401f48f872a99146b0608a450db57b09151f4a78c9778f",
+      "candidate_source": "function isPositive(n) {\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n =",
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-1",
+          "kind": "normal",
+          "args": [
+            -1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_46",
+      "language": "javascript",
+      "entry": "nthEven",
+      "docstring": "Implement function that returns the nth even number.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "385d63c520c208e5eb8205af45b2c800874c3f15c9816531cd4816be7ab45692",
+      "candidate_source": "function nthEven(n) {\n    var nthEven = nthEven;\n    var nthEven = nthEven;\n    var nthEven = nthEven;\n    var nthEven = nthEven;\n    var nthEven = nthEven;\n    var nth",
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_47",
+      "language": "javascript",
+      "entry": "myMod",
+      "docstring": "Implement function that computes modulus.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "a0d6345a751ea0fbef7463b65d6ce8d25a88b14344e9fed9d46c65e721dfc04e",
+      "candidate_source": "function myMod(a, b) {\n  var a = b.length;\n  var a = b.length;\n  var a = b.length;\n  var a = b.length;\n  var a = b.length;\n  var a = b.length;\n  var a = b.length;\n  var a = b.length;",
+      "cases": [
+        {
+          "name": "10%3",
+          "kind": "normal",
+          "args": [
+            10,
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "9%3",
+          "kind": "boundary",
+          "args": [
+            9,
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "7%4",
+          "kind": "normal",
+          "args": [
+            7,
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_48",
+      "language": "javascript",
+      "entry": "isBlank",
+      "docstring": "Implement function that checks if string is blank.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "2076467268dff73fc9886d9fc50aeb3f0b29741e5c52897648e73c7e71487be1",
+      "candidate_source": "function isBlank(s) {\n  var isBlank = false;\n  var isBlank = false;\n  var isBlank = false;\n  var isBlank = false;\n  var isBlank = false;\n  var isBlank = false;\n  var isBlank = false;\n  var isBlank = false;",
+      "cases": [
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "spaces",
+          "kind": "boundary",
+          "args": [
+            "   "
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "padded text",
+          "kind": "normal",
+          "args": [
+            " a "
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "text",
+          "kind": "normal",
+          "args": [
+            "a"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_49",
+      "language": "javascript",
+      "entry": "square",
+      "docstring": "Implement function that returns the square of a number.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "0e3a3bb9937ce90864f8f71684cc89a72a08c081a27ba6b212580c4997442bad",
+      "candidate_source": "function square(n) {\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n = n;\n    var n =",
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "args": [
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "-3",
+          "kind": "normal",
+          "args": [
+            -3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "args": [
+            2.5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_50",
+      "language": "javascript",
+      "entry": "fibIter",
+      "docstring": "Implement function that computes the nth Fibonacci iteratively.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "32dce664e2c67623ced2fd1d85f9c6f1eeafc77743dfe430449e6bbbacc8ed4a",
+      "candidate_source": "function fibIter(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "n=30",
+          "kind": "normal",
+          "args": [
+            30
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    }
+  ]
+}

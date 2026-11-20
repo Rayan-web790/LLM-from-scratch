@@ -1,0 +1,34 @@
+# Phase 12A — PROPOSAL ONLY: context-window experiment
+# This is NOT one of the four experiment branches. It is a separate proposal
+# for a follow-up study and must not be run as part of Phase 12A.
+# STATUS: proposal_only (not approved, not run).
+
+experiment:
+  id: proposal_context_window_1024
+  name: "Proposal — double context window to 1024"
+  phase: 12A
+  status: proposal_only
+  base_checkpoint: checkpoints/polycodegpt_first_pass/step_008130.pt
+  base_checkpoint_sha256: "5562acc2fd58837f9d4245042b7f0b10de65520aa2ba292999c80045470590bd"
+  base_checkpoint_step: 8130
+
+proposal:
+  change: "context_length 512 -> 1024"
+  motivation: >
+    Phase 10/11 programs are short, but real functions and their callers often
+    exceed 512 tokens; a larger window may reduce truncation of docstring+code.
+  required_work:
+    - re-tokenize the corpus at context_length 1024 (new manifest, new sha)
+    - extend positional embeddings (or move to RoPE) and resize checkpoint
+    - re-run all four branches at the new window
+    - re-run Phase 10/11 benchmarks at the new window for comparability
+  risks:
+    - positional embedding extrapolation if not retrained from scratch
+    - doubled memory and ~4x attention cost; may need gradient checkpointing
+    - breaks comparability with the Phase 11 functional benchmark
+  approval: required before any work begins
+
+constraints:
+  - not_run_in_phase_12a
+  - requires_new_checkpoint (cannot reuse step 8130 weights verbatim)
+  - requires_new_tokenized_manifest

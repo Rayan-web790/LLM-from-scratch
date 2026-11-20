@@ -1,0 +1,155 @@
+{
+  "v1_tasks": 20,
+  "v1_cases": 88,
+  "phase11_tasks": 100,
+  "behavior_similar_pairs": [
+    {
+      "v1": "py_ind_01",
+      "p11": "py_01",
+      "jaccard": 0.364
+    },
+    {
+      "v1": "py_ind_01",
+      "p11": "py_18",
+      "jaccard": 0.444
+    },
+    {
+      "v1": "py_ind_01",
+      "p11": "py_22",
+      "jaccard": 0.444
+    },
+    {
+      "v1": "py_ind_01",
+      "p11": "js_01",
+      "jaccard": 0.364
+    },
+    {
+      "v1": "py_ind_01",
+      "p11": "js_18",
+      "jaccard": 0.5
+    },
+    {
+      "v1": "py_ind_01",
+      "p11": "js_22",
+      "jaccard": 0.4
+    },
+    {
+      "v1": "py_ind_02",
+      "p11": "py_08",
+      "jaccard": 0.5
+    },
+    {
+      "v1": "py_ind_02",
+      "p11": "js_08",
+      "jaccard": 0.556
+    },
+    {
+      "v1": "py_ind_04",
+      "p11": "py_31",
+      "jaccard": 0.368
+    },
+    {
+      "v1": "py_ind_09",
+      "p11": "py_11",
+      "jaccard": 0.375
+    },
+    {
+      "v1": "py_ind_09",
+      "p11": "py_45",
+      "jaccard": 0.385
+    },
+    {
+      "v1": "py_ind_09",
+      "p11": "js_11",
+      "jaccard": 0.357
+    },
+    {
+      "v1": "py_ind_09",
+      "p11": "js_45",
+      "jaccard": 0.385
+    },
+    {
+      "v1": "js_ind_01",
+      "p11": "js_14",
+      "jaccard": 0.4
+    },
+    {
+      "v1": "js_ind_01",
+      "p11": "js_17",
+      "jaccard": 0.467
+    },
+    {
+      "v1": "js_ind_01",
+      "p11": "js_36",
+      "jaccard": 0.375
+    },
+    {
+      "v1": "js_ind_03",
+      "p11": "py_13",
+      "jaccard": 0.444
+    },
+    {
+      "v1": "js_ind_03",
+      "p11": "js_13",
+      "jaccard": 0.444
+    },
+    {
+      "v1": "js_ind_03",
+      "p11": "js_25",
+      "jaccard": 0.353
+    },
+    {
+      "v1": "js_ind_03",
+      "p11": "js_26",
+      "jaccard": 0.353
+    },
+    {
+      "v1": "js_ind_03",
+      "p11": "js_31",
+      "jaccard": 0.438
+    },
+    {
+      "v1": "js_ind_03",
+      "p11": "js_34",
+      "jaccard": 0.35
+    },
+    {
+      "v1": "js_ind_05",
+      "p11": "py_45",
+      "jaccard": 0.364
+    },
+    {
+      "v1": "js_ind_05",
+      "p11": "js_45",
+      "jaccard": 0.364
+    },
+    {
+      "v1": "js_ind_09",
+      "p11": "py_49",
+      "jaccard": 0.375
+    },
+    {
+      "v1": "js_ind_09",
+      "p11": "js_49",
+      "jaccard": 0.375
+    },
+    {
+      "v1": "js_ind_10",
+      "p11": "py_14",
+      "jaccard": 0.357
+    },
+    {
+      "v1": "js_ind_10",
+      "p11": "js_14",
+      "jaccard": 0.357
+    },
+    {
+      "v1": "js_ind_10",
+      "p11": "js_17",
+      "jaccard": 0.429
+    }
+  ],
+  "case_io_exact_overlaps": [],
+  "entry_name_overlaps": [],
+  "assessment": "v1 tasks are generic algorithmic primitives (sum, max, reverse, unique, anagram, clamp, etc.) whose problem shapes overlap substantially with Phase 11 tasks even after renaming. Classified as a PILOT benchmark, not a genuinely independent final benchmark. v2 (100 tasks) is required."
+}

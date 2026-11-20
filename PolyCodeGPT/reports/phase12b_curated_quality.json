@@ -1,0 +1,99 @@
+{
+  "curated_records": 35658,
+  "distinct_repos": 8341,
+  "repo_top1_share": 0.015564529698805318,
+  "exact_duplicates_curated": 0,
+  "near_duplicates_curated": 0,
+  "feature_usage": {
+    "has_arrow": 4598,
+    "uses_regex": 4332,
+    "uses_array_methods": 5933,
+    "uses_object_methods": 2052,
+    "has_promise": 1239,
+    "has_closure": 266,
+    "uses_try_catch": 1437,
+    "has_then_catch": 1543,
+    "has_async": 815,
+    "has_await": 452,
+    "has_class": 102,
+    "has_export": 2
+  },
+  "feature_usage_pct": {
+    "has_arrow": 12.89,
+    "uses_regex": 12.15,
+    "uses_array_methods": 16.64,
+    "uses_object_methods": 5.75,
+    "has_promise": 3.47,
+    "has_closure": 0.75,
+    "uses_try_catch": 4.03,
+    "has_then_catch": 4.33,
+    "has_async": 2.29,
+    "has_await": 1.27,
+    "has_class": 0.29,
+    "has_export": 0.01
+  },
+  "description_types": {
+    "plain_text": 35657,
+    "jsdoc": 1
+  },
+  "rejection_primary_counts": {
+    "parse_invalid": 32830,
+    "depends_on_ecosystem": 6679,
+    "stateful_or_method": 11253,
+    "description_fragment": 12309,
+    "code_too_long": 2399,
+    "not_standalone_function": 497,
+    "description_boilerplate": 367,
+    "name_mismatch": 105,
+    "near_duplicate": 72
+  },
+  "only_stateful_rejected": 9388,
+  "only_ecosystem_rejected": 3934,
+  "ecosystem_breakdown": {
+    "require": 1980,
+    "import_or_export": 450,
+    "host_global": 10658
+  },
+  "top_repos": [
+    [
+      "eslint/eslint",
+      555
+    ],
+    [
+      "angular/material",
+      233
+    ],
+    [
+      "CuppaLabs/angular2-multiselect-dropdown",
+      194
+    ],
+    [
+      "eventbrite/britecharts",
+      178
+    ],
+    [
+      "GitbookIO/gitbook",
+      164
+    ],
+    [
+      "TerriaJS/terriajs",
+      137
+    ],
+    [
+      "feedhenry/fh-forms",
+      131
+    ],
+    [
+      "sadiqhabib/tinymce-dist",
+      127
+    ],
+    [
+      "ArnaudBuchholz/gpf-js",
+      123
+    ],
+    [
+      "cemtopkaya/kuark-db",
+      122
+    ]
+  ]
+}

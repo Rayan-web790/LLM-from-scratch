@@ -1,0 +1,59 @@
+# PolyCodeGPT — Git Ignore Rules
+
+# Virtual environment
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment files
+.env
+.env.*
+
+# OS files
+.DS_Store
+
+# Large/generated data and experiment artifacts
+data/curated/*
+data/raw/*
+data/interim/*
+data/processed/*
+data/manifests/v2/token_counts.csv
+*.jsonl
+tokenizer/artifacts/*
+!tokenizer/artifacts/**/
+!tokenizer/artifacts/*.json
+!tokenizer/artifacts/**/*.json
+!tokenizer/artifacts/*.csv
+!tokenizer/artifacts/**/*.csv
+!tokenizer/artifacts/**/.gitkeep
+checkpoints/*
+logs/*
+release/*
+.scratchpad/*
+backups/*
+experiments/*/runs/*
+experiments/*/artifacts/*
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Phase 5A token streams and their manifest (generated; also covered by data/processed/*)
+data/processed/tokenized_v*/
+*.bin
+
+# Preserve .gitkeep files
+!.gitkeep
+
+# CodeSearchNet license metadata audit (large, metadata-only)
+data/interim/codesearchnet_license_metadata/
+data/manifests/codesearchnet_license_inventory.csv
+data/manifests/codesearchnet_license_repo_summary.csv
+
+# CodeSearchNet Zenodo Python raw download (large)
+data/raw/codesearchnet_zenodo_python/

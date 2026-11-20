@@ -1,0 +1,34 @@
+project_name: PolyCodeGPT-Phase20-ScenarioB
+
+training:
+  seed: 42
+  optimizer: AdamW
+  learning_rate: 0.0001
+  weight_decay: 0.1
+  gradient_clip: 1.0
+  micro_batch_size: 4
+  effective_batch_size: 32
+  context_length: 512
+  precision: auto
+  deterministic: true
+  log_every: 100
+  max_skipped_steps: 10
+
+  # The Phase 19 checkpoint has global step 200. The Phase 20 scheduler is
+  # stage-local and therefore contains only the new continuation updates.
+  initial_global_step: 200
+  additional_steps: 30518
+  total_steps: 30518
+  warmup_fraction: 0.02
+  min_lr_ratio: 0.1
+  complete_pass: true
+  partial_final_update: true
+
+  # A full checkpoint is written every 1,000 global steps, plus at completion.
+  # This produces periodic recovery points in the independent Phase 20 folder.
+  checkpoint_every: 1000
+
+  evaluation:
+    val_blocks: 256
+    val_batch_size: 4
+    every_steps: 500

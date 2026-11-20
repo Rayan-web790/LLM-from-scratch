@@ -1,0 +1,36 @@
+{
+  "phase": "12A",
+  "dataset": "js_v1",
+  "source": "data/processed/polycodegpt_corpus/train.jsonl",
+  "original_record_count": 102169,
+  "eligible_record_count": 35658,
+  "rejected_record_count": 66511,
+  "rejection_reasons": {
+    "parse_invalid": 32830,
+    "not_standalone_function": 497,
+    "description_missing": 0,
+    "description_fragment": 12309,
+    "description_boilerplate": 367,
+    "depends_on_ecosystem": 6679,
+    "stateful_or_method": 11253,
+    "code_too_short": 0,
+    "code_too_long": 2399,
+    "name_mismatch": 105,
+    "duplicate": 0,
+    "near_duplicate": 72
+  },
+  "output_file": "data/curated/js_v1/train.jsonl",
+  "output_sha256": "b0ae31c0d1757d120e84fc62d2fa4e7b8aa891e1487fd0b5f00767279d9e6bd7",
+  "output_record_count": 35658,
+  "distinct_repos_curated": 8341,
+  "token_lengths_curated_serialized": {
+    "min": 36.0,
+    "p25": 106.0,
+    "median": 154.0,
+    "p75": 236.0,
+    "p95": 402.0,
+    "max": 512.0,
+    "mean": 183.48900667451903
+  },
+  "generated_utc": "2026-11-17T16:26:27Z"
+}

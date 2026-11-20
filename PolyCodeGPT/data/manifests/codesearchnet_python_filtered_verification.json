@@ -1,0 +1,91 @@
+{
+  "language": "python",
+  "verified_at_utc": "2026-11-15T15:39:08Z",
+  "partitions": {
+    "train": {
+      "file": "C:/Users/UltraPc/Desktop/LLM FROM SCRATCH/PolyCodeGPT/data/processed/codesearchnet_python_filtered/train.jsonl",
+      "records": 290507,
+      "expected": 290507,
+      "count_matches": true,
+      "unique_repositories": 9786,
+      "unique_source_paths": 59568,
+      "sha256": "2c23d07f9fb4e2ab0a19a93804e43e9ab462b9b7ef97bba4d454d073a2e4c881",
+      "file_size_bytes": 1358821036,
+      "invalid_json": 0,
+      "records_missing_record_fields": 0,
+      "records_missing_provenance": 0,
+      "records_wrong_license_category": 0,
+      "records_repo_not_permissive_in_summary": 0,
+      "records_partition_mismatch": 0,
+      "duplicate_record_identities": 0
+    },
+    "valid": {
+      "file": "C:/Users/UltraPc/Desktop/LLM FROM SCRATCH/PolyCodeGPT/data/processed/codesearchnet_python_filtered/valid.jsonl",
+      "records": 14671,
+      "expected": 14671,
+      "count_matches": true,
+      "unique_repositories": 540,
+      "unique_source_paths": 3053,
+      "sha256": "3bcb20af27eb57735e4b1be175540df14754fe73b1413039f1eb72a8ca402333",
+      "file_size_bytes": 73204092,
+      "invalid_json": 0,
+      "records_missing_record_fields": 0,
+      "records_missing_provenance": 0,
+      "records_wrong_license_category": 0,
+      "records_repo_not_permissive_in_summary": 0,
+      "records_partition_mismatch": 0,
+      "duplicate_record_identities": 0
+    },
+    "test": {
+      "file": "C:/Users/UltraPc/Desktop/LLM FROM SCRATCH/PolyCodeGPT/data/processed/codesearchnet_python_filtered/test.jsonl",
+      "records": 15337,
+      "expected": 15337,
+      "count_matches": true,
+      "unique_repositories": 536,
+      "unique_source_paths": 3560,
+      "sha256": "94eaa05e672ae5a60877001893767496ad4f0d0f29315bc0ed5b4a7597934f1e",
+      "file_size_bytes": 75575892,
+      "invalid_json": 0,
+      "records_missing_record_fields": 0,
+      "records_missing_provenance": 0,
+      "records_wrong_license_category": 0,
+      "records_repo_not_permissive_in_summary": 0,
+      "records_partition_mismatch": 0,
+      "duplicate_record_identities": 0
+    }
+  },
+  "totals": {
+    "records": 320515,
+    "expected": 320515,
+    "count_matches": true,
+    "unique_repositories": 10862,
+    "unique_source_paths": 66144
+  },
+  "partition_overlaps": {
+    "train_vs_valid": 0,
+    "train_vs_test": 0,
+    "valid_vs_test": 0
+  },
+  "raw_archive_recount": {
+    "train": {
+      "raw_records_from_permissive_repos": 290507,
+      "matched_in_output": 290507,
+      "output_records_not_derivable_from_raw": 0,
+      "full_match": true
+    },
+    "valid": {
+      "raw_records_from_permissive_repos": 14671,
+      "matched_in_output": 14671,
+      "output_records_not_derivable_from_raw": 0,
+      "full_match": true
+    },
+    "test": {
+      "raw_records_from_permissive_repos": 15337,
+      "matched_in_output": 15337,
+      "output_records_not_derivable_from_raw": 0,
+      "full_match": true
+    }
+  },
+  "elapsed_s": 20.15760809999483,
+  "checks_passed": true
+}

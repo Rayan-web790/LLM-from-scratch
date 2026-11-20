@@ -1,0 +1,77 @@
+{
+  "generated_utc": "2026-11-17T16:37:56Z",
+  "tokenizer": "polycodegpt_tokenizer_v1_1",
+  "original_python": {
+    "records": 290463,
+    "tokens": 98807136,
+    "median": null,
+    "median_tokens": 218
+  },
+  "original_javascript": {
+    "records": 102169,
+    "tokens": 31538801,
+    "median_tokens": 178
+  },
+  "curated_javascript": {
+    "records": 35658,
+    "tokens": 6542851,
+    "median_tokens": 154.0
+  },
+  "control_total_tokens": 130345937,
+  "half_budget": 65172968,
+  "ratio_python_to_javascript_original": 3.1328754698062236,
+  "branches": {
+    "control": {
+      "python_records": 290463,
+      "python_tokens": 98807136,
+      "javascript_records": 102169,
+      "javascript_tokens": 31538801,
+      "python_share": 0.7580377131356231,
+      "javascript_share": 0.2419622868643769,
+      "js_revisits_per_record": 1.0,
+      "js_unique_coverage": 102169,
+      "effective_js_epochs": 1.0,
+      "sampling": "original distribution, no resampling"
+    },
+    "exp_a": {
+      "python_records": 290463,
+      "python_tokens": 98807136,
+      "javascript_records_available": 35658,
+      "javascript_tokens_available": 6542851,
+      "javascript_target_tokens": 31538801,
+      "js_revisits_per_record": 4.820345289843831,
+      "js_unique_coverage": 35658,
+      "effective_js_epochs": 4.820345289843831,
+      "python_share": 0.7580377131356231,
+      "javascript_share": 0.2419622868643769,
+      "sampling": "curated JS oversampled with replacement to original JS token volume"
+    },
+    "exp_b": {
+      "python_target_tokens": 65172968,
+      "javascript_target_tokens": 65172968,
+      "python_records_available": 290463,
+      "python_tokens_available": 98807136,
+      "javascript_records_available": 102169,
+      "javascript_tokens_available": 31538801,
+      "python_subsample_ratio": 0.6595977845162925,
+      "js_oversample_ratio": 2.066437719049624,
+      "python_share": 0.5,
+      "javascript_share": 0.5,
+      "sampling": "balanced 50/50 tokens: python subsampled, js oversampled with replacement"
+    },
+    "exp_c": {
+      "python_target_tokens": 65172968,
+      "javascript_target_tokens": 65172968,
+      "python_records_available": 290463,
+      "python_tokens_available": 98807136,
+      "javascript_records_available": 35658,
+      "javascript_tokens_available": 6542851,
+      "python_subsample_ratio": 0.6595977845162925,
+      "js_oversample_ratio": 9.960943325776485,
+      "python_share": 0.5,
+      "javascript_share": 0.5,
+      "sampling": "balanced 50/50 tokens: python subsampled, curated js oversampled with replacement"
+    }
+  },
+  "elapsed_s": 71.0
+}

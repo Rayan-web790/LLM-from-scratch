@@ -1,0 +1,28 @@
+project_name: PolyCodeGPT-Phase19-ScenarioB
+
+training:
+  seed: 42
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  gradient_clip: 1.0
+  micro_batch_size: 4
+  effective_batch_size: 32
+  context_length: 512
+  precision: auto
+  deterministic: true
+  log_every: 10
+  max_skipped_steps: 10
+  max_steps: 200
+
+  schedule:
+    total_steps: 200
+    warmup_fraction: 0.02
+    min_lr_ratio: 0.1
+
+  evaluation:
+    val_blocks: 256
+    val_batch_size: 4
+    steps: [50, 100, 150, 200]
+
+  checkpoint_steps: [50, 100, 150, 200]

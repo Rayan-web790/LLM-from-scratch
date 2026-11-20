@@ -1,0 +1,832 @@
+{
+  "codeparrot": {
+    "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+    "shard_bytes": 23118451109,
+    "shard_rows": 8176720,
+    "shards": [
+      {
+        "bytes": 285840384,
+        "path": "data/raw/v2/codeparrot_github_code/train-00000-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "4f4541d1e40d08c59381f38d9e09cdadbf005e0e57e0f42ed3741956b3c36de9",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288848766,
+        "path": "data/raw/v2/codeparrot_github_code/train-00001-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "51e30bfc214aedca19241d0140344b8355cb17cbc6096765a3513c526c365d3c",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290762148,
+        "path": "data/raw/v2/codeparrot_github_code/train-00002-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "74d67db8e189c1818f1908e8a4fb647b3a5b51c0c0965d4f8afa1e74490ef389",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 286618668,
+        "path": "data/raw/v2/codeparrot_github_code/train-00003-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "e109df908104b38b74e24cbdda7bb33312483cb8a87e586c27f96ea63139ac3b",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290585566,
+        "path": "data/raw/v2/codeparrot_github_code/train-00004-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "495e3eee6b94422fcc59291b6cd86dd945ed37c99ea351a3885541a1aa7fc63d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288208036,
+        "path": "data/raw/v2/codeparrot_github_code/train-00005-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "0e7e75c8fc73f6a162369c1aa1042a06e67f21dba6a0378cff4a242e1dc31d11",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289435376,
+        "path": "data/raw/v2/codeparrot_github_code/train-00006-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "48dd089762c27f22831ae2d3e42f91beae150a188113c7f75073fc67bc062c60",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288105347,
+        "path": "data/raw/v2/codeparrot_github_code/train-00007-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "ecd2955ededf5d419f541117334c6b7595cc200bea52025dd1b97ac7cc96f1f7",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 287771043,
+        "path": "data/raw/v2/codeparrot_github_code/train-00008-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "9b3e7eab1dc4fe7b4f070737657d104b7ad0a72e729e0c4402839bb980306ac9",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288608163,
+        "path": "data/raw/v2/codeparrot_github_code/train-00009-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "a376e8845d529ae21e82ded3e8a0fc11adcdfab45b0b3c8493e9c3369a936fd8",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 286824772,
+        "path": "data/raw/v2/codeparrot_github_code/train-00010-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "8a00aca597a85860692dba51ed569ce8b69fbddcb92350ce2b082f299301a085",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 287279209,
+        "path": "data/raw/v2/codeparrot_github_code/train-00011-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "34bc9bc9a2f06edcb05bd008ae5d2d88e3f71aa1ac1bf42936d1f0384dea3863",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289123300,
+        "path": "data/raw/v2/codeparrot_github_code/train-00012-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "3f6874e48960f29772fd8efe116a0b3dfc13c806685d9dc2492a0517a4f7eed0",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289578681,
+        "path": "data/raw/v2/codeparrot_github_code/train-00013-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "c48677aa8c87aeec90847de213ad2bfbd592bc307e6f7276a9ee8f19631c2bf3",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 283800281,
+        "path": "data/raw/v2/codeparrot_github_code/train-00014-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "55bfebc4b948482eae618cf08d4a3a62c58943c32ee99cf42f3e0aeb2d0eb67a",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 294878772,
+        "path": "data/raw/v2/codeparrot_github_code/train-00015-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "6672e18421a9467166b6aac92439d355c5ba37a1f23ccd0a2addd3dd82527c83",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 283302316,
+        "path": "data/raw/v2/codeparrot_github_code/train-00016-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "6b0d5c9aade342cad4a916822be95be33c809db216080a9fa5f9d8811be62301",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290163282,
+        "path": "data/raw/v2/codeparrot_github_code/train-00017-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "2c73c4f4a54000fd70d17adc94a22163acb88eb7352c8cc025c28c3e8c547259",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289359024,
+        "path": "data/raw/v2/codeparrot_github_code/train-00018-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "3f77fdedc93fbe8e97d9be3c16dd49c27683035e1de48dc1822499aaf07c0d1b",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 293811742,
+        "path": "data/raw/v2/codeparrot_github_code/train-00019-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "ff39396ea8313eaa095c5f185ef5ef59d2e200a2b4de0220ad78a25d46a4b6f0",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 292486311,
+        "path": "data/raw/v2/codeparrot_github_code/train-00020-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "75b5b38b193097618ffbe014bcab86954f7c1ab73dc22560a6691d2eec74061b",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290934072,
+        "path": "data/raw/v2/codeparrot_github_code/train-00021-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "53639a1dc38ef08cb8d70cd8bf940e99e625c9bd5b8cd154f2a9abc2492f039c",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290673463,
+        "path": "data/raw/v2/codeparrot_github_code/train-00022-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "951c11ae8db3167c1c1c04eae986b561bcc59aa1dbc1e019eef05fd18a3d44b9",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 285055031,
+        "path": "data/raw/v2/codeparrot_github_code/train-00023-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "5185deee73e91bc683bcc0896541bda7b59eabb2a74d22d48358e1e5cf2eb7ad",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288827252,
+        "path": "data/raw/v2/codeparrot_github_code/train-00024-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "1805ed1bd3549f51308798954dbecff88ba23494156239b0e1e03898fe170797",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288898979,
+        "path": "data/raw/v2/codeparrot_github_code/train-00025-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "281c815becac43aea72bd2afbcd9c30ad1cf1bbe1beb04639171b3f871a8dcd8",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291363792,
+        "path": "data/raw/v2/codeparrot_github_code/train-00026-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "9a4148233df69202cca8edc196698e795c156da5586e761b6b33187816b2f6a1",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289235321,
+        "path": "data/raw/v2/codeparrot_github_code/train-00027-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "e405035f5c6d809e111b9382919c020f2f924177a3c0d2199ec982eb45793348",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 293686139,
+        "path": "data/raw/v2/codeparrot_github_code/train-00028-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "03c126da0c016ecad18ba426a34561b9fbd2732654aea6d114d6bf704e572942",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 284654752,
+        "path": "data/raw/v2/codeparrot_github_code/train-00029-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "90f8393386ba8e3029dfe73c6e0d3b5c43b159fa7e700ab80d9189ba54e8dffb",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291335891,
+        "path": "data/raw/v2/codeparrot_github_code/train-00030-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "fafe79e0a42d8a354ba470102b3071fc85091069f0fc7ed55ea5cbe5ebae1282",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290150313,
+        "path": "data/raw/v2/codeparrot_github_code/train-00031-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "3a7dc0502dd1979b385830420d20617ae7af3990a40ee53e03aa9f4f8faa0071",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 284889860,
+        "path": "data/raw/v2/codeparrot_github_code/train-00032-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "e09ab5cabd868842c59b59a92bde1b27a915f8c5a638599c7a5ffcc30e69097d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290736828,
+        "path": "data/raw/v2/codeparrot_github_code/train-00033-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "373966e8ed345beacf75982898bdbdac2ca5a94a42c42cb0b3f80fd9b8e41838",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289739832,
+        "path": "data/raw/v2/codeparrot_github_code/train-00034-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "10898f7c5376ec822b3fc7ef8de41f2f884f2cc3540d6afd325da689a399b1cf",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 285751498,
+        "path": "data/raw/v2/codeparrot_github_code/train-00035-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "884004c71d6eb1971850176ff9ca7ba365121b9416f3b829e60fa425b08a29e3",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 293116619,
+        "path": "data/raw/v2/codeparrot_github_code/train-00036-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "83ba149017a1964f6abae3bbb1dcd7690ebad28287beeb1705eadcd96aad4f02",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 292398812,
+        "path": "data/raw/v2/codeparrot_github_code/train-00037-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "b3f672e485dd7e4dad205fb1c3d1064cc8002db24e99395c7855b1578954a11d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290208078,
+        "path": "data/raw/v2/codeparrot_github_code/train-00038-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "473a03f6c561e28f3be5cda222f7b468fe6eed74e8eb7d9e586c7e3f9495375f",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 285377579,
+        "path": "data/raw/v2/codeparrot_github_code/train-00039-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "82cd32aba225c2e3e5f28c3eb2cfac40c9e764eea977422694b46cfd3fe01bb4",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 285896049,
+        "path": "data/raw/v2/codeparrot_github_code/train-00040-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "e935ee9492f8d556ede50257f81ffafef25308623c3366a6f4f8ec0ffafa6952",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 294896872,
+        "path": "data/raw/v2/codeparrot_github_code/train-00041-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "0cf594242d22387a1b755562683b978a27d8e19ec4b192b62c01b486013647e6",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288952094,
+        "path": "data/raw/v2/codeparrot_github_code/train-00042-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "bc4c2b2504ffa3f80ebe1d8800ebe3a19a9b4a6227497b861bddf764e0545398",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 292595046,
+        "path": "data/raw/v2/codeparrot_github_code/train-00043-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "31f39b5eb649aacc23fadfa3e9840bedc9f175156ee319ed42733f1350bbb0a7",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289188297,
+        "path": "data/raw/v2/codeparrot_github_code/train-00044-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "baa56c8eebe68bb791d1a0f047eba158ea5f94bf973dc46496a6ee507917d84a",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291325866,
+        "path": "data/raw/v2/codeparrot_github_code/train-00045-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "208c77192ac4eae846dd7a7b491454b3d0bf80ba2162c084a7fc62a37ca2a35c",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288215632,
+        "path": "data/raw/v2/codeparrot_github_code/train-00046-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "8da3bd233deef51e8a0a85a74f137e5caf29c7ecf169c99257c8ae67b75c2041",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289398040,
+        "path": "data/raw/v2/codeparrot_github_code/train-00047-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "61def7b4b0fb17c8978d6130b61ac0b67be9dd9faec3bcb1b10c794798d489fd",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 292897421,
+        "path": "data/raw/v2/codeparrot_github_code/train-00048-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "9ba02534d5b5d8db00c8fe312a42db8dcce209a0515b1bca6dcda6839aef8866",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288533790,
+        "path": "data/raw/v2/codeparrot_github_code/train-00049-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "a3969693aefb8a46b89f95c551d9182f203e794c878d7490900bb42dff22f119",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291912014,
+        "path": "data/raw/v2/codeparrot_github_code/train-00050-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "6bed9642f303e0ed75d71ce763896b1d8639bf08a86096824e08035291bacb9d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 283276668,
+        "path": "data/raw/v2/codeparrot_github_code/train-00051-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "9d33818d4a992dd87f20505daf0377af3c4eeac113d1f85d272bc4d299be790d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 287323527,
+        "path": "data/raw/v2/codeparrot_github_code/train-00052-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "21a7d902b1cbd8f35484b3b08c79f6e85deec1f9103cebbef27f46c9eb4942d9",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 292135137,
+        "path": "data/raw/v2/codeparrot_github_code/train-00053-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "0e6a90fb6b377b2be71f933d6fe8276a22ea5dff242747a84a7d65bcd3548740",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289400839,
+        "path": "data/raw/v2/codeparrot_github_code/train-00054-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "7d0dd0ca4ffb1695dd0fe7c12436231b0156f7c7cd3041fcdd3267530a7e8947",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291665863,
+        "path": "data/raw/v2/codeparrot_github_code/train-00055-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "c5da4940564e5c9ac78243306f90fa250a66c8c3f8db5982c9b6f8dcac2dc8ec",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 292335390,
+        "path": "data/raw/v2/codeparrot_github_code/train-00056-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "503c24c43d111d83021c892d95790bc8d2c92d698ddc8b88e6708cb15b4a8170",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289611743,
+        "path": "data/raw/v2/codeparrot_github_code/train-00057-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "eb005c7e6bd429e667c63777f2232669879c2a2076f4b76980c9185af886f76d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 287295369,
+        "path": "data/raw/v2/codeparrot_github_code/train-00058-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "b4a9aa492380df79a87068900e8340943081d4eb0ba585fc772637408c7215b2",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290505820,
+        "path": "data/raw/v2/codeparrot_github_code/train-00059-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "4a6a90597028d148d4ebc2d01972fc42ad46824b3703228f5314991de91645b3",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 285120858,
+        "path": "data/raw/v2/codeparrot_github_code/train-00060-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "3b9672e87e46a7dbfc1fa3de1a76e8a93bcd89dd2659578c383db7425c2fa593",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288962444,
+        "path": "data/raw/v2/codeparrot_github_code/train-00061-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "9455086ebf5973cd7899dadd380df72cccdab049794ccfc4ed396e7f5c3fc82a",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 286146702,
+        "path": "data/raw/v2/codeparrot_github_code/train-00062-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "516182f8b8ab20c11c897f196de30b56cf84f278db29f4aeee10f9e1542e7fbc",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 283190437,
+        "path": "data/raw/v2/codeparrot_github_code/train-00063-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "ae318c9a1b4ca5e3497f9cab5590d3fbd4f56226e4b56401c3af76f5bc0f418e",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290072386,
+        "path": "data/raw/v2/codeparrot_github_code/train-00064-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "35948f8bfaabd7dd68340b74cc92aedcf750817f179bb1eaffe830ccbe84e67d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 287798000,
+        "path": "data/raw/v2/codeparrot_github_code/train-00065-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "fddb691323e2d6de7d42313c8120f6514f42fb7795884b0adeb5c32d0385d8df",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288429819,
+        "path": "data/raw/v2/codeparrot_github_code/train-00066-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "89abb975eeafadd302f225f5cb819067e49ee43477908e387cb85a36bd6e7f21",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 287823185,
+        "path": "data/raw/v2/codeparrot_github_code/train-00067-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "491c540dc0c2391c6fd73f247268ba379510e2eb5d04d44f12d67e2ad6698cee",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 289006651,
+        "path": "data/raw/v2/codeparrot_github_code/train-00068-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "968d1267749726fd4cb8a976529ab49dd420ffc40a752af819ea6dc9a0c17b71",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288907243,
+        "path": "data/raw/v2/codeparrot_github_code/train-00069-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "0ab27942e7ee3c8370176dea49fc1c38f28482fa279977ca65454e67b79a59f0",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 287994479,
+        "path": "data/raw/v2/codeparrot_github_code/train-00070-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "759577b29e5b62785b52c5efdbb86e2fffb5d4b60ff65362a05b00ca7d953c4b",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288521100,
+        "path": "data/raw/v2/codeparrot_github_code/train-00071-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "8cc3e2627b6568c3b1f22ce6a93d9887a2d851158cec3d0c6c9bf48ea1eaea47",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291023275,
+        "path": "data/raw/v2/codeparrot_github_code/train-00072-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "1cce818c48b19a665023a7811f3fae46d1263b42b10ee7dc132a0500160b057d",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 284476216,
+        "path": "data/raw/v2/codeparrot_github_code/train-00073-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "552fc0d68f191238f2e2cd3e3e7c312d79fb99388258acb4ceb1daac7a525556",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 283380855,
+        "path": "data/raw/v2/codeparrot_github_code/train-00074-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "4e2b1bd6e18f3c347d00d20928850b9620717ea3ebd2400aeecd49da01638c46",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291727049,
+        "path": "data/raw/v2/codeparrot_github_code/train-00075-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "ec3a87b15f8ba3ac9aa30f2b484e94d76dcb6ede80742f157cdaeaa2eca6cc78",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 288987506,
+        "path": "data/raw/v2/codeparrot_github_code/train-00076-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "1c21855097e72f7dfa7a5f801930a340b46c6faf7d3ee74a9dc9439d6b683723",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 285856967,
+        "path": "data/raw/v2/codeparrot_github_code/train-00077-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "cdd3be6b9cc4cac0b40898a50362c40307750bb858c1c02eb9b9e0aae55a6947",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 291145817,
+        "path": "data/raw/v2/codeparrot_github_code/train-00078-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "9e0dccd13d844972c476ef302086be2e8972dfd2a8bd6ce8be2fcf6420eb3f84",
+        "source": "CODEPARROT"
+      },
+      {
+        "bytes": 290093345,
+        "path": "data/raw/v2/codeparrot_github_code/train-00079-of-01126.parquet",
+        "revision": "b5661e6b17396364b2bcf8e68977b0d28e1ebd19",
+        "rows": 102209,
+        "sha256": "5228efc89ba12fc9cf2ec509fcb0a6e4becec792ac42b8b1a497e1f74cac38cd",
+        "source": "CODEPARROT"
+      }
+    ],
+    "shards_acquired": 80,
+    "snapshot_date": "2022-03-16",
+    "url": "https://huggingface.co/datasets/codeparrot/github-code"
+  },
+  "license_allowlist": [
+    "MIT",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "CC0-1.0",
+    "Unlicense"
+  ],
+  "license_allowlist_lower": [
+    "mit",
+    "apache-2.0",
+    "bsd-2-clause",
+    "bsd-3-clause",
+    "isc",
+    "cc0-1.0",
+    "unlicense"
+  ],
+  "node_docs": {
+    "license_path": "data/raw/v2/node_docs/node-24.12.0/LICENSE",
+    "license_sha256": "537308465103a306d0e3eecf42632b4ff1b48aaaec044e9fc10a78c81fd00b34",
+    "markdown_bytes": 16029709,
+    "markdown_files": 149,
+    "tarball": "data/raw/v2/node_docs/node-v24.12.0.tar.gz",
+    "tarball_bytes": 123246636,
+    "tarball_sha256": "e4f7d90c323aaf9ff3a33347e44b7710201753824113de87b9f07e81a98dc16c",
+    "version": "v24.12.0"
+  },
+  "phase": 18,
+  "preflight_date": "2026-11-18",
+  "preservation": {
+    "checkpoint_files_preserved": true,
+    "existing_test_partition_read": false,
+    "frozen_release": "release/polycodegpt-exp-c-0.1.0",
+    "independent_v3_task_content_inspected": false,
+    "policy": "No Phase 18 command reads data/processed/polycodegpt_corpus/test.jsonl or functional/independent_v3/ cases. Only train.jsonl and valid.jsonl seed records are read."
+  },
+  "preservation_manifest": [
+    {
+      "bytes": 187507839,
+      "modified_by_phase18": "NO",
+      "path": "release/polycodegpt-exp-c-0.1.0.zip",
+      "role": "frozen_v0_1_0_artifact",
+      "sha256": "3f5d1b9b5343fcb618ac2d7da7a043fbef97a5b83920ddfe57065f9d21aeb4f6"
+    },
+    {
+      "bytes": 207215053,
+      "modified_by_phase18": "NO",
+      "path": "release/polycodegpt-exp-c-0.1.0/models/exp_c_step_016260.pt",
+      "role": "frozen_v0_1_0_artifact",
+      "sha256": "cf0544099d73f85cdeb40bc1e0a93ce17bb790db4cb7136254be65d16c3b45b4"
+    },
+    {
+      "bytes": 1095741,
+      "modified_by_phase18": "NO",
+      "path": "release/polycodegpt-exp-c-0.1.0/tokenizer/polycodegpt_tokenizer_v1_1.json",
+      "role": "frozen_v0_1_0_artifact",
+      "sha256": "0459f8556a6f79ca1ba1c3dc3f76c26ae2e55653ebbf97beaa9bd23467358a03"
+    },
+    {
+      "bytes": 2592,
+      "modified_by_phase18": "NO",
+      "path": "release/polycodegpt-exp-c-0.1.0/hashes.sha256",
+      "role": "frozen_v0_1_0_artifact",
+      "sha256": "f6ba7c0cece99a05af269cb64497c84a4c35ac213838fe9bfb13bb9dd735cd4e"
+    },
+    {
+      "bytes": 205608919,
+      "modified_by_phase18": "NO",
+      "path": "checkpoints/polycodegpt_first_pass/best.pt",
+      "role": "frozen_v0_1_0_artifact",
+      "sha256": "b0bea60dddfa3791564e3192fef40c800c59989e4e4ba3df76009a32f78d8bd6"
+    },
+    {
+      "bytes": 205611467,
+      "modified_by_phase18": "NO",
+      "path": "checkpoints/polycodegpt_first_pass/latest.pt",
+      "role": "frozen_v0_1_0_artifact",
+      "sha256": "2b17b9e96d7aa7259b66fd2232daf3327d2ea5eca28b15a5c04159045f01580d"
+    },
+    {
+      "bytes": 1095741,
+      "modified_by_phase18": "NO",
+      "path": "tokenizer/artifacts/polycodegpt_tokenizer_v1_1.json",
+      "role": "historical_input_or_report",
+      "sha256": "0459f8556a6f79ca1ba1c3dc3f76c26ae2e55653ebbf97beaa9bd23467358a03"
+    },
+    {
+      "bytes": 41093,
+      "modified_by_phase18": "NO",
+      "path": "tokenizer/artifacts/tokenizer_metadata_v1_1.json",
+      "role": "historical_input_or_report",
+      "sha256": "71dd044cb775accf3863890307a4e4700047f137c1534e7fb81751861cabef99"
+    },
+    {
+      "bytes": 2071736482,
+      "modified_by_phase18": "NO",
+      "path": "data/processed/polycodegpt_corpus/train.jsonl",
+      "role": "historical_input_or_report",
+      "sha256": "2a9c71607a1893711cd7f2963ec172784415f838ec1c633c988949b45e345c74"
+    },
+    {
+      "bytes": 115075352,
+      "modified_by_phase18": "NO",
+      "path": "data/processed/polycodegpt_corpus/valid.jsonl",
+      "role": "historical_input_or_report",
+      "sha256": "2eb02406d22101716214a6509314e9d7e1596e1cc6640d0eb4a886c00fb715af"
+    },
+    {
+      "bytes": 266385914,
+      "modified_by_phase18": "NO",
+      "path": "data/processed/tokenized_v1_1/train.bin",
+      "role": "historical_input_or_report",
+      "sha256": "6b8ffbf653e8a3b3dbe5c641463dd78366bdd3e4387758fbc98866a6aba6e021"
+    },
+    {
+      "bytes": 15514010,
+      "modified_by_phase18": "NO",
+      "path": "data/processed/tokenized_v1_1/valid.bin",
+      "role": "historical_input_or_report",
+      "sha256": "ee55019be57e1b53a0a74b232ae6d37b5e2935c4b6af95f70221e714fa7e52df"
+    },
+    {
+      "bytes": 1211,
+      "modified_by_phase18": "NO",
+      "path": "data/manifests/polycodegpt_corpus_manifest.csv",
+      "role": "historical_input_or_report",
+      "sha256": "1cb7b566e6fd51e61a91e4bbafab1ea0322d8bd78c7284ac794c81f764a1cf0f"
+    },
+    {
+      "bytes": 1008,
+      "modified_by_phase18": "NO",
+      "path": "data/manifests/polycodegpt_corpus_validation.json",
+      "role": "historical_input_or_report",
+      "sha256": "5ab411ad6950a58db132d26deb8b7e011b202d0b4a3003fd79d1a7568a169d16"
+    },
+    {
+      "bytes": 9305,
+      "modified_by_phase18": "NO",
+      "path": "data/manifests/source_registry.csv",
+      "role": "historical_input_or_report",
+      "sha256": "ba676fc34fc970b94f8d5e4dd5d02b4c07a14aad1ddb3e417f9c042aa87382f6"
+    },
+    {
+      "bytes": 282879,
+      "modified_by_phase18": "NO",
+      "path": "data/manifests/python_docs_training_corpus_inventory.csv",
+      "role": "historical_input_or_report",
+      "sha256": "cb5f870ce3f95fb30399d0eede8c322e626ca1d6d25083af03586a9f382d1f25"
+    },
+    {
+      "bytes": 62386,
+      "modified_by_phase18": "NO",
+      "path": "reports/phase17_data_strategy.md",
+      "role": "historical_input_or_report",
+      "sha256": "3a4c90e3a80ec088412aa01dc53c4c1ac6d74f3e1064a69dac15f7cf2f90a0f2"
+    }
+  ],
+  "python_docs": {
+    "eligible_files": 500,
+    "inventory": "data/manifests/python_docs_training_corpus_inventory.csv",
+    "inventory_rows": 500,
+    "inventory_sha256": "cb5f870ce3f95fb30399d0eede8c322e626ca1d6d25083af03586a9f382d1f25"
+  },
+  "sources_accepted": [
+    "CSN-PY",
+    "CSN-JS",
+    "PYDOCS",
+    "NODE-DOCS",
+    "CODEPARROT"
+  ],
+  "sources_examined": 11,
+  "sources_excluded": [
+    "THE-STACK-V1-V2",
+    "STARCODERDATA",
+    "MDN-PROSE",
+    "STACKOVERFLOW",
+    "APPS-MBPP-CODE_CONTESTS",
+    "BUGSJS-BUGSINPY"
+  ]
+}

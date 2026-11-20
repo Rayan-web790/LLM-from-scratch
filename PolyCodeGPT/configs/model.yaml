@@ -1,0 +1,36 @@
+# PolyCodeGPT — Model Configuration
+# ==================================
+# These are initial experimental configurations subject to adjustment.
+# Values will be validated and tuned through profiling and training experiments.
+
+project_name: PolyCodeGPT
+
+model:
+  architecture: decoder_only_transformer
+  vocab_size: 16000
+  d_model: 384
+  n_layers: 6
+  n_heads: 6
+  ffn_dim: 1536
+  context_length: 512
+  dropout: 0.1
+  tie_embeddings: true
+  initialization: random
+
+languages:
+  natural:
+    - en
+    - fr
+    - ar
+  programming:
+    primary:
+      - python
+      - javascript
+    additional:
+      - java
+      - cpp
+      - sql
+
+tokenizer:
+  type: byte_level_bpe
+  vocab_size: 16000

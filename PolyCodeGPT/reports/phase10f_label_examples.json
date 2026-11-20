@@ -1,0 +1,302 @@
+{
+  "note": "Exploratory heuristic labels, not manual semantic annotation. Sample: random.seed(42), 200 records per language from train.jsonl, first 10 of each sample shown in full.",
+  "categories": [
+    "concise_standalone",
+    "algorithmic",
+    "framework_application",
+    "compiler_tooling",
+    "api_wrapper",
+    "incomplete_or_no_closing_brace",
+    "incomplete_or_no_colon",
+    "comment_like_description",
+    "meaningful_description"
+  ],
+  "sample_seed": 42,
+  "sample_size": 200,
+  "languages": {
+    "python": {
+      "corpus_records": 290463,
+      "examples": [
+        {
+          "index": 1,
+          "record_id": "335a76e23ae980897c1af9d41b5805f95682d1ea2439621ed065d7c26e15ed21",
+          "repo": "Erotemic/utool",
+          "path": "utool/util_cache.py",
+          "description_chars": 758,
+          "code_lines": 37,
+          "description": "Args:\n        max_size (int):\n\n    References:\n        https://github.com/amitdev/lru-dict\n\n    CommandLine:\n        python -m utool.util_cache --test-get_lru_cache\n\n    Example:\n        >>> # DISABLE_DOCTEST\n        >>> # UNSTABLE_DOCTEST\n        >>> from utool.util_cache import *  # NOQA\n        >>> import utool as ut  # NOQA\n        >>> max_size = 5\n        >>> # execute function\n        >>> cache_obj = get_lru_cache(max_size)\n        >>> cache_obj[1] = 1\n        >>> cache_obj[2] = 2\n        >>> cache_obj[3] = 3\n        >>> cache_obj[4] = 4\n        >>> cache_obj[5] = 5\n        >>> cache_obj[6] = 6\n        >>> # verify results\n        >>> result = ut.repr2(dict(cache_obj), nl=False)\n        >>> print(result)\n        {2: 2, 3: 3, 4: 4, 5: 5, 6: 6}",
+          "code": "def get_lru_cache(max_size=5):\n    \"\"\"\n    Args:\n        max_size (int):\n\n    References:\n        https://github.com/amitdev/lru-dict\n\n    CommandLine:\n        python -m utool.util_cache --test-get_lru_cache\n\n    Example:\n        >>> # DISABLE_DOCTEST\n        >>> # UNSTABLE_DOCTEST\n        >>> from utool.util_cache import *  # NOQA\n        >>> import utool as ut  # NOQA\n        >>> max_size = 5\n        >>> # execute function\n        >>> cache_obj = get_lru_cache(max_size)\n        >>> cache_obj[1] = 1\n        >>> cache_obj[2] = 2\n        >>> cache_obj[3] = 3\n        >>> cache_obj[4] = 4\n        >>> cache_obj[5] = 5\n        >>> cache_obj[6] = 6\n        >>> # verify results\n        >>> result = ut.repr2(dict(cache_obj), nl=False)\n        >>> print(result)\n        {2: 2, 3: 3, 4: 4, 5: 5, 6: 6}\n    \"\"\"\n    USE_C_LRU = False\n    if USE_C_LRU:\n        import lru\n        cache_obj = lru.LRU(max_size)\n    else:\n        cache_obj = LRUDict(max_size)\n    return cache_obj",
+          "heuristic_labels": [
+            "incomplete_or_no_colon",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 2,
+          "record_id": "2172af287fa54bdbc91f643eda52f48d826057bd2e47a192d1b5ea376b9b14fa",
+          "repo": "bokeh/bokeh",
+          "path": "bokeh/transform.py",
+          "description_chars": 845,
+          "code_lines": 31,
+          "description": "Create a ``DataSpec`` dict that applies a client-side\n    ``CategoricalColorMapper`` transformation to a ``ColumnDataSource``\n    column.\n\n    Args:\n        field_name (str) : a field name to configure ``DataSpec`` with\n\n        palette (seq[color]) : a list of colors to use for colormapping\n\n        factors (seq) : a sequences of categorical factors corresponding to\n            the palette\n\n        start (int, optional) : a start slice index to apply when the column\n            data has factors with multiple levels. (default: 0)\n\n        end (int, optional) : an end slice index to apply when the column\n            data has factors with multiple levels. (default: None)\n\n        nan_color (color, optional) : a default color to use when mapping data\n            from a column does not succeed (default: \"gray\")\n\n    Returns:\n        dict",
+          "code": "def factor_cmap(field_name, palette, factors, start=0, end=None, nan_color=\"gray\"):\n    ''' Create a ``DataSpec`` dict that applies a client-side\n    ``CategoricalColorMapper`` transformation to a ``ColumnDataSource``\n    column.\n\n    Args:\n        field_name (str) : a field name to configure ``DataSpec`` with\n\n        palette (seq[color]) : a list of colors to use for colormapping\n\n        factors (seq) : a sequences of categorical factors corresponding to\n            the palette\n\n        start (int, optional) : a start slice index to apply when the column\n            data has factors with multiple levels. (default: 0)\n\n        end (int, optional) : an end slice index to apply when the column\n            data has factors with multiple levels. (default: None)\n\n        nan_color (color, optional) : a default color to use when mapping data\n            from a column does not succeed (default: \"gray\")\n\n    Returns:\n        dict\n\n    '''\n    return field(field_name, CategoricalColorMapper(palette=palette,\n                                                    factors=factors,\n                                                    start=start,\n                                                    end=end,\n                                                    nan_color=nan_color))",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 3,
+          "record_id": "9ca9f630584e4ec09a0c1a2a24640db795433e3fe33f8cd5ba3a307e03c191d8",
+          "repo": "MillionIntegrals/vel",
+          "path": "vel/schedules/linear.py",
+          "description_chars": 42,
+          "code_lines": 3,
+          "description": "Interpolate linearly between start and end",
+          "code": "def value(self, progress_indicator):\n        \"\"\" Interpolate linearly between start and end \"\"\"\n        return interpolate.interpolate_linear_single(self.initial_value, self.final_value, progress_indicator)",
+          "heuristic_labels": [
+            "concise_standalone",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 4,
+          "record_id": "8e5ddcb05c249e4ab692d49dd9b5e7ca452aa84b4d29baea0d5501993257d549",
+          "repo": "chrismattmann/tika-python",
+          "path": "tika/tika.py",
+          "description_chars": 131,
+          "code_lines": 16,
+          "description": "Checks the signature of Jar\n    :param tikaServerJar:\n    :param jarPath:\n    :return: ``True`` if the signature of the jar matches",
+          "code": "def checkJarSig(tikaServerJar, jarPath):\n    '''\n    Checks the signature of Jar\n    :param tikaServerJar:\n    :param jarPath:\n    :return: ``True`` if the signature of the jar matches\n    '''\n    if not os.path.isfile(jarPath + \".md5\"):\n        getRemoteJar(tikaServerJar + \".md5\", jarPath + \".md5\")\n    m = hashlib.md5()\n    with open(jarPath, 'rb') as f:\n        binContents = f.read()\n        m.update(binContents)\n        with open(jarPath + \".md5\", \"r\") as em:\n            existingContents = em.read()\n            return existingContents == m.hexdigest()",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 5,
+          "record_id": "5b1ab96afdd6b0a658968be290dba23fd5c8a1a488636105a245e27555318bf6",
+          "repo": "lsst-sqre/BitlyOAuth2ProxySession",
+          "path": "BitlyOAuth2ProxySession/Session.py",
+          "description_chars": 24,
+          "code_lines": 9,
+          "description": "Don't look, I'm hideous!",
+          "code": "def _extract_authenticity_token(data):\n    \"\"\"Don't look, I'm hideous!\"\"\"\n    # Super-cheap Python3 hack.\n    if not isinstance(data, str):\n        data = str(data, 'utf-8')\n    pos = data.find(\"authenticity_token\")\n    # Super-gross.\n    authtok = str(data[pos + 41:pos + 41 + 88])\n    return authtok",
+          "heuristic_labels": [
+            "concise_standalone",
+            "incomplete_or_no_colon",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 6,
+          "record_id": "ad4bca49f409ce3ddc5ba220395a5068e3155bc7f4750d5e576279abdf1d485a",
+          "repo": "mamrhein/specification",
+          "path": "specification/_extd_ast_expr.py",
+          "description_chars": 59,
+          "code_lines": 8,
+          "description": "Return `node`s operator and operands as inlined expression.",
+          "code": "def visit_BoolOp(self, node: AST, dfltChaining: bool = True) -> str:\n        \"\"\"Return `node`s operator and operands as inlined expression.\"\"\"\n        op = node.op\n        with self.op_man(op):\n            src = self.visit(op).join([self.visit(node.values[0])] +\n                                      [self.visit(val, dfltChaining=False)\n                                       for val in node.values[1:]])\n            return self.wrap_expr(src, dfltChaining)",
+          "heuristic_labels": [
+            "compiler_tooling",
+            "concise_standalone",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 7,
+          "record_id": "8301b83e0bf780b9260917be10e2ed15c7d3f00f7c2832131a15cd7e123914b5",
+          "repo": "Robpol86/etaprogress",
+          "path": "etaprogress/eta.py",
+          "description_chars": 231,
+          "code_lines": 23,
+          "description": "Sets the new numerator (number of items done).\n\n        Positional arguments:\n        numerator -- the new numerator to add to the timing data.\n\n        Keyword arguments:\n        calculate -- calculate the ETA and rate by default.",
+          "code": "def set_numerator(self, numerator, calculate=True):\n        \"\"\"Sets the new numerator (number of items done).\n\n        Positional arguments:\n        numerator -- the new numerator to add to the timing data.\n\n        Keyword arguments:\n        calculate -- calculate the ETA and rate by default.\n        \"\"\"\n        # Validate\n        if self._timing_data and numerator < self._timing_data[-1][1]:\n            raise ValueError('numerator cannot decrement.')\n\n        # Update data.\n        now = _NOW()\n        if self._timing_data and now == self._timing_data[-1][0]:\n            self._timing_data[-1] = (now, numerator)  # Overwrite.\n        else:\n            self._timing_data.append((now, numerator))\n\n        # Calculate ETA and rate.\n        if not self.done and calculate and self.started:\n            self._calculate()",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 8,
+          "record_id": "69f5b938426f053af9f38287032023d851502a09b42081542bf69a4839f145fc",
+          "repo": "dlecocq/nsq-py",
+          "path": "nsq/connection.py",
+          "description_chars": 57,
+          "code_lines": 33,
+          "description": "Flush some of the waiting messages, returns count written",
+          "code": "def flush(self):\n        '''Flush some of the waiting messages, returns count written'''\n        # When profiling, we found that while there was some efficiency to be\n        # gained elsewhere, the big performance hit is sending lots of small\n        # messages at a time. In particular, consumers send many 'FIN' messages\n        # which are very small indeed and the cost of dispatching so many system\n        # calls is very high. Instead, we prefer to glom together many messages\n        # into a single string to send at once.\n        total = 0\n        for sock in self.socket(blocking=False):\n            # If there's nothing left in the out buffer, take whatever's in the\n            # pending queue.\n            #\n            # When using SSL, if the socket throws 'SSL_WANT_WRITE', then the\n            # subsequent send requests have to send the same buffer.\n            pending = self._pending\n            data = self._out_buffer or ''.join(\n                pending.popleft() for _ in xrange(len(pending)))\n            try:\n                # Try to send as much of the first message as possible\n                total = sock.send(data)\n            except socket.error as exc:\n                # Catch (errno, message)-type socket.errors\n                if exc.args[0] not in self.WOULD_BLOCK_ERRS:\n                    raise\n                self._out_buffer = data\n            else:\n                self._out_buffer = None\n            finally:\n                if total < len(data):\n                    # Save the rest of the message that could not be sent\n                    self._pending.appendleft(data[total:])\n        return total",
+          "heuristic_labels": [
+            "incomplete_or_no_colon",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 9,
+          "record_id": "9fb775498730325bc24b7e8243537d92fe8872295148ebe92fc8de6433377057",
+          "repo": "websocket-client/websocket-client",
+          "path": "websocket/_core.py",
+          "description_chars": 261,
+          "code_lines": 40,
+          "description": "Close Websocket object\n\n        status: status code to send. see STATUS_XXX.\n\n        reason: the reason to close. This must be string.\n\n        timeout: timeout until receive a close frame.\n            If None, it will wait forever until receive a close frame.",
+          "code": "def close(self, status=STATUS_NORMAL, reason=six.b(\"\"), timeout=3):\n        \"\"\"\n        Close Websocket object\n\n        status: status code to send. see STATUS_XXX.\n\n        reason: the reason to close. This must be string.\n\n        timeout: timeout until receive a close frame.\n            If None, it will wait forever until receive a close frame.\n        \"\"\"\n        if self.connected:\n            if status < 0 or status >= ABNF.LENGTH_16:\n                raise ValueError(\"code is invalid range\")\n\n            try:\n                self.connected = False\n                self.send(struct.pack('!H', status) +\n                          reason, ABNF.OPCODE_CLOSE)\n                sock_timeout = self.sock.gettimeout()\n                self.sock.settimeout(timeout)\n                start_time = time.time()\n                while timeout is None or time.time() - start_time < timeout:\n                    try:\n                        frame = self.recv_frame()\n                        if frame.opcode != ABNF.OPCODE_CLOSE:\n                            continue\n                        if isEnabledForError():\n                            recv_status = struct.unpack(\"!H\", frame.data[0:2])[0]\n                            if recv_status != STATUS_NORMAL:\n                                error(\"close status: \" + repr(recv_status))\n                        break\n                    except:\n                        break\n                self.sock.settimeout(sock_timeout)\n                self.sock.shutdown(socket.SHUT_RDWR)\n            except:\n                pass\n\n            self.shutdown()",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 10,
+          "record_id": "f86b1b863c3f8d961cc830fbd4c9b69bb0d4f6ed25a2a2aa2de989a14d6facc6",
+          "repo": "git-afsantos/bonsai",
+          "path": "bonsai/model.py",
+          "description_chars": 179,
+          "code_lines": 18,
+          "description": "Assign a function-local index to each child object and register\n            write operations to variables.\n\n            This should only be called after the object is fully built.",
+          "code": "def _afterpass(self):\n        \"\"\"Assign a function-local index to each child object and register\n            write operations to variables.\n\n            This should only be called after the object is fully built.\n        \"\"\"\n        if hasattr(self, '_fi'):\n            return\n        fi = 0\n        for codeobj in self.walk_preorder():\n            codeobj._fi = fi\n            fi += 1\n            if isinstance(codeobj, CodeOperator) and codeobj.is_assignment:\n                if codeobj.arguments and isinstance(codeobj.arguments[0],\n                                                    CodeReference):\n                    var = codeobj.arguments[0].reference\n                    if isinstance(var, CodeVariable):\n                        var.writes.append(codeobj)",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        }
+      ]
+    },
+    "javascript": {
+      "corpus_records": 102169,
+      "examples": [
+        {
+          "index": 1,
+          "record_id": "b068cb16a57ae463af3d8c53d1f288b43b7887b9ccff48d654a6fce9a22b0517",
+          "repo": "warncke/immutable-app",
+          "path": "lib/set-cookie.js",
+          "description_chars": 333,
+          "code_lines": 25,
+          "description": "@function setCookie\n\nset/clear cookie - if value is string then cookie will be set with value\nand default options. if value is false then cookie will be cleared. if\nvalue is object then it must contain a value and other properties will be\nuse as options.\n\n@param {string} name\n@param {object} res\n@param {boolean|object|string} value",
+          "code": "function setCookie (name, res, value) {\n    // if value is string do simple set\n    if (typeof value === 'string') {\n        res.cookie(name, value)\n    }\n    // if value is false then clear cookie\n    else if (value === false) {\n        res.cookie(name, '', {expires: new Date(1)})\n    }\n    // if object then contains options\n    else if (typeof value === 'object') {\n        // value is object containing options and value\n        var options = value\n        // get value\n        value = options.value\n        // delete value from options\n        delete options.value\n        // set cookie with options\n        res.cookie(name, value, options)\n    }\n    // invalid\n    else {\n        throw new Error('invalid cookie value')\n    }\n}",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 2,
+          "record_id": "53e4b4179e062fac9499b8264338a6a0f9d0006defe1d5447bdecda9a954d3cc",
+          "repo": "Tamersoul/magic-wand-js",
+          "path": "jsfiddle/OpenLayers.debug.js",
+          "description_chars": 332,
+          "code_lines": 24,
+          "description": "APIMethod: setFilter\nUpdate the filter for this strategy.  This will re-evaluate\nany features on the layer and in the cache.  Only features\nfor which filter.evalute(feature) returns true will be\nadded to the layer.  Others will be cached by the strategy.\n\nParameters:\nfilter - {<OpenLayers.Filter>} A filter for evaluating features.",
+          "code": "function(filter) {\n        this.filter = filter;\n        var previousCache = this.cache;\n        this.cache = [];\n        // look through layer for features to remove from layer\n        this.handleAdd({features: this.layer.features});\n        // cache now contains features to remove from layer\n        if (this.cache.length > 0) {\n            this.caching = true;\n            this.layer.removeFeatures(this.cache.slice());\n            this.caching = false;\n        }\n        // now look through previous cache for features to add to layer\n        if (previousCache.length > 0) {\n            var event = {features: previousCache};\n            this.handleAdd(event);\n            if (event.features.length > 0) {\n                // event has features to add to layer\n                this.caching = true;\n                this.layer.addFeatures(event.features);\n                this.caching = false;\n            }\n        }\n    }",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 3,
+          "record_id": "35388d6db58c4b6adc52fe92805a38dc7b06dc7bfd06f65a7276c8ca51dde3ab",
+          "repo": "ariatemplates/ariatemplates",
+          "path": "src/aria/core/JsonValidator.js",
+          "description_chars": 110,
+          "code_lines": 9,
+          "description": "Preprocessing function for base types of package aria.core.JsonTypes\n@param {aria.core.BaseTypes:Bean} beanDef",
+          "code": "function (beanDef) {\n                var typeDef = this.__baseTypes[beanDef.$type];\n                this.$assert(298, typeDef != null);\n                beanDef[this._MD_BUILTIN] = true;\n                beanDef[this._MD_BASETYPE] = typeDef;\n                var beanName = beanDef[this._MD_TYPENAME] = [this._BASE_TYPES_PACKAGE, typeDef.typeName].join('.');\n                this.__processedBeans[beanName] = beanDef;\n                return typeDef;\n            }",
+          "heuristic_labels": [
+            "concise_standalone",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 4,
+          "record_id": "6438780ab15a381a3d7e424d003f33fd228b51c15f01251b24385ca83dcc458d",
+          "repo": "Tamersoul/magic-wand-js",
+          "path": "jsfiddle/OpenLayers.debug.js",
+          "description_chars": 54,
+          "code_lines": 102,
+          "description": "Method: initResolutions\nPopulate the resolutions array",
+          "code": "function() {\n\n        var props = ['minZoomLevel', 'maxZoomLevel', 'numZoomLevels'];\n          \n        for(var i=0, len=props.length; i<len; i++) {\n            var property = props[i];\n            this[property] = (this.options[property] != null)  \n                                     ? this.options[property] \n                                     : this.map[property];\n        }\n\n        if ( (this.minZoomLevel == null) ||\n             (this.minZoomLevel < this.MIN_ZOOM_LEVEL) ){\n            this.minZoomLevel = this.MIN_ZOOM_LEVEL;\n        }        \n\n        //\n        // At this point, we know what the minimum desired zoom level is, and\n        //  we must calculate the total number of zoom levels. \n        //  \n        //  Because we allow for the setting of either the 'numZoomLevels'\n        //   or the 'maxZoomLevel' properties... on either the layer or the  \n        //   map, we have to define some rules to see which we take into\n        //   account first in this calculation. \n        //\n        // The following is the precedence list for these properties:\n        // \n        // (1) numZoomLevels set on layer\n        // (2) maxZoomLevel set on layer\n        // (3) numZoomLevels set on map\n        // (4) maxZoomLevel set on map*\n        // (5) none of the above*\n        //\n        // *Note that options (4) and (5) are only possible if the user \n        //  _explicitly_ sets the 'numZoomLevels' property on the map to \n        //  null, since it is set by default to 16. \n        //\n\n        //\n        // Note to future: In 3.0, I think we should remove the default \n        // value of 16 for map.numZoomLevels. Rather, I think that value \n        // should be set as a default on the Layer.WMS class. If someone\n        // creates a 3rd party layer and does not specify any 'minZoomLevel', \n        // 'maxZoomLevel', or 'numZoomLevels', and has not explicitly \n        // specified any of those on the map object either.. then I think\n        // it is fair to say that s/he wants all the zoom levels available.\n        // \n        // By making map.numZoomLevels *null* by default, that will be the \n        // case. As it is, I don't feel comfortable changing that right now\n        // as it would be a glaring API change and actually would probably\n        // break many peoples' codes. \n        //\n\n        //the number of zoom levels we'd like to have.\n        var desiredZoomLevels;\n\n        //this is the maximum number of zoom levels the layer will allow, \n        // given the specified starting minimum zoom level.\n        var limitZoomLevels = this.MAX_ZOOM_LEVEL - this.minZoomLevel + 1;\n\n        if ( ((this.options.numZoomLevels == null) && \n              (this.options.maxZoomLevel != null)) // (2)\n              ||\n             ((this.numZoomLevels == null) &&\n              (this.maxZoomLevel != null)) // (4)\n           ) {\n            //calculate based on specified maxZoomLevel (on layer or map)\n            desiredZoomLevels = this.maxZoomLevel - this.minZoomLevel + 1;\n        } else {\n            //calculate based on specified numZoomLevels (on layer or map)\n            // this covers cases (1) and (3)\n            desiredZoomLevels = this.numZoomLevels;\n        }\n\n        if (desiredZoomLevels != null) {\n            //Now that we know what we would *like* the number of zoom levels\n            // to be, based on layer or map options, we have to make sure that\n            // it does not conflict with the actual limit, as specified by \n            // the constants on the layer itself (and calculated into the\n            // 'limitZoomLevels' variable). \n            this.numZoomLevels = Math.min(desiredZoomLevels, limitZoomLevels);\n        } else {\n            // case (5) -- neither 'numZoomLevels' not 'maxZoomLevel' was \n            // set on either the layer or the map. So we just use the \n            // maximum limit as calculated by the layer's constants.\n            this.numZoomLevels = limitZoomLevels;\n        }\n\n        //now that the 'numZoomLevels' is appropriately, safely set, \n        // we go back and re-calculate the 'maxZoomLevel'.\n        this.maxZoomLevel = this.minZoomLevel + this.numZoomLevels - 1;\n\n        if (this.RESOLUTIONS != null) {\n            var resolutionsIndex = 0;\n            this.resolutions = [];\n            for(var i= this.minZoomLevel; i <= this.maxZoomLevel; i++) {\n                this.resolutions[resolutionsIndex++] = this.RESOLUTIONS[i];            \n            }\n            this.maxResolution = this.resolutions[0];\n            this.minResolution = this.resolutions[this.resolutions.length - 1];\n        }       \n    }",
+          "heuristic_labels": [
+            "api_wrapper",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 5,
+          "record_id": "b5d19d63af9d5c513539c1360ab88dcea70d661146a3ff99b8d90861065fe79c",
+          "repo": "cmap/morpheus.js",
+          "path": "js/morpheus.js",
+          "description_chars": 102,
+          "code_lines": 47,
+          "description": "Parses the cls file.\n\n@param lines\nThe lines to read.\n@throw Error If there is a problem with the data",
+          "code": "function (lines) {\n    var regex = /[ ,]+/;\n    // header= <num_data> <num_classes> 1\n    var header = lines[0].split(regex);\n    if (header.length < 3) {\n      throw new Error('Header line needs three numbers');\n    }\n    var headerNumbers = [];\n    try {\n      for (var i = 0; i < 3; i++) {\n        headerNumbers[i] = parseInt($.trim(header[i]));\n      }\n    }\n    catch (e) {\n      throw new Error('Header line element ' + i + ' is not a number');\n    }\n    if (headerNumbers[0] <= 0) {\n      throw new Error(\n        'Header line missing first number, number of data points');\n    }\n    if (headerNumbers[1] <= 0) {\n      throw new Error(\n        'Header line missing second number, number of classes');\n    }\n    var numClasses = headerNumbers[1];\n    var numItems = headerNumbers[0];\n    var classDefinitionLine = lines[1];\n    classDefinitionLine = classDefinitionLine.substring(classDefinitionLine\n      .indexOf('#') + 1);\n    var classNames = $.trim(classDefinitionLine).split(regex);\n    if (classNames.length < numClasses) {\n      throw new Error('First line specifies ' + numClasses\n        + ' classes, but found ' + classNames.length + '.');\n    }\n    var dataLine = lines[2];\n    var assignments = dataLine.split(regex);\n    // convert the assignments to names\n    for (var i = 0; i < assignments.length; i++) {\n      var assignment = $.trim(assignments[i]);\n      var index = parseInt(assignment);\n      var tmp = classNames[index];\n      if (tmp !== undefined) {\n        assignments[i] = tmp;\n      }\n    }\n    return assignments;\n  }",
+          "heuristic_labels": [
+            "framework_application",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 6,
+          "record_id": "998c419c593b83b493ab80e6efeadbac93a85408609c783667a5d4df8578b563",
+          "repo": "a8m/agile",
+          "path": "dist/agile.js",
+          "description_chars": 198,
+          "code_lines": 67,
+          "description": "@name orderBy\n@kind function\nfork of AngularJS#orderByFilter\n\n@description\nOrders a specified array by the expression predicate.\nIt is ordered alphabetically for strings and numerically for numbers.",
+          "code": "function orderBy(array, sortPredicate, reverseOrder) {\n  if (!isArrayLike(array)) {\n    return array;\n  }\n  sortPredicate = isArray(sortPredicate) ? sortPredicate : [sortPredicate];\n  if (sortPredicate.length === 0) { sortPredicate = ['+']; }\n  sortPredicate = sortPredicate.map(function(predicate) {\n    var descending = false;\n    var get = predicate || value;\n    if (isString(predicate)) {\n      if ((predicate.charAt(0) == '+' || predicate.charAt(0) == '-')) {\n        descending = predicate.charAt(0) == '-';\n        predicate = predicate.substring(1);\n      }\n      if (predicate === '') {\n        // Effectively no predicate was passed so we compare identity\n        return reverseComparator(function(a, b) {\n          return compare(a, b);\n        }, descending);\n      }\n      get = $parse(predicate);\n      if (get.constant) {\n        var key = get();\n        return reverseComparator(function(a, b) {\n          return compare(a[key], b[key]);\n        }, descending);\n      }\n    }\n    return reverseComparator(function(a, b) {\n      return compare(get(a),get(b));\n    }, descending);\n  });\n  var arrayCopy = [];\n  for (var i = 0; i < array.length; i++) { arrayCopy.push(array[i]); }\n  return arrayCopy.sort(reverseComparator(comparator, reverseOrder));\n\n  function comparator(o1, o2) {\n    for (var i = 0; i < sortPredicate.length; i++) {\n      var comp = sortPredicate[i](o1, o2);\n      if (comp !== 0) break;\n    }\n    return comp;\n  }\n  function reverseComparator(comp, descending) {\n    return descending\n      ? function(a, b) {return comp(b,a);}\n      : comp;\n  }\n  function compare(v1, v2) {\n    var t1 = typeof v1;\n    var t2 = typeof v2;\n    if (t1 == t2) {\n      if (isDate(v1) && isDate(v2)) {\n        v1 = v1.valueOf();\n        v2 = v2.valueOf();\n      }\n      if (t1 == \"string\") {\n        v1 = v1.toLowerCase();\n        v2 = v2.toLowerCase();\n      }\n      if (v1 === v2) return 0;\n      return v1 < v2 ? -1 : 1;\n    } else {\n      return t1 < t2 ? -1 : 1;\n    }\n  }\n}",
+          "heuristic_labels": [
+            "algorithmic",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 7,
+          "record_id": "5d59814512e7a070854027da6e588f55335475e49e8a34857fa7bf95c31b6f32",
+          "repo": "AncientSouls/Graph",
+          "path": "src/lib/graph.js",
+          "description_chars": 117,
+          "code_lines": 254,
+          "description": "This method allows you to use Graph class to its inheritance chain.\n\n@param {Class} ParentClass\n@return {Class} Graph",
+          "code": "function factoryGraph(ParentClass) {\n  \n  if (!ParentClass) {\n    var ParentClass = class {}\n  }\n  \n  /**\n   * Class to inherit. Class with methods for control links in graph.\n   * Must be completed for adaptation to a particular database.\n   * \n   * @class\n   * @description `import { Graph } from 'ancient-graph';`\n   */\n  class Graph extends ParentClass {\n    \n    /**\n     * Construct new graph and checks for required adaptation methods.\n     * @throws {Error} if the adapter methods is not complete\n     * \n     * @param {} collection - A pointer to the collection dannymineobhodimye daapteru to work with the graph. This may be a connection to the SQL database and table name, for example, or a collection of Mongo. \n     * @param {Object.<string, string>} fields - Comparison of the data in the collection of data in the graph. It is necessary for the adapter.\n     * @param {Object} [config] - Additional config.\n     * @param {Object} [config.aliases]\n     * @param {String} [config.aliases.$]\n     */\n    constructor(collection, fields, config) {\n      super(...arguments);\n      this.collection = collection;\n      this.fields = fields;\n      if (typeof(config) != 'object') var config = {};\n      this.config = config;\n      if (typeof(config.aliases) != 'object') config.aliases = {};\n      for (var f in fields) {\n        if (!config.aliases[f]) config.aliases[f] = f;\n      }\n      this.config._aliases = {};\n      for (var a in this.config.aliases) {\n        this.config._aliases[this.config.aliases[a]] = a;\n      }\n      if (this.insert == Graph.prototype.insert) {\n        throw new Error('Method `insert` is not adapted.');\n      }\n      if (this.update == Graph.prototype.update) {\n        throw new Error('Method `update` is not adapted.');\n      }\n      if (this.remove == Graph.prototype.remove) {\n        throw new Error('Method `remove` is not adapted.');\n      }\n      if (this.query == Graph.prototype.query) {\n        throw new Error('Method `query` is not adapted.');\n      }\n      if (this.options == Graph.prototype.options) {\n        throw new Error('Method `options` is not adapted.');\n      }\n      if (this.fetch == Graph.prototype.fetch) {\n        throw new Error('Method `fetch` is not adapted.');\n      }\n      if (this.get == Graph.prototype.get) {\n        throw new Error('Method `get` is not adapted.');\n      }\n      if (this.each == Graph.prototype.each) {\n        throw new Error('Method `each` is not adapted.');\n      }\n      if (this.map == Graph.prototype.map) {\n        throw new Error('Method `map` is not adapted.');\n      }\n      if (this.count == Graph.prototype.count) {\n        throw new Error('Method `count` is not adapted.');\n      }\n      if (this.on == Graph.prototype.on) {\n        throw new Error('Method `on` is not adapted.');\n      }\n    }\n    \n    /**\n     * Should insert new link into graph.\n     * If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.\n     * \n     * @param {Link} link\n     * @param {Graph~insertCallback} [callback]\n     * @param {Object} [context]\n     * @return {string} [id]\n     */\n    insert(link, callback, context) {}\n    \n    /**\n     * Optional callback. If present, called with an error object as the first argument and, if no error, the unique id of inserted link as the second.\n     *\n     * @callback Graph~insertCallback\n     * @param {Error} [error]\n     * @param {string} [id]\n     */\n    \n    /**\n     * Should update to new state of modifier object link by unique id or by link query object.\n     * If the database allows, it is recommended to return a synchronous result. This can be useful in your application. But for writing generic code, it is recommended to only use the callback result.\n     * \n     * @param {string|LinkSelector} selector\n     * @param {LinkModifier} modifier\n     * @param {Graph~updateCallback} [callback]\n     * @param {Object} [context]\n     * @return {number} [count]\n     */\n    update(selector, modifier, callback, context) {}\n    \n    /**\n     * Optional callback. If present, called with an error object as the first argument and, if no error, the number of affected documents as the second.\n     *\n     * @callback Graph~updateCallback\n     * @param {Error} [error]\n     * @param {number} [count]\n     */\n    \n    /**\n     * Should remove link by unique id or by link query object.\n     * \n     * @param {string|LinkSelector} selector\n     * @param {Graph~removeCallback} [callback]\n     * @param {Object} [context]\n     */\n    remove(selector, callback, context) {}\n    \n    /**\n     * Optional callback. If present, called with an error object as the first argument.\n     *\n     * @callback Graph~removeCallback\n     * @param {Error} [error]\n     * @param {number} [count]\n     */\n    \n    /**\n     * Should generate adapter for database query for links search by unique id or by link query object.\n     * \n     * @param {string|LinkSelector} selector\n     * @return {*} query\n     */\n    query(selector) {}\n    \n    /**\n     * Should generate adapter for database options. \n     * \n     * @param {Object} [options]\n     * @return {*} options - a options suitable for the database\n     */\n    options(options) {}\n    \n    /**\n     * Find and all matching links as an Array.\n     * \n     * @param {string|LinkSelector} selector\n     * @param {SelectOptions} [options]\n     * @param {Graph~fetchCallback} [callback]\n     * @return {Link[]} links - result links objects in array\n     */\n    fetch(selector, options, callback) {}\n    \n    /**\n     * Optional callback. If present, called with an error object as the first argument and, if no error, the result links objects in array.\n     *\n     * @callback Graph~fetchCallback\n     * @param {Error} [error]\n     * @param {Link[]} [links]\n     */\n    \n    /**\n     * Get one first matching link.\n     * \n     * @param {string|LinkSelector} selector\n     * @param {SelectOptions} [options]\n     * @param {Graph~getCallback} [callback]\n     * @return {Link} link - result link object\n     */\n    get(selector, options, callback) {}\n    \n    /**\n     * Optional callback. If present, called with an error object as the first argument and, if no error, the result link object.\n     *\n     * @callback Graph~getCallback\n     * @param {Error} [error]\n     * @param {Link} [link]\n     */\n    \n    /**\n     * Should call callback once for each matching document, sequentially and synchronously.\n     * \n     * @param {string|LinkSelector} selector\n     * @param {SelectOptions} [options]\n     * @param {Graph~eachCallback} [callback]\n     */\n    each(selector, options, callback) {}\n    \n    /**\n     * @callback Graph~eachCallback\n     * @param {Link} [link]\n     */\n    \n    /**\n     * Should map callback over all matching documents. Returns an Array.\n     * \n     * @param {string|LinkSelector} selector\n     * @param {SelectOptions} [options]\n     * @param {Graph~mapCallback} [callback]\n     * @return {Array} results\n     */\n    map(selector, options, callback) {}\n    \n    /**\n     * @callback Graph~mapCallback\n     * @param {Link} [link]\n     * @return {*} result\n     */\n    \n    /**\n     * Should count all matching documents.\n     * \n     * @param {string|LinkSelector} selector\n     * @param {SelectOptions} [options]\n     * @param {Graph~countCallback} [callback]\n     * @return {number} [count]\n     */\n    count(selector, options, callback) {}\n    \n    /**\n     * @callback Graph~countCallback\n     * @param {Error} [error]\n     * @param {number} [count]\n     */\n    \n    /**\n     * Should subscribe to the events: link, unlink, insert, update, remove.\n     * \n     * @param {string} event - One event name\n     * @param {Graph~onCallback} callback\n     * @returns {Function} Stops event subscription.\n     * @example\n     * var counter = 0;\n     * var stop = graph.on('update', (oldData, newData) => {\n     *   if (oldData.id == '1') console.log(oldData.id, 'is changed');\n     *   counter++;\n     *   if (counter == 3) stop();\n     * });\n     */\n    on(event, callback) {}\n    \n    /**\n     * @callback Graph~onCallback\n     * @param {Link} [oldLink] - can be undefined on link and insert events\n     * @param {Link} [newLink] - can be undefined on unlink and remove events\n     * @param {Object} [context] - additional app information, such as context.userId\n     */\n  };\n  \n  return Graph;\n}",
+          "heuristic_labels": [
+            "algorithmic",
+            "api_wrapper",
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 8,
+          "record_id": "4abd572c6b65696143b692a307274327d0b9fe49b44343ba4c2b903c1c177a2d",
+          "repo": "baidu/san",
+          "path": "src/parser/read-call.js",
+          "description_chars": 85,
+          "code_lines": 27,
+          "description": "读取调用\n\n@param {Walker} walker 源码读取对象\n@param {Array=} defaultArgs 默认参数\n@return {Object}",
+          "code": "function readCall(walker, defaultArgs) {\n    walker.goUntil();\n    var result = readAccessor(walker);\n\n    var args;\n    if (walker.goUntil(40)) { // (\n        args = [];\n\n        while (!walker.goUntil(41)) { // )\n            args.push(readTertiaryExpr(walker));\n            walker.goUntil(44); // ,\n        }\n    }\n    else if (defaultArgs) {\n        args = defaultArgs;\n    }\n\n    if (args) {\n        result = {\n            type: ExprType.CALL,\n            name: result,\n            args: args\n        };\n    }\n\n    return result;\n}",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 9,
+          "record_id": "0d818705f91e66495a5d5bf8552985580653665db9fb28921712048fb9a64e81",
+          "repo": "changlin-cn/changlin-util",
+          "path": "dist/math.js",
+          "description_chars": 71,
+          "code_lines": 17,
+          "description": "计算 组合数\n\n@param elementNumber\n@param combinationLength\n@returns {number}",
+          "code": "function computeCombinationLength(elementNumber, combinationLength) {\n    elementNumber = Number(elementNumber);\n    combinationLength = Number(combinationLength);\n    if (!_regex.regex.positiveInteger.test(String(elementNumber))) {\n        throw new Error(\"elementNumber should be positiveNumber but got \" + elementNumber);\n    }\n    if (!(_regex.regex.positiveInteger.test(String(combinationLength)) || combinationLength === 0)) {\n        throw new Error(\"elementNumber should be positiveNumber or 0 but got \" + combinationLength);\n    }\n    if (combinationLength > elementNumber) {\n        throw new Error(\"The max value of combinationLength should be \" + elementNumber + \" but got \" + combinationLength);\n    }\n    if (combinationLength === 0) {\n        return 1;\n    }\n    return computeFactorial(elementNumber) / (computeFactorial(combinationLength) * computeFactorial(elementNumber - combinationLength));\n}",
+          "heuristic_labels": [
+            "meaningful_description"
+          ]
+        },
+        {
+          "index": 10,
+          "record_id": "ea7473cfa8a94099bdf7355db36bf211a18211831afaedd572999f7729f262d2",
+          "repo": "tnantoka/LooseLeaf",
+          "path": "skeleton/public/javascripts/lib/cleditor/jquery.cleditor.js",
+          "description_chars": 111,
+          "code_lines": 9,
+          "description": "================== Private Functions ================== checksum - returns a checksum using the Adler-32 method",
+          "code": "function checksum(text)\r\n  {\r\n    var a = 1, b = 0;\r\n    for (var index = 0; index < text.length; ++index) {\r\n      a = (a + text.charCodeAt(index)) % 65521;\r\n      b = (b + a) % 65521;\r\n    }\r\n    return (b << 16) | a;\r\n  }",
+          "heuristic_labels": [
+            "concise_standalone",
+            "meaningful_description"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1546 @@
+{
+  "tasks": [
+    "Compute the factorial of n recursively.",
+    "Return the nth Fibonacci number.",
+    "Check whether a string is a palindrome.",
+    "Merge two sorted arrays into one sorted array.",
+    "Binary search on a sorted array.",
+    "Return the nth prime number.",
+    "Reverse a string.",
+    "Check if two strings are anagrams.",
+    "Compute the greatest common divisor.",
+    "Format a date from YYYY-MM-DD to DD/MM/YYYY."
+  ],
+  "results": {
+    "greedy_temp0": {
+      "temperature": 0.0,
+      "top_k": null,
+      "max_new_tokens": 64,
+      "runs": [
+        {
+          "seed": null,
+          "results": [
+            {
+              "seed": null,
+              "generated_text": "\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+              "candidate": "function factorial(n) {\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.078125,
+              "repeated_line_ratio": 0.09090909090909091,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "candidate": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.",
+              "candidate": "function isPalindrome(s) {\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.171875,
+              "repeated_line_ratio": 0.16666666666666666,
+              "repeated_4gram_ratio": 0.9523809523809523
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+              "candidate": "function mergeSorted(a, b) {\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.109375,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.",
+              "candidate": "function binarySearch(arr, target) {\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.171875,
+              "repeated_line_ratio": 0.16666666666666666,
+              "repeated_4gram_ratio": 0.9629629629629629
+            },
+            {
+              "seed": null,
+              "generated_text": "\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth",
+              "candidate": "function nthPrime(n) {\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s =",
+              "candidate": "function reverseString(s) {\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s =",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.21875,
+              "repeated_line_ratio": 0.2,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)",
+              "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.1875,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(",
+              "candidate": "function gcd(a, b) {\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.171875,
+              "repeated_line_ratio": 0.16666666666666666,
+              "repeated_4gram_ratio": 0.9523809523809523
+            },
+            {
+              "seed": null,
+              "generated_text": "\n  var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+              "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.1875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "sampling_t0.4_topkNone": {
+      "temperature": 0.4,
+      "top_k": null,
+      "max_new_tokens": 64,
+      "runs": [
+        {
+          "seed": 42,
+          "results": [
+            {
+              "seed": 42,
+              "generated_text": "\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;",
+              "candidate": "function factorial(n) {\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "candidate": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  return s.isPalindrome(s)\n  .then(function (e) {\n    return e.isPalindrome(s)\n    .then(function () {\n      return e.isPalindrome(s)\n    })\n  })\n}",
+              "candidate": "function isPalindrome(s) {\n  return s.isPalindrome(s)\n  .then(function (e) {\n    return e.isPalindrome(s)\n    .then(function () {\n      return e.isPalindrome(s)\n    })\n  })\n}",
+              "eos_hit": true,
+              "generated_token_count": 58,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.43103448275862066,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var b = a.length;\n  var a = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+              "candidate": "function mergeSorted(a, b) {\n  var b = a.length;\n  var a = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 0.7931034482758621
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var result = new Array(arr).length;\n  if (result.length === 0) {\n    result.push(target);\n  }\n  if (result.length === 0) {\n    result.push(target);\n  }\n  return result;\n}",
+              "candidate": "function binarySearch(arr, target) {\n  var result = new Array(arr).length;\n  if (result.length === 0) {\n    result.push(target);\n  }\n  if (result.length === 0) {\n    result.push(target);\n  }\n  return result;\n}",
+              "eos_hit": true,
+              "generated_token_count": 55,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.4909090909090909,
+              "repeated_line_ratio": 0.3333333333333333,
+              "repeated_4gram_ratio": 0.42105263157894735
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "candidate": "function nthPrime(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0",
+              "candidate": "function reverseString(s) {\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.265625,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 0.9375
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s3 = s2.length;\n  var s2 = s2.length;\n  var s2",
+              "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s3 = s2.length;\n  var s2 = s2.length;\n  var s2",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.140625,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 0.8260869565217391
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var b = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;",
+              "candidate": "function gcd(a, b) {\n  var b = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.140625,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 0.9310344827586207
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');",
+              "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.21875,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 1.0
+            }
+          ]
+        },
+        {
+          "seed": 123,
+          "results": [
+            {
+              "seed": 123,
+              "generated_text": "\n  var n = n - 1;\n  var n = n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+              "candidate": "function factorial(n) {\n  var n = n - 1;\n  var n = n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.109375,
+              "repeated_line_ratio": 0.2,
+              "repeated_4gram_ratio": 0.9047619047619048
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "candidate": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var palindrome = s.map(function (palindrome) {\n    return palindrome.replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(",
+              "candidate": "function isPalindrome(s) {\n  var palindrome = s.map(function (palindrome) {\n    return palindrome.replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.3125,
+              "repeated_line_ratio": 0.16666666666666666,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n  }\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n    keys[",
+              "candidate": "function mergeSorted(a, b) {\n  var keys = [];\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n  }\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n    keys[",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.34375,
+              "repeated_line_ratio": 0.2857142857142857,
+              "repeated_4gram_ratio": 0.6896551724137931
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  var key = keys.length;\n  var keys = keys.length;\n  for (var i = 0; i < keys.length; i++) {\n    var key = keys[i];\n    var key = keys[i];\n    for (var i = 0; i <",
+              "candidate": "function binarySearch(arr, target) {\n  var keys = [];\n  var key = keys.length;\n  var keys = keys.length;\n  for (var i = 0; i < keys.length; i++) {\n    var key = keys[i];\n    var key = keys[i];\n    for (var i = 0; i <",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.328125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 0.29411764705882354
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;",
+              "candidate": "function nthPrime(n) {\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.09375,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n ",
+              "candidate": "function reverseString(s) {\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n ",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s2);\n  var s2 = s2.split(s1",
+              "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s2);\n  var s2 = s2.split(s1",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.171875,
+              "repeated_line_ratio": 0.2,
+              "repeated_4gram_ratio": 0.7058823529411765
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd.push(gcd.length);\n  var gcd = b.split('.');\n  var g",
+              "candidate": "function gcd(a, b) {\n  var c = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd.push(gcd.length);\n  var gcd = b.split('.');\n  var g",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.25,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 0.6666666666666666
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '') + 'YYYY.';\n  var dateStr = dateStr.replace(/%/g,",
+              "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '') + 'YYYY.';\n  var dateStr = dateStr.replace(/%/g,",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.28125,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        {
+          "seed": 999,
+          "results": [
+            {
+              "seed": 999,
+              "generated_text": "\n    var factor = n;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var",
+              "candidate": "function factorial(n) {\n    var factor = n;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.1111111111111111,
+              "repeated_4gram_ratio": 0.9090909090909091
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "candidate": "function fibonacci(n) {\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 24,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.6666666666666666,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.3333333333333333
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s.length > 0) {\n        return false;\n    }\n    return false;\n  }",
+              "candidate": "function isPalindrome(s) {\n    if (s.length > 0) {\n        return false;\n    }\n    return false;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 22,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.7272727272727273,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (a.length > b.length) {\n      return b.length;\n    }\n    return b.length;\n  }",
+              "candidate": "function mergeSorted(a, b) {\n    if (a.length > b.length) {\n      return b.length;\n    }\n    return b.length;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 28,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.5357142857142857,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    return new Buffer(target);\n}",
+              "candidate": "function binarySearch(arr, target) {\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    return new Buffer(target);\n}",
+              "eos_hit": true,
+              "generated_token_count": 43,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.3953488372093023,
+              "repeated_line_ratio": 0.375,
+              "repeated_4gram_ratio": 0.6842105263157895
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "candidate": "function nthPrime(n) {\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 24,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.6666666666666666,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.3333333333333333
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s.length > 0) {\n        return s.join(s.length, s.length);\n    }\n    return s.join(s.length, s.length);\n  }",
+              "candidate": "function reverseString(s) {\n    if (s.length > 0) {\n        return s.join(s.length, s.length);\n    }\n    return s.join(s.length, s.length);\n  }",
+              "eos_hit": true,
+              "generated_token_count": 42,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.4523809523809524,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.2
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }",
+              "candidate": "function isAnagram(s1, s2) {\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.21875,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (a.length > 0) {\n        return b.charCodeAt(0);\n    }\n    return b.charCodeAt(0);\n  }",
+              "candidate": "function gcd(a, b) {\n    if (a.length > 0) {\n        return b.charCodeAt(0);\n    }\n    return b.charCodeAt(0);\n  }",
+              "eos_hit": true,
+              "generated_token_count": 30,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.6333333333333333,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+              "candidate": "function formatDate(dateStr) {\n    var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.1875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "sampling_t0.8_topkNone": {
+      "temperature": 0.8,
+      "top_k": null,
+      "max_new_tokens": 64,
+      "runs": [
+        {
+          "seed": 42,
+          "results": [
+            {
+              "seed": 42,
+              "generated_text": "\n  var factor = n <= maxIter;\n  var factor = n - 1;\n  var factor = n >= maxIter;\n  var factor = t * factor;\n  var factor = t * factor;\n  var factor = n - 1;\n  var factor = t * factor;\n  var factor;\n  var",
+              "candidate": "function factorial(n) {\n  var factor = n <= maxIter;\n  var factor = n - 1;\n  var factor = n >= maxIter;\n  var factor = t * factor;\n  var factor = t * factor;\n  var factor = n - 1;\n  var factor = t * factor;\n  var factor;\n  var",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.21875,
+              "repeated_line_ratio": 0.2222222222222222,
+              "repeated_4gram_ratio": 0.7619047619047619
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = nth.length, k = nth.length, nth.length, k = nth.length, k = nth.length, l = nth.length;\n\n  if (nth.length !== nth) {\n    return nth;\n  }\n  else",
+              "candidate": "function fibonacci(n) {\n  var nth = nth.length, k = nth.length, nth.length, k = nth.length, k = nth.length, l = nth.length;\n\n  if (nth.length !== nth) {\n    return nth;\n  }\n  else",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.34375,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.21739130434782608
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  return s.private(s.private(s.name));\n}",
+              "candidate": "function isPalindrome(s) {\n  return s.private(s.private(s.name));\n}",
+              "eos_hit": true,
+              "generated_token_count": 16,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.6875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var b = a.length\n  if (b == 0 || b == 0 ) {\n    return b\n  }\n\n  var a = b.length\n  var rows = b.length\n  var rows = b.length\n  var len = o.length\n  var len = o.length\n  var len = o",
+              "candidate": "function mergeSorted(a, b) {\n  var b = a.length\n  if (b == 0 || b == 0 ) {\n    return b\n  }\n\n  var a = b.length\n  var rows = b.length\n  var rows = b.length\n  var len = o.length\n  var len = o.length\n  var len = o",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.34375,
+              "repeated_line_ratio": 0.2,
+              "repeated_4gram_ratio": 0.42105263157894735
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var split = split.split(this, split).split()[2];\n  var tmpIndex = split[0];\n\n  for (i = 0; i < sizes.length; i++) {\n    start = Math.abs(i) - 1;\n    if (!isNaN(this.relative) && (",
+              "candidate": "function binarySearch(arr, target) {\n  var split = split.split(this, split).split()[2];\n  var tmpIndex = split[0];\n\n  for (i = 0; i < sizes.length; i++) {\n    start = Math.abs(i) - 1;\n    if (!isNaN(this.relative) && (",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.640625,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = n;\n  if (nth > 0) {\n    nth = nth[nth];\n  }\n  return nth;\n}",
+              "candidate": "function nthPrime(n) {\n  var nth = n;\n  if (nth > 0) {\n    nth = nth[nth];\n  }\n  return nth;\n}",
+              "eos_hit": true,
+              "generated_token_count": 35,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.5714285714285714,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s = s.replace(/[0-9]+)\\\\i+([^]+)/g, function (s) {\n    return s.replace(/[0-9]+\\\\i+([^]+)/g, function (s) {\n      return s.replace(/[0-9]+|\\\\",
+              "candidate": "function reverseString(s) {\n  var s = s.replace(/[0-9]+)\\\\i+([^]+)/g, function (s) {\n    return s.replace(/[0-9]+\\\\i+([^]+)/g, function (s) {\n      return s.replace(/[0-9]+|\\\\",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.46875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.18181818181818182
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s2 = s2.length, s2 = s2.length;\n  if (s2.length === s2.length) {\n    return s2.length;\n  }\n  return s2.length;\n}",
+              "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.length, s2 = s2.length;\n  if (s2.length === s2.length) {\n    return s2.length;\n  }\n  return s2.length;\n}",
+              "eos_hit": true,
+              "generated_token_count": 50,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.4,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var c = a.b.c, a.name = a.name;\n  if (c.length === 64) {\n    return true;\n  }\n\n  for (let b in a.b.top) {\n    var node = a.node.nodes[b.name];\n    if (",
+              "candidate": "function gcd(a, b) {\n  var c = a.b.c, a.name = a.name;\n  if (c.length === 64) {\n    return true;\n  }\n\n  for (let b in a.b.top) {\n    var node = a.node.nodes[b.name];\n    if (",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.515625,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var msg = 'Date: ' + str + ' ' + str + ' + str + ' ' + str + ' + ' ' + str + ' ' + str + ' ' + str + ' ' + str + ' + ' ' + str + ' + ' ' + str + ' ' +",
+              "candidate": "function formatDate(dateStr) {\n  var msg = 'Date: ' + str + ' ' + str + ' + str + ' ' + str + ' + ' ' + str + ' ' + str + ' ' + str + ' ' + str + ' + ' ' + str + ' + ' ' + str + ' ' +",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.140625,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.9137931034482759
+            }
+          ]
+        },
+        {
+          "seed": 123,
+          "results": [
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = Array.prototype.slice.call(this, n);\n  return .multiply(0, c);\n}",
+              "candidate": "function factorial(n) {\n  var c = Array.prototype.slice.call(this, n);\n  return .multiply(0, c);\n}",
+              "eos_hit": true,
+              "generated_token_count": 27,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.7407407407407407,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = n - 1;\n  var d = n;\n  var rnd = 0;\n  for (var j = 0; j < c.length; j++) {\n    var i=c[i];\n    var nth = n - 1;\n    var nth = n;\n    var",
+              "candidate": "function fibonacci(n) {\n  var c = n - 1;\n  var d = n;\n  var rnd = 0;\n  for (var j = 0; j < c.length; j++) {\n    var i=c[i];\n    var nth = n - 1;\n    var nth = n;\n    var",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.453125,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.11764705882352941
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = s.keys();\n  var a = Object.keys(s).reduce((a, b) => {\n    return a.trim().replace(a, b) => {\n      return a.trim().replace(a, b)\n    })\n  }).join('\\\\n');\n\n  if (typeof",
+              "candidate": "function isPalindrome(s) {\n  var keys = s.keys();\n  var a = Object.keys(s).reduce((a, b) => {\n    return a.trim().replace(a, b) => {\n      return a.trim().replace(a, b)\n    })\n  }).join('\\\\n');\n\n  if (typeof",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.578125,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.3
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  var values = [];\n  for (var i=0, len=0, len=len; i<len; i++) {\n    var key = a[i];\n    var len=a[i];\n    values.push(utils.merge(keys, (key''))",
+              "candidate": "function mergeSorted(a, b) {\n  var keys = [];\n  var values = [];\n  for (var i=0, len=0, len=len; i<len; i++) {\n    var key = a[i];\n    var len=a[i];\n    values.push(utils.merge(keys, (key''))",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.546875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  var values = [];\n  for (var i=0, i=0, l=0, l=0, l=0; i< l; i++) {\n    keys[i] = a[i]\n    new[i] = new[i]\n    new[",
+              "candidate": "function binarySearch(arr, target) {\n  var keys = [];\n  var values = [];\n  for (var i=0, i=0, l=0, l=0, l=0; i< l; i++) {\n    keys[i] = a[i]\n    new[i] = new[i]\n    new[",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.375,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var nth = nth && nth;\n  var nth = nth;\n  var t1 = nth || nth - nth;\n  while (t1 < nth) {\n    t2 = nth;\n  }\n  return nth;\n}",
+              "candidate": "function nthPrime(n) {\n  var nth = nth && nth;\n  var nth = nth;\n  var t1 = nth || nth - nth;\n  while (t1 < nth) {\n    t2 = nth;\n  }\n  return nth;\n}",
+              "eos_hit": true,
+              "generated_token_count": 59,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.3898305084745763,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = s.length;\n  var a = s;\n  var b = s.length;\n  var b = s.length;\n  var a = s.length;\n  var tmp = b.length;\n  var b = s.length;\n  for (k in keys) {\n    tmp",
+              "candidate": "function reverseString(s) {\n  var keys = s.length;\n  var a = s;\n  var b = s.length;\n  var b = s.length;\n  var a = s.length;\n  var tmp = b.length;\n  var b = s.length;\n  for (k in keys) {\n    tmp",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.28125,
+              "repeated_line_ratio": 0.1111111111111111,
+              "repeated_4gram_ratio": 0.2903225806451613
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = s1;\n\n  for (var j = 0; j < s2.length; j++){\n    var s2 = s2[j];\n\n    for (var i = 0; j < s2.length; j++){\n      var s2 = s2[j];\n      if (",
+              "candidate": "function isAnagram(s1, s2) {\n  var keys = s1;\n\n  for (var j = 0; j < s2.length; j++){\n    var s2 = s2[j];\n\n    for (var i = 0; j < s2.length; j++){\n      var s2 = s2[j];\n      if (",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.40625,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.4827586206896552
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = b.getBoundingClient();\n  var c;\n  if (a.length > 1) c = 0;\n  if (c.length === 0) c = 0;\n  return c;\n  }\n  c = c.getBoundingClient();\n  c.getBoundingClient();\n  c",
+              "candidate": "function gcd(a, b) {\n  var c = b.getBoundingClient();\n  var c;\n  if (a.length > 1) c = 0;\n  if (c.length === 0) c = 0;\n  return c;\n  }\n  c = c.getBoundingClient();\n  c.getBoundingClient();\n  c",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.359375,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var dateStr = parsedObj.url.toString() ? parsedObj.dateStr.replace(/[1-9]+/g, ').length : datetime.length;\n  var dateStr = parsedObj.dateStr.replace(/[0-9]+/g, ').length;\n  var",
+              "candidate": "function formatDate(dateStr) {\n  var dateStr = parsedObj.url.toString() ? parsedObj.dateStr.replace(/[1-9]+/g, ').length : datetime.length;\n  var dateStr = parsedObj.dateStr.replace(/[0-9]+/g, ').length;\n  var",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.46875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 999,
+          "results": [
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return;\n    }\n\n    return n ^ 1;\n}",
+              "candidate": "function factorial(n) {\n    if (n >= 0) {\n        return;\n    }\n\n    return n ^ 1;\n}",
+              "eos_hit": true,
+              "generated_token_count": 21,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8571428571428571,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return;\n    }\n\n    return n ^ n;\n}",
+              "candidate": "function fibonacci(n) {\n    if (n >= 0) {\n        return;\n    }\n\n    return n ^ n;\n}",
+              "eos_hit": true,
+              "generated_token_count": 21,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8095238095238095,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s instanceof Array) {\n        return;\n    }\n\n    return false;\n}",
+              "candidate": "function isPalindrome(s) {\n    if (s instanceof Array) {\n        return;\n    }\n\n    return false;\n}",
+              "eos_hit": true,
+              "generated_token_count": 19,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8421052631578947,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (b >= 0) {\n        return;\n    }\n\n    return b ^ 0.0;\n}",
+              "candidate": "function mergeSorted(a, b) {\n    if (b >= 0) {\n        return;\n    }\n\n    return b ^ 0.0;\n}",
+              "eos_hit": true,
+              "generated_token_count": 23,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8260869565217391,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (target instanceof Array) {\n        return new Buffer(target)\n      }\n    } else {\n      return new Buffer(target)\n    }\n  }\n\n  return value\n}",
+              "candidate": "function binarySearch(arr, target) {\n    if (target instanceof Array) {\n        return new Buffer(target)\n      }\n    } else {\n      return new Buffer(target)\n    }\n  }\n\n  return value\n}",
+              "eos_hit": true,
+              "generated_token_count": 37,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.5675675675675675,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.35294117647058826
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return;\n    }\n\n    return nthPrime(n);\n  }",
+              "candidate": "function nthPrime(n) {\n    if (n >= 0) {\n        return;\n    }\n\n    return nthPrime(n);\n  }",
+              "eos_hit": true,
+              "generated_token_count": 24,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8333333333333334,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s instanceof Array) {\n        return new Buffer(s)\n      }\n    }\n    return s",
+              "candidate": "function reverseString(s) {\n    if (s instanceof Array) {\n        return new Buffer(s)\n      }\n    }\n    return s",
+              "eos_hit": true,
+              "generated_token_count": 22,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.7272727272727273,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    return false;\n}",
+              "candidate": "function isAnagram(s1, s2) {\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    return false;\n}",
+              "eos_hit": true,
+              "generated_token_count": 54,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.3148148148148148,
+              "repeated_line_ratio": 0.2727272727272727,
+              "repeated_4gram_ratio": 0.875
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (b instanceof Eias) {\n        y = b.charCodeAt(0);\n    }\n    return y;\n  }",
+              "candidate": "function gcd(a, b) {\n    if (b instanceof Eias) {\n        y = b.charCodeAt(0);\n    }\n    return y;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 26,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8461538461538461,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (dateStr === 'MM-DD') {\n        throw new TypeError('Date string cannot be bytes');\n    }\n\n    var p = new Date();\n    kickt = [];\n    for (i = 0; i < p.length; i += 1) {\n      p[i] = String(",
+              "candidate": "function formatDate(dateStr) {\n    if (dateStr === 'MM-DD') {\n        throw new TypeError('Date string cannot be bytes');\n    }\n\n    var p = new Date();\n    kickt = [];\n    for (i = 0; i < p.length; i += 1) {\n      p[i] = String(",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.78125,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "sampling_t0.8_topk50": {
+      "temperature": 0.8,
+      "top_k": 50,
+      "max_new_tokens": 64,
+      "runs": [
+        {
+          "seed": 42,
+          "results": [
+            {
+              "seed": 42,
+              "generated_text": "\n  var factor = n <= maxIter;\n  var factor = n - 1;\n  var factor = n >= maxIter;\n  var factor = t * factor;\n  var factor = t * factor;\n  var factor = n - 1;\n  var factor = t * factor;\n  var factor;\n  var",
+              "candidate": "function factorial(n) {\n  var factor = n <= maxIter;\n  var factor = n - 1;\n  var factor = n >= maxIter;\n  var factor = t * factor;\n  var factor = t * factor;\n  var factor = n - 1;\n  var factor = t * factor;\n  var factor;\n  var",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.21875,
+              "repeated_line_ratio": 0.2222222222222222,
+              "repeated_4gram_ratio": 0.7619047619047619
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = nth.length, k = nth.length, nth.length, k = nth.length, k = nth.length, l = nth.length;\n\n  if (nth.length !== nth) {\n    return nth;\n  }\n  else",
+              "candidate": "function fibonacci(n) {\n  var nth = nth.length, k = nth.length, nth.length, k = nth.length, k = nth.length, l = nth.length;\n\n  if (nth.length !== nth) {\n    return nth;\n  }\n  else",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.34375,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.21739130434782608
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  return s.charCodeAt(s.length, s.name);\n}",
+              "candidate": "function isPalindrome(s) {\n  return s.charCodeAt(s.length, s.name);\n}",
+              "eos_hit": true,
+              "generated_token_count": 16,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8125,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var b = a.length\n  if (b == 0 || b == 0 ) {\n    return b\n  }\n\n  var a = b.length\n  var b = b.length\n  var a = b.length\n  var b = b.length\n  var b = b.length\n  var b = b",
+              "candidate": "function mergeSorted(a, b) {\n  var b = a.length\n  if (b == 0 || b == 0 ) {\n    return b\n  }\n\n  var a = b.length\n  var b = b.length\n  var a = b.length\n  var b = b.length\n  var b = b.length\n  var b = b",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.296875,
+              "repeated_line_ratio": 0.2,
+              "repeated_4gram_ratio": 0.47368421052631576
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var split = split.split(this, split).split()[2];\n  var tmpIndex = split[0];\n\n  for (i = 0; i < len; i++) {\n    var i = arr[i];\n    var index = arr[i];\n    var index = arr[index];\n   ",
+              "candidate": "function binarySearch(arr, target) {\n  var split = split.split(this, split).split()[2];\n  var tmpIndex = split[0];\n\n  for (i = 0; i < len; i++) {\n    var i = arr[i];\n    var index = arr[i];\n    var index = arr[index];\n   ",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.5,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.14814814814814814
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = n;\n  if (nth > 0) {\n    nth = nth[nth];\n  }\n  return nth;\n}",
+              "candidate": "function nthPrime(n) {\n  var nth = n;\n  if (nth > 0) {\n    nth = nth[nth];\n  }\n  return nth;\n}",
+              "eos_hit": true,
+              "generated_token_count": 35,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.5714285714285714,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s = s.replace(/[0-9]+)\\\\i+([^]+)/g, function (s) {\n    return s.replace(/[0-9]+\\\\i+([^]+)/g, function (s) {\n      return s.replace(/[0-9]+|\\\\",
+              "candidate": "function reverseString(s) {\n  var s = s.replace(/[0-9]+)\\\\i+([^]+)/g, function (s) {\n    return s.replace(/[0-9]+\\\\i+([^]+)/g, function (s) {\n      return s.replace(/[0-9]+|\\\\",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.46875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.18181818181818182
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s2 = s2.length, s2 = s2.length;\n  if (s2.length === s2.length) {\n    return s2.length;\n  }\n  return s2.length;\n}",
+              "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.length, s2 = s2.length;\n  if (s2.length === s2.length) {\n    return s2.length;\n  }\n  return s2.length;\n}",
+              "eos_hit": true,
+              "generated_token_count": 50,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.4,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var c = a.b.c, a.name = a.name;\n  if (c.length === 64) {\n    return true;\n  }\n\n  for (let b in a.b.values()) {\n    var o = a.b.key;\n    // Check for any other variables",
+              "candidate": "function gcd(a, b) {\n  var c = a.b.c, a.name = a.name;\n  if (c.length === 64) {\n    return true;\n  }\n\n  for (let b in a.b.values()) {\n    var o = a.b.key;\n    // Check for any other variables",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.5625,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var date = dateStr.format(dateStr).trim();\n  if (dateStr.length) {\n    dateStr.length = dateStr.substring(0, dateStr.length);\n    start = dateStr.slice(1, dateStr.length);\n  } else {\n    dateStr.",
+              "candidate": "function formatDate(dateStr) {\n  var date = dateStr.format(dateStr).trim();\n  if (dateStr.length) {\n    dateStr.length = dateStr.substring(0, dateStr.length);\n    start = dateStr.slice(1, dateStr.length);\n  } else {\n    dateStr.",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.421875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 123,
+          "results": [
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = Array.prototype.slice.call(this, n);\n  return c;\n}",
+              "candidate": "function factorial(n) {\n  var c = Array.prototype.slice.call(this, n);\n  return c;\n}",
+              "eos_hit": true,
+              "generated_token_count": 22,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8181818181818182,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = n - 1;\n  var d = n;\n  var rnd = 0;\n  for (var j = 0; j < c.length; j++) {\n    var i=c[i];\n    var nth = n - 1;\n    var nth = n;\n    var",
+              "candidate": "function fibonacci(n) {\n  var c = n - 1;\n  var d = n;\n  var rnd = 0;\n  for (var j = 0; j < c.length; j++) {\n    var i=c[i];\n    var nth = n - 1;\n    var nth = n;\n    var",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.453125,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.11764705882352941
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = s.getFullYear();\n  var c;\n  if (s.length > 1) c = 0;\n  if (d.length === 0) c = 0;\n  return c;\n  }\n  c = s.getFullYear();\n  if (c == 0) c =",
+              "candidate": "function isPalindrome(s) {\n  var c = s.getFullYear();\n  var c;\n  if (s.length > 1) c = 0;\n  if (d.length === 0) c = 0;\n  return c;\n  }\n  c = s.getFullYear();\n  if (c == 0) c =",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.390625,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  var values = [];\n  for (var i=0, len=0, len=len; i<len; i++) {\n    var key = a[i];\n    var len=a[i];\n    values.push(i);\n  }\n  var j;\n  for",
+              "candidate": "function mergeSorted(a, b) {\n  var keys = [];\n  var values = [];\n  for (var i=0, len=0, len=len; i<len; i++) {\n    var key = a[i];\n    var len=a[i];\n    values.push(i);\n  }\n  var j;\n  for",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.5,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  var values = [];\n  for (var i=0, i=0, l=0, l=0, l=0; i< l; i++) {\n    keys[i] = a[i]\n    new[i] = new[i]\n    new[",
+              "candidate": "function binarySearch(arr, target) {\n  var keys = [];\n  var values = [];\n  for (var i=0, i=0, l=0, l=0, l=0; i< l; i++) {\n    keys[i] = a[i]\n    new[i] = new[i]\n    new[",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.375,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var nth = nth && nth;\n  var nth = nth;\n  var t1 = nth || nth - nth;\n  while (t1 < nth) {\n    t2 = nth;\n  }\n  return nth;\n}",
+              "candidate": "function nthPrime(n) {\n  var nth = nth && nth;\n  var nth = nth;\n  var t1 = nth || nth - nth;\n  while (t1 < nth) {\n    t2 = nth;\n  }\n  return nth;\n}",
+              "eos_hit": true,
+              "generated_token_count": 59,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.3898305084745763,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = s.length;\n  var a = s;\n  var b = s.length;\n  var b = s.length;\n  var a = s.length;\n  var i;\n  var b = s.length;\n  for(var i = 0; i < b; i++)",
+              "candidate": "function reverseString(s) {\n  var keys = s.length;\n  var a = s;\n  var b = s.length;\n  var b = s.length;\n  var a = s.length;\n  var i;\n  var b = s.length;\n  for(var i = 0; i < b; i++)",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.265625,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 0.2903225806451613
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = s1;\n\n  for (var j = 0; j < s2.length; j++){\n    var s2 = s2[j];\n\n    for (var i = 0; j < s2.length; j++){\n      var s2 = s2[j];\n      if (",
+              "candidate": "function isAnagram(s1, s2) {\n  var keys = s1;\n\n  for (var j = 0; j < s2.length; j++){\n    var s2 = s2[j];\n\n    for (var i = 0; j < s2.length; j++){\n      var s2 = s2[j];\n      if (",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.40625,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.4827586206896552
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = b.getBoundingClient();\n  var c;\n  if (a.length > 1) c = 0;\n  if (c.length === 0) c = 0;\n  return c;\n  }\n  c = c.getBoundingClient();\n  c.getBoundingClient();\n  c",
+              "candidate": "function gcd(a, b) {\n  var c = b.getBoundingClient();\n  var c;\n  if (a.length > 1) c = 0;\n  if (c.length === 0) c = 0;\n  return c;\n  }\n  c = c.getBoundingClient();\n  c.getBoundingClient();\n  c",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.359375,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var dateStr = dateStr.replace('[%d-MM-DD,%d-MM-DD-DD-DD-DD');\n  var dateStr = dateStr.replace('[%d-MM-DD,%d-MM-DD-DD-DD-DD-DD-DD-",
+              "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace('[%d-MM-DD,%d-MM-DD-DD-DD-DD');\n  var dateStr = dateStr.replace('[%d-MM-DD,%d-MM-DD-DD-DD-DD-DD-DD-",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.234375,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            }
+          ]
+        },
+        {
+          "seed": 999,
+          "results": [
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return;\n    }\n\n    return n ^ 1;\n}",
+              "candidate": "function factorial(n) {\n    if (n >= 0) {\n        return;\n    }\n\n    return n ^ 1;\n}",
+              "eos_hit": true,
+              "generated_token_count": 21,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8571428571428571,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return;\n    }\n\n    return n;\n}",
+              "candidate": "function fibonacci(n) {\n    if (n >= 0) {\n        return;\n    }\n\n    return n;\n}",
+              "eos_hit": true,
+              "generated_token_count": 19,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8421052631578947,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s instanceof Array) {\n        return;\n    }\n\n    return false;\n}",
+              "candidate": "function isPalindrome(s) {\n    if (s instanceof Array) {\n        return;\n    }\n\n    return false;\n}",
+              "eos_hit": true,
+              "generated_token_count": 19,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8421052631578947,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (b >= 0) {\n        return;\n    }\n\n    return b ^ 0.0;\n}",
+              "candidate": "function mergeSorted(a, b) {\n    if (b >= 0) {\n        return;\n    }\n\n    return b ^ 0.0;\n}",
+              "eos_hit": true,
+              "generated_token_count": 23,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8260869565217391,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (target instanceof Array) {\n        return new Buffer(target)\n      }\n    } else {\n      return new Buffer(target)\n    }\n  }\n\n  return value\n}",
+              "candidate": "function binarySearch(arr, target) {\n    if (target instanceof Array) {\n        return new Buffer(target)\n      }\n    } else {\n      return new Buffer(target)\n    }\n  }\n\n  return value\n}",
+              "eos_hit": true,
+              "generated_token_count": 37,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.5675675675675675,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.35294117647058826
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return;\n    }\n\n    return nthPrime(n);\n  }",
+              "candidate": "function nthPrime(n) {\n    if (n >= 0) {\n        return;\n    }\n\n    return nthPrime(n);\n  }",
+              "eos_hit": true,
+              "generated_token_count": 24,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.8333333333333334,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s instanceof Array) {\n        return new Buffer(s)\n      }\n    }\n    return s",
+              "candidate": "function reverseString(s) {\n    if (s instanceof Array) {\n        return new Buffer(s)\n      }\n    }\n    return s",
+              "eos_hit": true,
+              "generated_token_count": 22,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.7272727272727273,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    return false;\n}",
+              "candidate": "function isAnagram(s1, s2) {\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    if (s2 === s2) {\n        return false;\n    }\n\n    return false;\n}",
+              "eos_hit": true,
+              "generated_token_count": 54,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.3148148148148148,
+              "repeated_line_ratio": 0.2727272727272727,
+              "repeated_4gram_ratio": 0.875
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (b instanceof Ep) {\n        return -1;\n      }\n    }\n    return -1;\n  }",
+              "candidate": "function gcd(a, b) {\n    if (b instanceof Ep) {\n        return -1;\n      }\n    }\n    return -1;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 25,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.68,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (dateStr === 'MM-DD') {\n        throw new TypeError('Date string cannot be a string')\n    }\n\n    if (dateStr === 'MM-DD') {\n        throw new TypeError('Date string cannot be a string')\n    }\n\n    return dateStr.parse(dateStr)\n  }",
+              "candidate": "function formatDate(dateStr) {\n    if (dateStr === 'MM-DD') {\n        throw new TypeError('Date string cannot be a string')\n    }\n\n    if (dateStr === 'MM-DD') {\n        throw new TypeError('Date string cannot be a string')\n    }\n\n    return dateStr.parse(dateStr)\n  }",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.484375,
+              "repeated_line_ratio": 0.375,
+              "repeated_4gram_ratio": 0.7857142857142857
+            }
+          ]
+        }
+      ]
+    },
+    "sampling_t0.4_topk50": {
+      "temperature": 0.4,
+      "top_k": 50,
+      "max_new_tokens": 64,
+      "runs": [
+        {
+          "seed": 42,
+          "results": [
+            {
+              "seed": 42,
+              "generated_text": "\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;",
+              "candidate": "function factorial(n) {\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;\n  var factor = n - 1;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "candidate": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  return s.isPalindrome(s)\n  .then(function (e) {\n    return e.isPalindrome(s)\n    .then(function () {\n      return e.isPalindrome(s)\n    })\n  })\n}",
+              "candidate": "function isPalindrome(s) {\n  return s.isPalindrome(s)\n  .then(function (e) {\n    return e.isPalindrome(s)\n    .then(function () {\n      return e.isPalindrome(s)\n    })\n  })\n}",
+              "eos_hit": true,
+              "generated_token_count": 58,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.43103448275862066,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var b = a.length;\n  var a = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+              "candidate": "function mergeSorted(a, b) {\n  var b = a.length;\n  var a = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 0.7931034482758621
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var result = new Array(arr).length;\n  if (result.length === 0) {\n    result.push(target);\n  }\n  if (result.length === 0) {\n    result.push(target);\n  }\n  return result;\n}",
+              "candidate": "function binarySearch(arr, target) {\n  var result = new Array(arr).length;\n  if (result.length === 0) {\n    result.push(target);\n  }\n  if (result.length === 0) {\n    result.push(target);\n  }\n  return result;\n}",
+              "eos_hit": true,
+              "generated_token_count": 55,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.4909090909090909,
+              "repeated_line_ratio": 0.3333333333333333,
+              "repeated_4gram_ratio": 0.42105263157894735
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "candidate": "function nthPrime(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0",
+              "candidate": "function reverseString(s) {\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0-9]+)\\\\/g, '');\n  var s = s.replace(/[0",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.265625,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 0.9375
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s3 = s2.length;\n  var s2 = s2.length;\n  var s2",
+              "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s2 = s2.length;\n  var s3 = s2.length;\n  var s2 = s2.length;\n  var s2",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.140625,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 0.8260869565217391
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var b = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;",
+              "candidate": "function gcd(a, b) {\n  var b = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;\n  var g = a.length;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.140625,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 0.9310344827586207
+            },
+            {
+              "seed": 42,
+              "generated_text": "\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');",
+              "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');\n  var dateStr = dateStr.replace(/h/g, '');",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.21875,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 1.0
+            }
+          ]
+        },
+        {
+          "seed": 123,
+          "results": [
+            {
+              "seed": 123,
+              "generated_text": "\n  var n = n - 1;\n  var n = n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+              "candidate": "function factorial(n) {\n  var n = n - 1;\n  var n = n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n - n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.109375,
+              "repeated_line_ratio": 0.2,
+              "repeated_4gram_ratio": 0.9047619047619048
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "candidate": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var palindrome = s.map(function (palindrome) {\n    return palindrome.replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(",
+              "candidate": "function isPalindrome(s) {\n  var palindrome = s.map(function (palindrome) {\n    return palindrome.replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(palindrome)\n    .replace(",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.3125,
+              "repeated_line_ratio": 0.16666666666666666,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n  }\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n    keys[",
+              "candidate": "function mergeSorted(a, b) {\n  var keys = [];\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n  }\n  for (var i = 0; i < keys.length; i++) {\n    keys[i] = keys[i];\n    keys[",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.34375,
+              "repeated_line_ratio": 0.2857142857142857,
+              "repeated_4gram_ratio": 0.6896551724137931
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var keys = [];\n  var key = keys.length;\n  var keys = keys.length;\n  for (var i = 0; i < keys.length; i++) {\n    var key = keys[i];\n    var key = keys[i];\n    for (var i = 0; i <",
+              "candidate": "function binarySearch(arr, target) {\n  var keys = [];\n  var key = keys.length;\n  var keys = keys.length;\n  for (var i = 0; i < keys.length; i++) {\n    var key = keys[i];\n    var key = keys[i];\n    for (var i = 0; i <",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.328125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 0.29411764705882354
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;",
+              "candidate": "function nthPrime(n) {\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;\n  var nth = nth;",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.09375,
+              "repeated_line_ratio": 0.125,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n ",
+              "candidate": "function reverseString(s) {\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n  var s = s.split('.');\n ",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s2);\n  var s2 = s2.split(s1",
+              "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s1);\n  var s2 = s2.split(s2);\n  var s2 = s2.split(s1",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.171875,
+              "repeated_line_ratio": 0.2,
+              "repeated_4gram_ratio": 0.7058823529411765
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var c = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd.push(gcd.length);\n  var gcd = b.split('.');\n  var g",
+              "candidate": "function gcd(a, b) {\n  var c = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd = b.split('.');\n  var gcd.push(gcd.length);\n  var gcd = b.split('.');\n  var g",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.25,
+              "repeated_line_ratio": 0.14285714285714285,
+              "repeated_4gram_ratio": 0.6666666666666666
+            },
+            {
+              "seed": 123,
+              "generated_text": "\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '') + 'YYYY.';\n  var dateStr = dateStr.replace(/%/g,",
+              "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '');\n  var dateStr = dateStr.replace(/%/g, '') + 'YYYY.';\n  var dateStr = dateStr.replace(/%/g,",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.28125,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 0.6666666666666666
+            }
+          ]
+        },
+        {
+          "seed": 999,
+          "results": [
+            {
+              "seed": 999,
+              "generated_text": "\n    var factor = n;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var",
+              "candidate": "function factorial(n) {\n    var factor = n;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var factor = n - 1;\n    var",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.125,
+              "repeated_line_ratio": 0.1111111111111111,
+              "repeated_4gram_ratio": 0.9090909090909091
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "candidate": "function fibonacci(n) {\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 24,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.6666666666666666,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.3333333333333333
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s.length > 0) {\n        return false;\n    }\n    return false;\n  }",
+              "candidate": "function isPalindrome(s) {\n    if (s.length > 0) {\n        return false;\n    }\n    return false;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 22,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.7272727272727273,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (a.length > b.length) {\n      return b.length;\n    }\n    return b.length;\n  }",
+              "candidate": "function mergeSorted(a, b) {\n    if (a.length > b.length) {\n      return b.length;\n    }\n    return b.length;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 28,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.5357142857142857,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    return new Buffer(target);\n}",
+              "candidate": "function binarySearch(arr, target) {\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    if (target instanceof Array) {\n        return new Buffer(target);\n    }\n    return new Buffer(target);\n}",
+              "eos_hit": true,
+              "generated_token_count": 43,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.3953488372093023,
+              "repeated_line_ratio": 0.375,
+              "repeated_4gram_ratio": 0.6842105263157895
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "candidate": "function nthPrime(n) {\n    if (n >= 0) {\n        return n - 1;\n    }\n    return n - 1;\n  }",
+              "eos_hit": true,
+              "generated_token_count": 24,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.6666666666666666,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.3333333333333333
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s.length > 0) {\n        return s.join(s.length, s.length);\n    }\n    return s.join(s.length, s.length);\n  }",
+              "candidate": "function reverseString(s) {\n    if (s.length > 0) {\n        return s.join(s.length, s.length);\n    }\n    return s.join(s.length, s.length);\n  }",
+              "eos_hit": true,
+              "generated_token_count": 42,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.4523809523809524,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.2
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }",
+              "candidate": "function isAnagram(s1, s2) {\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }\n    if (s2 === s2) {\n        return false;\n    }",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.21875,
+              "repeated_line_ratio": 0.25,
+              "repeated_4gram_ratio": 1.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    if (a.length > 0) {\n        return b.charCodeAt(0);\n    }\n    return b.charCodeAt(0);\n  }",
+              "candidate": "function gcd(a, b) {\n    if (a.length > 0) {\n        return b.charCodeAt(0);\n    }\n    return b.charCodeAt(0);\n  }",
+              "eos_hit": true,
+              "generated_token_count": 30,
+              "syntax_valid": true,
+              "unique_token_ratio": 0.6333333333333333,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            },
+            {
+              "seed": 999,
+              "generated_text": "\n    var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+              "candidate": "function formatDate(dateStr) {\n    var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+              "eos_hit": false,
+              "generated_token_count": 64,
+              "syntax_valid": false,
+              "unique_token_ratio": 0.1875,
+              "repeated_line_ratio": 0.0,
+              "repeated_4gram_ratio": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

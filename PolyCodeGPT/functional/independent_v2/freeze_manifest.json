@@ -1,0 +1,16 @@
+{
+  "benchmark": "independent_v2",
+  "files": {
+    "functional/independent_v2/spec/python_specs.py": "9bfc8b555c146927afbc5447b9136f79fe9057162a35d87a5c88fc1d8e02a596",
+    "functional/independent_v2/spec/javascript_specs.py": "dd714a7da31cce38da4606c6728b086ce58c4ee13e18e1b229085385c3718045",
+    "functional/independent_v2/spec/build_manifest.py": "41dd9f5822fc2dfcd86f6423ccce0e10f639fac4c0581cb029e99817b3b91751",
+    "functional/independent_v2/manifest.json": "3ebb5ed1d21355f1535d0be2cc4c72716d792e32efe63c511130226beba38b8c",
+    "functional/independent_v2/reference/python_refs.py": "665b3c4fbd645bfbe3899e82804a03617d824cffd821c6a6148cd72b2f26da3c",
+    "functional/independent_v2/reference/javascript_refs.js": "1efacbc1010cc06fd19ad0b2fcac8c6f6d2163dd0391d2e740b62583345fbb04",
+    "functional/independent_v2/reference/validate_references.py": "14fb670a2f4d5fc922fe82eb6438ae1180e530e4641aa3fb81dbbf2c821fc8a4"
+  },
+  "tasks": 100,
+  "cases": 328,
+  "reference_validation": "100/100 tasks, 328/328 cases (sandbox)",
+  "contamination_check": "reports/phase12b_contamination_v2.json (contamination_found=false)"
+}

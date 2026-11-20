@@ -1,0 +1,46 @@
+{
+  "checked_at_utc": "2026-11-15T15:49:18Z",
+  "source_counts": {
+    "python": 320515,
+    "javascript": 114162
+  },
+  "partition_counts": {
+    "train": 392632,
+    "valid": 20965,
+    "test": 21080
+  },
+  "total_records": 434677,
+  "language_totals": {
+    "python": 320515,
+    "javascript": 114162
+  },
+  "partition_language_counts": {
+    "train": {
+      "python": 290463,
+      "javascript": 102169
+    },
+    "valid": {
+      "python": 14671,
+      "javascript": 6294
+    },
+    "test": {
+      "python": 15381,
+      "javascript": 5699
+    }
+  },
+  "repositories": 27221,
+  "repositories_spanning_partitions": {},
+  "partition_overlaps": {
+    "train_vs_valid": 0,
+    "train_vs_test": 0,
+    "valid_vs_test": 0
+  },
+  "missing_fields": [],
+  "non_permissive_records": 0,
+  "incomplete_provenance": 0,
+  "wrong_partition_records": 0,
+  "inconsistent_original_partition": 0,
+  "problems": [],
+  "checks_passed": true,
+  "elapsed_s": 17.008616399994935
+}

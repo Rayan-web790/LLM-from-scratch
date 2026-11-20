@@ -1,0 +1,20 @@
+{
+  "steps": 8130,
+  "stage_step": 0,
+  "initial_global_step": 8130,
+  "additional_updates": 0,
+  "expected_final_global_step": 16260,
+  "tokens_seen": 133192704,
+  "micro_batches": 65036,
+  "sequences": 260142,
+  "passes": 1,
+  "elapsed_seconds": 0.002680400008102879,
+  "tokens_per_second": 49691353379.10647,
+  "skipped_steps": 0,
+  "best_val_loss": 2.3928599059581757,
+  "best_step": 8130,
+  "precision": "bf16",
+  "effective_batch_size": 32,
+  "tokens_per_step": 16384,
+  "weights_tied": true
+}

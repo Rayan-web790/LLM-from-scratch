@@ -1,0 +1,26 @@
+{
+  "backup_reason": "pre-serializer-1.1.0 state",
+  "created_utc": "2026-11-15",
+  "files": [
+    {
+      "file": "polycodegpt_tokenizer.json",
+      "size": 1095495,
+      "sha256": "f1feba02fcb9f5c85b8f90b610f5ccb350ba2950ecc1fd3847a74562ca2a6e79"
+    },
+    {
+      "file": "serializer_v1_0_0.py",
+      "size": 6231,
+      "sha256": "0d07accfa8dc46e2c66c0381dab784647bf2aaf5c0fc010d707f6c847dd29f40"
+    },
+    {
+      "file": "tokenizer_metadata.json",
+      "size": 40668,
+      "sha256": "401e8ab6b0ed0a6f983184c75881490971651790850681280c5f2e565e84675e"
+    },
+    {
+      "file": "training_input_manifest.csv",
+      "size": 101700,
+      "sha256": "b00ff0ee1f012520679533ada2cdde5ebfa4685af2c20ae582d0275e38c008b4"
+    }
+  ]
+}

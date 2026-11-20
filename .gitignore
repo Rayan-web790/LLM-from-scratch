@@ -1,0 +1,70 @@
+# Git Ignore Rules
+
+# Virtual environments
+.venv/
+.venv*/
+**/.venv*/
+venv/
+ENV/
+env/
+
+# Scratch, backups, and temporary files
+.freebuff/
+**/.scratchpad/
+**/backups/
+*.backup*
+*.backup_before_*
+*.sqlite
+*.sqlite3
+*.db
+
+# Python caches and build artifacts
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large datasets, raw downloads, and caches
+**/data/curated/*
+**/data/raw/*
+**/data/interim/*
+**/data/processed/*
+**/data/manifests/v2/token_counts.csv
+**/data/manifests/codesearchnet_license_inventory.csv
+**/data/manifests/codesearchnet_license_repo_summary.csv
+*.jsonl
+
+# Large checkpoints, run outputs, and logs
+**/checkpoints/*
+**/logs/*
+**/release/*
+**/experiments/*/runs/*
+**/experiments/*/artifacts/*
+
+# Model weights and large binaries (>50MB / GitHub 100MB limit)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.tar.gz
+*.zip
+
+# Preserve .gitkeep and essential small artifacts
+!**/.gitkeep
+!**/tokenizer/artifacts/*.json
+!**/tokenizer/artifacts/*.csv

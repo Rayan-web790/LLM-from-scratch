@@ -1,0 +1,173 @@
+{
+  "phase": "12A",
+  "generated_utc": "2026-11-17T16:26:27Z",
+  "source": "data/processed/polycodegpt_corpus/train.jsonl",
+  "original_record_count": 102169,
+  "eligible_record_count": 35658,
+  "rejected_record_count": 66511,
+  "rejection_reasons": {
+    "parse_invalid": 32830,
+    "not_standalone_function": 497,
+    "description_missing": 0,
+    "description_fragment": 12309,
+    "description_boilerplate": 367,
+    "depends_on_ecosystem": 6679,
+    "stateful_or_method": 11253,
+    "code_too_short": 0,
+    "code_too_long": 2399,
+    "name_mismatch": 105,
+    "duplicate": 0,
+    "near_duplicate": 72
+  },
+  "parse_status": {
+    "invalid": 32830,
+    "valid_script": 69339
+  },
+  "structural_kinds": {
+    "function_decl": 102167,
+    "other": 2
+  },
+  "description_categories": {
+    "plain_text": 100389,
+    "line_comment": 1773,
+    "jsdoc_block": 7
+  },
+  "description_qualities": {
+    "meaningful": 83668,
+    "fragment": 18053,
+    "boilerplate": 448
+  },
+  "duplicate_exact": 0,
+  "duplicate_near": 72,
+  "distinct_repos_original": 14738,
+  "distinct_repos_curated": 8341,
+  "token_lengths": {
+    "all_serialized": {
+      "min": 33.0,
+      "p25": 113.0,
+      "median": 178.0,
+      "p75": 309.0,
+      "p95": 816.0,
+      "max": 624879.0,
+      "mean": 308.6924703187855
+    },
+    "curated_serialized": {
+      "min": 36.0,
+      "p25": 106.0,
+      "median": 154.0,
+      "p75": 236.0,
+      "p95": 402.0,
+      "max": 512.0,
+      "mean": 183.48900667451903
+    },
+    "all_code_tokens": {
+      "min": 22.0,
+      "p25": 56.0,
+      "median": 91.0,
+      "p75": 164.0,
+      "p95": 443.0,
+      "max": 671620.0,
+      "mean": 166.93023324100264
+    },
+    "curated_code_tokens": {
+      "min": 22.0,
+      "p25": 51.0,
+      "median": 76.0,
+      "p75": 123.0,
+      "p95": 229.0,
+      "max": 441.0,
+      "mean": 96.29611868304448
+    }
+  },
+  "top_repos_curated": [
+    [
+      "eslint/eslint",
+      555
+    ],
+    [
+      "angular/material",
+      233
+    ],
+    [
+      "CuppaLabs/angular2-multiselect-dropdown",
+      194
+    ],
+    [
+      "eventbrite/britecharts",
+      178
+    ],
+    [
+      "GitbookIO/gitbook",
+      164
+    ],
+    [
+      "TerriaJS/terriajs",
+      137
+    ],
+    [
+      "feedhenry/fh-forms",
+      131
+    ],
+    [
+      "sadiqhabib/tinymce-dist",
+      127
+    ],
+    [
+      "ArnaudBuchholz/gpf-js",
+      123
+    ],
+    [
+      "cemtopkaya/kuark-db",
+      122
+    ],
+    [
+      "nhn/tui.editor",
+      102
+    ],
+    [
+      "prebid/Prebid.js",
+      102
+    ],
+    [
+      "clay/amphora",
+      100
+    ],
+    [
+      "ota-meshi/eslint-plugin-lodash-template",
+      94
+    ],
+    [
+      "zhanziyang/vue-croppa",
+      87
+    ]
+  ],
+  "rules": {
+    "parse_invalid": "V8 rejected the snippet (syntax error)",
+    "not_standalone_function": "not a single complete standalone function definition",
+    "description_missing": "no description text",
+    "description_fragment": "description is a comment fragment, not usable natural language",
+    "description_boilerplate": "description is a licence/copyright preamble",
+    "depends_on_ecosystem": "requires modules, imports/exports, or host globals",
+    "stateful_or_method": "uses `this`/object state, so not a self-contained function",
+    "code_too_short": "fewer than 12 code tokens",
+    "code_too_long": "more than 512 serialized tokens",
+    "name_mismatch": "declared function name disagrees with the corpus func_name",
+    "duplicate": "identical normalized code already kept",
+    "near_duplicate": "near-identical code already kept (minhash LSH)"
+  },
+  "thresholds": {
+    "MIN_DESCRIPTION_WORDS": 4,
+    "MIN_DESCRIPTION_CHARS": 20,
+    "MAX_DESCRIPTION_CHARS": 1200,
+    "MIN_ALPHA_RATIO": 0.5,
+    "MIN_CODE_TOKENS": 12,
+    "MAX_CODE_TOKENS": 500,
+    "MAX_SERIALIZED_TOKENS": 512,
+    "ALLOWED_KINDS": [
+      "function_decl",
+      "function_assignment",
+      "arrow_assignment"
+    ],
+    "NEAR_DUP": "15 minhash values over 5-token shingles, 3 bands of 5"
+  }
+}

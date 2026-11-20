@@ -1,0 +1,4366 @@
+{
+  "phase": 11,
+  "timestamp": "2026-11-18T14:12:57+00:00",
+  "candidate_source": "reports\\phase14_exp_c_generation.json",
+  "manifest": "functional\\independent_v3\\manifest.json",
+  "manifest_path": "functional\\independent_v3\\manifest.json",
+  "manifest_sha256": "2a7fbf3ddc43f6a2fee368d6faa711dbe8fa841343c7cf9507c919cd3baeb46c",
+  "manifest_hash": "2a7fbf3ddc43f6a2fee368d6faa711dbe8fa841343c7cf9507c919cd3baeb46c",
+  "checkpoint_step": 16260,
+  "seed": 42,
+  "safety_probes": {
+    "passed": 16,
+    "total": 16
+  },
+  "sandbox": {
+    "images": {
+      "python": "polycodegpt-sandbox-python:v1",
+      "javascript": "polycodegpt-sandbox-node:v1"
+    },
+    "limits": {
+      "memory": "128m",
+      "memory_swap": "128m",
+      "cpus": "0.50",
+      "pids": "32",
+      "nofile": "64",
+      "fsize": "1048576"
+    },
+    "timeout_s": 10.0,
+    "network": "none"
+  },
+  "success_rule": "a task succeeds only if every case passes",
+  "metrics": {
+    "python": {
+      "tasks": 50,
+      "tasks_scored": 50,
+      "infrastructure_errors": 0,
+      "syntax_valid_rate": 0.8,
+      "functional_success_rate": 0.06,
+      "test_case_pass_rate": 0.1646,
+      "runtime_error_rate": 0.38,
+      "timeout_rate": 0.0,
+      "completion_rate": 0.8,
+      "edge_case_success_rate": 0.2222,
+      "missing_entry_rate": 0.0,
+      "resource_limit_rate": 0.0,
+      "syntax_failure_rate": 0.2,
+      "functional_success_rate_executed_only": 0.075,
+      "convention_sensitivity": {
+        "tasks_passing_all_non_convention_cases": 3,
+        "rate": 0.06
+      },
+      "case_counts": {
+        "total": 164,
+        "passed": 27,
+        "normal": 101,
+        "boundary": 63,
+        "error": 0,
+        "convention": 0
+      },
+      "outcome_counts": {
+        "syntax_failure": 10,
+        "missing_entry": 0,
+        "runtime_error": 19,
+        "timeout": 0,
+        "resource_limit": 0,
+        "incorrect_output": 18,
+        "success": 3
+      }
+    },
+    "javascript": {
+      "tasks": 50,
+      "tasks_scored": 50,
+      "infrastructure_errors": 0,
+      "syntax_valid_rate": 0.46,
+      "functional_success_rate": 0.02,
+      "test_case_pass_rate": 0.0732,
+      "runtime_error_rate": 0.0,
+      "timeout_rate": 0.0,
+      "completion_rate": 0.46,
+      "edge_case_success_rate": 0.1111,
+      "missing_entry_rate": 0.0,
+      "resource_limit_rate": 0.0,
+      "syntax_failure_rate": 0.54,
+      "functional_success_rate_executed_only": 0.0435,
+      "convention_sensitivity": {
+        "tasks_passing_all_non_convention_cases": 1,
+        "rate": 0.02
+      },
+      "case_counts": {
+        "total": 164,
+        "passed": 12,
+        "normal": 101,
+        "boundary": 63,
+        "error": 0,
+        "convention": 0
+      },
+      "outcome_counts": {
+        "syntax_failure": 27,
+        "missing_entry": 0,
+        "runtime_error": 0,
+        "timeout": 0,
+        "resource_limit": 0,
+        "incorrect_output": 22,
+        "success": 1
+      }
+    }
+  },
+  "task_outcomes": [
+    {
+      "task_id": "py_v2_01",
+      "language": "python",
+      "entry": "sumSquaredValues",
+      "docstring": "Return sum(x*x for x in nums).",
+      "outcome": "success",
+      "executed": true,
+      "duration_s": 1.662,
+      "detail": "",
+      "candidate_sha256": "97fb8e232519645928e9821db347b634828f8f20fd4d5b574ff26fe59519555b",
+      "candidate_source": "def sumSquaredValues(nums):\n    \"\"\"Return sum(x*x for x in nums).\"\"\"\n    return sum(x*x for x in nums)",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "30",
+          "expected": "30"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        },
+        {
+          "name": "negV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "14",
+          "expected": "14"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_02",
+      "language": "python",
+      "entry": "count_positives",
+      "docstring": "Count strictly positive numbers in nums.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.786,
+      "detail": "1 case(s) wrong, first: basicV3 got 0 want 3",
+      "candidate_sha256": "4720400260f4e71fb6add5449f37eab1efcc6f16d75ce03359c3973b38489e9b",
+      "candidate_source": "def count_positives(nums):\n    \"\"\"Count strictly positive numbers in nums.\"\"\"\n    if nums == 0:\n        return 0\n    else:\n        return 0",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "3"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_03",
+      "language": "python",
+      "entry": "count_negatives",
+      "docstring": "Count strictly negative numbers in nums.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.683,
+      "detail": "1 case(s) wrong, first: basicV3 got 0 want 3",
+      "candidate_sha256": "bc3693e333d390d3f1cae964c7c1c90a5fc304e28365191cea05abd7d90872e8",
+      "candidate_source": "def count_negatives(nums):\n    \"\"\"Count strictly negative numbers in nums.\"\"\"\n    if len(nums) == 1:\n        return 0\n    else:\n        return 0",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "3"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_04",
+      "language": "python",
+      "entry": "max_abs",
+      "docstring": "Return max(|x|) in nums, or None if empty.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.69,
+      "detail": "4 case(s) wrong, first: basicV3 got [-3, 1, 2, 3] want 3",
+      "candidate_sha256": "6489696abb3a099a9c97fcf0f8be77437d3cecc6f4e27f843071c618f84f2a1e",
+      "candidate_source": "def max_abs(nums):\n    \"\"\"Return max(|x|) in nums, or None if empty.\"\"\"\n    if len(nums) == 1:\n        return nums\n    else:\n        return nums",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[-3, 1, 2, 3]",
+          "expected": "3"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[0]",
+          "expected": "0"
+        },
+        {
+          "name": "singleV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[-5, -4]",
+          "expected": "5"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[-3, 1, 2, 3, 4]",
+          "expected": "4"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_05",
+      "language": "python",
+      "entry": "min_abs",
+      "docstring": "Return min(|x|) in nums, or None if empty.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.73,
+      "detail": "4 case(s) wrong, first: basicV3 got [-3, 1, 2, 3] want 1",
+      "candidate_sha256": "bcbd91faa4c55c8efebed20a0a3657ed3305e081a62dc14028cc176c7af61dcd",
+      "candidate_source": "def min_abs(nums):\n    \"\"\"Return min(|x|) in nums, or None if empty.\"\"\"\n    if len(nums) == 1:\n        return nums\n    else:\n        return nums",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[-3, 1, 2, 3]",
+          "expected": "1"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[0]",
+          "expected": "0"
+        },
+        {
+          "name": "singleV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[-5, -4]",
+          "expected": "4"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[-3, 1, 2, 3, 4]",
+          "expected": "1"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_06",
+      "language": "python",
+      "entry": "all_positive",
+      "docstring": "Return True if all elements of nums are > 0.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.781,
+      "detail": "1 case(s) wrong, first: allV3 got False want True",
+      "candidate_sha256": "8938c06bd0b82c3d455f29e6a5e605c083e244304c07a745608a613073ac77cc",
+      "candidate_source": "def all_positive(nums):\n    \"\"\"Return True if all elements of nums are > 0.\"\"\"\n    if nums == 0:\n        return False\n    return False",
+      "cases": [
+        {
+          "name": "allV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "False",
+          "expected": "True"
+        },
+        {
+          "name": "someV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_07",
+      "language": "python",
+      "entry": "any_negative",
+      "docstring": "Return True if any element of nums is < 0.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.611,
+      "detail": "2 case(s) wrong, first: noV3 got True want False",
+      "candidate_sha256": "f3fd275bef98cd39448b9239392c3f8aef8dafb4c1e3ba4c5738fea7e1df65f3",
+      "candidate_source": "def any_negative(nums):\n    \"\"\"Return True if any element of nums is < 0.\"\"\"\n    if nums == 0:\n        return False\n    return True",
+      "cases": [
+        {
+          "name": "yesV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "True",
+          "expected": "True"
+        },
+        {
+          "name": "noV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "True",
+          "expected": "False"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "True",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_08",
+      "language": "python",
+      "entry": "count_zeros",
+      "docstring": "Count elements equal to 0 in nums.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "054137ad666a1ea2390a39720cf1a7b0c9f5e1bc4d6a7de0aefda2864343f206",
+      "candidate_source": "def count_zeros(nums):\n    \"\"\"Count elements equal to 0 in nums.\"\"\"\n    num_s = len(nums)\n    num_s = len(nums)\n    num_s = len(nums)\n    num_s = len(nums)\n    num_s = len(nums)\n    num_s = len(nums",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            [
+              0,
+              1,
+              0,
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_09",
+      "language": "python",
+      "entry": "sum_first_n",
+      "docstring": "Sum the first n elements (all if n > len).",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.715,
+      "detail": "NameError on case basicV3: name 'num' is not defined",
+      "candidate_sha256": "56712213a609dbae587a2aa07f555e350f23f226bb5a325d7392cb775f88b927",
+      "candidate_source": "def sum_first_n(nums, n):\n    \"\"\"Sum the first n elements (all if n > len).\n    \"\"\"\n    n = len(nums)\n    if n > len(nums):\n        return num\n    return num",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "allV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "zeroV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_10",
+      "language": "python",
+      "entry": "sum_last_n",
+      "docstring": "Sum the last n elements.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.691,
+      "detail": "UnboundLocalError on case basicV3: cannot access local variable 'num_elements' where it is not associated with a value",
+      "candidate_sha256": "ff2e324112e0064d3d82a5ca0eeeba7238ac7643c05e6451ec86609303cbdaf7",
+      "candidate_source": "def sum_last_n(nums, n):\n    \"\"\"Sum the last n elements.\"\"\"\n    num_elements = num_elements - 1\n    num_elements = num_elements - 1\n    num_elements = num_elements - 1\n    num_elements = num_elements - 1\n    num_elements = num_elements - 1\n    num_elements = num",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "allV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "zeroV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_11",
+      "language": "python",
+      "entry": "mean_rounded",
+      "docstring": "Mean of nums rounded to 2 decimals; 0 if empty.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.702,
+      "detail": "TypeError on case basicV3: '<' not supported between instances of 'list' and 'int'",
+      "candidate_sha256": "a9e3fda472b8f747ad14808010ba0d009c83eeffd4343c724daa13542918243d",
+      "candidate_source": "def mean_rounded(nums):\n    \"\"\"Mean of nums rounded to 2 decimals; 0 if empty.\"\"\"\n    if nums < 1:\n        return nums\n    else:\n        return nums",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "decV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_12",
+      "language": "python",
+      "entry": "median_simple",
+      "docstring": "Median (average of two middles when even).",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.743,
+      "detail": "NameError on case oddV3: name 'np' is not defined",
+      "candidate_sha256": "c8260e61a90ec0dc0f5e17b09fc5f0594565c35826cc94061d19ca51833c8b35",
+      "candidate_source": "def median_simple(nums):\n    \"\"\"Median (average of two middles when even).\n    \"\"\"\n    if len(nums) == 1:\n        return np.array(nums)\n    else:\n        return np.array(nums)",
+      "cases": [
+        {
+          "name": "oddV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "evenV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "singleV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_13",
+      "language": "python",
+      "entry": "range_of",
+      "docstring": "max-min of nums, or 0 if empty.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.848,
+      "detail": "NameError on case basicV3: name 'num_s' is not defined",
+      "candidate_sha256": "7f9e46ddd3de1a366832b3ed6a8484949d108981f3a0962e7c19fff24c60a87a",
+      "candidate_source": "def range_of(nums):\n    \"\"\"max-min of nums, or 0 if empty.\"\"\"\n    if len(nums) == 1:\n        return num_s\n    else:\n        return num_s",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "singleV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_14",
+      "language": "python",
+      "entry": "normalize_minmax",
+      "docstring": "Min-max scale nums to [0,1]; [] if empty; all-equal -> list of 0.0.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.511,
+      "detail": "2 case(s) wrong, first: basicV3 got [2] want [0.0, 0.3333333333333333, 0.6666666666666666, 1.0]",
+      "candidate_sha256": "f8629a7c82033321e2e975e0530febc616a7835ddf40038ca1902f9472e81915",
+      "candidate_source": "def normalize_minmax(nums):\n    \"\"\"Min-max scale nums to [0,1]; [] if empty; all-equal -> list of 0.0.\"\"\"\n    if len(nums) == 1:\n        return [nums[0]]\n    else:\n        return [nums[1]]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[2]",
+          "expected": "[0.0, 0.3333333333333333, 0.6666666666666666, 1.0]"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[0]",
+          "expected": "[0.0]"
+        },
+        {
+          "name": "equalV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[5]",
+          "expected": "[0.0, 0.0, 1.0]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_15",
+      "language": "python",
+      "entry": "reverse_words",
+      "docstring": "Reverse order of whitespace-separated words.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "504229d15dc63e762f1316ecd0ca9d70b042672e585e4f6c95f6836abba6a12c",
+      "candidate_source": "def reverse_words(s):\n    \"\"\"Reverse order of whitespace-separated words.\"\"\"\n    if s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            "hello world!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "singleV3",
+          "kind": "boundary",
+          "args": [
+            "hi!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            "!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "args": [
+            "hello world!!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_16",
+      "language": "python",
+      "entry": "count_words",
+      "docstring": "Count whitespace-separated words.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "d11991e206cf0abb9ca9b8b509a933ab04524338f6fc4ea02f8dfa61ba5ce714",
+      "candidate_source": "def count_words(s):\n    \"\"\"Count whitespace-separated words.\"\"\"\n    if s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            "a b c!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            "!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "multiV3",
+          "kind": "normal",
+          "args": [
+            "  x   y  !"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_17",
+      "language": "python",
+      "entry": "longest_word",
+      "docstring": "Longest word in s (first on ties); '' if empty.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.598,
+      "detail": "2 case(s) wrong, first: basicV3 got 'a bb ccc!' want 'ccc!'",
+      "candidate_sha256": "fead6b15055fb9aa9181a3b5512156eca9390a205deeb862dc9c006a8402140f",
+      "candidate_source": "def longest_word(s):\n    \"\"\"Longest word in s (first on ties); '' if empty.\"\"\"\n    if s.lower() == '0':\n        return s\n    else:\n        return s",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'a bb ccc!'",
+          "expected": "'ccc!'"
+        },
+        {
+          "name": "tieV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'aa bb!'",
+          "expected": "'bb!'"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "'!'",
+          "expected": "'!'"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_18",
+      "language": "python",
+      "entry": "shortest_word",
+      "docstring": "Shortest word in s (first on ties); '' if empty.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "bebaaa912fa64fd57405b036a599284a8f14fd85f55c23b4710f074a37f7be9b",
+      "candidate_source": "def shortest_word(s):\n    \"\"\"Shortest word in s (first on ties); '' if empty.\"\"\"\n    if s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            "a bb ccc!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "tieV3",
+          "kind": "normal",
+          "args": [
+            "aa bb!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            "!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_19",
+      "language": "python",
+      "entry": "words_sorted",
+      "docstring": "Sorted list of words in s.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.536,
+      "detail": "AttributeError on case basicV3: 'str' object has no attribute 'sort'",
+      "candidate_sha256": "00e72ede33e130eb27ce8394665b5e58f99c475dd9a27ab3d71cfbb391bea023",
+      "candidate_source": "def words_sorted(s):\n    \"\"\"Sorted list of words in s.\"\"\"\n    return sorted(s.sort(key=lambda x: x[0], reverse=True))",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_20",
+      "language": "python",
+      "entry": "remove_punctuation",
+      "docstring": "Remove non-alphanumeric chars, keep spaces.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "b80dcde43f4a3dc718475add0fae1b0cb75fefb835dba4c71e4299f6a7b4efa0",
+      "candidate_source": "def remove_punctuation(s):\n    \"\"\"Remove non-alphanumeric chars, keep spaces.\"\"\"\n    if s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.startswith(' ') or s.",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            "a,b! c.!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "args": [
+            "abc!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            "!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_21",
+      "language": "python",
+      "entry": "is_substring",
+      "docstring": "True if a occurs in b.",
+      "outcome": "success",
+      "executed": true,
+      "duration_s": 1.783,
+      "detail": "",
+      "candidate_sha256": "3c591b3a1b3d1fad28e9e8a779b90add17ef27bff286e643c5768c6bffa543fa",
+      "candidate_source": "def is_substring(a, b):\n    \"\"\"True if a occurs in b.\"\"\"\n    if not a:\n        return False\n    return False",
+      "cases": [
+        {
+          "name": "yesV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        },
+        {
+          "name": "noV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        },
+        {
+          "name": "empty aV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_22",
+      "language": "python",
+      "entry": "count_substring",
+      "docstring": "Non-overlapping count of sub in s.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.608,
+      "detail": "1 case(s) wrong, first: basicV3 got 0 want 3",
+      "candidate_sha256": "2aeabeef8081494f250a9f26f70543d4ffc937e385a4caab429498ff9837d41d",
+      "candidate_source": "def count_substring(s, sub):\n    \"\"\"Non-overlapping count of sub in s.\"\"\"\n    if len(s) == 1:\n        return 0\n    return 0",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "3"
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        },
+        {
+          "name": "empty subV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "0",
+          "expected": "0"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_23",
+      "language": "python",
+      "entry": "replaceAllOccurrences",
+      "docstring": "Replace all occurrences of old with new.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.647,
+      "detail": "4 case(s) wrong, first: basicV3 got [0, 1, 2, 3, 4, 5] want 'aYbYc!'",
+      "candidate_sha256": "983ab22d151af0d1626dcf3e6bab9a0a323bb151cd3d741b5c83b431cc099358",
+      "candidate_source": "def replaceAllOccurrences(s, old, new):\n    \"\"\"Replace all occurrences of old with new.\"\"\"\n    new = []\n    for i in range(len(s)):\n        new.append(i)\n    return new",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[0, 1, 2, 3, 4, 5]",
+          "expected": "'aYbYc!'"
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[0, 1, 2, 3]",
+          "expected": "'abc!'"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[0]",
+          "expected": "'!'"
+        },
+        {
+          "name": "boundary_extraV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[0]",
+          "expected": "'!'"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_24",
+      "language": "python",
+      "entry": "starts_with_vowel",
+      "docstring": "True if s starts with a vowel (case-insensitive).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "1a9cce813214e06afcac3343f9a688b19a4a2b7a31ca30cd09205a91d06e686c",
+      "candidate_source": "def starts_with_vowel(s):\n    \"\"\"True if s starts with a vowel (case-insensitive).\n    \"\"\"\n    if s.lower() == 'case-insensitive':\n        return False\n    elif s.lower() == 'case-insensitive':\n        return False\n    elif s.lower() == 'case-insensitive':\n        return False\n    elif",
+      "cases": [
+        {
+          "name": "yesV3",
+          "kind": "normal",
+          "args": [
+            "apple!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noV3",
+          "kind": "normal",
+          "args": [
+            "banana!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            "!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_25",
+      "language": "python",
+      "entry": "ends_with_digit",
+      "docstring": "True if s ends with a digit.",
+      "outcome": "success",
+      "executed": true,
+      "duration_s": 1.698,
+      "detail": "",
+      "candidate_sha256": "5a7dd2a67c6593efb18eb8f68ecd556bfb9dd07dcb90083cbb31ffb685434177",
+      "candidate_source": "def ends_with_digit(s):\n    \"\"\"True if s ends with a digit.\"\"\"\n    if s.startswith(s):\n        return False\n    return True",
+      "cases": [
+        {
+          "name": "yesV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        },
+        {
+          "name": "noV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_26",
+      "language": "python",
+      "entry": "alternating_case",
+      "docstring": "Alternating case starting uppercase.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.915,
+      "detail": "AttributeError on case basicV3: 'str' object has no attribute 'lowercase'",
+      "candidate_sha256": "dc986c56dc39947456575ff1000d4b46d7e435abf6b367772491946b8ca2b43a",
+      "candidate_source": "def alternating_case(s):\n    \"\"\"Alternating case starting uppercase.\"\"\"\n    if s.lowercase == 'lowercase':\n        return s.lowercase\n    else:\n        return s.lowercase",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "singleV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_27",
+      "language": "python",
+      "entry": "collapseWhitespaceRuns",
+      "docstring": "Collapse consecutive whitespace to one space and trim.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "049dc137a948d828843001471bcbf7c5796b54c986060d145aca4daff37aee98",
+      "candidate_source": "def collapseWhitespaceRuns(s):\n    \"\"\"Collapse consecutive whitespace to one space and trim.\"\"\"\n    if s.endswith(' ') or s.endswith(' ') or s.endswith(' ') or s.endswith(' ') or s.endswith(' ') or s.endswith(' ') or s.endswith(' ') or s.endswith(' ') or s.",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            "  a   b  !"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "args": [
+            "a b!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            "!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_28",
+      "language": "python",
+      "entry": "truncateText",
+      "docstring": "Truncate to n chars, append '...' if truncated.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.665,
+      "detail": "3 case(s) wrong, first: longV3 got 'abcdef!' want 'abc...'",
+      "candidate_sha256": "ef2c56d26527a456a14b8260bea068ef208c50b20e973128e2a663c7517659c4",
+      "candidate_source": "def truncateText(s, n):\n    \"\"\"Truncate to n chars, append '...' if truncated.\"\"\"\n    if n == 0:\n        return s\n    else:\n        return s",
+      "cases": [
+        {
+          "name": "longV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'abcdef!'",
+          "expected": "'abc...'"
+        },
+        {
+          "name": "shortV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "'ab!'",
+          "expected": "'ab!'"
+        },
+        {
+          "name": "exactV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "'abc!'",
+          "expected": "'abc...'"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "'abcdef!!'",
+          "expected": "'abc...'"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_29",
+      "language": "python",
+      "entry": "pad_left",
+      "docstring": "Left-pad s to width with char (default space).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "885b76bbf1ec5eb5ee96d17084440810c65a4501e262d0a5091312e2cf68518b",
+      "candidate_source": "def pad_left(s, width, char=' '):\n    \"\"\"Left-pad s to width with char (default space).\n    \"\"\"\n    if char == ' ':\n        return s\n    elif char == ':\n        return s\n    elif char == ':\n        return s\n    elif char == ':\n        return s\n    elif char == ':\n        return s\n    elif",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            "ab!",
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "charV3",
+          "kind": "normal",
+          "args": [
+            "ab!",
+            5,
+            "0"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "no padV3",
+          "kind": "boundary",
+          "args": [
+            "abcde!",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_30",
+      "language": "python",
+      "entry": "checkPrimality",
+      "docstring": "True if n is prime (n>=2).",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.737,
+      "detail": "2 case(s) wrong, first: twoV3 got False want True",
+      "candidate_sha256": "20efbee4cd5094b3f5d02fe16b958652e1c3468b0a2d2dedb3eb32d64aff820e",
+      "candidate_source": "def checkPrimality(n):\n    \"\"\"True if n is prime (n>=2).\n    \"\"\"\n    if n == 0:\n        return False\n    else:\n        return False",
+      "cases": [
+        {
+          "name": "primeV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        },
+        {
+          "name": "notV3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "False",
+          "expected": "False"
+        },
+        {
+          "name": "twoV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "False",
+          "expected": "True"
+        },
+        {
+          "name": "oneV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "False",
+          "expected": "True"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_31",
+      "language": "python",
+      "entry": "next_prime",
+      "docstring": "Smallest prime >= n (n>=2).",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.86,
+      "detail": "4 case(s) wrong, first: basicV3 got 0 want 11",
+      "candidate_sha256": "69070e78defd44730265ab246dd834bf886b0764e8a5205f8a74c713af93a8fc",
+      "candidate_source": "def next_prime(n):\n    \"\"\"Smallest prime >= n (n>=2).\n    \"\"\"\n    if n <= 1:\n        return 0\n    else:\n        return 0",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "11"
+        },
+        {
+          "name": "primeV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "11"
+        },
+        {
+          "name": "twoV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "3"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "13"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_32",
+      "language": "python",
+      "entry": "prime_count_upto",
+      "docstring": "Count primes <= n. Returns the computed result as specified.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.563,
+      "detail": "AttributeError on case basicV3: 'int' object has no attribute 'issub'",
+      "candidate_sha256": "17d50c5140aa9e80ffa9aad37e9f3f0a3e2e8f32ac81840853e730a6364208c7",
+      "candidate_source": "def prime_count_upto(n):\n    \"\"\"Count primes <= n. Returns the computed result as specified.\"\"\"\n    if n.issub():\n        return 0\n    else:\n        return 0",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "smallV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "noneV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_33",
+      "language": "python",
+      "entry": "gcd_two",
+      "docstring": "GCD of a, b. Returns the computed result as specified.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "aa08f2aaf18dce5fbb9df03cc6a229a4d390025ae3b2faf7b3d141f74c5c878d",
+      "candidate_source": "def gcd_two(a, b):\n    \"\"\"GCD of a, b. Returns the computed result as specified.\"\"\"\n    if not isinstance(a, int):\n        return 0\n    if isinstance(a, int):\n        return 0\n    if isinstance(b, int):\n        return 0\n    if isinstance(b, int):\n        return 0\n    if isinstance",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            13,
+            18
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "coprimeV3",
+          "kind": "normal",
+          "args": [
+            8,
+            13
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3",
+          "kind": "boundary",
+          "args": [
+            1,
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_34",
+      "language": "python",
+      "entry": "lcm_two",
+      "docstring": "LCM of a, b. Returns the computed result as specified.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.647,
+      "detail": "3 case(s) wrong, first: basicV3 got 0 want 30",
+      "candidate_sha256": "3cea09d97a42f423457d375192e30b40ad7d8aaff3853ef2ccbf160c918ac890",
+      "candidate_source": "def lcm_two(a, b):\n    \"\"\"LCM of a, b. Returns the computed result as specified.\"\"\"\n    if a == b:\n        return 0\n    else:\n        return 0",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "30"
+        },
+        {
+          "name": "coprimeV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "20"
+        },
+        {
+          "name": "zeroV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "5"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_35",
+      "language": "python",
+      "entry": "iterativeFactorialValue",
+      "docstring": "n! iteratively. Returns the computed result as specified.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.72,
+      "detail": "2 case(s) wrong, first: basicV3 got 6 want 720",
+      "candidate_sha256": "809a16e7ac9b053195c69f8167e635c8e436110e63068dd0e882b1c6879ff87a",
+      "candidate_source": "def iterativeFactorialValue(n):\n    \"\"\"\n    n! iteratively. Returns the computed result as specified.\n    \"\"\"\n    if n == 0:\n        return n\n    else:\n        return n",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "6",
+          "expected": "720"
+        },
+        {
+          "name": "zeroV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "1",
+          "expected": "1"
+        },
+        {
+          "name": "oneV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "2",
+          "expected": "2"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "7",
+          "expected": "5040"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_36",
+      "language": "python",
+      "entry": "raiseToPower",
+      "docstring": "base**exp for exp>=0.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.666,
+      "detail": "ValueError on case zero expV3: invalid exp",
+      "candidate_sha256": "bf0940baccda5abf7d5fd8786255ef5d12e320c80ac5cd06855ef0863b98513c",
+      "candidate_source": "def raiseToPower(base, exp):\n    \"\"\"base**exp for exp>=0.\n    \"\"\"\n    if exp == 0:\n        raise ValueError(\"invalid exp\")\n    if exp == 0:\n        raise ValueError(\"invalid exp\")\n    if exp == 0:\n        raise ValueError(\"invalid exp\")\n    if exp == 0:\n        raise ValueError(\"invalid exp\")",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "59049"
+        },
+        {
+          "name": "zero expV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "base 0V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "None",
+          "expected": "1"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_37",
+      "language": "python",
+      "entry": "sqrt_floor",
+      "docstring": "Floor sqrt of n. Returns the computed result as specified.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.528,
+      "detail": "NameError on case basicV3: name 'np' is not defined",
+      "candidate_sha256": "2266be3cc881c85935b0fe2fd6d4a5f34bd4cffc9f2861ea861f18bd0006d50b",
+      "candidate_source": "def sqrt_floor(n):\n    \"\"\"Floor sqrt of n. Returns the computed result as specified.\"\"\"\n    return np.sqrt(n)",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "perfectV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "zeroV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_38",
+      "language": "python",
+      "entry": "abs_diff",
+      "docstring": "|a-b|. Returns the computed result as specified.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.71,
+      "detail": "NameError on case basicV3: name 'np' is not defined",
+      "candidate_sha256": "b603ec3307e0a59b91a02cbc1994a8dc02968ce57b982a44d801de7a211296a2",
+      "candidate_source": "def abs_diff(a, b):\n    \"\"\"|a-b|. Returns the computed result as specified.\"\"\"\n    if not isinstance(a, np.ndarray):\n        return a\n    return a",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "equalV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "negV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_39",
+      "language": "python",
+      "entry": "signOfNumber",
+      "docstring": "-1/0/1 by sign of n.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.71,
+      "detail": "AttributeError on case posV3: 'int' object has no attribute 'lower'",
+      "candidate_sha256": "60b5118ddc3055115d0b519be4aa0f6e8d7dd4cd45ae2b0d53edee9e9ca5a8da",
+      "candidate_source": "def signOfNumber(n):\n    \"\"\"-1/0/1 by sign of n.\"\"\"\n    n = n.lower()\n    n = n.lower()\n    n = n.lower()\n    n = n.lower()\n    n = n.lower()\n    n = n.lower()\n    n = n.lower()\n    n",
+      "cases": [
+        {
+          "name": "posV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "negV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "zeroV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_40",
+      "language": "python",
+      "entry": "clamp_list",
+      "docstring": "Clamp each element to [lo, hi].",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.687,
+      "detail": "3 case(s) wrong, first: basicV3 got [3, 12] want [3, 5, 10, 12, 12]",
+      "candidate_sha256": "266a9651fb1418385fa4a46a4f700c1b54fa093515cf02bf6c18d83e78679d44",
+      "candidate_source": "def clamp_list(nums, lo, hi):\n    \"\"\"Clamp each element to [lo, hi].\"\"\"\n    if lo == 0:\n        return [lo, hi]\n    else:\n        return [lo, hi]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[3, 12]",
+          "expected": "[3, 5, 10, 12, 12]"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[0, 1]",
+          "expected": "[]"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[3, 12]",
+          "expected": "[3, 5, 10, 12, 12, 12]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_41",
+      "language": "python",
+      "entry": "filter_positive",
+      "docstring": "Elements > 0. Returns the computed result as specified.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.58,
+      "detail": "NameError on case basicV3: name 'num_elements' is not defined",
+      "candidate_sha256": "744532d95b3f1ff6c7a4f416e6b50ccb92c073e0ef6023465f337d9c31a3ae5d",
+      "candidate_source": "def filter_positive(nums):\n    \"\"\"Elements > 0. Returns the computed result as specified.\"\"\"\n    if num_elements == 0:\n        return num_elements\n    else:\n        return num_elements",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_42",
+      "language": "python",
+      "entry": "filter_negative",
+      "docstring": "Elements < 0. Returns the computed result as specified.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.635,
+      "detail": "UnboundLocalError on case basicV3: cannot access local variable 'num_elements' where it is not associated with a value",
+      "candidate_sha256": "b8436094d26080b10e89ed8f21a4d075e5c520384674b403c481bd7c92907788",
+      "candidate_source": "def filter_negative(nums):\n    \"\"\"Elements < 0. Returns the computed result as specified.\"\"\"\n    if num_elements is None:\n        num_elements = num_elements\n    else:\n        num_elements = num_elements\n    return num_elements",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "noneV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_43",
+      "language": "python",
+      "entry": "square_list",
+      "docstring": "Each element squared.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.696,
+      "detail": "TypeError on case basicV3: 'list' object cannot be interpreted as an integer",
+      "candidate_sha256": "49610ebe0c75322249cce69632a92e513cd30e521956367c07b3dafde71ad3cd",
+      "candidate_source": "def square_list(nums):\n    \"\"\"Each element squared.\"\"\"\n    if len(nums) == 1:\n        return [nums[0] for i in range(nums)]\n    else:\n        return [nums[1] for i in range(nums)]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "negV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_44",
+      "language": "python",
+      "entry": "cube_list",
+      "docstring": "Each element cubed. Returns the computed result as specified.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.91,
+      "detail": "UnboundLocalError on case basicV3: cannot access local variable 'num_classes' where it is not associated with a value",
+      "candidate_sha256": "c7d1758ed27fd4df0b67d3f9a37b151409da3628258b744dcebd51d97a1fa170",
+      "candidate_source": "def cube_list(nums):\n    \"\"\"Each element cubed.\"\"\"\n    if num_classes:\n        num_classes = num_classes.shape[0]\n    else:\n        num_classes = num_classes.shape[1]\n    return num_classes",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_45",
+      "language": "python",
+      "entry": "double_list",
+      "docstring": "Each element doubled.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.987,
+      "detail": "2 case(s) wrong, first: basicV3 got [2] want [2, 4, 6, 8]",
+      "candidate_sha256": "68ed1ff0e3bcdcaae102afbcdcec71dbb8fae24c17909e65a0f8d7941e05d5d7",
+      "candidate_source": "def double_list(nums):\n    \"\"\"Each element doubled.\"\"\"\n    if len(nums) == 1:\n        return [nums[0]]\n    else:\n        return [nums[1]]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[2]",
+          "expected": "[2, 4, 6, 8]"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[0]",
+          "expected": "[0]"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[2]",
+          "expected": "[2, 4, 6, 8, 10]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_46",
+      "language": "python",
+      "entry": "negate_list",
+      "docstring": "Each element negated.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "829edd69957177ae2d78f23b228a96998e59aea287e8f9491c384dc8076d9134",
+      "candidate_source": "def negate_list(nums):\n    \"\"\"Each element negated.\"\"\"\n    if num_of_num_of_num_of_num_of_num_of_num_of_num_of_num_of_num_of_num_of_num_of_num_of_num_of_num_of",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              4
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              4,
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_47",
+      "language": "python",
+      "entry": "sort_ascending",
+      "docstring": "Sorted ascending copy.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 2.168,
+      "detail": "NameError on case basicV3: name 'num_nums' is not defined",
+      "candidate_sha256": "1f9adcf3580dbd660127854522aafd59312c90d7da26c774c23a14500afe4d70",
+      "candidate_source": "def sort_ascending(nums):\n    \"\"\"Sorted ascending copy.\"\"\"\n    if len(nums) == 1:\n        return [nums[0] for i in range(num_nums)]\n    else:\n        return [nums[0] for i in range(num_nums)]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "dupV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_48",
+      "language": "python",
+      "entry": "sort_descending",
+      "docstring": "Sorted descending copy.",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.911,
+      "detail": "NameError on case basicV3: name 'num_count' is not defined",
+      "candidate_sha256": "f25862bad3893103c7ad653d8c745d1174afd44dd810fd6662c477ee48571971",
+      "candidate_source": "def sort_descending(nums):\n    \"\"\"Sorted descending copy.\"\"\"\n    if len(nums) == 1:\n        return [nums[0] for i in range(num_count)]\n    else:\n        return [nums[0] for i in range(num_count)]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_49",
+      "language": "python",
+      "entry": "unique_sorted",
+      "docstring": "Sorted unique values.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.851,
+      "detail": "2 case(s) wrong, first: basicV3 got [1] want [1, 2, 3]",
+      "candidate_sha256": "863fbde155f61dd313a253ec3d59444d944cc56ec0f76c538b0d1bc64efbd7ec",
+      "candidate_source": "def unique_sorted(nums):\n    \"\"\"Sorted unique values.\"\"\"\n    if len(nums) == 1:\n        return [nums[0]]\n    else:\n        return [nums[1]]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1]",
+          "expected": "[1, 2, 3]"
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[0]",
+          "expected": "[0]"
+        },
+        {
+          "name": "normal2V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1]",
+          "expected": "[1, 2, 3]"
+        }
+      ]
+    },
+    {
+      "task_id": "py_v2_50",
+      "language": "python",
+      "entry": "product_of_list",
+      "docstring": "Product of elements (1 if empty).",
+      "outcome": "runtime_error",
+      "executed": true,
+      "duration_s": 1.623,
+      "detail": "NameError on case basicV3: name 'num_elements' is not defined",
+      "candidate_sha256": "792c35566588ab27455d42ed05afbab330cd2320dd965a8b37bdf3a04530eab7",
+      "candidate_source": "def product_of_list(nums):\n    \"\"\"Product of elements (1 if empty).\n    \"\"\"\n    if len(nums) == 1:\n        return [nums[0] for i in range(num_elements)]\n    else:\n        return [nums[1] for i in range(num_elements)]",
+      "cases": [
+        {
+          "name": "basicV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "emptyV3",
+          "kind": "boundary",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        },
+        {
+          "name": "zeroV3",
+          "kind": "normal",
+          "status": "exception",
+          "got": "",
+          "expected": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_01",
+      "language": "javascript",
+      "entry": "sumSquaredValues",
+      "docstring": "Return sum of x*x for x in arr.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.139,
+      "detail": "3 case(s) wrong, first: basicV3V3 got 16 want 66",
+      "candidate_sha256": "ab85d1324cc86bf75c7b58e71ef45881f0d16d5d9308bc37e86374954d8fa195",
+      "candidate_source": "function sumSquaredValues(arr) {\n  var sum = arr.length;\n  var sum = 0;\n  for (var i = 0; i < arr.length; i++) {\n    sum += arr[i];\n  }\n  return sum;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "16",
+          "expected": "66"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "2",
+          "expected": "4"
+        },
+        {
+          "name": "negV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "9",
+          "expected": "39"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_02",
+      "language": "javascript",
+      "entry": "countPositive",
+      "docstring": "Count strictly positive numbers in arr.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.237,
+      "detail": "3 case(s) wrong, first: basicV3V3 got false want 4",
+      "candidate_sha256": "4f4581013c5251006b5ac851d99f10f03342ff1149f85c768bd7a8ff7a008088",
+      "candidate_source": "function countPositive(arr) {\n  var i = 0;\n  for (i = 0; i < arr.length; i++) {\n    if (arr[i] === arr[i]) {\n      return false;\n    }\n  }\n  return false;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "4"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "false",
+          "expected": "1"
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "1"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_03",
+      "language": "javascript",
+      "entry": "countNegative",
+      "docstring": "Count strictly negative numbers in arr.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.165,
+      "detail": "3 case(s) wrong, first: basicV3V3 got false want 4",
+      "candidate_sha256": "980d1c7454702fe92c1dacd78c477e0354904853469985d070a32d61dc3845ad",
+      "candidate_source": "function countNegative(arr) {\n  var i = arr.length;\n  for (i = 0; i < arr.length; i++) {\n    if (arr[i] === arr[i]) {\n      return false;\n    }\n  }\n  return false;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "4"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "false",
+          "expected": "0"
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "0"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_04",
+      "language": "javascript",
+      "entry": "maxAbsValue",
+      "docstring": "Return max(|x|) in arr, or null if empty.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.147,
+      "detail": "4 case(s) wrong, first: basicV3V3 got null want 5",
+      "candidate_sha256": "7c3f4e8ae47b035a47bac5c4df16af0c980eea3d6d79ccd23cc86f08b29e5b5a",
+      "candidate_source": "function maxAbsValue(arr) {\n  if (arr.length === 0) {\n    return arr;\n  }\n  return arr.length === 0 ? arr : null;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "null",
+          "expected": "5"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "null",
+          "expected": "2"
+        },
+        {
+          "name": "singleV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "null",
+          "expected": "5"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "null",
+          "expected": "6"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_05",
+      "language": "javascript",
+      "entry": "minAbsValue",
+      "docstring": "Return min(|x|) in arr, or null if empty.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "518ad6703e6392c79fbdc3ea12d28f2e483692a2c6b26dae10ba9a08465e9b69",
+      "candidate_source": "function minAbsValue(arr) {\n  if (arr.length === 0) {\n    return arr;\n  }\n  if (arr.length === 0) {\n    return arr;\n  }\n  if (arr.length === 0) {\n    return arr;\n  }\n  if (arr.length === 0) {\n    return arr;\n  }",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2,
+              3,
+              5
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              0,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "singleV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              -5,
+              -4,
+              -2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2,
+              3,
+              4,
+              6
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_06",
+      "language": "javascript",
+      "entry": "allPositiveValues",
+      "docstring": "Return true if every element of arr is > 0.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.086,
+      "detail": "1 case(s) wrong, first: allV3V3 got false want true",
+      "candidate_sha256": "33fcb7cf7f05444236bfa96f706f154a753a693ed1b6591b9f8f995043babb2b",
+      "candidate_source": "function allPositiveValues(arr) {\n  return arr.length === 0 && arr.length === 0 && arr.length === 0;\n}",
+      "cases": [
+        {
+          "name": "allV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "true"
+        },
+        {
+          "name": "someV3V3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "false",
+          "expected": "false"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "false",
+          "expected": "false"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_07",
+      "language": "javascript",
+      "entry": "anyNegativeValue",
+      "docstring": "Return true if any element of arr is < 0.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.107,
+      "detail": "1 case(s) wrong, first: yesV3V3 got false want true",
+      "candidate_sha256": "b5f2f0c9810554d2de3f73504f7ed2356fd734d8628773edae68104a0752845d",
+      "candidate_source": "function anyNegativeValue(arr) {\n  return arr.length === 0 && arr.length === 0 && arr.length === 0;\n}",
+      "cases": [
+        {
+          "name": "yesV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "true"
+        },
+        {
+          "name": "noV3V3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "false",
+          "expected": "false"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "false",
+          "expected": "false"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_08",
+      "language": "javascript",
+      "entry": "zeroCount",
+      "docstring": "Count elements equal to 0 in arr.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.099,
+      "detail": "3 case(s) wrong, first: basicV3V3 got false want 2",
+      "candidate_sha256": "9e489d4bb57c7db654deb7b65d78f678cc0a8d00abdc29e068c15661cd9607c9",
+      "candidate_source": "function zeroCount(arr) {\n    var i = 0;\n    for (i = 0; i < arr.length; i++) {\n        if (arr[i] === 0) {\n            return false;\n        }\n    }\n    return false;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "2"
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "false",
+          "expected": "0"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "false",
+          "expected": "1"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_09",
+      "language": "javascript",
+      "entry": "sumFirstN",
+      "docstring": "Sum the first n elements (all if n > length).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "240a4c5407d7c84f1c6490d2b5a5f9f317976a1ee5ddb2c0d93b7baf9da4e759",
+      "candidate_source": "function sumFirstN(arr, n) {\n  var n = arr.length;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7
+            ],
+            2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "allV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              6
+            ],
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              6
+            ],
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_10",
+      "language": "javascript",
+      "entry": "sumLastN",
+      "docstring": "Sum the last n elements.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "c3da0e57fc3a3ca62ad244d4ced4d3f28eb3bc6e05c96a47746e2a6702d9a58f",
+      "candidate_source": "function sumLastN(arr, n) {\n  var n = arr.length;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;\n  var n = n - 1;",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7
+            ],
+            2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "allV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              6
+            ],
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              6
+            ],
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            2
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_11",
+      "language": "javascript",
+      "entry": "roundedMean",
+      "docstring": "Mean of arr rounded to 2 decimals; 0 if empty.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.178,
+      "detail": "3 case(s) wrong, first: basicV3V3 got [1,2,3,4,6] want 3.2",
+      "candidate_sha256": "e725a38f161809faa6e031e7a5226081243804b5ca2032dd0f7b6657b3ea2bae",
+      "candidate_source": "function roundedMean(arr) {\n    var i = 0;\n    for (i = 0; i < arr.length; i++) {\n        if (arr[i] < 0) {\n            arr[i] = arr[i];\n        }\n    }\n    return arr;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1,2,3,4,6]",
+          "expected": "3.2"
+        },
+        {
+          "name": "decV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1,2,3,5]",
+          "expected": "2.75"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[0,2]",
+          "expected": "1"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_12",
+      "language": "javascript",
+      "entry": "simpleMedian",
+      "docstring": "Median (average of two middles when even).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "9ac00ca1df938305d045f21169647d218536a168e8c5ec36c8f1d465793dc744",
+      "candidate_source": "function simpleMedian(arr) {\n  var i = arr.length;\n  for (i = 0; i < arr.length; i++) {\n    var mid = arr[i];\n    for (i = 0; i < mid; i++) {\n      mid = mid + mid;\n      arr[mid] = mid;\n    }\n ",
+      "cases": [
+        {
+          "name": "oddV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              6
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "evenV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "singleV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              5,
+              6,
+              8
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_13",
+      "language": "javascript",
+      "entry": "valueRange",
+      "docstring": "max-min of arr, or 0 if empty.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.189,
+      "detail": "4 case(s) wrong, first: basicV3V3 got [] want 5",
+      "candidate_sha256": "e0eeefc83d4035d6c8012acf85c8c719ddd8fb137580bfb2d2a9b83f0f441d31",
+      "candidate_source": "function valueRange(arr) {\n    var arr = [];\n    for (var i = 0; i < arr.length; i++) {\n        arr.push(arr[i]);\n    }\n    return arr;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "5"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "2"
+        },
+        {
+          "name": "singleV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "3"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "6"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_14",
+      "language": "javascript",
+      "entry": "minMaxNormalize",
+      "docstring": "Min-max scale arr to [0,1]; [] if empty; all-equal -> array of 0.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "2e090cdf9470f1cfb6494c54b86da72e9a1c150620c56e9ccfa3e1c875a393cf",
+      "candidate_source": "function minMaxNormalize(arr) {\n  var min = arr.length;\n  var max = arr.length;\n  var max = arr.length;\n  var max = arr.length;\n  var max = arr.length;\n  var max = arr.length;\n  var max = arr.length;\n  var max = arr.length;",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              6
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              0,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "equalV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              5,
+              5,
+              6,
+              8
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_15",
+      "language": "javascript",
+      "entry": "reverseWordOrder",
+      "docstring": "Reverse order of whitespace-separated words.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.123,
+      "detail": "4 case(s) wrong, first: basicV3V3 got [\"h\",\"e\",\"l\",\"l\",\"o\",\" \",\"w\",\"o\",\"r\",\"l\",\"d\",\"!\",\"?\",\"!\"] want \"world!?! hello\"",
+      "candidate_sha256": "23a85500ef9c47fa96fbb74fd1752fc643402649eb24b3600790969ff8b9b35c",
+      "candidate_source": "function reverseWordOrder(s) {\n  var result = [];\n  for (var i = 0; i < s.length; i++) {\n    result.push(s[i]);\n  }\n  return result;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[\"h\",\"e\",\"l\",\"l\",\"o\",\" \",\"w\",\"o\",\"r\",\"l\",\"d\",\"!\",\"?\",\"!\"]",
+          "expected": "\"world!?! hello\""
+        },
+        {
+          "name": "singleV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[\"h\",\"i\",\"!\",\"?\",\"!\"]",
+          "expected": "\"hi!?!\""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[\"!\",\"?\",\"!\"]",
+          "expected": "\"!?!\""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[\"h\",\"e\",\"l\",\"l\",\"o\",\" \",\"w\",\"o\",\"r\",\"l\",\"d\",\"!\",\"!\",\"?\",\"!\"]",
+          "expected": "\"world!!?! hello\""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_16",
+      "language": "javascript",
+      "entry": "countWordsInText",
+      "docstring": "Count whitespace-separated words.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "59852b5c941d83b2a778b4ececcbf089b0eb416c3b5fe7f7cc2d2aaeb8085f74",
+      "candidate_source": "function countWordsInText(s) {\n  var words = s.split('\\\\n');\n  var words = words.split('\\\\n');\n  var words = words.split('\\\\n');\n  var words = words.split('\\\\n');\n  var words = words.split('\\\\n');\n  var words = words.split('\\\\n');\n  var words =",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "a b c!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "multiV3V3",
+          "kind": "normal",
+          "args": [
+            "  x   y  !?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_17",
+      "language": "javascript",
+      "entry": "longestWord",
+      "docstring": "Longest word in s (first on ties); '' if empty.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "ca4b46f7436c85a4fdbcfabafd407b091a86f925f95f4eba3cbe8b0f7b7a0d14",
+      "candidate_source": "function longestWord(s) {\n  var s = s.split(' ');\n  var i = 0;\n  for (i = 0; i < s.length; i++) {\n    s = s[i];\n    if (s[i] === '0') {\n      s = s[i];\n    }\n  }\n  return s",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "a bb ccc!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "tieV3V3",
+          "kind": "normal",
+          "args": [
+            "aa bb!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_18",
+      "language": "javascript",
+      "entry": "shortestWord",
+      "docstring": "Shortest word in s (first on ties); '' if empty.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "7e1f298a7e8ee83b0664e940fe8044fe9f002afade876821e1ee5d780c768fab",
+      "candidate_source": "function shortestWord(s) {\n  if (s.length === 0) return s;\n  if (s.length === 0) return s;\n  if (s.length === 0) return s;\n  if (s.length === 0) return s;\n  if (s.length === 0) return s;\n  if (s",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "a bb ccc!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "tieV3V3",
+          "kind": "normal",
+          "args": [
+            "aa bb!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_19",
+      "language": "javascript",
+      "entry": "sortedWords",
+      "docstring": "Sorted list of words in s.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.108,
+      "detail": "3 case(s) wrong, first: basicV3V3 got [\"b\",\"a\",\"n\",\"a\",\"n\",\"a\",\" \",\"a\",\"p\",\"p\",\"l\",\"e\",\" \",\"c\",\"h\",\"e\",\"r\",\"r\",\"y\",\"!\",\"?\",\"!\"] want [\"apple\",\"banana\",\"cherry!?!\"]",
+      "candidate_sha256": "6f9f2508bc9a9a3adf04f9e09fb665185880c89fbf3b556eaa3ddde30a7747d9",
+      "candidate_source": "function sortedWords(s) {\n  var result = [];\n  for (var i = 0; i < s.length; i++) {\n    result.push(s[i]);\n  }\n  return result;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[\"b\",\"a\",\"n\",\"a\",\"n\",\"a\",\" \",\"a\",\"p\",\"p\",\"l\",\"e\",\" \",\"c\",\"h\",\"e\",\"r\",\"r\",\"y\",\"!\",\"?\",\"!\"]",
+          "expected": "[\"apple\",\"banana\",\"cherry!?!\"]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[\"!\",\"?\",\"!\"]",
+          "expected": "[\"!?!\"]"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[\"b\",\"a\",\"n\",\"a\",\"n\",\"a\",\" \",\"a\",\"p\",\"p\",\"l\",\"e\",\" \",\"c\",\"h\",\"e\",\"r\",\"r\",\"y\",\"!\",\"!\",\"?\",\"!\"]",
+          "expected": "[\"apple\",\"banana\",\"cherry!!?!\"]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_20",
+      "language": "javascript",
+      "entry": "stripPunctuation",
+      "docstring": "Remove non-alphanumeric chars, keep spaces.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "b6f99b88dfd18e5810c1483618a794a618f4e9337a83e137b864565a69dd9f17",
+      "candidate_source": "function stripPunctuation(s) {\n  var s = s.replace(/[\\\\s\\\\s\\\\s]/g, '');\n  var s = s.replace(/[\\\\s\\\\s\\\\s]/g, '');\n  var s = s.replace(/[\\\\s\\\\s\\\\s]/g, '');\n  var s = s.replace(/[\\\\s",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "a,b! c.!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "args": [
+            "abc!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_21",
+      "language": "javascript",
+      "entry": "isSubstring",
+      "docstring": "True if a occurs in b.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "1bdac8359f48c98745cbfb9a791f61ca6ede9b23298191490c0d335f7af36e42",
+      "candidate_source": "function isSubstring(a, b) {\n  return a.length === b.length && a.length === b.length && a.length === b.length && a.length === b.length && a.length === b.length && a.length === b.length && a.length === b.length && a.length === b.",
+      "cases": [
+        {
+          "name": "yesV3V3",
+          "kind": "normal",
+          "args": [
+            "bc!?!",
+            "abcd"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noV3V3",
+          "kind": "normal",
+          "args": [
+            "xy!?!",
+            "abcd"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty aV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!",
+            "abcd"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_22",
+      "language": "javascript",
+      "entry": "countSubstring",
+      "docstring": "Non-overlapping count of sub in s.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "2b67480afac9b497587b84cb875da67b9673d1915a3eac4b32f6164b002c2275",
+      "candidate_source": "function countSubstring(s, sub) {\n  var sub = s.length\n  var subLength = sub.length\n  var subLength = sub.length\n  var subLength = sub.length\n  var subLength = subLength\n  var subLength = subLength\n  var subLength = subLength\n  var subLength = subLength\n  var subLength =",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "ababab!?!",
+            "ab"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "args": [
+            "abc!?!",
+            "xy"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "empty subV3V3",
+          "kind": "boundary",
+          "args": [
+            "abc!?!",
+            ""
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_23",
+      "language": "javascript",
+      "entry": "replaceAllOccurrences",
+      "docstring": "Replace all occurrences of old with new.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "0dc43d8db04ddfcd77b7de365a4b595931da73c68b6a53efe789f70dfdf15b8c",
+      "candidate_source": "function replaceAllOccurrences(s, oldStr, newStr) {\n  var newStr = newStr.replace(newStr, '');\n  var newStr = newStr.replace(newStr, '');\n  var newStr = newStr.replace(newStr, '');\n  var newStr = newStr.replace(newStr, '');\n  var newStr = newStr.",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "aXbXc!?!",
+            "X",
+            "Y"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "args": [
+            "abc!?!",
+            "X",
+            "Y"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "normal",
+          "args": [
+            "!?!",
+            "a",
+            "b"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "boundary_extraV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!",
+            "",
+            ""
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_24",
+      "language": "javascript",
+      "entry": "startsWithVowel",
+      "docstring": "True if s starts with a vowel (case-insensitive).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "2230d437daa268ae4af6ec9d99fd093b4941761601bf324d7c16be24f6d824d4",
+      "candidate_source": "function startsWithVowel(s) {\n  if (s.length === 0) {\n    return false;\n  }\n  if (s.length === 0) {\n    return false;\n  }\n  if (s.length === 0) {\n    return false;\n  }\n  if (s.length === 0) {\n    return false;\n  }",
+      "cases": [
+        {
+          "name": "yesV3V3",
+          "kind": "normal",
+          "args": [
+            "apple!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noV3V3",
+          "kind": "normal",
+          "args": [
+            "banana!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_25",
+      "language": "javascript",
+      "entry": "endsWithDigit",
+      "docstring": "True if s ends with a digit.",
+      "outcome": "success",
+      "executed": true,
+      "duration_s": 1.099,
+      "detail": "",
+      "candidate_sha256": "f467fe38672d89aea4991f374d413bf144588e108817c13960d1e7f05c8deecb",
+      "candidate_source": "function endsWithDigit(s) {\n    if (s.length === 0) {\n        return false;\n    }\n    if (s.length === 0) {\n        return false;\n    }\n    return false;\n}",
+      "cases": [
+        {
+          "name": "yesV3V3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "false",
+          "expected": "false"
+        },
+        {
+          "name": "noV3V3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "false",
+          "expected": "false"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "false",
+          "expected": "false"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_26",
+      "language": "javascript",
+      "entry": "alternateCase",
+      "docstring": "Alternating case starting uppercase.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "b264d5fcec3800cea72023417ee6282948dbf756f034ea931d764d1bf83379c2",
+      "candidate_source": "function alternateCase(s) {\n  if (s.length === 0) {\n    return s;\n  }\n  if (s.length === 0) {\n    return s;\n  }\n  if (s.length === 0) {\n    return s;\n  }\n  if (s.length === 0) {\n    return s;\n  }",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "hello!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "singleV3V3",
+          "kind": "boundary",
+          "args": [
+            "a!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            "hello!!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_27",
+      "language": "javascript",
+      "entry": "collapseWhitespaceRuns",
+      "docstring": "Collapse consecutive whitespace to one space and trim.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "21f4a79544a4f13ac18d950159fb71e8e807e8cc7d3374a09f05b339c31fe888",
+      "candidate_source": "function collapseWhitespaceRuns(s) {\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i = 0;\n  var i =",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "  a   b  !?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "args": [
+            "a b!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            "!?!"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_28",
+      "language": "javascript",
+      "entry": "truncateText",
+      "docstring": "Truncate to n chars, append '...' if truncated.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "f876dba7bd62481715de7cf94071667e209b0790104a81d8f49854d40a41060b",
+      "candidate_source": "function truncateText(s, n) {\n  if (s.length > 0) {\n    s = s.slice(0, s.length - 1);\n  }\n  if (s.length > 0) {\n    s = s.slice(0, s.length - 1);\n  }\n  if (s.length > 0) {",
+      "cases": [
+        {
+          "name": "longV3V3",
+          "kind": "normal",
+          "args": [
+            "abcdef!?!",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "shortV3V3",
+          "kind": "boundary",
+          "args": [
+            "ab!?!",
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "exactV3V3",
+          "kind": "boundary",
+          "args": [
+            "abc!?!",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            "abcdef!!?!",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_29",
+      "language": "javascript",
+      "entry": "padStringLeft",
+      "docstring": "Left-pad s to width with char (default space).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "9805754e28d6cb8b01a5d51a0c31242bd1d4da0b0206dab586dfd96c9e5c1e8b",
+      "candidate_source": "function padStringLeft(s, width, ch=' ') {\n  var s = s.split(separator);\n  var s = s.split(separator);\n  var s = s.split(separator);\n  var s = s.split(separator);\n  var s = s.split(separator);\n  var s = s.split(separator);\n  var s =",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            "ab!?!",
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "charV3V3",
+          "kind": "normal",
+          "args": [
+            "ab!?!",
+            5,
+            "0"
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "no padV3V3",
+          "kind": "boundary",
+          "args": [
+            "abcde!?!",
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_30",
+      "language": "javascript",
+      "entry": "isPrimeNumber",
+      "docstring": "True if n is prime (n>=2).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "a66b83e874bd83ad35f49052c7213389ac79ae563e28e67f9d58975de2658ebb",
+      "candidate_source": "function isPrimeNumber(n) {\n  return n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n === 0 || n ===",
+      "cases": [
+        {
+          "name": "primeV3V3",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "notV3V3",
+          "kind": "normal",
+          "args": [
+            11
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "twoV3V3",
+          "kind": "boundary",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "oneV3V3",
+          "kind": "boundary",
+          "args": [
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_31",
+      "language": "javascript",
+      "entry": "nextPrimeNumber",
+      "docstring": "Smallest prime >= n (n>=2).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "7ee94b290d9cdf97f3ce57ce3fe746b90cb9e51d2e3bc79012e89609465c9161",
+      "candidate_source": "function nextPrimeNumber(n) {\n  var n = Math.floor(n / 2);\n  var n = Math.floor(n / 2);\n  var n = Math.floor(n / 2);\n  var n = Math.floor(n / 2);\n  var n = Math.floor(n / 2);\n  var n =",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            13
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "primeV3V3",
+          "kind": "boundary",
+          "args": [
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "twoV3V3",
+          "kind": "boundary",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            14
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_32",
+      "language": "javascript",
+      "entry": "primeCount",
+      "docstring": "Count primes <= n. Returns the computed result as specified.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "986e82d0c132e37ddba4798f2c065bdf5e716fb11c02abcb70200151adc5c0ab",
+      "candidate_source": "function primeCount(n) {\n  var result = [];\n  for (var i = 0; i < n; i++) {\n    result.push(Math.floor(Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random() *",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            13
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "smallV3V3",
+          "kind": "boundary",
+          "args": [
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "boundary",
+          "args": [
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            14
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_33",
+      "language": "javascript",
+      "entry": "gcdPair",
+      "docstring": "Compute the greatest common divisor of two integers a and b using the Euclidean algorithm.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "8fb934d85fd83107ff35fd30280ff93dd40ae1f7c14a5a1decca4e2ae8c12e11",
+      "candidate_source": "function gcdPair(a, b) {\n  var a = a.length;\n  var b = a.length;\n  var b = a.length;\n  var b = a.length;\n  var c = a[0];\n  var c = a[1];\n  var c = a[2];\n  var c = a[2];",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            15,
+            18
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "coprimeV3V3",
+          "kind": "normal",
+          "args": [
+            10,
+            13
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "boundary",
+          "args": [
+            3,
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_34",
+      "language": "javascript",
+      "entry": "lcmPair",
+      "docstring": "Compute the least common multiple of two integers a and b.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "4b3e4fc47a686785f1dec48cec9bcbf7f25a1fbf328401c91b7329b87a153535",
+      "candidate_source": "function lcmPair(a, b) {\n  var a = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var c = b.length;\n  var c = b.length;\n  var c = b.length;\n  var c = c.length;",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            7,
+            6
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "coprimeV3V3",
+          "kind": "normal",
+          "args": [
+            6,
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "boundary",
+          "args": [
+            3,
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_35",
+      "language": "javascript",
+      "entry": "iterativeFactorial",
+      "docstring": "n! iteratively. Returns the computed result as specified.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "8ac7cc67a81738571f6970c2dc9b7a23df142d40a7eb3990fe93b0e13db53ef7",
+      "candidate_source": "function iterativeFactorial(n) {\n  var result = [];\n  for (var i = 0; i < n; i++) {\n    result.push(Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random() * Math.random()",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            8
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "boundary",
+          "args": [
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "oneV3V3",
+          "kind": "boundary",
+          "args": [
+            4
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "args": [
+            9
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_36",
+      "language": "javascript",
+      "entry": "powerOf",
+      "docstring": "Return base raised to exp for exp>=0.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "38ea75daf0d2584a9a7c8416b5e121c3f882a4e7ac1ba8897500318d6adab33a",
+      "candidate_source": "function powerOf(base, exp) {\n  if (typeof base === 'number') {\n    return base;\n  }\n  if (typeof exp === 'number') {\n    return base;\n  }\n  if (typeof exp === 'number') {\n    return base;\n  }\n  if (typeof exp === 'number') {\n    return base;\n  }",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            5,
+            10
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zero expV3V3",
+          "kind": "boundary",
+          "args": [
+            8,
+            0
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "base 0V3V3",
+          "kind": "normal",
+          "args": [
+            3,
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_37",
+      "language": "javascript",
+      "entry": "floorSqrt",
+      "docstring": "Return floor(sqrt(n)) for n >= 0.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.123,
+      "detail": "4 case(s) wrong, first: basicV3V3 got 3.605551275463989 want 3",
+      "candidate_sha256": "eb6ee680c3e2168e2b1c0967e3357966eb1262b2fadfa09ac33093a05615b656",
+      "candidate_source": "function floorSqrt(n) {\n    var floor = Math.sqrt(n);\n    return floor;\n  }",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "3.605551275463989",
+          "expected": "3"
+        },
+        {
+          "name": "perfectV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "4.358898943540674",
+          "expected": "4"
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "1.7320508075688772",
+          "expected": "1"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "3.7416573867739413",
+          "expected": "3"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_38",
+      "language": "javascript",
+      "entry": "absoluteDifference",
+      "docstring": "Return the absolute difference |a-b|.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "c44879c6a9545e810efaddadf544aa92fe5cec0449246be264a7305a760b5023",
+      "candidate_source": "function absoluteDifference(a, b) {\n  if (a.length < b.length) {\n    return 0;\n  }\n  if (a.length > b.length) {\n    return 0;\n  }\n  if (a.length > b.length) {\n    return 0;\n  }\n  if (a.length > b.length",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            6,
+            7
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "equalV3V3",
+          "kind": "boundary",
+          "args": [
+            8,
+            5
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "negV3V3",
+          "kind": "normal",
+          "args": [
+            1,
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_39",
+      "language": "javascript",
+      "entry": "signOf",
+      "docstring": "-1/0/1 by sign of n.",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "a789b76d69e25764c28f1f663be4fa175d0cb02e1e687bd6a03be0b6878aea45",
+      "candidate_source": "function signOf(n) {\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;\n    var n = n.length;",
+      "cases": [
+        {
+          "name": "posV3V3",
+          "kind": "normal",
+          "args": [
+            8
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "negV3V3",
+          "kind": "normal",
+          "args": [
+            -6
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "boundary",
+          "args": [
+            3
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_40",
+      "language": "javascript",
+      "entry": "clampArray",
+      "docstring": "Clamp each element to [lo, hi].",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.158,
+      "detail": "2 case(s) wrong, first: basicV3V3 got [1,5,10,15,16,18] want [3,5,10,12,12,12]",
+      "candidate_sha256": "7b24bc7dc881ec830dcb718072c536e5e9ff0df8f071e75bb8d355d20bb9e322",
+      "candidate_source": "function clampArray(arr, lo, hi) {\n  var i = 0;\n  for (i = 0; i < arr.length; i++) {\n    arr[i] = arr[i];\n  }\n  return arr;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1,5,10,15,16,18]",
+          "expected": "[3,5,10,12,12,12]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[]",
+          "expected": "[]"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1,5,10,15,16,17,19]",
+          "expected": "[3,5,10,12,12,12,12]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_41",
+      "language": "javascript",
+      "entry": "positiveFilter",
+      "docstring": "Yield a subset of arr consisting solely of values above zero, leaving the input untouched.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.185,
+      "detail": "3 case(s) wrong, first: basicV3V3 got 0 want [2,4,5,7]",
+      "candidate_sha256": "fdd06762ed107b377b6d3d5cd8bbe18d13e23b180a98dd91cffdda0ed4787ca2",
+      "candidate_source": "function positiveFilter(arr) {\n  var arrLen = arr.length;\n  var i;\n  for (i = 0; i < arrLen; i++) {\n    arrLen--;\n    arrLen--;\n    arrLen--;\n  }\n  return arrLen;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "0",
+          "expected": "[2,4,5,7]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "-1",
+          "expected": "[2]"
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "1",
+          "expected": "[1]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_42",
+      "language": "javascript",
+      "entry": "negativeFilter",
+      "docstring": "Return the elements of arr that are strictly less than zero.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.082,
+      "detail": "1 case(s) wrong, first: basicV3V3 got [] want [-1,-3]",
+      "candidate_sha256": "e69be2bc19686d0adf452d2ef3eba02083c58a47dd37b6b5d91f8ba68b8a7b28",
+      "candidate_source": "function negativeFilter(arr) {\n  var arr = [];\n  for (var i = 0; i < arr.length; i++) {\n    arr.push(arr[i]);\n  }\n  return arr;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[-1,-3]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[]",
+          "expected": "[]"
+        },
+        {
+          "name": "noneV3V3",
+          "kind": "normal",
+          "status": "pass",
+          "got": "[]",
+          "expected": "[]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_43",
+      "language": "javascript",
+      "entry": "squareArray",
+      "docstring": "Each element squared.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 0.983,
+      "detail": "3 case(s) wrong, first: basicV3V3 got [1,2,3,4,6] want [1,4,9,16,36]",
+      "candidate_sha256": "340334a58c982be6c6717163e51b0e021a53b28db11104e589f80b51d2962d6d",
+      "candidate_source": "function squareArray(arr) {\n    var result = [];\n    for (var i = 0; i < arr.length; i++) {\n        result.push(arr[i]);\n    }\n    return result;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1,2,3,4,6]",
+          "expected": "[1,4,9,16,36]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[0,2]",
+          "expected": "[0,4]"
+        },
+        {
+          "name": "negV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[-2,-1,1]",
+          "expected": "[4,1,1]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_44",
+      "language": "javascript",
+      "entry": "cubeArray",
+      "docstring": "Return a new array with each element of arr cubed.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.194,
+      "detail": "3 case(s) wrong, first: basicV3V3 got [1,2,3,4,6] want [1,8,27,64,216]",
+      "candidate_sha256": "eb02f931d9126c392e11f67754ec53242d328e5bb5888ebfa12bfe45c88e0188",
+      "candidate_source": "function cubeArray(arr) {\n  var i, j, j, j;\n  for (i = 0; i < arr.length; i++) {\n    j = arr[i];\n    if (j === arr[j]) {\n      return arr[j];\n    }\n  }\n  return arr;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1,2,3,4,6]",
+          "expected": "[1,8,27,64,216]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "[0,8]"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[1,2,3,4,5,7]",
+          "expected": "[1,8,27,64,125,343]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_45",
+      "language": "javascript",
+      "entry": "doubleArray",
+      "docstring": "Return a new array with each element of arr doubled.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.27,
+      "detail": "3 case(s) wrong, first: basicV3V3 got [] want [2,4,6,8,12]",
+      "candidate_sha256": "7828625a377cc753eabde694bb9847bba7a8c6a0e0386501bb7e5c7e5e104039",
+      "candidate_source": "function doubleArray(arr) {\n  var arr = [];\n  for (var i = 0; i < arr.length; i++) {\n    arr.push(arr[i]);\n  }\n  return arr;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[2,4,6,8,12]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[0,4]"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[2,4,6,8,10,14]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_46",
+      "language": "javascript",
+      "entry": "negateArray",
+      "docstring": "Return a new array with each element of arr negated.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.037,
+      "detail": "3 case(s) wrong, first: basicV3V3 got [] want [-1,2,-3,-4,-6]",
+      "candidate_sha256": "37e4055605a40f93d2e7ea2dfc241c98723f4bb328f6b54a8be9798b1aa66fed",
+      "candidate_source": "function negateArray(arr) {\n  var arr = [];\n  for (var i = 0; i < arr.length; i++) {\n    arr.push(arr[i]);\n  }\n  return arr;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[-1,2,-3,-4,-6]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[0,-2]"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[]",
+          "expected": "[-1,2,-3,-4,-5,-7]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_47",
+      "language": "javascript",
+      "entry": "ascendingSort",
+      "docstring": "Sorted ascending copy.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.073,
+      "detail": "2 case(s) wrong, first: basicV3V3 got [3,1,2,3,5] want [1,2,3,3,5]",
+      "candidate_sha256": "46a202edada36cd091f45ebe90ef7ecf17c9de7a5b15975dd55509c3617478d9",
+      "candidate_source": "function ascendingSort(arr) {\n    var result = [];\n    for (var i = 0; i < arr.length; i++) {\n        result.push(arr[i]);\n    }\n    return result;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[3,1,2,3,5]",
+          "expected": "[1,2,3,3,5]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[0,2]",
+          "expected": "[0,2]"
+        },
+        {
+          "name": "dupV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[2,2,1,2,4]",
+          "expected": "[1,2,2,2,4]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_48",
+      "language": "javascript",
+      "entry": "descendingSort",
+      "docstring": "Return a sorted copy of arr in descending order.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.203,
+      "detail": "3 case(s) wrong, first: basicV3V3 got 1 want [5,3,3,2,1]",
+      "candidate_sha256": "7111744860efebeff584b2e5e4f80b6640be7e1c2b79d706d8a161433b7de16d",
+      "candidate_source": "function descendingSort(arr) {\n  var arrLen = arr.length;\n  var i;\n  for (i = 0; i < arrLen; i++) {\n    arrLen = arr[i];\n    if (arrLen === arrLen) {\n      arrLen = arrLen;\n    }\n  }\n  return arrLen;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "1",
+          "expected": "[5,3,3,2,1]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "fail",
+          "got": "0",
+          "expected": "[2,0]"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "1",
+          "expected": "[6,4,3,3,2,1]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_49",
+      "language": "javascript",
+      "entry": "uniqueSorted",
+      "docstring": "Return the sorted unique values of arr.",
+      "outcome": "incorrect_output",
+      "executed": true,
+      "duration_s": 1.21,
+      "detail": "2 case(s) wrong, first: basicV3V3 got [3,1,2,1,2,4] want [1,2,3,4]",
+      "candidate_sha256": "93a9290e5113552291127383b080b51da13ed5f7e7fe25806fadb9193a39c681",
+      "candidate_source": "function uniqueSorted(arr) {\n  var sorted = [];\n  for (var i = 0; i < arr.length; i++) {\n    sorted.push(arr[i]);\n  }\n  return sorted;\n}",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[3,1,2,1,2,4]",
+          "expected": "[1,2,3,4]"
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "status": "pass",
+          "got": "[0,2]",
+          "expected": "[0,2]"
+        },
+        {
+          "name": "normal2V3V3",
+          "kind": "normal",
+          "status": "fail",
+          "got": "[3,1,2,1,2,3,5]",
+          "expected": "[1,2,3,5]"
+        }
+      ]
+    },
+    {
+      "task_id": "js_v2_50",
+      "language": "javascript",
+      "entry": "productList",
+      "docstring": "Product of elements (1 if empty).",
+      "outcome": "syntax_failure",
+      "executed": false,
+      "duration_s": 0.0,
+      "detail": "candidate did not parse; not executed",
+      "candidate_sha256": "d008e810c578ba4e72ec988803c05c657458824c19818bfdd1ef9a5d12631010",
+      "candidate_source": "function productList(arr) {\n  var len = arr.length;\n  var len = arr.length;\n  var len = len;\n  var len = len;\n  var i;\n  var i;\n  var i;\n  var i;\n  var i;\n  var i;\n  var i;\n  var i;\n  var i;",
+      "cases": [
+        {
+          "name": "basicV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              3,
+              4,
+              5,
+              7
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "emptyV3V3",
+          "kind": "boundary",
+          "args": [
+            [
+              0,
+              2
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        },
+        {
+          "name": "zeroV3V3",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              0,
+              3,
+              4,
+              6
+            ]
+          ],
+          "expected": "",
+          "status": "not_run",
+          "got": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Phase 11 JavaScript evaluation sandbox.
+# Unprivileged user, no package manager use at runtime, harness baked in read-only.
+FROM node:22-alpine
+
+ENV NODE_OPTIONS="" \
+    TMPDIR=/tmp
+
+RUN adduser -D -u 10001 -s /sbin/nologin runner \
+    && mkdir -p /opt/harness \
+    && chown root:root /opt/harness
+
+COPY harness_node.mjs /opt/harness/harness.mjs
+RUN chmod 0555 /opt/harness/harness.mjs && chmod 0555 /opt/harness
+
+USER 10001:10001
+WORKDIR /
+ENTRYPOINT ["node", "/opt/harness/harness.mjs"]

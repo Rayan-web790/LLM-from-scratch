@@ -1,0 +1,9 @@
+{
+  "independent_tasks": 100,
+  "phase11_entry_overlaps": [],
+  "v1_entry_overlaps": [],
+  "corpus_function_name_hits": [],
+  "reference_file_exact_hash_hits": [],
+  "behavior_near_duplicate_pairs": [],
+  "contamination_found": false
+}

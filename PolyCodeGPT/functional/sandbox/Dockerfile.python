@@ -1,0 +1,20 @@
+# Phase 11 Python evaluation sandbox.
+# Unprivileged user, no package manager use at runtime, harness baked in read-only.
+FROM python:3
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONHASHSEED=0 \
+    PYTHONNOUSERSITE=1 \
+    TMPDIR=/tmp
+
+RUN useradd --uid 10001 --no-create-home --shell /usr/sbin/nologin runner \
+    && mkdir -p /opt/harness \
+    && chown root:root /opt/harness
+
+COPY harness_python.py /opt/harness/harness.py
+RUN chmod 0555 /opt/harness/harness.py && chmod 0555 /opt/harness
+
+USER 10001:10001
+WORKDIR /
+ENTRYPOINT ["python3", "-I", "/opt/harness/harness.py"]

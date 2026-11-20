@@ -1,0 +1,5779 @@
+{
+  "phase": 11,
+  "source": "scripts/phase10_tasks.py",
+  "candidate_source": "reports/phase10_generation_evaluation_20261117_153043.json",
+  "success_rule": "all cases pass",
+  "convention_rule": "cases with convention=true are reported but excluded from the sensitivity metric",
+  "summary": {
+    "python": {
+      "tasks": 50,
+      "cases": 210,
+      "normal": 116,
+      "boundary": 92,
+      "error": 2,
+      "convention_cases": 6,
+      "documented_ambiguities": 29
+    },
+    "javascript": {
+      "tasks": 50,
+      "cases": 210,
+      "normal": 116,
+      "boundary": 92,
+      "error": 2,
+      "convention_cases": 6,
+      "documented_ambiguities": 28
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "py_01",
+      "language": "python",
+      "index": 1,
+      "entry": "factorial",
+      "signature": "def factorial(n):",
+      "docstring": "Compute the factorial of n recursively.",
+      "behavior": "Return n! as an int for integer n >= 0; 0! == 1. Recursive implementation expected.",
+      "resolution": "Docstring is silent on negative n; negative input is not tested, so no error contract is imposed.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": 5040
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "task_id": "py_02",
+      "language": "python",
+      "index": 2,
+      "entry": "fibonacci",
+      "signature": "def fibonacci(n):",
+      "docstring": "Return the nth Fibonacci number.",
+      "behavior": "Return the n-th Fibonacci number with 0-based indexing: F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2).",
+      "resolution": "Indexing is not stated. Resolved to 0-based, the standard convention for 'nth Fibonacci number' when F(0)=0 is included.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "args": [
+            20
+          ],
+          "expected": 6765
+        }
+      ]
+    },
+    {
+      "task_id": "py_03",
+      "language": "python",
+      "index": 3,
+      "entry": "is_palindrome",
+      "signature": "def is_palindrome(s):",
+      "docstring": "Check whether a string is a palindrome.",
+      "behavior": "Return True iff s reads the same forwards and backwards; comparison is case-sensitive and whitespace-sensitive.",
+      "resolution": "Case folding is not specified; resolved to exact character comparison (no lowercase normalisation), so 'Racecar' is not a palindrome.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "racecar",
+          "kind": "normal",
+          "args": [
+            "racecar"
+          ],
+          "expected": true
+        },
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": true
+        },
+        {
+          "name": "abba",
+          "kind": "normal",
+          "args": [
+            "abba"
+          ],
+          "expected": true
+        },
+        {
+          "name": "single char",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_04",
+      "language": "python",
+      "index": 4,
+      "entry": "merge_sorted",
+      "signature": "def merge_sorted(a, b):",
+      "docstring": "Merge two sorted lists into one sorted list.",
+      "behavior": "Return a new ascending list containing every element of a and b; inputs are already sorted ascending; duplicates are preserved.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "interleaved",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "empty + list",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_05",
+      "language": "python",
+      "index": 5,
+      "entry": "binary_search",
+      "signature": "def binary_search(arr, target):",
+      "docstring": "Binary search on a sorted list.",
+      "behavior": "Search the ascending list arr for target; return its index or -1 when absent.",
+      "resolution": "Return value for a miss is not stated. Resolved to -1 (the common convention); miss cases are flagged as conventions because None is an equally defensible reading.",
+      "convention_note": "A candidate returning None on a miss fails only the convention cases; the sensitivity metric in the report excludes them.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "found middle",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            5
+          ],
+          "expected": 2
+        },
+        {
+          "name": "found first",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            1
+          ],
+          "expected": 0
+        },
+        {
+          "name": "found last",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            9
+          ],
+          "expected": 4
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            4
+          ],
+          "expected": -1,
+          "convention": true
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": -1,
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_06",
+      "language": "python",
+      "index": 6,
+      "entry": "nth_prime",
+      "signature": "def nth_prime(n):",
+      "docstring": "Return the nth prime number.",
+      "behavior": "Return the n-th prime with 1-based indexing: nth_prime(1) == 2.",
+      "resolution": "Whether the count is 0- or 1-based is unstated; resolved to 1-based, so the first prime is index 1.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 2
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 11
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 29
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "args": [
+            20
+          ],
+          "expected": 71
+        }
+      ]
+    },
+    {
+      "task_id": "py_07",
+      "language": "python",
+      "index": 7,
+      "entry": "reverse_string",
+      "signature": "def reverse_string(s):",
+      "docstring": "Reverse a string.",
+      "behavior": "Return s with its characters in reverse order.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "olleh"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "a"
+        },
+        {
+          "name": "two",
+          "kind": "normal",
+          "args": [
+            "ab"
+          ],
+          "expected": "ba"
+        }
+      ]
+    },
+    {
+      "task_id": "py_08",
+      "language": "python",
+      "index": 8,
+      "entry": "is_anagram",
+      "signature": "def is_anagram(s1, s2):",
+      "docstring": "Check if two strings are anagrams.",
+      "behavior": "Return True iff s1 and s2 contain the same characters with the same multiplicities; comparison is case-sensitive and ignores nothing else.",
+      "resolution": "Case sensitivity is unstated; resolved to case-sensitive exact matching.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "listen/silent",
+          "kind": "normal",
+          "args": [
+            "listen",
+            "silent"
+          ],
+          "expected": true
+        },
+        {
+          "name": "hello/world",
+          "kind": "normal",
+          "args": [
+            "hello",
+            "world"
+          ],
+          "expected": false
+        },
+        {
+          "name": "abc/cba",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "cba"
+          ],
+          "expected": true
+        },
+        {
+          "name": "aab/abb",
+          "kind": "boundary",
+          "args": [
+            "aab",
+            "abb"
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "py_09",
+      "language": "python",
+      "index": 9,
+      "entry": "gcd",
+      "signature": "def gcd(a, b):",
+      "docstring": "Compute the greatest common divisor.",
+      "behavior": "Return the greatest common divisor of integers a and b; gcd(a, 0) == a.",
+      "resolution": "Sign handling is unstated; only non-negative inputs are tested, so the Python-specific sign of gcd is never exercised.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "12,18",
+          "kind": "normal",
+          "args": [
+            12,
+            18
+          ],
+          "expected": 6
+        },
+        {
+          "name": "7,13",
+          "kind": "normal",
+          "args": [
+            7,
+            13
+          ],
+          "expected": 1
+        },
+        {
+          "name": "0,5",
+          "kind": "boundary",
+          "args": [
+            0,
+            5
+          ],
+          "expected": 5
+        },
+        {
+          "name": "5,0",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": 5
+        },
+        {
+          "name": "48,180",
+          "kind": "normal",
+          "args": [
+            48,
+            180
+          ],
+          "expected": 12
+        }
+      ]
+    },
+    {
+      "task_id": "py_10",
+      "language": "python",
+      "index": 10,
+      "entry": "format_date",
+      "signature": "def format_date(date_str):",
+      "docstring": "Format a date from YYYY-MM-DD to DD/MM/YYYY.",
+      "behavior": "Convert a 'YYYY-MM-DD' string to 'DD/MM/YYYY'.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2024-01-05",
+          "kind": "normal",
+          "args": [
+            "2024-01-05"
+          ],
+          "expected": "05/01/2024"
+        },
+        {
+          "name": "1999-12-31",
+          "kind": "normal",
+          "args": [
+            "1999-12-31"
+          ],
+          "expected": "31/12/1999"
+        },
+        {
+          "name": "2026-11-17",
+          "kind": "normal",
+          "args": [
+            "2026-11-17"
+          ],
+          "expected": "17/11/2026"
+        },
+        {
+          "name": "0001-01-01",
+          "kind": "boundary",
+          "args": [
+            "0001-01-01"
+          ],
+          "expected": "01/01/0001"
+        }
+      ]
+    },
+    {
+      "task_id": "py_11",
+      "language": "python",
+      "index": 11,
+      "entry": "is_prime",
+      "signature": "def is_prime(n):",
+      "docstring": "Check if a number is prime.",
+      "behavior": "Return True iff n is a prime number; every n < 2 (including 0, 1 and negatives) is False.",
+      "resolution": "Behaviour for n < 2 is unstated; resolved to False (mathematical convention), documented here so negative inputs are well defined.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": true
+        },
+        {
+          "name": "17",
+          "kind": "normal",
+          "args": [
+            17
+          ],
+          "expected": true
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": false
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": false
+        },
+        {
+          "name": "9",
+          "kind": "normal",
+          "args": [
+            9
+          ],
+          "expected": false
+        },
+        {
+          "name": "97",
+          "kind": "normal",
+          "args": [
+            97
+          ],
+          "expected": true
+        },
+        {
+          "name": "-7",
+          "kind": "boundary",
+          "args": [
+            -7
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "py_12",
+      "language": "python",
+      "index": 12,
+      "entry": "triangular_number",
+      "signature": "def triangular_number(n):",
+      "docstring": "Calculate the nth triangular number.",
+      "behavior": "Return the n-th triangular number n*(n+1)/2 for n >= 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 15
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "task_id": "py_13",
+      "language": "python",
+      "index": 13,
+      "entry": "linear_search",
+      "signature": "def linear_search(arr, target):",
+      "docstring": "Implement a linear search.",
+      "behavior": "Scan arr in order and return the index of the first occurrence of target, or -1.",
+      "resolution": "Miss value unstated; resolved to -1 and flagged as a convention case.",
+      "convention_note": "A candidate returning None on a miss fails only the miss cases, which are excluded from the sensitivity metric.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "last",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            9
+          ],
+          "expected": 2
+        },
+        {
+          "name": "first",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            4
+          ],
+          "expected": 0
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            7
+          ],
+          "expected": -1,
+          "convention": true
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": -1,
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_14",
+      "language": "python",
+      "index": 14,
+      "entry": "find_max",
+      "signature": "def find_max(arr):",
+      "docstring": "Find the maximum element in a list.",
+      "behavior": "Return the largest element of the non-empty list arr.",
+      "resolution": "Empty input is unstated and untested; no error contract is imposed.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,5,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              3
+            ]
+          ],
+          "expected": 5
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "args": [
+            [
+              -4,
+              -2,
+              -9
+            ]
+          ],
+          "expected": -2
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "args": [
+            [
+              2,
+              2
+            ]
+          ],
+          "expected": 2
+        }
+      ]
+    },
+    {
+      "task_id": "py_15",
+      "language": "python",
+      "index": 15,
+      "entry": "bubble_sort",
+      "signature": "def bubble_sort(arr):",
+      "docstring": "Implement a simple sort (bubble sort).",
+      "behavior": "Return a new list with arr sorted ascending using bubble sort; input is not modified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "3,1,2",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": [
+            5
+          ]
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              -5,
+              3
+            ]
+          ],
+          "expected": [
+            -5,
+            -1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_16",
+      "language": "python",
+      "index": 16,
+      "entry": "is_even",
+      "signature": "def is_even(n):",
+      "docstring": "Check if a number is even.",
+      "behavior": "Return True iff n is divisible by 2, for positive, zero and negative integers.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "args": [
+            4
+          ],
+          "expected": true
+        },
+        {
+          "name": "7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": false
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": true
+        },
+        {
+          "name": "-2",
+          "kind": "boundary",
+          "args": [
+            -2
+          ],
+          "expected": true
+        },
+        {
+          "name": "-3",
+          "kind": "boundary",
+          "args": [
+            -3
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "py_17",
+      "language": "python",
+      "index": 17,
+      "entry": "sum_list",
+      "signature": "def sum_list(lst):",
+      "docstring": "Compute the sum of list elements.",
+      "behavior": "Return the arithmetic sum of lst; the empty list sums to 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 6
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              1
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              10
+            ]
+          ],
+          "expected": 10
+        }
+      ]
+    },
+    {
+      "task_id": "py_18",
+      "language": "python",
+      "index": 18,
+      "entry": "factorial_iter",
+      "signature": "def factorial_iter(n):",
+      "docstring": "Implement factorial iteratively.",
+      "behavior": "Return n! for integer n >= 0 using an iterative loop; 0! == 1.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=6",
+          "kind": "normal",
+          "args": [
+            6
+          ],
+          "expected": 720
+        }
+      ]
+    },
+    {
+      "task_id": "py_19",
+      "language": "python",
+      "index": 19,
+      "entry": "my_len",
+      "signature": "def my_len(s):",
+      "docstring": "Implement string length without len().",
+      "behavior": "Return the number of characters in s without calling the built-in len().",
+      "resolution": "The 'without len()' constraint is a style requirement that cannot be verified by behaviour alone; it is not enforced by the evaluator.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": 5
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": 0
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": 1
+        },
+        {
+          "name": "spaces",
+          "kind": "normal",
+          "args": [
+            "a b"
+          ],
+          "expected": 3
+        }
+      ]
+    },
+    {
+      "task_id": "py_20",
+      "language": "python",
+      "index": 20,
+      "entry": "is_leap_year",
+      "signature": "def is_leap_year(y):",
+      "docstring": "Check if a year is a leap year.",
+      "behavior": "Return True iff y is a Gregorian leap year: divisible by 4, except centuries, except multiples of 400.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2024",
+          "kind": "normal",
+          "args": [
+            2024
+          ],
+          "expected": true
+        },
+        {
+          "name": "1900",
+          "kind": "boundary",
+          "args": [
+            1900
+          ],
+          "expected": false
+        },
+        {
+          "name": "2000",
+          "kind": "boundary",
+          "args": [
+            2000
+          ],
+          "expected": true
+        },
+        {
+          "name": "2023",
+          "kind": "normal",
+          "args": [
+            2023
+          ],
+          "expected": false
+        },
+        {
+          "name": "1600",
+          "kind": "boundary",
+          "args": [
+            1600
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_21",
+      "language": "python",
+      "index": 21,
+      "entry": "countdown",
+      "signature": "def countdown(n):",
+      "docstring": "Implement a countdown.",
+      "behavior": "Return a list of integers counting down from n to 1 inclusive; n <= 0 returns [].",
+      "resolution": "Return shape is unstated (a printed countdown is equally plausible). Resolved to returning a list; a printing-only implementation fails.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": [
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": []
+        },
+        {
+          "name": "3",
+          "kind": "normal",
+          "args": [
+            3
+          ],
+          "expected": [
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_22",
+      "language": "python",
+      "index": 22,
+      "entry": "safe_factorial",
+      "signature": "def safe_factorial(n):",
+      "docstring": "Implement factorial with error checking.",
+      "behavior": "Return n! for integer n >= 0 and raise ValueError when n < 0.",
+      "resolution": "The docstring says 'with error checking' but names no type; resolved to ValueError, the conventional Python choice, and stated in the specification.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "n=3",
+          "kind": "normal",
+          "args": [
+            3
+          ],
+          "expected": 6
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=-1 raises ValueError",
+          "kind": "error",
+          "args": [
+            -1
+          ],
+          "expect_error": "ValueError"
+        },
+        {
+          "name": "n=-5 raises ValueError",
+          "kind": "error",
+          "args": [
+            -5
+          ],
+          "expect_error": "ValueError"
+        }
+      ]
+    },
+    {
+      "task_id": "py_23",
+      "language": "python",
+      "index": 23,
+      "entry": "caesar_cipher",
+      "signature": "def caesar_cipher(s, n):",
+      "docstring": "Implement a simple cipher (shift by n).",
+      "behavior": "Shift every ASCII letter of s forward by n positions, wrapping within the same case (a-z and A-Z separately); non-letters are unchanged.",
+      "resolution": "Alphabet, case handling and non-letter handling are unstated. Resolved to case-preserving ASCII letters with wrap and unchanged punctuation; the mixed case case is flagged as a convention.",
+      "convention_note": "Lowercase-only cases are mandatory; the mixed-case/punctuation case is reported separately.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "abc+1",
+          "kind": "normal",
+          "args": [
+            "abc",
+            1
+          ],
+          "expected": "bcd"
+        },
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "args": [
+            "xyz",
+            3
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "args": [
+            "hello",
+            0
+          ],
+          "expected": "hello"
+        },
+        {
+          "name": "abc+25",
+          "kind": "normal",
+          "args": [
+            "abc",
+            25
+          ],
+          "expected": "zab"
+        },
+        {
+          "name": "mixed+1",
+          "kind": "normal",
+          "args": [
+            "Hello, World!",
+            1
+          ],
+          "expected": "Ifmmp, Xpsme!",
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_24",
+      "language": "python",
+      "index": 24,
+      "entry": "fib_memo",
+      "signature": "def fib_memo(n, memo={}):",
+      "docstring": "Implement Fibonacci with memoization.",
+      "behavior": "Return the n-th Fibonacci number (0-based, F(0)=0, F(1)=1) using the memo dict for caching; calling with a single argument must work.",
+      "resolution": "Calling convention for memo is unstated; every case calls with a single argument, so the default from the stub must work (a mutable default is fine).",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 1,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=25",
+          "kind": "normal",
+          "args": [
+            25
+          ],
+          "expected": 75025
+        }
+      ]
+    },
+    {
+      "task_id": "py_25",
+      "language": "python",
+      "index": 25,
+      "entry": "get_evens",
+      "signature": "def get_evens(lst):",
+      "docstring": "Implement a function that returns list of even numbers.",
+      "behavior": "Return the even elements of lst in their original order.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "all even",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "no even",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              3
+            ]
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "py_26",
+      "language": "python",
+      "index": 26,
+      "entry": "get_odds",
+      "signature": "def get_odds(lst):",
+      "docstring": "Implement a function that returns list of odd numbers.",
+      "behavior": "Return the odd elements of lst in their original order.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            1,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "no odd",
+          "kind": "boundary",
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "all odd",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_27",
+      "language": "python",
+      "index": 27,
+      "entry": "filter_positives",
+      "signature": "def filter_positives(lst):",
+      "docstring": "Implement a function that filters positive numbers.",
+      "behavior": "Return the elements of lst strictly greater than zero, preserving order.",
+      "resolution": "'Positive' is resolved to > 0, so 0 is excluded (the standard mathematical meaning).",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "-2,0,3,5",
+          "kind": "normal",
+          "args": [
+            [
+              -2,
+              0,
+              3,
+              5
+            ]
+          ],
+          "expected": [
+            3,
+            5
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "only zero",
+          "kind": "boundary",
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "single positive",
+          "kind": "normal",
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_28",
+      "language": "python",
+      "index": 28,
+      "entry": "string_lengths",
+      "signature": "def string_lengths(lst):",
+      "docstring": "Implement a function that maps strings to their lengths.",
+      "behavior": "Map each string in lst to its integer character count.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "a,bb,ccc",
+          "kind": "normal",
+          "args": [
+            [
+              "a",
+              "bb",
+              "ccc"
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "ab,c",
+          "kind": "normal",
+          "args": [
+            [
+              "ab",
+              "c"
+            ]
+          ],
+          "expected": [
+            2,
+            1
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "with empty string",
+          "kind": "boundary",
+          "args": [
+            [
+              "",
+              "ab"
+            ]
+          ],
+          "expected": [
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_29",
+      "language": "python",
+      "index": 29,
+      "entry": "is_sorted",
+      "signature": "def is_sorted(lst):",
+      "docstring": "Implement a function that checks if a list is sorted.",
+      "behavior": "Return True iff lst is in non-decreasing order; the empty list and singletons are sorted.",
+      "resolution": "'Sorted' is resolved to non-decreasing (equal neighbours allowed).",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "ascending",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "descending",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": true
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "equal pair",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_30",
+      "language": "python",
+      "index": 30,
+      "entry": "fib_recursive",
+      "signature": "def fib_recursive(n):",
+      "docstring": "Implement a function that returns the nth Fibonacci number using recursion.",
+      "behavior": "Return the n-th Fibonacci number (0-based) using recursion.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": 13
+        },
+        {
+          "name": "n=15",
+          "kind": "normal",
+          "args": [
+            15
+          ],
+          "expected": 610
+        }
+      ]
+    },
+    {
+      "task_id": "py_31",
+      "language": "python",
+      "index": 31,
+      "entry": "remove_duplicates",
+      "signature": "def remove_duplicates(lst):",
+      "docstring": "Implement a function that removes duplicates from a list.",
+      "behavior": "Return a list of the distinct elements of lst, keeping the order of first appearance.",
+      "resolution": "Output order for duplicates is unstated; resolved to first-occurrence order.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,2,3,1",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              2,
+              3,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "all same",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "already unique",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            3,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_32",
+      "language": "python",
+      "index": 32,
+      "entry": "list_intersection",
+      "signature": "def list_intersection(l1, l2):",
+      "docstring": "Implement a function that finds the intersection of two lists.",
+      "behavior": "Return the distinct elements that occur in both l1 and l2, in l1 order.",
+      "resolution": "Set semantics vs multiset semantics and output order are unstated. Resolved to distinct elements in l1 order; the duplicate case is flagged as a convention because a multiset implementation would return [2, 2].",
+      "convention_note": "A multiset implementation fails only the duplicate case, which is excluded from the sensitivity metric.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3 & 2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "duplicate in l1",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          "expected": [
+            2
+          ],
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_33",
+      "language": "python",
+      "index": 33,
+      "entry": "list_union",
+      "signature": "def list_union(l1, l2):",
+      "docstring": "Implement a function that finds the union of two lists.",
+      "behavior": "Return the distinct elements of l1 followed by the distinct elements of l2 not already present.",
+      "resolution": "Order of the union is unstated; resolved to l1 order then new l2 elements.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "overlap",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "py_34",
+      "language": "python",
+      "index": 34,
+      "entry": "flatten",
+      "signature": "def flatten(lst):",
+      "docstring": "Implement a function that flattens a nested list.",
+      "behavior": "Return a flat list containing every non-list element of the arbitrarily nested lst, in depth-first order.",
+      "resolution": "Nesting depth is unstated; resolved to full recursive flattening, so single-level implementations fail the deep case.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "nested",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              [
+                2,
+                [
+                  3,
+                  4
+                ]
+              ],
+              5
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "empty inner",
+          "kind": "boundary",
+          "args": [
+            [
+              [],
+              [
+                1
+              ]
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "already flat",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "deep",
+          "kind": "boundary",
+          "args": [
+            [
+              [
+                [
+                  1
+                ]
+              ],
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_35",
+      "language": "python",
+      "index": 35,
+      "entry": "binary_search_simple",
+      "signature": "def binary_search_simple(arr, target):",
+      "docstring": "Implement a function that checks if a value is in a sorted list.",
+      "behavior": "Return True iff target occurs in the ascending list arr, else False.",
+      "resolution": "'Checks if a value is in a sorted list' is resolved to a boolean membership result (unlike binary_search, which returns an index).",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "present",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            3
+          ],
+          "expected": true
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            4
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "py_36",
+      "language": "python",
+      "index": 36,
+      "entry": "running_total",
+      "signature": "def running_total(lst):",
+      "docstring": "Implement a function that computes running total.",
+      "behavior": "Return the list of prefix sums of lst; the empty list yields [].",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            3,
+            6
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": [
+            5
+          ]
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              1
+            ]
+          ],
+          "expected": [
+            -1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_37",
+      "language": "python",
+      "index": 37,
+      "entry": "selection_sort",
+      "signature": "def selection_sort(arr):",
+      "docstring": "Implement a function that sorts a list using selection sort.",
+      "behavior": "Return a new list with arr sorted ascending using selection sort.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "64,25,12",
+          "kind": "normal",
+          "args": [
+            [
+              64,
+              25,
+              12
+            ]
+          ],
+          "expected": [
+            12,
+            25,
+            64
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              3
+            ]
+          ],
+          "expected": [
+            3
+          ]
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "py_38",
+      "language": "python",
+      "index": 38,
+      "entry": "caesar_wrap",
+      "signature": "def caesar_wrap(s, n):",
+      "docstring": "Implement a function that implements a simple Caesar cipher with wrap.",
+      "behavior": "Shift ASCII letters of s by n, where n may exceed 25 and wraps modulo 26; case is preserved and non-letters are unchanged.",
+      "resolution": "Wrap-around beyond 25 is the stated point of this task; resolved to shift modulo 26. Negative shifts are unspecified and untested.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "args": [
+            "xyz",
+            3
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "hello+2",
+          "kind": "normal",
+          "args": [
+            "hello",
+            2
+          ],
+          "expected": "jgnnq"
+        },
+        {
+          "name": "abc+29",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            29
+          ],
+          "expected": "def"
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "args": [
+            "hello",
+            0
+          ],
+          "expected": "hello"
+        },
+        {
+          "name": "abc+52",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            52
+          ],
+          "expected": "abc"
+        }
+      ]
+    },
+    {
+      "task_id": "py_39",
+      "language": "python",
+      "index": 39,
+      "entry": "same_word",
+      "signature": "def same_word(w1, w2):",
+      "docstring": "Implement a function that checks if two words are the same case-insensitive.",
+      "behavior": "Return True iff w1 and w2 are equal ignoring ASCII letter case.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "Hello/hello",
+          "kind": "normal",
+          "args": [
+            "Hello",
+            "hello"
+          ],
+          "expected": true
+        },
+        {
+          "name": "abc/abd",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "abd"
+          ],
+          "expected": false
+        },
+        {
+          "name": "A/a",
+          "kind": "boundary",
+          "args": [
+            "A",
+            "a"
+          ],
+          "expected": true
+        },
+        {
+          "name": "same",
+          "kind": "normal",
+          "args": [
+            "test",
+            "test"
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_40",
+      "language": "python",
+      "index": 40,
+      "entry": "my_abs",
+      "signature": "def my_abs(x):",
+      "docstring": "Implement a function that returns the absolute value.",
+      "behavior": "Return the absolute value of x without calling the built-in abs().",
+      "resolution": "The 'without abs()' constraint is stylistic and not enforced behaviourally.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "-5",
+          "kind": "normal",
+          "args": [
+            -5
+          ],
+          "expected": 5
+        },
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 5
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "-3.5",
+          "kind": "boundary",
+          "args": [
+            -3.5
+          ],
+          "expected": 3.5
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "args": [
+            2.5
+          ],
+          "expected": 2.5
+        }
+      ]
+    },
+    {
+      "task_id": "py_41",
+      "language": "python",
+      "index": 41,
+      "entry": "power",
+      "signature": "def power(base, exp):",
+      "docstring": "Implement a function that computes power (base^exp).",
+      "behavior": "Return base raised to the non-negative integer exponent exp, computed by repeated multiplication; exp == 0 yields 1 for any base.",
+      "resolution": "Negative exponents are unspecified and untested.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2^10",
+          "kind": "normal",
+          "args": [
+            2,
+            10
+          ],
+          "expected": 1024
+        },
+        {
+          "name": "5^0",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "3^3",
+          "kind": "normal",
+          "args": [
+            3,
+            3
+          ],
+          "expected": 27
+        },
+        {
+          "name": "1^100",
+          "kind": "boundary",
+          "args": [
+            1,
+            100
+          ],
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "task_id": "py_42",
+      "language": "python",
+      "index": 42,
+      "entry": "is_digits",
+      "signature": "def is_digits(s):",
+      "docstring": "Implement a function that checks if a string contains only digits.",
+      "behavior": "Return True iff s is non-empty and every character is an ASCII digit 0-9.",
+      "resolution": "The empty string is unstated; resolved to False, matching str.isdigit('').",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "123",
+          "kind": "normal",
+          "args": [
+            "123"
+          ],
+          "expected": true
+        },
+        {
+          "name": "12a",
+          "kind": "normal",
+          "args": [
+            "12a"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": false
+        },
+        {
+          "name": "leading zero",
+          "kind": "boundary",
+          "args": [
+            "007"
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "py_43",
+      "language": "python",
+      "index": 43,
+      "entry": "min_of_three",
+      "signature": "def min_of_three(a, b, c):",
+      "docstring": "Implement a function that finds the minimum of three numbers.",
+      "behavior": "Return the smallest of a, b and c.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            1,
+            2,
+            3
+          ],
+          "expected": 1
+        },
+        {
+          "name": "5,2,9",
+          "kind": "normal",
+          "args": [
+            5,
+            2,
+            9
+          ],
+          "expected": 2
+        },
+        {
+          "name": "all negative",
+          "kind": "normal",
+          "args": [
+            -1,
+            -5,
+            -3
+          ],
+          "expected": -5
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "args": [
+            2,
+            2,
+            2
+          ],
+          "expected": 2
+        }
+      ]
+    },
+    {
+      "task_id": "py_44",
+      "language": "python",
+      "index": 44,
+      "entry": "c_to_f",
+      "signature": "def c_to_f(c):",
+      "docstring": "Implement a function that converts Celsius to Fahrenheit.",
+      "behavior": "Convert a Celsius temperature to Fahrenheit: F = C * 9/5 + 32.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "0C",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 32
+        },
+        {
+          "name": "100C",
+          "kind": "normal",
+          "args": [
+            100
+          ],
+          "expected": 212
+        },
+        {
+          "name": "-40C",
+          "kind": "boundary",
+          "args": [
+            -40
+          ],
+          "expected": -40
+        },
+        {
+          "name": "10C",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 50
+        }
+      ]
+    },
+    {
+      "task_id": "py_45",
+      "language": "python",
+      "index": 45,
+      "entry": "is_positive",
+      "signature": "def is_positive(n):",
+      "docstring": "Implement a function that checks if a number is positive.",
+      "behavior": "Return True iff n is strictly greater than zero.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": true
+        },
+        {
+          "name": "-1",
+          "kind": "normal",
+          "args": [
+            -1
+          ],
+          "expected": false
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "py_46",
+      "language": "python",
+      "index": 46,
+      "entry": "nth_even",
+      "signature": "def nth_even(n):",
+      "docstring": "Implement a function that returns the nth even number.",
+      "behavior": "Return the n-th positive even number with 1-based indexing: nth_even(1) == 2.",
+      "resolution": "Indexing unstated; resolved to 1-based so the first even number is index 1.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 2
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 10
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 20
+        }
+      ]
+    },
+    {
+      "task_id": "py_47",
+      "language": "python",
+      "index": 47,
+      "entry": "my_mod",
+      "signature": "def my_mod(a, b):",
+      "docstring": "Implement a function that computes the modulus.",
+      "behavior": "Return a modulo b (the remainder of integer division) without calling the built-in % operator.",
+      "resolution": "Only non-negative operands are tested because Python and JavaScript disagree on the sign of a negative remainder, and the docstring does not specify.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "10%3",
+          "kind": "normal",
+          "args": [
+            10,
+            3
+          ],
+          "expected": 1
+        },
+        {
+          "name": "9%3",
+          "kind": "boundary",
+          "args": [
+            9,
+            3
+          ],
+          "expected": 0
+        },
+        {
+          "name": "7%4",
+          "kind": "normal",
+          "args": [
+            7,
+            4
+          ],
+          "expected": 3
+        }
+      ]
+    },
+    {
+      "task_id": "py_48",
+      "language": "python",
+      "index": 48,
+      "entry": "is_blank",
+      "signature": "def is_blank(s):",
+      "docstring": "Implement a function that checks if a string is blank.",
+      "behavior": "Return True iff s is empty or contains only whitespace.",
+      "resolution": "'Blank' is unstated; resolved to empty-or-whitespace-only.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": true
+        },
+        {
+          "name": "spaces",
+          "kind": "boundary",
+          "args": [
+            "   "
+          ],
+          "expected": true
+        },
+        {
+          "name": "padded text",
+          "kind": "normal",
+          "args": [
+            " a "
+          ],
+          "expected": false
+        },
+        {
+          "name": "text",
+          "kind": "normal",
+          "args": [
+            "a"
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "py_49",
+      "language": "python",
+      "index": 49,
+      "entry": "square",
+      "signature": "def square(x):",
+      "docstring": "Implement a function that returns the square of a number.",
+      "behavior": "Return the square of x.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "args": [
+            4
+          ],
+          "expected": 16
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "-3",
+          "kind": "normal",
+          "args": [
+            -3
+          ],
+          "expected": 9
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "args": [
+            2.5
+          ],
+          "expected": 6.25
+        }
+      ]
+    },
+    {
+      "task_id": "py_50",
+      "language": "python",
+      "index": 50,
+      "entry": "fib_iter",
+      "signature": "def fib_iter(n):",
+      "docstring": "Implement a function that computes the nth Fibonacci iteratively.",
+      "behavior": "Return the n-th Fibonacci number (0-based, F(0)=0, F(1)=1) using an iterative loop.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=30",
+          "kind": "normal",
+          "args": [
+            30
+          ],
+          "expected": 832040
+        }
+      ]
+    },
+    {
+      "task_id": "js_01",
+      "language": "javascript",
+      "index": 1,
+      "entry": "factorial",
+      "signature": "function factorial(n) {",
+      "docstring": "Compute the factorial of n recursively.",
+      "behavior": "Return n! as a number for integer n >= 0; 0! === 1. Recursive implementation expected.",
+      "resolution": "Negative n is unspecified and untested; no error contract is imposed.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": 5040
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "task_id": "js_02",
+      "language": "javascript",
+      "index": 2,
+      "entry": "fibonacci",
+      "signature": "function fibonacci(n) {",
+      "docstring": "Return the nth Fibonacci number.",
+      "behavior": "Return the n-th Fibonacci number with 0-based indexing: F(0)=0, F(1)=1.",
+      "resolution": "Indexing is unstated; resolved to 0-based.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "args": [
+            20
+          ],
+          "expected": 6765
+        }
+      ]
+    },
+    {
+      "task_id": "js_03",
+      "language": "javascript",
+      "index": 3,
+      "entry": "isPalindrome",
+      "signature": "function isPalindrome(s) {",
+      "docstring": "Check whether a string is a palindrome.",
+      "behavior": "Return true iff s reads the same forwards and backwards; case-sensitive, no normalisation.",
+      "resolution": "Case folding is unstated; resolved to exact comparison.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "racecar",
+          "kind": "normal",
+          "args": [
+            "racecar"
+          ],
+          "expected": true
+        },
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": true
+        },
+        {
+          "name": "abba",
+          "kind": "normal",
+          "args": [
+            "abba"
+          ],
+          "expected": true
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_04",
+      "language": "javascript",
+      "index": 4,
+      "entry": "mergeSorted",
+      "signature": "function mergeSorted(a, b) {",
+      "docstring": "Merge two sorted arrays into one sorted array.",
+      "behavior": "Return a new ascending array containing every element of a and b (both already sorted); duplicates preserved.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "interleaved",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              4,
+              6
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "empty + list",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_05",
+      "language": "javascript",
+      "index": 5,
+      "entry": "binarySearch",
+      "signature": "function binarySearch(arr, target) {",
+      "docstring": "Binary search on a sorted array.",
+      "behavior": "Search the ascending array arr for target; return its index or -1 when absent.",
+      "resolution": "Miss value is unstated; resolved to -1 and flagged as a convention case (null, undefined or false are defensible alternatives).",
+      "convention_note": "Miss cases are excluded from the sensitivity metric.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "found middle",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            5
+          ],
+          "expected": 2
+        },
+        {
+          "name": "found first",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            1
+          ],
+          "expected": 0
+        },
+        {
+          "name": "found last",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            9
+          ],
+          "expected": 4
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5,
+              7,
+              9
+            ],
+            4
+          ],
+          "expected": -1,
+          "convention": true
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": -1,
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_06",
+      "language": "javascript",
+      "index": 6,
+      "entry": "nthPrime",
+      "signature": "function nthPrime(n) {",
+      "docstring": "Return the nth prime number.",
+      "behavior": "Return the n-th prime with 1-based indexing: nthPrime(1) === 2.",
+      "resolution": "Indexing is unstated; resolved to 1-based.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 2
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 11
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 29
+        },
+        {
+          "name": "n=20",
+          "kind": "normal",
+          "args": [
+            20
+          ],
+          "expected": 71
+        }
+      ]
+    },
+    {
+      "task_id": "js_07",
+      "language": "javascript",
+      "index": 7,
+      "entry": "reverseString",
+      "signature": "function reverseString(s) {",
+      "docstring": "Reverse a string.",
+      "behavior": "Return s with its characters in reverse order.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "olleh"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "a"
+        },
+        {
+          "name": "two",
+          "kind": "normal",
+          "args": [
+            "ab"
+          ],
+          "expected": "ba"
+        }
+      ]
+    },
+    {
+      "task_id": "js_08",
+      "language": "javascript",
+      "index": 8,
+      "entry": "isAnagram",
+      "signature": "function isAnagram(s1, s2) {",
+      "docstring": "Check if two strings are anagrams.",
+      "behavior": "Return true iff s1 and s2 have the same characters with the same multiplicities; case-sensitive.",
+      "resolution": "Case sensitivity is unstated; resolved to exact, case-sensitive matching.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "listen/silent",
+          "kind": "normal",
+          "args": [
+            "listen",
+            "silent"
+          ],
+          "expected": true
+        },
+        {
+          "name": "hello/world",
+          "kind": "normal",
+          "args": [
+            "hello",
+            "world"
+          ],
+          "expected": false
+        },
+        {
+          "name": "abc/cba",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "cba"
+          ],
+          "expected": true
+        },
+        {
+          "name": "aab/abb",
+          "kind": "boundary",
+          "args": [
+            "aab",
+            "abb"
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "js_09",
+      "language": "javascript",
+      "index": 9,
+      "entry": "gcd",
+      "signature": "function gcd(a, b) {",
+      "docstring": "Compute the greatest common divisor.",
+      "behavior": "Return the greatest common divisor of a and b; gcd(a, 0) === a.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "12,18",
+          "kind": "normal",
+          "args": [
+            12,
+            18
+          ],
+          "expected": 6
+        },
+        {
+          "name": "7,13",
+          "kind": "normal",
+          "args": [
+            7,
+            13
+          ],
+          "expected": 1
+        },
+        {
+          "name": "0,5",
+          "kind": "boundary",
+          "args": [
+            0,
+            5
+          ],
+          "expected": 5
+        },
+        {
+          "name": "5,0",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": 5
+        },
+        {
+          "name": "48,180",
+          "kind": "normal",
+          "args": [
+            48,
+            180
+          ],
+          "expected": 12
+        }
+      ]
+    },
+    {
+      "task_id": "js_10",
+      "language": "javascript",
+      "index": 10,
+      "entry": "formatDate",
+      "signature": "function formatDate(dateStr) {",
+      "docstring": "Format a date from YYYY-MM-DD to DD/MM/YYYY.",
+      "behavior": "Convert a 'YYYY-MM-DD' string to 'DD/MM/YYYY'.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2024-01-05",
+          "kind": "normal",
+          "args": [
+            "2024-01-05"
+          ],
+          "expected": "05/01/2024"
+        },
+        {
+          "name": "1999-12-31",
+          "kind": "normal",
+          "args": [
+            "1999-12-31"
+          ],
+          "expected": "31/12/1999"
+        },
+        {
+          "name": "2026-11-17",
+          "kind": "normal",
+          "args": [
+            "2026-11-17"
+          ],
+          "expected": "17/11/2026"
+        },
+        {
+          "name": "0001-01-01",
+          "kind": "boundary",
+          "args": [
+            "0001-01-01"
+          ],
+          "expected": "01/01/0001"
+        }
+      ]
+    },
+    {
+      "task_id": "js_11",
+      "language": "javascript",
+      "index": 11,
+      "entry": "isPrime",
+      "signature": "function isPrime(n) {",
+      "docstring": "Check if a number is prime.",
+      "behavior": "Return true iff n is prime; every n < 2 (including negatives) is false.",
+      "resolution": "n < 2 is unstated; resolved to false.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": true
+        },
+        {
+          "name": "17",
+          "kind": "normal",
+          "args": [
+            17
+          ],
+          "expected": true
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": false
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": false
+        },
+        {
+          "name": "9",
+          "kind": "normal",
+          "args": [
+            9
+          ],
+          "expected": false
+        },
+        {
+          "name": "97",
+          "kind": "normal",
+          "args": [
+            97
+          ],
+          "expected": true
+        },
+        {
+          "name": "-7",
+          "kind": "boundary",
+          "args": [
+            -7
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "js_12",
+      "language": "javascript",
+      "index": 12,
+      "entry": "triangularNumber",
+      "signature": "function triangularNumber(n) {",
+      "docstring": "Calculate the nth triangular number.",
+      "behavior": "Return the n-th triangular number n*(n+1)/2 for n >= 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 15
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        }
+      ]
+    },
+    {
+      "task_id": "js_13",
+      "language": "javascript",
+      "index": 13,
+      "entry": "linearSearch",
+      "signature": "function linearSearch(arr, target) {",
+      "docstring": "Implement a linear search.",
+      "behavior": "Scan arr in order and return the index of the first occurrence of target, or -1.",
+      "resolution": "Miss value is unstated; resolved to -1 and flagged as a convention case.",
+      "convention_note": "A candidate returning null/undefined on a miss fails only the miss cases, which are excluded from the sensitivity metric.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "last",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            9
+          ],
+          "expected": 2
+        },
+        {
+          "name": "first",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            4
+          ],
+          "expected": 0
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              4,
+              2,
+              9
+            ],
+            7
+          ],
+          "expected": -1,
+          "convention": true
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": -1,
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_14",
+      "language": "javascript",
+      "index": 14,
+      "entry": "findMax",
+      "signature": "function findMax(arr) {",
+      "docstring": "Find the maximum element in an array.",
+      "behavior": "Return the largest element of the non-empty array arr.",
+      "resolution": "Empty input is unspecified and untested.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,5,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              3
+            ]
+          ],
+          "expected": 5
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "args": [
+            [
+              -4,
+              -2,
+              -9
+            ]
+          ],
+          "expected": -2
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 7
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "args": [
+            [
+              2,
+              2
+            ]
+          ],
+          "expected": 2
+        }
+      ]
+    },
+    {
+      "task_id": "js_15",
+      "language": "javascript",
+      "index": 15,
+      "entry": "bubbleSort",
+      "signature": "function bubbleSort(arr) {",
+      "docstring": "Implement a simple sort (bubble sort).",
+      "behavior": "Return a new ascending array using bubble sort; the input array is not modified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "3,1,2",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": [
+            5
+          ]
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "negatives",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              -5,
+              3
+            ]
+          ],
+          "expected": [
+            -5,
+            -1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_16",
+      "language": "javascript",
+      "index": 16,
+      "entry": "isEven",
+      "signature": "function isEven(n) {",
+      "docstring": "Check if a number is even.",
+      "behavior": "Return true iff n is divisible by 2, for positive, zero and negative integers.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "args": [
+            4
+          ],
+          "expected": true
+        },
+        {
+          "name": "7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": false
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": true
+        },
+        {
+          "name": "-2",
+          "kind": "boundary",
+          "args": [
+            -2
+          ],
+          "expected": true
+        },
+        {
+          "name": "-3",
+          "kind": "boundary",
+          "args": [
+            -3
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "js_17",
+      "language": "javascript",
+      "index": 17,
+      "entry": "sumArray",
+      "signature": "function sumArray(arr) {",
+      "docstring": "Compute the sum of array elements.",
+      "behavior": "Return the arithmetic sum of arr; the empty array sums to 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 6
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              1
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              10
+            ]
+          ],
+          "expected": 10
+        }
+      ]
+    },
+    {
+      "task_id": "js_18",
+      "language": "javascript",
+      "index": 18,
+      "entry": "factorialIter",
+      "signature": "function factorialIter(n) {",
+      "docstring": "Implement factorial iteratively.",
+      "behavior": "Return n! for integer n >= 0 using a loop; 0! === 1.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=6",
+          "kind": "normal",
+          "args": [
+            6
+          ],
+          "expected": 720
+        }
+      ]
+    },
+    {
+      "task_id": "js_19",
+      "language": "javascript",
+      "index": 19,
+      "entry": "myLen",
+      "signature": "function myLen(s) {",
+      "docstring": "Implement string length without length.",
+      "behavior": "Return the number of characters in s without using s.length.",
+      "resolution": "The 'without length' constraint is stylistic and not enforced behaviourally.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "hello",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": 5
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": 0
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": 1
+        },
+        {
+          "name": "spaces",
+          "kind": "normal",
+          "args": [
+            "a b"
+          ],
+          "expected": 3
+        }
+      ]
+    },
+    {
+      "task_id": "js_20",
+      "language": "javascript",
+      "index": 20,
+      "entry": "isLeapYear",
+      "signature": "function isLeapYear(y) {",
+      "docstring": "Check if a year is a leap year.",
+      "behavior": "Return true iff y is a Gregorian leap year: divisible by 4, except centuries, except multiples of 400.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2024",
+          "kind": "normal",
+          "args": [
+            2024
+          ],
+          "expected": true
+        },
+        {
+          "name": "1900",
+          "kind": "boundary",
+          "args": [
+            1900
+          ],
+          "expected": false
+        },
+        {
+          "name": "2000",
+          "kind": "boundary",
+          "args": [
+            2000
+          ],
+          "expected": true
+        },
+        {
+          "name": "2023",
+          "kind": "normal",
+          "args": [
+            2023
+          ],
+          "expected": false
+        },
+        {
+          "name": "1600",
+          "kind": "boundary",
+          "args": [
+            1600
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_21",
+      "language": "javascript",
+      "index": 21,
+      "entry": "countdown",
+      "signature": "function countdown(n) {",
+      "docstring": "Implement a countdown.",
+      "behavior": "Return an array of integers from n down to 1 inclusive; n <= 0 returns [].",
+      "resolution": "Return shape is unstated; resolved to returning an array.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": [
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "name": "1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": []
+        },
+        {
+          "name": "3",
+          "kind": "normal",
+          "args": [
+            3
+          ],
+          "expected": [
+            3,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_22",
+      "language": "javascript",
+      "index": 22,
+      "entry": "safeFactorial",
+      "signature": "function safeFactorial(n) {",
+      "docstring": "Implement factorial with error checking.",
+      "behavior": "Return n! for integer n >= 0 and throw an Error when n < 0.",
+      "resolution": "The docstring says 'with error checking' but names no type. Resolved to throwing an Error instance (plain Error, RangeError or TypeError all accepted).",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "n=3",
+          "kind": "normal",
+          "args": [
+            3
+          ],
+          "expected": 6
+        },
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=-1 throws",
+          "kind": "error",
+          "args": [
+            -1
+          ],
+          "expect_error": [
+            "Error",
+            "RangeError",
+            "TypeError"
+          ]
+        },
+        {
+          "name": "n=-5 throws",
+          "kind": "error",
+          "args": [
+            -5
+          ],
+          "expect_error": [
+            "Error",
+            "RangeError",
+            "TypeError"
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_23",
+      "language": "javascript",
+      "index": 23,
+      "entry": "caesarCipher",
+      "signature": "function caesarCipher(s, n) {",
+      "docstring": "Implement a simple cipher (shift by n).",
+      "behavior": "Shift every ASCII letter of s forward by n, wrapping within the same case (a-z, A-Z separately); non-letters unchanged.",
+      "resolution": "Alphabet, case and non-letter handling are unstated; resolved to case-preserving ASCII shifting with punctuation unchanged.",
+      "convention_note": "Lowercase-only cases are mandatory; the mixed-case case is reported separately.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "abc+1",
+          "kind": "normal",
+          "args": [
+            "abc",
+            1
+          ],
+          "expected": "bcd"
+        },
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "args": [
+            "xyz",
+            3
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "args": [
+            "hello",
+            0
+          ],
+          "expected": "hello"
+        },
+        {
+          "name": "abc+25",
+          "kind": "normal",
+          "args": [
+            "abc",
+            25
+          ],
+          "expected": "zab"
+        },
+        {
+          "name": "mixed+1",
+          "kind": "normal",
+          "args": [
+            "Hello, World!",
+            1
+          ],
+          "expected": "Ifmmp, Xpsme!",
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_24",
+      "language": "javascript",
+      "index": 24,
+      "entry": "fibMemo",
+      "signature": "function fibMemo(n, memo) {",
+      "docstring": "Implement Fibonacci with memoization.",
+      "behavior": "Return the n-th Fibonacci number (0-based) using the memo object for caching.",
+      "resolution": "The stub's memo parameter has no default, so every case passes an empty object explicitly; this mirrors the Python cases, which rely on memo={}.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0,
+            {}
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1,
+            {}
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10,
+            {}
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=25",
+          "kind": "normal",
+          "args": [
+            25,
+            {}
+          ],
+          "expected": 75025
+        }
+      ]
+    },
+    {
+      "task_id": "js_25",
+      "language": "javascript",
+      "index": 25,
+      "entry": "getEvens",
+      "signature": "function getEvens(arr) {",
+      "docstring": "Implement function that returns list of even numbers.",
+      "behavior": "Return the even elements of arr in their original order.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "all even",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "no even",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              3
+            ]
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "js_26",
+      "language": "javascript",
+      "index": 26,
+      "entry": "getOdds",
+      "signature": "function getOdds(arr) {",
+      "docstring": "Implement function that returns list of odd numbers.",
+      "behavior": "Return the odd elements of arr in their original order.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            1,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "no odd",
+          "kind": "boundary",
+          "args": [
+            [
+              2,
+              4
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "all odd",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_27",
+      "language": "javascript",
+      "index": 27,
+      "entry": "filterPositives",
+      "signature": "function filterPositives(arr) {",
+      "docstring": "Implement function that filters positive numbers.",
+      "behavior": "Return the elements of arr strictly greater than zero, preserving order.",
+      "resolution": "'Positive' resolved to > 0, so 0 is excluded.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "-2,0,3,5",
+          "kind": "normal",
+          "args": [
+            [
+              -2,
+              0,
+              3,
+              5
+            ]
+          ],
+          "expected": [
+            3,
+            5
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "only zero",
+          "kind": "boundary",
+          "args": [
+            [
+              0
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "single positive",
+          "kind": "normal",
+          "args": [
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_28",
+      "language": "javascript",
+      "index": 28,
+      "entry": "stringLengths",
+      "signature": "function stringLengths(arr) {",
+      "docstring": "Implement function that maps strings to lengths.",
+      "behavior": "Map each string in arr to its character count.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "a,bb,ccc",
+          "kind": "normal",
+          "args": [
+            [
+              "a",
+              "bb",
+              "ccc"
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "ab,c",
+          "kind": "normal",
+          "args": [
+            [
+              "ab",
+              "c"
+            ]
+          ],
+          "expected": [
+            2,
+            1
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "with empty string",
+          "kind": "boundary",
+          "args": [
+            [
+              "",
+              "ab"
+            ]
+          ],
+          "expected": [
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_29",
+      "language": "javascript",
+      "index": 29,
+      "entry": "isSorted",
+      "signature": "function isSorted(arr) {",
+      "docstring": "Implement function that checks if a list is sorted.",
+      "behavior": "Return true iff arr is in non-decreasing order; empty arrays and singletons are sorted.",
+      "resolution": "'Sorted' resolved to non-decreasing.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "ascending",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "descending",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": true
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "equal pair",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              1,
+              2
+            ]
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_30",
+      "language": "javascript",
+      "index": 30,
+      "entry": "fibRecursive",
+      "signature": "function fibRecursive(n) {",
+      "docstring": "Implement Fibonacci using recursion.",
+      "behavior": "Return the n-th Fibonacci number (0-based) using recursion.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=7",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": 13
+        },
+        {
+          "name": "n=15",
+          "kind": "normal",
+          "args": [
+            15
+          ],
+          "expected": 610
+        }
+      ]
+    },
+    {
+      "task_id": "js_31",
+      "language": "javascript",
+      "index": 31,
+      "entry": "removeDuplicates",
+      "signature": "function removeDuplicates(arr) {",
+      "docstring": "Implement function that removes duplicates from array.",
+      "behavior": "Return the distinct elements of arr, keeping first-occurrence order.",
+      "resolution": "Output order unstated; resolved to first-occurrence order.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,2,3,1",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              2,
+              3,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "all same",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "already unique",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            3,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_32",
+      "language": "javascript",
+      "index": 32,
+      "entry": "listIntersection",
+      "signature": "function listIntersection(arr1, arr2) {",
+      "docstring": "Implement function that finds intersection of two arrays.",
+      "behavior": "Return the distinct elements present in both arr1 and arr2, in arr1 order.",
+      "resolution": "Set vs multiset semantics and order are unstated; resolved to distinct elements in arr1 order, with the duplicate case flagged as a convention.",
+      "convention_note": "A multiset implementation fails only the duplicate case, which is excluded from the sensitivity metric.",
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3 & 2,3,4",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "expected": []
+        },
+        {
+          "name": "duplicate in arr1",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          "expected": [
+            2
+          ],
+          "convention": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_33",
+      "language": "javascript",
+      "index": 33,
+      "entry": "listUnion",
+      "signature": "function listUnion(arr1, arr2) {",
+      "docstring": "Implement function that finds union of two arrays.",
+      "behavior": "Return the distinct elements of arr1 followed by the distinct elements of arr2 not already present.",
+      "resolution": "Order unstated; resolved to arr1 order then new arr2 elements.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "disjoint",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "overlap",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty left",
+          "kind": "boundary",
+          "args": [
+            [],
+            [
+              1
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "both empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            []
+          ],
+          "expected": []
+        }
+      ]
+    },
+    {
+      "task_id": "js_34",
+      "language": "javascript",
+      "index": 34,
+      "entry": "flatten",
+      "signature": "function flatten(arr) {",
+      "docstring": "Implement function that flattens nested array.",
+      "behavior": "Return a flat array of every non-array element of the arbitrarily nested arr, depth-first.",
+      "resolution": "Nesting depth unstated; resolved to full recursive flattening.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "nested",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              [
+                2,
+                [
+                  3,
+                  4
+                ]
+              ],
+              5
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "empty inner",
+          "kind": "boundary",
+          "args": [
+            [
+              [],
+              [
+                1
+              ]
+            ]
+          ],
+          "expected": [
+            1
+          ]
+        },
+        {
+          "name": "already flat",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "deep",
+          "kind": "boundary",
+          "args": [
+            [
+              [
+                [
+                  1
+                ]
+              ],
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_35",
+      "language": "javascript",
+      "index": 35,
+      "entry": "includesSorted",
+      "signature": "function includesSorted(arr, target) {",
+      "docstring": "Implement function that checks if value is in sorted array.",
+      "behavior": "Return true iff target occurs in the ascending array arr, else false.",
+      "resolution": "Resolved to a boolean membership result (not an index).",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "present",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            3
+          ],
+          "expected": true
+        },
+        {
+          "name": "absent",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              3,
+              5
+            ],
+            4
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            1
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "js_36",
+      "language": "javascript",
+      "index": 36,
+      "entry": "runningTotal",
+      "signature": "function runningTotal(arr) {",
+      "docstring": "Implement function that computes running total.",
+      "behavior": "Return the array of prefix sums of arr; empty input yields [].",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            3,
+            6
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": [
+            5
+          ]
+        },
+        {
+          "name": "-1,1",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              1
+            ]
+          ],
+          "expected": [
+            -1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_37",
+      "language": "javascript",
+      "index": 37,
+      "entry": "selectionSort",
+      "signature": "function selectionSort(arr) {",
+      "docstring": "Implement selection sort.",
+      "behavior": "Return a new ascending array using selection sort.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "64,25,12",
+          "kind": "normal",
+          "args": [
+            [
+              64,
+              25,
+              12
+            ]
+          ],
+          "expected": [
+            12,
+            25,
+            64
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              3
+            ]
+          ],
+          "expected": [
+            3
+          ]
+        },
+        {
+          "name": "duplicates",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": "js_38",
+      "language": "javascript",
+      "index": 38,
+      "entry": "caesarWrap",
+      "signature": "function caesarWrap(s, n) {",
+      "docstring": "Implement Caesar cipher with wrap-around.",
+      "behavior": "Shift ASCII letters of s by n, with n wrapping modulo 26; case preserved, non-letters unchanged.",
+      "resolution": "Wrap beyond 25 is the point of the task; resolved to modulo 26. Negative shifts are unspecified and untested.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "xyz+3",
+          "kind": "normal",
+          "args": [
+            "xyz",
+            3
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "hello+2",
+          "kind": "normal",
+          "args": [
+            "hello",
+            2
+          ],
+          "expected": "jgnnq"
+        },
+        {
+          "name": "abc+29",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            29
+          ],
+          "expected": "def"
+        },
+        {
+          "name": "hello+0",
+          "kind": "boundary",
+          "args": [
+            "hello",
+            0
+          ],
+          "expected": "hello"
+        },
+        {
+          "name": "abc+52",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            52
+          ],
+          "expected": "abc"
+        }
+      ]
+    },
+    {
+      "task_id": "js_39",
+      "language": "javascript",
+      "index": 39,
+      "entry": "sameWord",
+      "signature": "function sameWord(w1, w2) {",
+      "docstring": "Implement function that checks same word case-insensitive.",
+      "behavior": "Return true iff w1 and w2 are equal ignoring letter case.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "Hello/hello",
+          "kind": "normal",
+          "args": [
+            "Hello",
+            "hello"
+          ],
+          "expected": true
+        },
+        {
+          "name": "abc/abd",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "abd"
+          ],
+          "expected": false
+        },
+        {
+          "name": "A/a",
+          "kind": "boundary",
+          "args": [
+            "A",
+            "a"
+          ],
+          "expected": true
+        },
+        {
+          "name": "same",
+          "kind": "normal",
+          "args": [
+            "test",
+            "test"
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_40",
+      "language": "javascript",
+      "index": 40,
+      "entry": "myAbs",
+      "signature": "function myAbs(n) {",
+      "docstring": "Implement function that returns absolute value.",
+      "behavior": "Return the absolute value of n without calling Math.abs.",
+      "resolution": "The 'without Math.abs' constraint is stylistic and not enforced behaviourally.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "-5",
+          "kind": "normal",
+          "args": [
+            -5
+          ],
+          "expected": 5
+        },
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 5
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "-3.5",
+          "kind": "boundary",
+          "args": [
+            -3.5
+          ],
+          "expected": 3.5
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "args": [
+            2.5
+          ],
+          "expected": 2.5
+        }
+      ]
+    },
+    {
+      "task_id": "js_41",
+      "language": "javascript",
+      "index": 41,
+      "entry": "power",
+      "signature": "function power(base, exp) {",
+      "docstring": "Implement function that computes power (base^exp).",
+      "behavior": "Return base raised to the non-negative integer exponent exp, computed by repeated multiplication; exp === 0 yields 1.",
+      "resolution": "Negative exponents are unspecified and untested.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "2^10",
+          "kind": "normal",
+          "args": [
+            2,
+            10
+          ],
+          "expected": 1024
+        },
+        {
+          "name": "5^0",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "3^3",
+          "kind": "normal",
+          "args": [
+            3,
+            3
+          ],
+          "expected": 27
+        },
+        {
+          "name": "1^100",
+          "kind": "boundary",
+          "args": [
+            1,
+            100
+          ],
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "task_id": "js_42",
+      "language": "javascript",
+      "index": 42,
+      "entry": "isDigits",
+      "signature": "function isDigits(s) {",
+      "docstring": "Implement function that checks if string contains only digits.",
+      "behavior": "Return true iff s is non-empty and every character is an ASCII digit 0-9.",
+      "resolution": "The empty string is unstated; resolved to false.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "123",
+          "kind": "normal",
+          "args": [
+            "123"
+          ],
+          "expected": true
+        },
+        {
+          "name": "12a",
+          "kind": "normal",
+          "args": [
+            "12a"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": false
+        },
+        {
+          "name": "leading zero",
+          "kind": "boundary",
+          "args": [
+            "007"
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "task_id": "js_43",
+      "language": "javascript",
+      "index": 43,
+      "entry": "minOfThree",
+      "signature": "function minOfThree(a, b, c) {",
+      "docstring": "Implement function that finds minimum of three numbers.",
+      "behavior": "Return the smallest of a, b and c.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "1,2,3",
+          "kind": "normal",
+          "args": [
+            1,
+            2,
+            3
+          ],
+          "expected": 1
+        },
+        {
+          "name": "5,2,9",
+          "kind": "normal",
+          "args": [
+            5,
+            2,
+            9
+          ],
+          "expected": 2
+        },
+        {
+          "name": "all negative",
+          "kind": "normal",
+          "args": [
+            -1,
+            -5,
+            -3
+          ],
+          "expected": -5
+        },
+        {
+          "name": "all equal",
+          "kind": "boundary",
+          "args": [
+            2,
+            2,
+            2
+          ],
+          "expected": 2
+        }
+      ]
+    },
+    {
+      "task_id": "js_44",
+      "language": "javascript",
+      "index": 44,
+      "entry": "cToF",
+      "signature": "function cToF(c) {",
+      "docstring": "Implement function that converts Celsius to Fahrenheit.",
+      "behavior": "Convert Celsius to Fahrenheit: F = C * 9/5 + 32.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "0C",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 32
+        },
+        {
+          "name": "100C",
+          "kind": "normal",
+          "args": [
+            100
+          ],
+          "expected": 212
+        },
+        {
+          "name": "-40C",
+          "kind": "boundary",
+          "args": [
+            -40
+          ],
+          "expected": -40
+        },
+        {
+          "name": "10C",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 50
+        }
+      ]
+    },
+    {
+      "task_id": "js_45",
+      "language": "javascript",
+      "index": 45,
+      "entry": "isPositive",
+      "signature": "function isPositive(n) {",
+      "docstring": "Implement function that checks if a number is positive.",
+      "behavior": "Return true iff n is strictly greater than zero.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": true
+        },
+        {
+          "name": "-1",
+          "kind": "normal",
+          "args": [
+            -1
+          ],
+          "expected": false
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "js_46",
+      "language": "javascript",
+      "index": 46,
+      "entry": "nthEven",
+      "signature": "function nthEven(n) {",
+      "docstring": "Implement function that returns the nth even number.",
+      "behavior": "Return the n-th positive even number with 1-based indexing: nthEven(1) === 2.",
+      "resolution": "Indexing unstated; resolved to 1-based.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 2
+        },
+        {
+          "name": "n=5",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 10
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 20
+        }
+      ]
+    },
+    {
+      "task_id": "js_47",
+      "language": "javascript",
+      "index": 47,
+      "entry": "myMod",
+      "signature": "function myMod(a, b) {",
+      "docstring": "Implement function that computes modulus.",
+      "behavior": "Return a modulo b (the remainder of integer division) without using the % operator.",
+      "resolution": "Only non-negative operands are tested; negative remainders differ between the two languages and the docstring does not specify them.",
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "10%3",
+          "kind": "normal",
+          "args": [
+            10,
+            3
+          ],
+          "expected": 1
+        },
+        {
+          "name": "9%3",
+          "kind": "boundary",
+          "args": [
+            9,
+            3
+          ],
+          "expected": 0
+        },
+        {
+          "name": "7%4",
+          "kind": "normal",
+          "args": [
+            7,
+            4
+          ],
+          "expected": 3
+        }
+      ]
+    },
+    {
+      "task_id": "js_48",
+      "language": "javascript",
+      "index": 48,
+      "entry": "isBlank",
+      "signature": "function isBlank(s) {",
+      "docstring": "Implement function that checks if string is blank.",
+      "behavior": "Return true iff s is empty or contains only whitespace.",
+      "resolution": "'Blank' resolved to empty-or-whitespace-only.",
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": true
+        },
+        {
+          "name": "spaces",
+          "kind": "boundary",
+          "args": [
+            "   "
+          ],
+          "expected": true
+        },
+        {
+          "name": "padded text",
+          "kind": "normal",
+          "args": [
+            " a "
+          ],
+          "expected": false
+        },
+        {
+          "name": "text",
+          "kind": "normal",
+          "args": [
+            "a"
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "task_id": "js_49",
+      "language": "javascript",
+      "index": 49,
+      "entry": "square",
+      "signature": "function square(n) {",
+      "docstring": "Implement function that returns the square of a number.",
+      "behavior": "Return the square of n.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "4",
+          "kind": "normal",
+          "args": [
+            4
+          ],
+          "expected": 16
+        },
+        {
+          "name": "0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "-3",
+          "kind": "normal",
+          "args": [
+            -3
+          ],
+          "expected": 9
+        },
+        {
+          "name": "2.5",
+          "kind": "normal",
+          "args": [
+            2.5
+          ],
+          "expected": 6.25
+        }
+      ]
+    },
+    {
+      "task_id": "js_50",
+      "language": "javascript",
+      "index": 50,
+      "entry": "fibIter",
+      "signature": "function fibIter(n) {",
+      "docstring": "Implement function that computes the nth Fibonacci iteratively.",
+      "behavior": "Return the n-th Fibonacci number (0-based) using a loop.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "n=0",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "n=1",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "n=10",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 55
+        },
+        {
+          "name": "n=30",
+          "kind": "normal",
+          "args": [
+            30
+          ],
+          "expected": 832040
+        }
+      ]
+    }
+  ]
+}

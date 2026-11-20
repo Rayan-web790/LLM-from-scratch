@@ -1,0 +1,95 @@
+{
+  "alignment": {
+    "failed_to_module": 15026,
+    "not_applicable": 849211,
+    "pass": 371785
+  },
+  "categories": {
+    "en|documentation": 177345,
+    "javascript|async": 32159,
+    "javascript|class": 31613,
+    "javascript|function": 93619,
+    "javascript|module": 231379,
+    "javascript|stateful": 77214,
+    "javascript|tests": 72707,
+    "python|async": 4464,
+    "python|class": 96314,
+    "python|function": 341640,
+    "python|module": 33321,
+    "python|tests": 44247
+  },
+  "post_tokenization": {
+    "train_bytes": 4391757986,
+    "train_sha256": "1a5e57b9178a6ccb3e30febf68a84e2a17e5065878b97889ead121f3dd2a792c",
+    "train_tokens": 780997244,
+    "valid_bytes": 175615268,
+    "valid_sha256": "5b98ce443f7f495fc28c2c99bbeca6054efb20f02473005bdcc30e8f4a361ca6",
+    "validation_tokens": 30894000
+  },
+  "pre_tokenization_hashes": {
+    "train_bytes": 4367798873,
+    "train_sha256": "41ac4ce1188fd0671978e3e60ad8e94d86506cf1cfa26e72ca9140ffdd9d9629",
+    "valid_bytes": 174673593,
+    "valid_sha256": "cc19547035d538d9ae4540bc1bd3e93e8c31911d691bc631583cb06e582e397a"
+  },
+  "records": 1236022,
+  "records_by_language": {
+    "en": 177345,
+    "javascript": 538691,
+    "python": 519986
+  },
+  "records_by_source": {
+    "CODEPARROT|en": 173031,
+    "CODEPARROT|javascript": 446927,
+    "CODEPARROT|python": 224939,
+    "CSN-JS|javascript": 91764,
+    "CSN-PY|python": 295047,
+    "NODE-DOCS|en": 922,
+    "PYDOCS|en": 3392
+  },
+  "scenario_b": {
+    "path": "data/processed/polycodegpt_v2/scenario_b",
+    "repository_overlap_count": 0,
+    "train_records": 763321,
+    "train_tokens": 499999912,
+    "validation_records": 46761,
+    "validation_tokens": 30894000
+  },
+  "serialized_chars": {
+    "en": 370216042,
+    "javascript": 1317016649,
+    "python": 1265490003
+  },
+  "split": {
+    "records": {
+      "train": 1189261,
+      "validation": 46761
+    },
+    "repository_overlap": [],
+    "repository_overlap_count": 0,
+    "serialized_chars": {
+      "train": 2838162521,
+      "validation": 114560173
+    },
+    "tokens": {
+      "train": 780997244,
+      "validation": 30894000
+    },
+    "train_repositories": 324014,
+    "validation_percent_policy": 5,
+    "validation_repositories": 13919
+  },
+  "test_partition_read": false,
+  "token_counts": {
+    "train.jsonl": 780997244,
+    "valid.jsonl": 30894000
+  },
+  "tokenizer": {
+    "artifact": "tokenizer/artifacts/v2/polycodegpt_tokenizer_v2.json",
+    "vocab_size": 24000
+  },
+  "train_bytes": 4391757986,
+  "train_sha256": "1a5e57b9178a6ccb3e30febf68a84e2a17e5065878b97889ead121f3dd2a792c",
+  "valid_bytes": 175615268,
+  "valid_sha256": "5b98ce443f7f495fc28c2c99bbeca6054efb20f02473005bdcc30e8f4a361ca6"
+}

@@ -1,0 +1,505 @@
+{
+  "phase": "12A",
+  "recorded_utc": "2026-11-17T16:21:56+00:00",
+  "inventory": {
+    "checkpoint": [
+      {
+        "path": "checkpoints/polycodegpt_first_pass/step_008130.pt",
+        "sha256": "5562acc2fd58837f9d4245042b7f0b10de65520aa2ba292999c80045470590bd",
+        "bytes": 205612557,
+        "mtime_utc": "2026-11-16T00:18:25+00:00"
+      },
+      {
+        "path": "checkpoints/polycodegpt_first_pass/best.pt",
+        "sha256": "b0bea60dddfa3791564e3192fef40c800c59989e4e4ba3df76009a32f78d8bd6",
+        "bytes": 205608919,
+        "mtime_utc": "2026-11-16T00:18:24+00:00"
+      },
+      {
+        "path": "checkpoints/polycodegpt_first_pass/latest.pt",
+        "sha256": "2b17b9e96d7aa7259b66fd2232daf3327d2ea5eca28b15a5c04159045f01580d",
+        "bytes": 205611467,
+        "mtime_utc": "2026-11-16T00:18:22+00:00"
+      }
+    ],
+    "tokenizer": [
+      {
+        "path": "tokenizer/artifacts/polycodegpt_tokenizer.json",
+        "sha256": "0459f8556a6f79ca1ba1c3dc3f76c26ae2e55653ebbf97beaa9bd23467358a03",
+        "bytes": 1095741,
+        "mtime_utc": "2026-11-15T16:23:15+00:00"
+      },
+      {
+        "path": "tokenizer/artifacts/polycodegpt_tokenizer_v1_1.json",
+        "sha256": "0459f8556a6f79ca1ba1c3dc3f76c26ae2e55653ebbf97beaa9bd23467358a03",
+        "bytes": 1095741,
+        "mtime_utc": "2026-11-15T16:23:15+00:00"
+      },
+      {
+        "path": "tokenizer/artifacts/tokenizer_metadata.json",
+        "sha256": "71dd044cb775accf3863890307a4e4700047f137c1534e7fb81751861cabef99",
+        "bytes": 41093,
+        "mtime_utc": "2026-11-15T16:23:15+00:00"
+      },
+      {
+        "path": "tokenizer/artifacts/tokenizer_metadata_v1_1.json",
+        "sha256": "71dd044cb775accf3863890307a4e4700047f137c1534e7fb81751861cabef99",
+        "bytes": 41093,
+        "mtime_utc": "2026-11-15T16:23:15+00:00"
+      },
+      {
+        "path": "tokenizer/artifacts/training_input_manifest.csv",
+        "sha256": "9322655c4ecc65fb4ca3e95664eb7572baa39230170586084fbab98a5f2bfcc7",
+        "bytes": 150586,
+        "mtime_utc": "2026-11-15T16:23:15+00:00"
+      },
+      {
+        "path": "tokenizer/artifacts/training_input_manifest_v1_1.csv",
+        "sha256": "9322655c4ecc65fb4ca3e95664eb7572baa39230170586084fbab98a5f2bfcc7",
+        "bytes": 150586,
+        "mtime_utc": "2026-11-15T16:22:42+00:00"
+      }
+    ],
+    "data_manifest": [
+      {
+        "path": "data/manifests/codesearchnet_javascript_filtered_verification.json",
+        "sha256": "401ad49c3e600169b9b06096b19d556fcda8ad25051f286727ac374468cc691d",
+        "bytes": 3173,
+        "mtime_utc": "2026-11-15T15:38:48+00:00"
+      },
+      {
+        "path": "data/manifests/codesearchnet_javascript_source_metadata.json",
+        "sha256": "60a43d2c45f0afea24a838838e373e3982eb5a2834aac67ba61d80ae979d874e",
+        "bytes": 2525,
+        "mtime_utc": "2026-11-15T15:39:42+00:00"
+      },
+      {
+        "path": "data/manifests/codesearchnet_python_filtered_verification.json",
+        "sha256": "3c6815c1a81565af2410807df765bdef5935be26fb39e07eaf24c4b98c218437",
+        "bytes": 3166,
+        "mtime_utc": "2026-11-15T15:39:08+00:00"
+      },
+      {
+        "path": "data/manifests/codesearchnet_python_source_metadata.json",
+        "sha256": "f6021360052f4fe67649dd531521121d24b3ab393d8bc95df3e6865c0b48753d",
+        "bytes": 2213,
+        "mtime_utc": "2026-11-15T14:45:12+00:00"
+      },
+      {
+        "path": "data/manifests/polycodegpt_corpus_validation.json",
+        "sha256": "5ab411ad6950a58db132d26deb8b7e011b202d0b4a3003fd79d1a7568a169d16",
+        "bytes": 1008,
+        "mtime_utc": "2026-11-15T15:49:18+00:00"
+      },
+      {
+        "path": "data/manifests/codesearchnet_javascript_filtered_manifest.csv",
+        "sha256": "1fae9a620df72697ff74aff91cf11ebd63360f333a5307a622f4c8cedf6b5c94",
+        "bytes": 1129,
+        "mtime_utc": "2026-11-15T15:41:08+00:00"
+      },
+      {
+        "path": "data/manifests/codesearchnet_license_inventory.csv",
+        "sha256": "740837d1b1d73271529ce4877412d18448a687d33db265bd3175c7ccd7f96192",
+        "bytes": 343770419,
+        "mtime_utc": "2026-11-15T13:32:50+00:00"
+      },
+      {
+        "path": "data/manifests/codesearchnet_license_repo_summary.csv",
+        "sha256": "18bdf09832fdd0d8e89a68f44743aced536b812594522cddc1ecd3be2e0493e3",
+        "bytes": 4906642,
+        "mtime_utc": "2026-11-15T13:32:50+00:00"
+      },
+      {
+        "path": "data/manifests/codesearchnet_python_filtered_manifest.csv",
+        "sha256": "0d93684b797193d6bda5ae334ae3ab95d63544145b09be9e03febdbf2343e532",
+        "bytes": 1095,
+        "mtime_utc": "2026-11-15T15:21:46+00:00"
+      },
+      {
+        "path": "data/manifests/polycodegpt_corpus_manifest.csv",
+        "sha256": "1cb7b566e6fd51e61a91e4bbafab1ea0322d8bd78c7284ac794c81f764a1cf0f",
+        "bytes": 1211,
+        "mtime_utc": "2026-11-15T15:49:16+00:00"
+      },
+      {
+        "path": "data/manifests/python_docs_en_files.csv",
+        "sha256": "67d34edd8f4e549d7343d35b9f5b3be5ae51385aad75e94e825d8746e79e2983",
+        "bytes": 278039,
+        "mtime_utc": "2026-11-15T13:06:06+00:00"
+      },
+      {
+        "path": "data/manifests/python_docs_training_corpus_inventory.csv",
+        "sha256": "cb5f870ce3f95fb30399d0eede8c322e626ca1d6d25083af03586a9f382d1f25",
+        "bytes": 282879,
+        "mtime_utc": "2026-11-15T15:46:34+00:00"
+      },
+      {
+        "path": "data/manifests/source_registry.csv",
+        "sha256": "ba676fc34fc970b94f8d5e4dd5d02b4c07a14aad1ddb3e417f9c042aa87382f6",
+        "bytes": 9305,
+        "mtime_utc": "2026-11-15T15:39:42+00:00"
+      },
+      {
+        "path": "data/processed/tokenized_v1_1/manifest.json",
+        "sha256": "367636ca923c8e9b6d0693a7606ae06504e76067908c686bcbf0e746508f5544",
+        "bytes": 6119,
+        "mtime_utc": "2026-11-15T17:47:16+00:00"
+      }
+    ],
+    "config": [
+      {
+        "path": "configs/model.yaml",
+        "sha256": "8b960967dea848ebb4cd428c48ad4155dc72c1c13e9f18aa23c54a22035ec8c2",
+        "bytes": 686,
+        "mtime_utc": "2026-11-14T14:52:17+00:00"
+      },
+      {
+        "path": "configs/training.yaml",
+        "sha256": "36ea99cedaba4dc8c36ee6bb1794bfa393b273d10d756fc19a38d352a7534262",
+        "bytes": 1116,
+        "mtime_utc": "2026-11-15T18:15:50+00:00"
+      }
+    ],
+    "report": [
+      {
+        "path": "reports/phase10_generation_evaluation_20261117_150204.json",
+        "sha256": "10181afac4127fa5d22b87f7cba74834b0102722665223ce402788cc201c977a",
+        "bytes": 120264,
+        "mtime_utc": "2026-11-17T14:02:04+00:00"
+      },
+      {
+        "path": "reports/phase10_generation_evaluation_20261117_153043.json",
+        "sha256": "542f1b4a7f088c1dcfe4edcd6c6d5f9879a2041be172e2e59d2c3ce4a14c7387",
+        "bytes": 83343,
+        "mtime_utc": "2026-11-17T14:30:43+00:00"
+      },
+      {
+        "path": "reports/phase10e_inference_diagnostics.json",
+        "sha256": "7d5665adeb8ef6fdd8ea09a1ec2feda5793dee39cf7f88ec0a7822541cf3ea22",
+        "bytes": 24785,
+        "mtime_utc": "2026-11-17T14:48:43+00:00"
+      },
+      {
+        "path": "reports/phase10f_decoding_diagnostics.json",
+        "sha256": "b1e3704430299b5c81a4ae29cdff68a2704848f48ac0045088daf32dbb75a4e0",
+        "bytes": 93820,
+        "mtime_utc": "2026-11-17T15:11:24+00:00"
+      },
+      {
+        "path": "reports/phase10f_label_examples.json",
+        "sha256": "2fef940eeb66a325824a3def1850a7e79a57b3103b2b9cbc7d63fcb2ac153465",
+        "bytes": 43882,
+        "mtime_utc": "2026-11-17T15:30:00+00:00"
+      },
+      {
+        "path": "reports/phase11_functional_results.json",
+        "sha256": "055410a825fac2a713a68e1c08cc5801f229b00674b1f5958a1b4d242298107e",
+        "bytes": 153714,
+        "mtime_utc": "2026-11-17T16:05:41+00:00"
+      },
+      {
+        "path": "reports/phase11_sandbox_security.json",
+        "sha256": "1518ac0c555168ff1370d23e986eb73c6ebdce554a611751d2c2d069a87d9dfa",
+        "bytes": 7840,
+        "mtime_utc": "2026-11-17T16:02:19+00:00"
+      },
+      {
+        "path": "reports/codesearchnet_javascript_filter_report.md",
+        "sha256": "5b014363d61800915c705618bff175969e7cd53e372b65376914cce135158048",
+        "bytes": 10519,
+        "mtime_utc": "2026-11-15T15:40:59+00:00"
+      },
+      {
+        "path": "reports/codesearchnet_license_audit.md",
+        "sha256": "f12e8c1f39f9259051feb27639305a684108ded6157312190a78b1790c7fbfc6",
+        "bytes": 19830,
+        "mtime_utc": "2026-11-15T13:35:11+00:00"
+      },
+      {
+        "path": "reports/codesearchnet_python_collection_report.md",
+        "sha256": "319ffc8ce6c3b7a229ac07080e409a6efe167d8a266d20ee2460ab545a2222b5",
+        "bytes": 5720,
+        "mtime_utc": "2026-11-15T14:48:05+00:00"
+      },
+      {
+        "path": "reports/codesearchnet_python_filter_report.md",
+        "sha256": "38080e8f57fb35b33a8ab632149fe5037787fea701c69633f93dd8476485d0dc",
+        "bytes": 12367,
+        "mtime_utc": "2026-11-15T15:41:14+00:00"
+      },
+      {
+        "path": "reports/phase10_benchmark_spec.md",
+        "sha256": "9ff8f8859b005f196f4b118d8738029741df27652e1467d8b85e14a34ecc9de4",
+        "bytes": 17182,
+        "mtime_utc": "2026-11-17T01:53:13+00:00"
+      },
+      {
+        "path": "reports/phase10_evaluation_summary.md",
+        "sha256": "5f3ee5f821ccefac2668644a6e5d41c707dee98e20d3e9fbefac92060e706c51",
+        "bytes": 833,
+        "mtime_utc": "2026-11-17T14:30:43+00:00"
+      },
+      {
+        "path": "reports/phase10_plan.md",
+        "sha256": "f49b5970a5f20c9f47b1e3519ecbffee99d136db8d7d70c6eff68efd691304ad",
+        "bytes": 10717,
+        "mtime_utc": "2026-11-17T01:46:15+00:00"
+      },
+      {
+        "path": "reports/phase10_progress.md",
+        "sha256": "90c59913fbe30fdf066180585603f12d53511270a47bb3d495e6ed16d3cc679b",
+        "bytes": 9499,
+        "mtime_utc": "2026-11-17T03:24:46+00:00"
+      },
+      {
+        "path": "reports/phase10f_reconciliation.md",
+        "sha256": "8c91163149b4a0f3754cccd36134d771c6372e4daa5ec036a558dfe8157fe289",
+        "bytes": 38681,
+        "mtime_utc": "2026-11-17T15:34:30+00:00"
+      },
+      {
+        "path": "reports/phase11_functional_results.md",
+        "sha256": "656442daf9c2caf94b7cbb95bb26b7a4932b82c714234f810c87acd7d3165dd0",
+        "bytes": 12060,
+        "mtime_utc": "2026-11-17T16:05:41+00:00"
+      },
+      {
+        "path": "reports/phase11_functional_spec.md",
+        "sha256": "bc5b2bee396b22fc697503605dc6aba825919db856938924561fb25c54bde1cd",
+        "bytes": 52255,
+        "mtime_utc": "2026-11-17T16:00:08+00:00"
+      },
+      {
+        "path": "reports/phase11_implementation.md",
+        "sha256": "e02be4ca755c3e0646a7ff35f1a8b8eca204f5998a1c38ae32db78161efbcf44",
+        "bytes": 12352,
+        "mtime_utc": "2026-11-17T16:06:38+00:00"
+      },
+      {
+        "path": "reports/phase11_sandbox_security.md",
+        "sha256": "7e5ba2b47026c71e6a6199f362dbf73ebf93af48d865133c43f392b73c012079",
+        "bytes": 3410,
+        "mtime_utc": "2026-11-17T16:02:19+00:00"
+      },
+      {
+        "path": "reports/phase4_transformer_implementation_report.md",
+        "sha256": "2df4e36d9de3828a7e2047a5afe4ddc2e23fe9615a490bc55e6dccc011957c4e",
+        "bytes": 10507,
+        "mtime_utc": "2026-11-15T17:02:51+00:00"
+      },
+      {
+        "path": "reports/phase5a_data_pipeline_report.md",
+        "sha256": "53f12250fda5df9175d8afc8ff6543301ef13b0c4ebe64fe4b503b45cb6037e7",
+        "bytes": 15895,
+        "mtime_utc": "2026-11-15T17:49:32+00:00"
+      },
+      {
+        "path": "reports/phase5b_training_pilot_report.md",
+        "sha256": "863a2c07f5e473da7cbb714b590a8a6ffb20ef2f9f45af88e22e28a6c25422fd",
+        "bytes": 15857,
+        "mtime_utc": "2026-11-15T18:29:35+00:00"
+      },
+      {
+        "path": "reports/phase5c_first_training_pass_report.md",
+        "sha256": "e27b3060013d1b89d20c909f710260fbd8bd787e225cac64eed00f2ce2566b91",
+        "bytes": 22985,
+        "mtime_utc": "2026-11-16T00:35:35+00:00"
+      },
+      {
+        "path": "reports/phase6_generation_samples.md",
+        "sha256": "e06d101c3dcf93df43653ce923d17ce914e5e427b1c7ae0f5988ff9740c1cf6b",
+        "bytes": 7064,
+        "mtime_utc": "2026-11-16T00:51:47+00:00"
+      },
+      {
+        "path": "reports/phase6_generation_samples_sampling.md",
+        "sha256": "7c676ea181b7a6baca78d969347f414267e49efa61cacadcc5ac19defda74d93",
+        "bytes": 5774,
+        "mtime_utc": "2026-11-16T01:04:53+00:00"
+      },
+      {
+        "path": "reports/phase6_test_evaluation_report.md",
+        "sha256": "db22f324ba5edb66a372f59d018a0290e69ced9160b39ebad62a3face45f7f34",
+        "bytes": 2249,
+        "mtime_utc": "2026-11-16T00:45:53+00:00"
+      },
+      {
+        "path": "reports/phase6_validation_generation_diagnostic.md",
+        "sha256": "1e374a5679683cef974785587de2bc2d12902f56b0d1a7a72848652cff77ca87",
+        "bytes": 64848,
+        "mtime_utc": "2026-11-16T20:34:58+00:00"
+      },
+      {
+        "path": "reports/phase7_data_quality_audit.md",
+        "sha256": "cc9b75feff52559cd95ad4edad740927c12eb9b805b7169fb9f741d2187167c4",
+        "bytes": 97724,
+        "mtime_utc": "2026-11-16T21:13:37+00:00"
+      },
+      {
+        "path": "reports/phase8_validation_loss_decomposition.md",
+        "sha256": "0011454a198e8287dfc10826a2161684ac4a8a0e229fe27986af87d3ce78cc8f",
+        "bytes": 6533,
+        "mtime_utc": "2026-11-17T00:31:03+00:00"
+      },
+      {
+        "path": "reports/phase9_integrity_repetition_audit.md",
+        "sha256": "5a9639b51a38f701c4d3a3b92b52128931d07533b1b31b86e6ce7fa2e30f93a6",
+        "bytes": 13509,
+        "mtime_utc": "2026-11-17T01:38:44+00:00"
+      },
+      {
+        "path": "reports/polycodegpt_combined_corpus_report.md",
+        "sha256": "0b676b40ec33fb8edc3aa4f9ab55080831c3376bb0fa7f09b4d5e9a9fe987f96",
+        "bytes": 13510,
+        "mtime_utc": "2026-11-15T15:52:04+00:00"
+      },
+      {
+        "path": "reports/python_docs_collection_report.md",
+        "sha256": "6c21cff02d07710cc630d45afa21142cf2deefddc3717f7efa954ea6ae0984ea",
+        "bytes": 12709,
+        "mtime_utc": "2026-11-15T13:33:16+00:00"
+      },
+      {
+        "path": "reports/tokenizer_finalization_audit.md",
+        "sha256": "97106cf0a00a8cded5ef6f7aedb004619a463b71f98ac2881e26470d22c3130e",
+        "bytes": 9037,
+        "mtime_utc": "2026-11-15T16:14:46+00:00"
+      },
+      {
+        "path": "reports/tokenizer_finalization_v1_1_report.md",
+        "sha256": "49063937a5ceedb9201c70e25db6227aa0c5946e71aa8eb09d886b6500620d00",
+        "bytes": 10837,
+        "mtime_utc": "2026-11-15T16:26:44+00:00"
+      },
+      {
+        "path": "reports/tokenizer_training_report.md",
+        "sha256": "647920d32ae0f09fca5fa5cb6fecf06de746f3d393d94dce8e02e2f060ebe403",
+        "bytes": 11767,
+        "mtime_utc": "2026-11-15T16:14:12+00:00"
+      }
+    ]
+  },
+  "checkpoint": {
+    "checkpoint": "checkpoints/polycodegpt_first_pass/step_008130.pt",
+    "checkpoint_sha256": "5562acc2fd58837f9d4245042b7f0b10de65520aa2ba292999c80045470590bd",
+    "step": 8130,
+    "tokens_seen": 133192704,
+    "sequences": 260142,
+    "micro_batches": 65036,
+    "best_val_loss": 2.3928599059581757,
+    "best_step": 8130,
+    "precision": "bf16",
+    "seed": 42,
+    "settings": {
+      "micro_batch_size": 4,
+      "gradient_accumulation_steps": 8,
+      "effective_batch_size": 32,
+      "tokens_per_step": 16384,
+      "max_steps": 8130,
+      "total_steps": 8130,
+      "warmup_fraction": 0.02,
+      "warmup_steps": 163,
+      "min_lr_ratio": 0.1,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "gradient_clip": 1.0,
+      "precision": "auto",
+      "seed": 42,
+      "context_length": 512,
+      "eval_steps": [],
+      "checkpoint_steps": [],
+      "eval_every": 100,
+      "checkpoint_every": 500,
+      "complete_pass": true,
+      "partial_final_update": true
+    },
+    "scheduler_state": {
+      "total_steps": 8130,
+      "warmup_steps": 163,
+      "min_lr_ratio": 0.1,
+      "last_step": 8130
+    },
+    "model_config": {
+      "vocab_size": 16000,
+      "d_model": 384,
+      "n_layers": 6,
+      "n_heads": 6,
+      "ffn_dim": 1536,
+      "context_length": 512,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "layer_norm_eps": 1e-05,
+      "init_std": 0.02,
+      "architecture": "decoder_only_transformer"
+    },
+    "checks": {
+      "step_is_8130": {
+        "ok": true,
+        "value": 8130
+      },
+      "tokenizer_hash_matches": {
+        "ok": true,
+        "checkpoint": "0459f8556a6f79ca1ba1c3dc3f76c26ae2e55653ebbf97beaa9bd23467358a03",
+        "on_disk": "0459f8556a6f79ca1ba1c3dc3f76c26ae2e55653ebbf97beaa9bd23467358a03"
+      },
+      "data_manifest_hash_matches": {
+        "ok": true,
+        "checkpoint": "367636ca923c8e9b6d0693a7606ae06504e76067908c686bcbf0e746508f5544",
+        "on_disk": "367636ca923c8e9b6d0693a7606ae06504e76067908c686bcbf0e746508f5544"
+      },
+      "model_state_loads_strictly": {
+        "ok": true,
+        "missing": 0,
+        "unexpected": 0,
+        "parameter_count": 16988160,
+        "checkpoint_parameter_count": 16988160
+      },
+      "optimizer_state_restores": {
+        "ok": true,
+        "parameter_groups": 2,
+        "tensors_with_moments": 100,
+        "parameters": 100,
+        "adam_step_values": [
+          8130
+        ],
+        "group_weight_decay": [
+          0.1,
+          0.0
+        ]
+      },
+      "scheduler_state_restores": {
+        "ok": true,
+        "total_steps": 8130,
+        "warmup_steps": 163,
+        "min_lr_ratio": 0.1,
+        "last_step": 8130,
+        "base_lr": 0.0003,
+        "next_step_lr": 3e-05
+      },
+      "rng_state_present": {
+        "ok": true,
+        "keys": [
+          "cuda",
+          "loader_generator",
+          "numpy",
+          "python",
+          "torch"
+        ],
+        "loader_epoch_state_shape": [
+          5056
+        ],
+        "loader_epoch_state_dtype": "torch.uint8"
+      },
+      "token_accounting": {
+        "ok": true,
+        "tokens_seen": 133192704,
+        "sequences_x_context": 133192704,
+        "sequences": 260142,
+        "micro_batches": 65036,
+        "partial_final_group_sequences": 14,
+        "partial_final_micro_batch_slack": 2
+      }
+    },
+    "all_checks_passed": true
+  }
+}

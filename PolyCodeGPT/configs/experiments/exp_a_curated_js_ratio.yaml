@@ -1,0 +1,95 @@
+# Phase 12A — Experiment branch A: better-quality JavaScript, original ratio
+# Replaces the JS split with the curated js_v1 set, oversampled with
+# replacement to the original JS token volume so the Python:JavaScript
+# exposure ratio and the total token budget stay identical to the control.
+# STATUS: planned (not run).
+
+experiment:
+  id: exp_a
+  name: "Exp A — curated JS, original language ratio"
+  phase: 12A
+  status: planned_not_run
+  base_checkpoint: checkpoints/polycodegpt_first_pass/step_008130.pt
+  base_checkpoint_sha256: "5562acc2fd58837f9d4245042b7f0b10de65520aa2ba292999c80045470590bd"
+  base_checkpoint_step: 8130
+  seed: 42
+
+data:
+  python_source: data/processed/polycodegpt_corpus/train.jsonl
+  python_filter: language == python
+  python_records: 290463
+  python_sampling: all_original
+  javascript_source: data/curated/js_v1/train.jsonl
+  javascript_records_available: 35658
+  javascript_sampling: oversample_with_replacement_to_original_js_token_volume
+  javascript_effective_records: 102169  # ~2.86x oversampling of the curated set
+  token_budget_total: 133192957
+  english_doc_tokens: 2847020
+  code_tokens: 130345937
+  token_budget_per_language:
+    python: 98807136
+    javascript: 31538801
+  curated_filter: experiments/phase12a/rules.py  # 102169 -> 35658
+  dedup: exact + minhash (already applied during curation)
+  validation_split: data/processed/polycodegpt_corpus/valid.jsonl
+
+training:
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.999
+  eps: 1.0e-8
+  gradient_clip: 1.0
+  max_steps: 16260
+  additional_steps: 8130
+  # Deterministic configuration (Phase 12B).  Seeds are explicit per stream so a
+  # run can be reproduced without relying on process-global state.
+  deterministic: true
+  python_seed: 42
+  torch_seed: 42
+  cuda_seed: 42
+  dataloader_worker_seed: 42
+  dataloader_num_workers: 0
+  deterministic_algorithms: true
+  cudnn_deterministic: true
+  cudnn_benchmark: false
+  micro_batch_size: 4
+  gradient_accumulation_steps: 8
+  effective_batch_size: 32
+  tokens_per_step: 16384
+  context_length: 512
+  precision: auto
+  seed: 42
+
+schedule:
+  total_steps: 8130
+  warmup_fraction: 0.02
+  warmup_steps: 163
+  reset_schedule: true
+  reset_optimizer_step: false
+  min_lr_ratio: 0.1
+
+checkpointing:
+  validation_interval: 500
+  checkpoint_interval: 1000
+  checkpoint_steps: [500, 1000, 2000, 4000, 8129]
+  save_optimizer_state: true
+  save_rng_state: true
+  save_loader_state: true
+
+evaluation:
+  development:
+    - phase10_syntax_benchmark
+    - phase11_functional_benchmark
+  validation_loss: data/processed/polycodegpt_corpus/valid.jsonl
+  final_benchmark: independent_phase12b
+
+constraints:
+  - no_retraining_in_this_phase
+  - base_checkpoint_never_modified
+  - original_datasets_never_modified
+  - tokenizer_never_modified
+  - no_test_split_access
+  - experiments_not_launched
+  - oversampling_is_with_replacement_and_is_documented_as_such

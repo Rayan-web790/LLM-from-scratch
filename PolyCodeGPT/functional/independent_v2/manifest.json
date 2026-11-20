@@ -1,0 +1,4981 @@
+{
+  "benchmark": "independent_v2",
+  "tasks": [
+    {
+      "task_id": "py_v2_01",
+      "language": "python",
+      "index": 1,
+      "entry": "sumSquaredValues",
+      "signature": "def sumSquaredValues(nums):",
+      "docstring": "Return sum(x*x for x in nums).",
+      "behavior": "Return sum(x*x for x in nums).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 14
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              2
+            ]
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_02",
+      "language": "python",
+      "index": 2,
+      "entry": "count_positives",
+      "signature": "def count_positives(nums):",
+      "docstring": "Count strictly positive numbers in nums.",
+      "behavior": "Count strictly positive numbers in nums.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              0
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              -2
+            ]
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_03",
+      "language": "python",
+      "index": 3,
+      "entry": "count_negatives",
+      "signature": "def count_negatives(nums):",
+      "docstring": "Count strictly negative numbers in nums.",
+      "behavior": "Count strictly negative numbers in nums.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              -4
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_04",
+      "language": "python",
+      "index": 4,
+      "entry": "max_abs",
+      "signature": "def max_abs(nums):",
+      "docstring": "Return max(|x|) in nums, or None if empty.",
+      "behavior": "Return max(|x|) in nums, or None if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2
+            ]
+          ],
+          "expected": 3
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": null
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              -5
+            ]
+          ],
+          "expected": 5
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 3
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_05",
+      "language": "python",
+      "index": 5,
+      "entry": "min_abs",
+      "signature": "def min_abs(nums):",
+      "docstring": "Return min(|x|) in nums, or None if empty.",
+      "behavior": "Return min(|x|) in nums, or None if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2
+            ]
+          ],
+          "expected": 1
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": null
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              -5
+            ]
+          ],
+          "expected": 5
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 1
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_06",
+      "language": "python",
+      "index": 6,
+      "entry": "all_positive",
+      "signature": "def all_positive(nums):",
+      "docstring": "Return True if all elements of nums are > 0.",
+      "behavior": "Return True if all elements of nums are > 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "all",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "some",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2
+            ]
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": true
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_07",
+      "language": "python",
+      "index": 7,
+      "entry": "any_negative",
+      "signature": "def any_negative(nums):",
+      "docstring": "Return True if any element of nums is < 0.",
+      "behavior": "Return True if any element of nums is < 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_08",
+      "language": "python",
+      "index": 8,
+      "entry": "count_zeros",
+      "signature": "def count_zeros(nums):",
+      "docstring": "Count elements equal to 0 in nums.",
+      "behavior": "Count elements equal to 0 in nums.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              0,
+              1,
+              0,
+              2
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_09",
+      "language": "python",
+      "index": 9,
+      "entry": "sum_first_n",
+      "signature": "def sum_first_n(nums, n):",
+      "docstring": "Sum the first n elements (all if n > len).",
+      "behavior": "Sum the first n elements (all if n > len).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2
+          ],
+          "expected": 3
+        },
+        {
+          "name": "all",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            10
+          ],
+          "expected": 6
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            2
+          ],
+          "expected": 3
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_10",
+      "language": "python",
+      "index": 10,
+      "entry": "sum_last_n",
+      "signature": "def sum_last_n(nums, n):",
+      "docstring": "Sum the last n elements.",
+      "behavior": "Sum the last n elements.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2
+          ],
+          "expected": 7
+        },
+        {
+          "name": "all",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            10
+          ],
+          "expected": 6
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            2
+          ],
+          "expected": 9
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_11",
+      "language": "python",
+      "index": 11,
+      "entry": "mean_rounded",
+      "signature": "def mean_rounded(nums):",
+      "docstring": "Mean of nums rounded to 2 decimals; 0 if empty.",
+      "behavior": "Mean of nums rounded to 2 decimals; 0 if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2.0
+        },
+        {
+          "name": "dec",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_12",
+      "language": "python",
+      "index": 12,
+      "entry": "median_simple",
+      "signature": "def median_simple(nums):",
+      "docstring": "Median (average of two middles when even).",
+      "behavior": "Median (average of two middles when even).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "odd",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2.0
+        },
+        {
+          "name": "even",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 2.5
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": 5.0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_13",
+      "language": "python",
+      "index": 13,
+      "entry": "range_of",
+      "signature": "def range_of(nums):",
+      "docstring": "max-min of nums, or 0 if empty.",
+      "behavior": "max-min of nums, or 0 if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              3
+            ]
+          ],
+          "expected": 4
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              3,
+              4
+            ]
+          ],
+          "expected": 4
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_14",
+      "language": "python",
+      "index": 14,
+      "entry": "normalize_minmax",
+      "signature": "def normalize_minmax(nums):",
+      "docstring": "Min-max scale nums to [0,1]; [] if empty; all-equal -> list of 0.0.",
+      "behavior": "Min-max scale nums to [0,1]; [] if empty; all-equal -> list of 0.0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            0.0,
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "equal",
+          "kind": "normal",
+          "args": [
+            [
+              5,
+              5
+            ]
+          ],
+          "expected": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_15",
+      "language": "python",
+      "index": 15,
+      "entry": "reverse_words",
+      "signature": "def reverse_words(s):",
+      "docstring": "Reverse order of whitespace-separated words.",
+      "behavior": "Reverse order of whitespace-separated words.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "hello world"
+          ],
+          "expected": "world hello"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "hi"
+          ],
+          "expected": "hi"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "hello world!"
+          ],
+          "expected": "world! hello"
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_16",
+      "language": "python",
+      "index": 16,
+      "entry": "count_words",
+      "signature": "def count_words(s):",
+      "docstring": "Count whitespace-separated words.",
+      "behavior": "Count whitespace-separated words.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a b c"
+          ],
+          "expected": 3
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": 0
+        },
+        {
+          "name": "multi",
+          "kind": "normal",
+          "args": [
+            "  x   y  "
+          ],
+          "expected": 2
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_17",
+      "language": "python",
+      "index": 17,
+      "entry": "longest_word",
+      "signature": "def longest_word(s):",
+      "docstring": "Longest word in s (first on ties); '' if empty.",
+      "behavior": "Longest word in s (first on ties); '' if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a bb ccc"
+          ],
+          "expected": "ccc"
+        },
+        {
+          "name": "tie",
+          "kind": "normal",
+          "args": [
+            "aa bb"
+          ],
+          "expected": "aa"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_18",
+      "language": "python",
+      "index": 18,
+      "entry": "shortest_word",
+      "signature": "def shortest_word(s):",
+      "docstring": "Shortest word in s (first on ties); '' if empty.",
+      "behavior": "Shortest word in s (first on ties); '' if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a bb ccc"
+          ],
+          "expected": "a"
+        },
+        {
+          "name": "tie",
+          "kind": "normal",
+          "args": [
+            "aa bb"
+          ],
+          "expected": "aa"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_19",
+      "language": "python",
+      "index": 19,
+      "entry": "words_sorted",
+      "signature": "def words_sorted(s):",
+      "docstring": "Sorted list of words in s.",
+      "behavior": "Sorted list of words in s.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "banana apple cherry"
+          ],
+          "expected": [
+            "apple",
+            "banana",
+            "cherry"
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "banana apple cherry!"
+          ],
+          "expected": [
+            "apple",
+            "banana",
+            "cherry!"
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_20",
+      "language": "python",
+      "index": 20,
+      "entry": "remove_punctuation",
+      "signature": "def remove_punctuation(s):",
+      "docstring": "Remove non-alphanumeric chars, keep spaces.",
+      "behavior": "Remove non-alphanumeric chars, keep spaces.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a,b! c."
+          ],
+          "expected": "ab c"
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "abc"
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_21",
+      "language": "python",
+      "index": 21,
+      "entry": "is_substring",
+      "signature": "def is_substring(a, b):",
+      "docstring": "True if a occurs in b.",
+      "behavior": "True if a occurs in b.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            "bc",
+            "abcd"
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            "xy",
+            "abcd"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty a",
+          "kind": "boundary",
+          "args": [
+            "",
+            "abcd"
+          ],
+          "expected": true
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_22",
+      "language": "python",
+      "index": 22,
+      "entry": "count_substring",
+      "signature": "def count_substring(s, sub):",
+      "docstring": "Non-overlapping count of sub in s.",
+      "behavior": "Non-overlapping count of sub in s.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "ababab",
+            "ab"
+          ],
+          "expected": 3
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "xy"
+          ],
+          "expected": 0
+        },
+        {
+          "name": "empty sub",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            ""
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_23",
+      "language": "python",
+      "index": 23,
+      "entry": "replaceAllOccurrences",
+      "signature": "def replaceAllOccurrences(s, old, new):",
+      "docstring": "Replace all occurrences of old with new.",
+      "behavior": "Replace all occurrences of old with new.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "aXbXc",
+            "X",
+            "Y"
+          ],
+          "expected": "aYbYc"
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "X",
+            "Y"
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "empty",
+          "kind": "normal",
+          "args": [
+            "",
+            "a",
+            "b"
+          ],
+          "expected": ""
+        },
+        {
+          "name": "boundary_extra",
+          "kind": "boundary",
+          "args": [
+            "",
+            "",
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_24",
+      "language": "python",
+      "index": 24,
+      "entry": "starts_with_vowel",
+      "signature": "def starts_with_vowel(s):",
+      "docstring": "True if s starts with a vowel (case-insensitive).",
+      "behavior": "True if s starts with a vowel (case-insensitive).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            "apple"
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            "banana"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_25",
+      "language": "python",
+      "index": 25,
+      "entry": "ends_with_digit",
+      "signature": "def ends_with_digit(s):",
+      "docstring": "True if s ends with a digit.",
+      "behavior": "True if s ends with a digit.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            "abc3"
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            "abc"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_26",
+      "language": "python",
+      "index": 26,
+      "entry": "alternating_case",
+      "signature": "def alternating_case(s):",
+      "docstring": "Alternating case starting uppercase.",
+      "behavior": "Alternating case starting uppercase.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "HeLlO"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "A"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "hello!"
+          ],
+          "expected": "HeLlO!"
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_27",
+      "language": "python",
+      "index": 27,
+      "entry": "collapseWhitespaceRuns",
+      "signature": "def collapseWhitespaceRuns(s):",
+      "docstring": "Collapse consecutive whitespace to one space and trim.",
+      "behavior": "Collapse consecutive whitespace to one space and trim.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "  a   b  "
+          ],
+          "expected": "a b"
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "a b"
+          ],
+          "expected": "a b"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_28",
+      "language": "python",
+      "index": 28,
+      "entry": "truncateText",
+      "signature": "def truncateText(s, n):",
+      "docstring": "Truncate to n chars, append '...' if truncated.",
+      "behavior": "Truncate to n chars, append '...' if truncated.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "long",
+          "kind": "normal",
+          "args": [
+            "abcdef",
+            3
+          ],
+          "expected": "abc..."
+        },
+        {
+          "name": "short",
+          "kind": "boundary",
+          "args": [
+            "ab",
+            5
+          ],
+          "expected": "ab"
+        },
+        {
+          "name": "exact",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            3
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "abcdef!",
+            3
+          ],
+          "expected": "abc..."
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_29",
+      "language": "python",
+      "index": 29,
+      "entry": "pad_left",
+      "signature": "def pad_left(s, width, char=' '):",
+      "docstring": "Left-pad s to width with char (default space).",
+      "behavior": "Left-pad s to width with char (default space).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 1,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "ab",
+            5
+          ],
+          "expected": "   ab"
+        },
+        {
+          "name": "char",
+          "kind": "normal",
+          "args": [
+            "ab",
+            5,
+            "0"
+          ],
+          "expected": "000ab"
+        },
+        {
+          "name": "no pad",
+          "kind": "boundary",
+          "args": [
+            "abcde",
+            3
+          ],
+          "expected": "abcde"
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_30",
+      "language": "python",
+      "index": 30,
+      "entry": "checkPrimality",
+      "signature": "def checkPrimality(n):",
+      "docstring": "True if n is prime (n>=2).",
+      "behavior": "True if n is prime (n>=2).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "prime",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": true
+        },
+        {
+          "name": "not",
+          "kind": "normal",
+          "args": [
+            8
+          ],
+          "expected": false
+        },
+        {
+          "name": "two",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": true
+        },
+        {
+          "name": "one",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_31",
+      "language": "python",
+      "index": 31,
+      "entry": "next_prime",
+      "signature": "def next_prime(n):",
+      "docstring": "Smallest prime >= n (n>=2).",
+      "behavior": "Smallest prime >= n (n>=2).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 11
+        },
+        {
+          "name": "prime",
+          "kind": "boundary",
+          "args": [
+            7
+          ],
+          "expected": 7
+        },
+        {
+          "name": "two",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": 2
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            11
+          ],
+          "expected": 11
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_32",
+      "language": "python",
+      "index": 32,
+      "entry": "prime_count_upto",
+      "signature": "def prime_count_upto(n):",
+      "docstring": "Count primes <= n. Returns the computed result as specified.",
+      "behavior": "Count primes <= n. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 4
+        },
+        {
+          "name": "small",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": 1
+        },
+        {
+          "name": "none",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            11
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_33",
+      "language": "python",
+      "index": 33,
+      "entry": "gcd_two",
+      "signature": "def gcd_two(a, b):",
+      "docstring": "GCD of a, b. Returns the computed result as specified.",
+      "behavior": "GCD of a, b. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            12,
+            18
+          ],
+          "expected": 6
+        },
+        {
+          "name": "coprime",
+          "kind": "normal",
+          "args": [
+            7,
+            13
+          ],
+          "expected": 1
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0,
+            5
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_34",
+      "language": "python",
+      "index": 34,
+      "entry": "lcm_two",
+      "signature": "def lcm_two(a, b):",
+      "docstring": "LCM of a, b. Returns the computed result as specified.",
+      "behavior": "LCM of a, b. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            4,
+            6
+          ],
+          "expected": 12
+        },
+        {
+          "name": "coprime",
+          "kind": "normal",
+          "args": [
+            3,
+            5
+          ],
+          "expected": 15
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0,
+            5
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_35",
+      "language": "python",
+      "index": 35,
+      "entry": "iterativeFactorialValue",
+      "signature": "def iterativeFactorialValue(n):",
+      "docstring": "n! iteratively. Returns the computed result as specified.",
+      "behavior": "n! iteratively. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "one",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            6
+          ],
+          "expected": 720
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_36",
+      "language": "python",
+      "index": 36,
+      "entry": "raiseToPower",
+      "signature": "def raiseToPower(base, exp):",
+      "docstring": "base**exp for exp>=0.",
+      "behavior": "base**exp for exp>=0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            2,
+            10
+          ],
+          "expected": 1024
+        },
+        {
+          "name": "zero exp",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "base 0",
+          "kind": "normal",
+          "args": [
+            0,
+            3
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_37",
+      "language": "python",
+      "index": 37,
+      "entry": "sqrt_floor",
+      "signature": "def sqrt_floor(n):",
+      "docstring": "Floor sqrt of n. Returns the computed result as specified.",
+      "behavior": "Floor sqrt of n. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 3
+        },
+        {
+          "name": "perfect",
+          "kind": "boundary",
+          "args": [
+            16
+          ],
+          "expected": 4
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            11
+          ],
+          "expected": 3
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_38",
+      "language": "python",
+      "index": 38,
+      "entry": "abs_diff",
+      "signature": "def abs_diff(a, b):",
+      "docstring": "|a-b|. Returns the computed result as specified.",
+      "behavior": "|a-b|. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            3,
+            7
+          ],
+          "expected": 4
+        },
+        {
+          "name": "equal",
+          "kind": "boundary",
+          "args": [
+            5,
+            5
+          ],
+          "expected": 0
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            -2,
+            3
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_39",
+      "language": "python",
+      "index": 39,
+      "entry": "signOfNumber",
+      "signature": "def signOfNumber(n):",
+      "docstring": "-1/0/1 by sign of n.",
+      "behavior": "-1/0/1 by sign of n.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "pos",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 1
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            -3
+          ],
+          "expected": -1
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_40",
+      "language": "python",
+      "index": 40,
+      "entry": "clamp_list",
+      "signature": "def clamp_list(nums, lo, hi):",
+      "docstring": "Clamp each element to [lo, hi].",
+      "behavior": "Clamp each element to [lo, hi].",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              10,
+              15
+            ],
+            3,
+            12
+          ],
+          "expected": [
+            3,
+            5,
+            10,
+            12
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            0,
+            1
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              10,
+              15,
+              16
+            ],
+            3,
+            12
+          ],
+          "expected": [
+            3,
+            5,
+            10,
+            12,
+            12
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_41",
+      "language": "python",
+      "index": 41,
+      "entry": "filter_positive",
+      "signature": "def filter_positive(nums):",
+      "docstring": "Elements > 0. Returns the computed result as specified.",
+      "behavior": "Elements > 0. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              2,
+              -3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              -2
+            ]
+          ],
+          "expected": []
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_42",
+      "language": "python",
+      "index": 42,
+      "entry": "filter_negative",
+      "signature": "def filter_negative(nums):",
+      "docstring": "Elements < 0. Returns the computed result as specified.",
+      "behavior": "Elements < 0. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              2,
+              -3,
+              4
+            ]
+          ],
+          "expected": [
+            -1,
+            -3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": []
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_43",
+      "language": "python",
+      "index": 43,
+      "entry": "square_list",
+      "signature": "def square_list(nums):",
+      "docstring": "Each element squared.",
+      "behavior": "Each element squared.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            4,
+            9
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            [
+              -2
+            ]
+          ],
+          "expected": [
+            4
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_44",
+      "language": "python",
+      "index": 44,
+      "entry": "cube_list",
+      "signature": "def cube_list(nums):",
+      "docstring": "Each element cubed. Returns the computed result as specified.",
+      "behavior": "Each element cubed. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            8,
+            27
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            1,
+            8,
+            27,
+            64
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_45",
+      "language": "python",
+      "index": 45,
+      "entry": "double_list",
+      "signature": "def double_list(nums):",
+      "docstring": "Each element doubled.",
+      "behavior": "Each element doubled.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            2,
+            4,
+            6
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_46",
+      "language": "python",
+      "index": 46,
+      "entry": "negate_list",
+      "signature": "def negate_list(nums):",
+      "docstring": "Each element negated.",
+      "behavior": "Each element negated.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3
+            ]
+          ],
+          "expected": [
+            -1,
+            2,
+            -3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            -1,
+            2,
+            -3,
+            -4
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_47",
+      "language": "python",
+      "index": 47,
+      "entry": "sort_ascending",
+      "signature": "def sort_ascending(nums):",
+      "docstring": "Sorted ascending copy.",
+      "behavior": "Sorted ascending copy.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "dup",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            2
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_48",
+      "language": "python",
+      "index": 48,
+      "entry": "sort_descending",
+      "signature": "def sort_descending(nums):",
+      "docstring": "Sorted descending copy.",
+      "behavior": "Sorted descending copy.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            3,
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_49",
+      "language": "python",
+      "index": 49,
+      "entry": "unique_sorted",
+      "signature": "def unique_sorted(nums):",
+      "docstring": "Sorted unique values.",
+      "behavior": "Sorted unique values.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "py_v2_50",
+      "language": "python",
+      "index": 50,
+      "entry": "product_of_list",
+      "signature": "def product_of_list(nums):",
+      "docstring": "Product of elements (1 if empty).",
+      "behavior": "Product of elements (1 if empty).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 24
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 1
+        },
+        {
+          "name": "zero",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              0,
+              3
+            ]
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_01",
+      "language": "javascript",
+      "index": 1,
+      "entry": "sumSquaredValues",
+      "signature": "function sumSquaredValues(arr) {",
+      "docstring": "Return sum of x*x for x in arr.",
+      "behavior": "Return sum of x*x for x in arr.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 14
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              2
+            ]
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_02",
+      "language": "javascript",
+      "index": 2,
+      "entry": "countPositive",
+      "signature": "function countPositive(arr) {",
+      "docstring": "Count strictly positive numbers in arr.",
+      "behavior": "Count strictly positive numbers in arr.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              0
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              -2
+            ]
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_03",
+      "language": "javascript",
+      "index": 3,
+      "entry": "countNegative",
+      "signature": "function countNegative(arr) {",
+      "docstring": "Count strictly negative numbers in arr.",
+      "behavior": "Count strictly negative numbers in arr.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              -4
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_04",
+      "language": "javascript",
+      "index": 4,
+      "entry": "maxAbsValue",
+      "signature": "function maxAbsValue(arr) {",
+      "docstring": "Return max(|x|) in arr, or null if empty.",
+      "behavior": "Return max(|x|) in arr, or null if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2
+            ]
+          ],
+          "expected": 3
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": null
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              -5
+            ]
+          ],
+          "expected": 5
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 3
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_05",
+      "language": "javascript",
+      "index": 5,
+      "entry": "minAbsValue",
+      "signature": "function minAbsValue(arr) {",
+      "docstring": "Return min(|x|) in arr, or null if empty.",
+      "behavior": "Return min(|x|) in arr, or null if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2
+            ]
+          ],
+          "expected": 1
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": null
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              -5
+            ]
+          ],
+          "expected": 5
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              -3,
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 1
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_06",
+      "language": "javascript",
+      "index": 6,
+      "entry": "allPositiveValues",
+      "signature": "function allPositiveValues(arr) {",
+      "docstring": "Return true if every element of arr is > 0.",
+      "behavior": "Return true if every element of arr is > 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "all",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "some",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2
+            ]
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": true
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_07",
+      "language": "javascript",
+      "index": 7,
+      "entry": "anyNegativeValue",
+      "signature": "function anyNegativeValue(arr) {",
+      "docstring": "Return true if any element of arr is < 0.",
+      "behavior": "Return true if any element of arr is < 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3
+            ]
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_08",
+      "language": "javascript",
+      "index": 8,
+      "entry": "zeroCount",
+      "signature": "function zeroCount(arr) {",
+      "docstring": "Count elements equal to 0 in arr.",
+      "behavior": "Count elements equal to 0 in arr.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              0,
+              1,
+              0,
+              2
+            ]
+          ],
+          "expected": 2
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_09",
+      "language": "javascript",
+      "index": 9,
+      "entry": "sumFirstN",
+      "signature": "function sumFirstN(arr, n) {",
+      "docstring": "Sum the first n elements (all if n > length).",
+      "behavior": "Sum the first n elements (all if n > length).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2
+          ],
+          "expected": 3
+        },
+        {
+          "name": "all",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            10
+          ],
+          "expected": 6
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            2
+          ],
+          "expected": 3
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_10",
+      "language": "javascript",
+      "index": 10,
+      "entry": "sumLastN",
+      "signature": "function sumLastN(arr, n) {",
+      "docstring": "Sum the last n elements.",
+      "behavior": "Sum the last n elements.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            2
+          ],
+          "expected": 7
+        },
+        {
+          "name": "all",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            10
+          ],
+          "expected": 6
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ],
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            2
+          ],
+          "expected": 9
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_11",
+      "language": "javascript",
+      "index": 11,
+      "entry": "roundedMean",
+      "signature": "function roundedMean(arr) {",
+      "docstring": "Mean of arr rounded to 2 decimals; 0 if empty.",
+      "behavior": "Mean of arr rounded to 2 decimals; 0 if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2.0
+        },
+        {
+          "name": "dec",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": 1.5
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_12",
+      "language": "javascript",
+      "index": 12,
+      "entry": "simpleMedian",
+      "signature": "function simpleMedian(arr) {",
+      "docstring": "Median (average of two middles when even).",
+      "behavior": "Median (average of two middles when even).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "odd",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": 2.0
+        },
+        {
+          "name": "even",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 2.5
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              5
+            ]
+          ],
+          "expected": 5.0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_13",
+      "language": "javascript",
+      "index": 13,
+      "entry": "valueRange",
+      "signature": "function valueRange(arr) {",
+      "docstring": "max-min of arr, or 0 if empty.",
+      "behavior": "max-min of arr, or 0 if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              3
+            ]
+          ],
+          "expected": 4
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 0
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            [
+              7
+            ]
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              3,
+              4
+            ]
+          ],
+          "expected": 4
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_14",
+      "language": "javascript",
+      "index": 14,
+      "entry": "minMaxNormalize",
+      "signature": "function minMaxNormalize(arr) {",
+      "docstring": "Min-max scale arr to [0,1]; [] if empty; all-equal -> array of 0.",
+      "behavior": "Min-max scale arr to [0,1]; [] if empty; all-equal -> array of 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            0.0,
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "equal",
+          "kind": "normal",
+          "args": [
+            [
+              5,
+              5
+            ]
+          ],
+          "expected": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_15",
+      "language": "javascript",
+      "index": 15,
+      "entry": "reverseWordOrder",
+      "signature": "function reverseWordOrder(s) {",
+      "docstring": "Reverse order of whitespace-separated words.",
+      "behavior": "Reverse order of whitespace-separated words.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "hello world"
+          ],
+          "expected": "world hello"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "hi"
+          ],
+          "expected": "hi"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "hello world!"
+          ],
+          "expected": "world! hello"
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_16",
+      "language": "javascript",
+      "index": 16,
+      "entry": "countWordsInText",
+      "signature": "function countWordsInText(s) {",
+      "docstring": "Count whitespace-separated words.",
+      "behavior": "Count whitespace-separated words.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a b c"
+          ],
+          "expected": 3
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": 0
+        },
+        {
+          "name": "multi",
+          "kind": "normal",
+          "args": [
+            "  x   y  "
+          ],
+          "expected": 2
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_17",
+      "language": "javascript",
+      "index": 17,
+      "entry": "longestWord",
+      "signature": "function longestWord(s) {",
+      "docstring": "Longest word in s (first on ties); '' if empty.",
+      "behavior": "Longest word in s (first on ties); '' if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a bb ccc"
+          ],
+          "expected": "ccc"
+        },
+        {
+          "name": "tie",
+          "kind": "normal",
+          "args": [
+            "aa bb"
+          ],
+          "expected": "aa"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_18",
+      "language": "javascript",
+      "index": 18,
+      "entry": "shortestWord",
+      "signature": "function shortestWord(s) {",
+      "docstring": "Shortest word in s (first on ties); '' if empty.",
+      "behavior": "Shortest word in s (first on ties); '' if empty.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a bb ccc"
+          ],
+          "expected": "a"
+        },
+        {
+          "name": "tie",
+          "kind": "normal",
+          "args": [
+            "aa bb"
+          ],
+          "expected": "aa"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_19",
+      "language": "javascript",
+      "index": 19,
+      "entry": "sortedWords",
+      "signature": "function sortedWords(s) {",
+      "docstring": "Sorted list of words in s.",
+      "behavior": "Sorted list of words in s.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "banana apple cherry"
+          ],
+          "expected": [
+            "apple",
+            "banana",
+            "cherry"
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "banana apple cherry!"
+          ],
+          "expected": [
+            "apple",
+            "banana",
+            "cherry!"
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_20",
+      "language": "javascript",
+      "index": 20,
+      "entry": "stripPunctuation",
+      "signature": "function stripPunctuation(s) {",
+      "docstring": "Remove non-alphanumeric chars, keep spaces.",
+      "behavior": "Remove non-alphanumeric chars, keep spaces.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "a,b! c."
+          ],
+          "expected": "ab c"
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "abc"
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_21",
+      "language": "javascript",
+      "index": 21,
+      "entry": "isSubstring",
+      "signature": "function isSubstring(a, b) {",
+      "docstring": "True if a occurs in b.",
+      "behavior": "True if a occurs in b.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            "bc",
+            "abcd"
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            "xy",
+            "abcd"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty a",
+          "kind": "boundary",
+          "args": [
+            "",
+            "abcd"
+          ],
+          "expected": true
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_22",
+      "language": "javascript",
+      "index": 22,
+      "entry": "countSubstring",
+      "signature": "function countSubstring(s, sub) {",
+      "docstring": "Non-overlapping count of sub in s.",
+      "behavior": "Non-overlapping count of sub in s.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "ababab",
+            "ab"
+          ],
+          "expected": 3
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "xy"
+          ],
+          "expected": 0
+        },
+        {
+          "name": "empty sub",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            ""
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_23",
+      "language": "javascript",
+      "index": 23,
+      "entry": "replaceAllOccurrences",
+      "signature": "function replaceAllOccurrences(s, oldStr, newStr) {",
+      "docstring": "Replace all occurrences of old with new.",
+      "behavior": "Replace all occurrences of old with new.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "aXbXc",
+            "X",
+            "Y"
+          ],
+          "expected": "aYbYc"
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "abc",
+            "X",
+            "Y"
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "empty",
+          "kind": "normal",
+          "args": [
+            "",
+            "a",
+            "b"
+          ],
+          "expected": ""
+        },
+        {
+          "name": "boundary_extra",
+          "kind": "boundary",
+          "args": [
+            "",
+            "",
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_24",
+      "language": "javascript",
+      "index": 24,
+      "entry": "startsWithVowel",
+      "signature": "function startsWithVowel(s) {",
+      "docstring": "True if s starts with a vowel (case-insensitive).",
+      "behavior": "True if s starts with a vowel (case-insensitive).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            "apple"
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            "banana"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_25",
+      "language": "javascript",
+      "index": 25,
+      "entry": "endsWithDigit",
+      "signature": "function endsWithDigit(s) {",
+      "docstring": "True if s ends with a digit.",
+      "behavior": "True if s ends with a digit.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "yes",
+          "kind": "normal",
+          "args": [
+            "abc3"
+          ],
+          "expected": true
+        },
+        {
+          "name": "no",
+          "kind": "normal",
+          "args": [
+            "abc"
+          ],
+          "expected": false
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_26",
+      "language": "javascript",
+      "index": 26,
+      "entry": "alternateCase",
+      "signature": "function alternateCase(s) {",
+      "docstring": "Alternating case starting uppercase.",
+      "behavior": "Alternating case starting uppercase.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "hello"
+          ],
+          "expected": "HeLlO"
+        },
+        {
+          "name": "single",
+          "kind": "boundary",
+          "args": [
+            "a"
+          ],
+          "expected": "A"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "hello!"
+          ],
+          "expected": "HeLlO!"
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_27",
+      "language": "javascript",
+      "index": 27,
+      "entry": "collapseWhitespaceRuns",
+      "signature": "function collapseWhitespaceRuns(s) {",
+      "docstring": "Collapse consecutive whitespace to one space and trim.",
+      "behavior": "Collapse consecutive whitespace to one space and trim.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "  a   b  "
+          ],
+          "expected": "a b"
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            "a b"
+          ],
+          "expected": "a b"
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            ""
+          ],
+          "expected": ""
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_28",
+      "language": "javascript",
+      "index": 28,
+      "entry": "truncateText",
+      "signature": "function truncateText(s, n) {",
+      "docstring": "Truncate to n chars, append '...' if truncated.",
+      "behavior": "Truncate to n chars, append '...' if truncated.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "long",
+          "kind": "normal",
+          "args": [
+            "abcdef",
+            3
+          ],
+          "expected": "abc..."
+        },
+        {
+          "name": "short",
+          "kind": "boundary",
+          "args": [
+            "ab",
+            5
+          ],
+          "expected": "ab"
+        },
+        {
+          "name": "exact",
+          "kind": "boundary",
+          "args": [
+            "abc",
+            3
+          ],
+          "expected": "abc"
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            "abcdef!",
+            3
+          ],
+          "expected": "abc..."
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_29",
+      "language": "javascript",
+      "index": 29,
+      "entry": "padStringLeft",
+      "signature": "function padStringLeft(s, width, ch=' ') {",
+      "docstring": "Left-pad s to width with char (default space).",
+      "behavior": "Left-pad s to width with char (default space).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 1,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            "ab",
+            5
+          ],
+          "expected": "   ab"
+        },
+        {
+          "name": "char",
+          "kind": "normal",
+          "args": [
+            "ab",
+            5,
+            "0"
+          ],
+          "expected": "000ab"
+        },
+        {
+          "name": "no pad",
+          "kind": "boundary",
+          "args": [
+            "abcde",
+            3
+          ],
+          "expected": "abcde"
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_30",
+      "language": "javascript",
+      "index": 30,
+      "entry": "isPrimeNumber",
+      "signature": "function isPrimeNumber(n) {",
+      "docstring": "True if n is prime (n>=2).",
+      "behavior": "True if n is prime (n>=2).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "prime",
+          "kind": "normal",
+          "args": [
+            7
+          ],
+          "expected": true
+        },
+        {
+          "name": "not",
+          "kind": "normal",
+          "args": [
+            8
+          ],
+          "expected": false
+        },
+        {
+          "name": "two",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": true
+        },
+        {
+          "name": "one",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": false
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_31",
+      "language": "javascript",
+      "index": 31,
+      "entry": "nextPrimeNumber",
+      "signature": "function nextPrimeNumber(n) {",
+      "docstring": "Smallest prime >= n (n>=2).",
+      "behavior": "Smallest prime >= n (n>=2).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 11
+        },
+        {
+          "name": "prime",
+          "kind": "boundary",
+          "args": [
+            7
+          ],
+          "expected": 7
+        },
+        {
+          "name": "two",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": 2
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            11
+          ],
+          "expected": 11
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_32",
+      "language": "javascript",
+      "index": 32,
+      "entry": "primeCount",
+      "signature": "function primeCount(n) {",
+      "docstring": "Count primes <= n. Returns the computed result as specified.",
+      "behavior": "Count primes <= n. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 4
+        },
+        {
+          "name": "small",
+          "kind": "boundary",
+          "args": [
+            2
+          ],
+          "expected": 1
+        },
+        {
+          "name": "none",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            11
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_33",
+      "language": "javascript",
+      "index": 33,
+      "entry": "gcdPair",
+      "signature": "function gcdPair(a, b) {",
+      "docstring": "Compute the greatest common divisor of two integers a and b using the Euclidean algorithm.",
+      "behavior": "Compute the greatest common divisor of two integers a and b using the Euclidean algorithm.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            12,
+            18
+          ],
+          "expected": 6
+        },
+        {
+          "name": "coprime",
+          "kind": "normal",
+          "args": [
+            7,
+            13
+          ],
+          "expected": 1
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0,
+            5
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_34",
+      "language": "javascript",
+      "index": 34,
+      "entry": "lcmPair",
+      "signature": "function lcmPair(a, b) {",
+      "docstring": "Compute the least common multiple of two integers a and b.",
+      "behavior": "Compute the least common multiple of two integers a and b.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            4,
+            6
+          ],
+          "expected": 12
+        },
+        {
+          "name": "coprime",
+          "kind": "normal",
+          "args": [
+            3,
+            5
+          ],
+          "expected": 15
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0,
+            5
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_35",
+      "language": "javascript",
+      "index": 35,
+      "entry": "iterativeFactorial",
+      "signature": "function iterativeFactorial(n) {",
+      "docstring": "n! iteratively. Returns the computed result as specified.",
+      "behavior": "n! iteratively. Returns the computed result as specified.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 120
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "one",
+          "kind": "boundary",
+          "args": [
+            1
+          ],
+          "expected": 1
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            6
+          ],
+          "expected": 720
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_36",
+      "language": "javascript",
+      "index": 36,
+      "entry": "powerOf",
+      "signature": "function powerOf(base, exp) {",
+      "docstring": "Return base raised to exp for exp>=0.",
+      "behavior": "Return base raised to exp for exp>=0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            2,
+            10
+          ],
+          "expected": 1024
+        },
+        {
+          "name": "zero exp",
+          "kind": "boundary",
+          "args": [
+            5,
+            0
+          ],
+          "expected": 1
+        },
+        {
+          "name": "base 0",
+          "kind": "normal",
+          "args": [
+            0,
+            3
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_37",
+      "language": "javascript",
+      "index": 37,
+      "entry": "floorSqrt",
+      "signature": "function floorSqrt(n) {",
+      "docstring": "Return floor(sqrt(n)) for n >= 0.",
+      "behavior": "Return floor(sqrt(n)) for n >= 0.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            10
+          ],
+          "expected": 3
+        },
+        {
+          "name": "perfect",
+          "kind": "boundary",
+          "args": [
+            16
+          ],
+          "expected": 4
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            11
+          ],
+          "expected": 3
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_38",
+      "language": "javascript",
+      "index": 38,
+      "entry": "absoluteDifference",
+      "signature": "function absoluteDifference(a, b) {",
+      "docstring": "Return the absolute difference |a-b|.",
+      "behavior": "Return the absolute difference |a-b|.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 2,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            3,
+            7
+          ],
+          "expected": 4
+        },
+        {
+          "name": "equal",
+          "kind": "boundary",
+          "args": [
+            5,
+            5
+          ],
+          "expected": 0
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            -2,
+            3
+          ],
+          "expected": 5
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_39",
+      "language": "javascript",
+      "index": 39,
+      "entry": "signOf",
+      "signature": "function signOf(n) {",
+      "docstring": "-1/0/1 by sign of n.",
+      "behavior": "-1/0/1 by sign of n.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "pos",
+          "kind": "normal",
+          "args": [
+            5
+          ],
+          "expected": 1
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            -3
+          ],
+          "expected": -1
+        },
+        {
+          "name": "zero",
+          "kind": "boundary",
+          "args": [
+            0
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_40",
+      "language": "javascript",
+      "index": 40,
+      "entry": "clampArray",
+      "signature": "function clampArray(arr, lo, hi) {",
+      "docstring": "Clamp each element to [lo, hi].",
+      "behavior": "Clamp each element to [lo, hi].",
+      "resolution": null,
+      "convention_note": null,
+      "params": 3,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              10,
+              15
+            ],
+            3,
+            12
+          ],
+          "expected": [
+            3,
+            5,
+            10,
+            12
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            [],
+            0,
+            1
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              5,
+              10,
+              15,
+              16
+            ],
+            3,
+            12
+          ],
+          "expected": [
+            3,
+            5,
+            10,
+            12,
+            12
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_41",
+      "language": "javascript",
+      "index": 41,
+      "entry": "positiveFilter",
+      "signature": "function positiveFilter(arr) {",
+      "docstring": "Yield a subset of arr consisting solely of values above zero, leaving the input untouched.",
+      "behavior": "Yield a subset of arr consisting solely of values above zero, leaving the input untouched.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              2,
+              -3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              -2
+            ]
+          ],
+          "expected": []
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_42",
+      "language": "javascript",
+      "index": 42,
+      "entry": "negativeFilter",
+      "signature": "function negativeFilter(arr) {",
+      "docstring": "Return the elements of arr that are strictly less than zero.",
+      "behavior": "Return the elements of arr that are strictly less than zero.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              -1,
+              2,
+              -3,
+              4
+            ]
+          ],
+          "expected": [
+            -1,
+            -3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "none",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expected": []
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_43",
+      "language": "javascript",
+      "index": 43,
+      "entry": "squareArray",
+      "signature": "function squareArray(arr) {",
+      "docstring": "Each element squared.",
+      "behavior": "Each element squared.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            4,
+            9
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "neg",
+          "kind": "normal",
+          "args": [
+            [
+              -2
+            ]
+          ],
+          "expected": [
+            4
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_44",
+      "language": "javascript",
+      "index": 44,
+      "entry": "cubeArray",
+      "signature": "function cubeArray(arr) {",
+      "docstring": "Return a new array with each element of arr cubed.",
+      "behavior": "Return a new array with each element of arr cubed.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            1,
+            8,
+            27
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            1,
+            8,
+            27,
+            64
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_45",
+      "language": "javascript",
+      "index": 45,
+      "entry": "doubleArray",
+      "signature": "function doubleArray(arr) {",
+      "docstring": "Return a new array with each element of arr doubled.",
+      "behavior": "Return a new array with each element of arr doubled.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            2,
+            4,
+            6
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            2,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_46",
+      "language": "javascript",
+      "index": 46,
+      "entry": "negateArray",
+      "signature": "function negateArray(arr) {",
+      "docstring": "Return a new array with each element of arr negated.",
+      "behavior": "Return a new array with each element of arr negated.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3
+            ]
+          ],
+          "expected": [
+            -1,
+            2,
+            -3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              1,
+              -2,
+              3,
+              4
+            ]
+          ],
+          "expected": [
+            -1,
+            2,
+            -3,
+            -4
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_47",
+      "language": "javascript",
+      "index": 47,
+      "entry": "ascendingSort",
+      "signature": "function ascendingSort(arr) {",
+      "docstring": "Sorted ascending copy.",
+      "behavior": "Sorted ascending copy.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "dup",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            2
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_48",
+      "language": "javascript",
+      "index": 48,
+      "entry": "descendingSort",
+      "signature": "function descendingSort(arr) {",
+      "docstring": "Return a sorted copy of arr in descending order.",
+      "behavior": "Return a sorted copy of arr in descending order.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2,
+              3
+            ]
+          ],
+          "expected": [
+            3,
+            3,
+            2,
+            1
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_49",
+      "language": "javascript",
+      "index": 49,
+      "entry": "uniqueSorted",
+      "signature": "function uniqueSorted(arr) {",
+      "docstring": "Return the sorted unique values of arr.",
+      "behavior": "Return the sorted unique values of arr.",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2,
+              1
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": []
+        },
+        {
+          "name": "normal2",
+          "kind": "normal",
+          "args": [
+            [
+              3,
+              1,
+              2,
+              1,
+              2
+            ]
+          ],
+          "expected": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "benchmark": "independent_v2"
+    },
+    {
+      "task_id": "js_v2_50",
+      "language": "javascript",
+      "index": 50,
+      "entry": "productList",
+      "signature": "function productList(arr) {",
+      "docstring": "Product of elements (1 if empty).",
+      "behavior": "Product of elements (1 if empty).",
+      "resolution": null,
+      "convention_note": null,
+      "params": 1,
+      "params_with_defaults": 0,
+      "cases": [
+        {
+          "name": "basic",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "expected": 24
+        },
+        {
+          "name": "empty",
+          "kind": "boundary",
+          "args": [
+            []
+          ],
+          "expected": 1
+        },
+        {
+          "name": "zero",
+          "kind": "normal",
+          "args": [
+            [
+              2,
+              0,
+              3
+            ]
+          ],
+          "expected": 0
+        }
+      ],
+      "benchmark": "independent_v2"
+    }
+  ]
+}

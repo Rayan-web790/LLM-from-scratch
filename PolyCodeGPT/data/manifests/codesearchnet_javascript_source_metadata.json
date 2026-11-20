@@ -1,0 +1,58 @@
+{
+  "source_id": "CSN-JS-ZENODO",
+  "dataset_name": "CodeSearchNet JavaScript (Zenodo archival copy)",
+  "provider": "Zenodo",
+  "original_project": "github/CodeSearchNet",
+  "doi": "10.5281/zenodo.7908468",
+  "zenodo_record_url": "https://zenodo.org/records/7908468",
+  "record_version": "v1",
+  "archive_filename": "javascript.zip",
+  "local_path": "data/raw/codesearchnet_zenodo_javascript/javascript.zip",
+  "expected_size_bytes": 1664713350,
+  "actual_size_bytes": 1664713350,
+  "source_published_checksum": "md5:7649178a02f7b5c8fbccb64abe7946b6",
+  "actual_md5": "7649178a02f7b5c8fbccb64abe7946b6",
+  "sha256": "fdc743f5af27f90c77584a2d29e2b7f8cecdd00c37b433c385b888ee062936dd",
+  "retrieval_date": "2026-11-15",
+  "download_method": "HTTPS, curl -L --fail -C - (resumable); Content-Length 1,664,713,350",
+  "zip_members": 15,
+  "zip_crc_check": "zipfile.testzip() -> None (all CRCs valid)",
+  "license_metadata_member": "javascript_licenses.pkl",
+  "license_metadata_uncompressed_bytes": 196114558,
+  "license_metadata_compressed_bytes": 32315567,
+  "license_metadata_crc32": "0x145bda7a",
+  "license_metadata_matches_phase_2b2_copy": true,
+  "license_metadata_sha256": "7ae57111b6d275f0d0b9a832d7c89003b5245f6fe9627658eb469f276d6181f1",
+  "dedup_member": "javascript_dedupe_definitions_v2.pkl",
+  "dedup_uncompressed_bytes": 6597724320,
+  "dedup_compressed_bytes": 1551823021,
+  "code_shards": {
+    "train": {
+      "count": 5,
+      "compressed_bytes": 72360553,
+      "uncompressed_bytes": 72682474
+    },
+    "test": {
+      "count": 1,
+      "compressed_bytes": 3659283,
+      "uncompressed_bytes": 3676434
+    },
+    "valid": {
+      "count": 1,
+      "compressed_bytes": 4551704,
+      "uncompressed_bytes": 4570551
+    }
+  },
+  "s3_v2_parity": "NOT ESTABLISHED - original S3 URLs return 403 AccessDenied; Zenodo deposit is a separately identified archival source.",
+  "filtered_output": {
+    "records": 114162,
+    "raw_records": 138625,
+    "unique_repositories": 16366,
+    "output_dir": "data/processed/codesearchnet_javascript_filtered"
+  },
+  "raw_data_modified": false,
+  "approval_status": "FILTERED_PENDING_REVIEW",
+  "notes": "Phase 2D. Trusted source MD5 published by Zenodo matched exactly. Only CLEAR_PERMISSIVE_CANDIDATE repositories retained. Dedup pickle untouched; no extraction of code shards to disk; no tokenizer or model work.",
+  "code_shards_total_compressed_bytes": 80571540,
+  "code_shards_total_uncompressed_bytes": 80929459
+}

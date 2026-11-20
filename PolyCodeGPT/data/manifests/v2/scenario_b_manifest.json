@@ -1,0 +1,151 @@
+{
+  "alignment": {
+    "failed_to_module": 10388,
+    "not_applicable": 484516,
+    "pass": 268417
+  },
+  "files": {
+    "train.bin": "2706cff336b42bee8bfaf610cce9a143f025a4a468939aa647ff7e44e69efa03",
+    "train.jsonl": "140bf946d1c3637aa0399a01b3f004e98f9de5d0c1b2854df09ff4dfb1bb5ee5",
+    "valid.bin": "63e7e4218657734dc2f64e6ade530e6fac9156694b78caa052d60cbd04de4c80",
+    "valid.jsonl": "5b98ce443f7f495fc28c2c99bbeca6054efb20f02473005bdcc30e8f4a361ca6"
+  },
+  "full_pool_hashes": {
+    "train.jsonl": "1a5e57b9178a6ccb3e30febf68a84e2a17e5065878b97889ead121f3dd2a792c",
+    "valid.jsonl": "5b98ce443f7f495fc28c2c99bbeca6054efb20f02473005bdcc30e8f4a361ca6"
+  },
+  "full_pool_tokens": {
+    "en": 115644755,
+    "javascript": 346099216,
+    "python": 319253273
+  },
+  "full_pool_total_tokens": 780997244,
+  "records": 763321,
+  "records_by_category": {
+    "en|documentation": 38416,
+    "javascript|async": 19965,
+    "javascript|class": 19611,
+    "javascript|function": 57855,
+    "javascript|module": 143754,
+    "javascript|stateful": 47934,
+    "javascript|tests": 45468,
+    "python|async": 3427,
+    "python|class": 72006,
+    "python|function": 256918,
+    "python|module": 24937,
+    "python|tests": 33030
+  },
+  "records_by_language": {
+    "en": 38416,
+    "javascript": 334587,
+    "python": 390318
+  },
+  "records_by_source": {
+    "CODEPARROT|en": 37465,
+    "CODEPARROT|javascript": 277844,
+    "CODEPARROT|python": 168256,
+    "CSN-JS|javascript": 56743,
+    "CSN-PY|python": 222062,
+    "NODE-DOCS|en": 208,
+    "PYDOCS|en": 743
+  },
+  "repository_overlap_count": 0,
+  "scenario": "B",
+  "seed": "polycodegpt-v2-scenario-b-500m",
+  "selected_tokens": {
+    "en": 24999945,
+    "javascript": 224999986,
+    "python": 249999981
+  },
+  "selection": "ascending sha256(seed|record_id) within language, whole records only",
+  "status": "CAP_APPLIED",
+  "target_tokens": {
+    "en": 25000000,
+    "javascript": 225000000,
+    "python": 250000000
+  },
+  "test_partition_read": false,
+  "tokens_by_category": {
+    "en|documentation": 24999945,
+    "javascript|async": 18576015,
+    "javascript|class": 15059409,
+    "javascript|function": 32452068,
+    "javascript|module": 78002064,
+    "javascript|stateful": 46984229,
+    "javascript|tests": 33926201,
+    "python|async": 1468290,
+    "python|class": 82221865,
+    "python|function": 116674091,
+    "python|module": 11482695,
+    "python|tests": 38153040
+  },
+  "tokens_by_source": {
+    "CODEPARROT|en": 24423811,
+    "CODEPARROT|javascript": 208152041,
+    "CODEPARROT|python": 168010185,
+    "CSN-JS|javascript": 16847945,
+    "CSN-PY|python": 81989796,
+    "NODE-DOCS|en": 170658,
+    "PYDOCS|en": 405476
+  },
+  "total_selected_tokens": 499999912,
+  "train_repositories": 239194,
+  "validation": {
+    "alignment": {
+      "failed_to_module": 684,
+      "not_applicable": 30322,
+      "pass": 15755
+    },
+    "by_category_records": {
+      "javascript|async": 1414,
+      "javascript|class": 1551,
+      "javascript|function": 4728,
+      "javascript|module": 10357,
+      "javascript|stateful": 3789,
+      "javascript|tests": 3129,
+      "python|async": 95,
+      "python|class": 4438,
+      "python|function": 13763,
+      "python|module": 1539,
+      "python|tests": 1958
+    },
+    "by_category_tokens": {
+      "javascript|async": 1313639,
+      "javascript|class": 1120330,
+      "javascript|function": 2631827,
+      "javascript|module": 5514474,
+      "javascript|stateful": 3806676,
+      "javascript|tests": 2260976,
+      "python|async": 33983,
+      "python|class": 5072292,
+      "python|function": 6177461,
+      "python|module": 702323,
+      "python|tests": 2260019
+    },
+    "by_language_records": {
+      "javascript": 24968,
+      "python": 21793
+    },
+    "by_language_tokens": {
+      "javascript": 16647922,
+      "python": 14246078
+    },
+    "by_source_records": {
+      "CODEPARROT|javascript": 20132,
+      "CODEPARROT|python": 10190,
+      "CSN-JS|javascript": 4836,
+      "CSN-PY|python": 11603
+    },
+    "by_source_tokens": {
+      "CODEPARROT|javascript": 15106900,
+      "CODEPARROT|python": 10127173,
+      "CSN-JS|javascript": 1541022,
+      "CSN-PY|python": 4118905
+    },
+    "chars": 114560173,
+    "records": 46761,
+    "repositories": 13919,
+    "tokens": 30894000
+  },
+  "validation_repositories": 13919
+}

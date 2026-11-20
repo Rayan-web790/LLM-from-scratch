@@ -1,0 +1,353 @@
+{
+  "tasks": [
+    "Compute the factorial of n recursively.",
+    "Return the nth Fibonacci number.",
+    "Check whether a string is a palindrome.",
+    "Merge two sorted arrays into one sorted array.",
+    "Binary search on a sorted array.",
+    "Return the nth prime number.",
+    "Reverse a string.",
+    "Check if two strings are anagrams.",
+    "Compute the greatest common divisor.",
+    "Format a date from YYYY-MM-DD to DD/MM/YYYY."
+  ],
+  "results": {
+    "greedy_64": [
+      {
+        "docstring": "Compute the factorial of n recursively.",
+        "generated_text": "\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+        "candidate": "function factorial(n) {\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n =",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.09090909090909091,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.078125
+      },
+      {
+        "docstring": "Return the nth Fibonacci number.",
+        "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+        "candidate": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.14285714285714285,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.125
+      },
+      {
+        "docstring": "Check whether a string is a palindrome.",
+        "generated_text": "\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.",
+        "candidate": "function isPalindrome(s) {\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.16666666666666666,
+        "repeated_4gram_ratio": 0.9523809523809523,
+        "unique_token_ratio": 0.171875
+      },
+      {
+        "docstring": "Merge two sorted arrays into one sorted array.",
+        "generated_text": "\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+        "candidate": "function mergeSorted(a, b) {\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.125,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.109375
+      },
+      {
+        "docstring": "Binary search on a sorted array.",
+        "generated_text": "\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.",
+        "candidate": "function binarySearch(arr, target) {\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.16666666666666666,
+        "repeated_4gram_ratio": 0.9629629629629629,
+        "unique_token_ratio": 0.171875
+      },
+      {
+        "docstring": "Return the nth prime number.",
+        "generated_text": "\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth",
+        "candidate": "function nthPrime(n) {\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.14285714285714285,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.125
+      },
+      {
+        "docstring": "Reverse a string.",
+        "generated_text": "\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s =",
+        "candidate": "function reverseString(s) {\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s =",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.2,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.21875
+      },
+      {
+        "docstring": "Check if two strings are anagrams.",
+        "generated_text": "\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)",
+        "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.25,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.1875
+      },
+      {
+        "docstring": "Compute the greatest common divisor.",
+        "generated_text": "\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(",
+        "candidate": "function gcd(a, b) {\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.16666666666666666,
+        "repeated_4gram_ratio": 0.9523809523809523,
+        "unique_token_ratio": 0.171875
+      },
+      {
+        "docstring": "Format a date from YYYY-MM-DD to DD/MM/YYYY.",
+        "generated_text": "\n  var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+        "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.0,
+        "unique_token_ratio": 0.1875
+      }
+    ],
+    "greedy_128": [
+      {
+        "docstring": "Compute the factorial of n recursively.",
+        "generated_text": "\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var",
+        "candidate": "function factorial(n) {\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var n = n;\n  var",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.045454545454545456,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.0390625
+      },
+      {
+        "docstring": "Return the nth Fibonacci number.",
+        "generated_text": "\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.",
+        "candidate": "function fibonacci(n) {\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.length;\n  var nth = nth.",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.07692307692307693,
+        "repeated_4gram_ratio": 0.9795918367346939,
+        "unique_token_ratio": 0.0625
+      },
+      {
+        "docstring": "Check whether a string is a palindrome.",
+        "generated_text": "\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome =",
+        "candidate": "function isPalindrome(s) {\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome = s.length;\n  var palindrome =",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.08333333333333333,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.0859375
+      },
+      {
+        "docstring": "Merge two sorted arrays into one sorted array.",
+        "generated_text": "\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+        "candidate": "function mergeSorted(a, b) {\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;\n  var b = b.length;",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0625,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.0546875
+      },
+      {
+        "docstring": "Binary search on a sorted array.",
+        "generated_text": "\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(",
+        "candidate": "function binarySearch(arr, target) {\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(arr.length);\n  var result = new Array(",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.08333333333333333,
+        "repeated_4gram_ratio": 0.9824561403508771,
+        "unique_token_ratio": 0.0859375
+      },
+      {
+        "docstring": "Return the nth prime number.",
+        "generated_text": "\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.",
+        "candidate": "function nthPrime(n) {\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.length;\n    var nth = nth.",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.07692307692307693,
+        "repeated_4gram_ratio": 0.9795918367346939,
+        "unique_token_ratio": 0.0625
+      },
+      {
+        "docstring": "Reverse a string.",
+        "generated_text": "\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/",
+        "candidate": "function reverseString(s) {\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/[\\\\s]+/g, '');\n  var s = s.replace(/",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.1111111111111111,
+        "repeated_4gram_ratio": 0.975609756097561,
+        "unique_token_ratio": 0.109375
+      },
+      {
+        "docstring": "Check if two strings are anagrams.",
+        "generated_text": "\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)",
+        "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)\n  var s2 = s2.split(s1, s2)",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.125,
+        "repeated_4gram_ratio": 1.0,
+        "unique_token_ratio": 0.09375
+      },
+      {
+        "docstring": "Compute the greatest common divisor.",
+        "generated_text": "\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.",
+        "candidate": "function gcd(a, b) {\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.split(a);\n  var gcd = b.",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.08333333333333333,
+        "repeated_4gram_ratio": 0.9777777777777777,
+        "unique_token_ratio": 0.0859375
+      },
+      {
+        "docstring": "Format a date from YYYY-MM-DD to DD/MM/YYYY.",
+        "generated_text": "\n  var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,",
+        "candidate": "function formatDate(dateStr) {\n  var dateStr = dateStr.replace(/[/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,/g,",
+        "eos_hit": false,
+        "generated_token_count": 128,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.0,
+        "unique_token_ratio": 0.09375
+      }
+    ],
+    "sampling_t0.8_topk50_64": [
+      {
+        "docstring": "Compute the factorial of n recursively.",
+        "generated_text": "\n  var factor = n <= maxIter;\n  var factor = n - 1;\n  var factor = n >= maxIter;\n  var factor = t * factor;\n  var factor = t * factor;\n  var factor = n - 1;\n  var factor = t * factor;\n  var factor;\n  var",
+        "candidate": "function factorial(n) {\n  var factor = n <= maxIter;\n  var factor = n - 1;\n  var factor = n >= maxIter;\n  var factor = t * factor;\n  var factor = t * factor;\n  var factor = n - 1;\n  var factor = t * factor;\n  var factor;\n  var",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.2222222222222222,
+        "repeated_4gram_ratio": 0.7619047619047619,
+        "unique_token_ratio": 0.21875
+      },
+      {
+        "docstring": "Return the nth Fibonacci number.",
+        "generated_text": "\n  var nth = nth.length, k = nth.length, nth.length, k = nth.length, k = nth.length, l = nth.length;\n\n  if (nth.length !== nth) {\n    return nth;\n  }\n  else",
+        "candidate": "function fibonacci(n) {\n  var nth = nth.length, k = nth.length, nth.length, k = nth.length, k = nth.length, l = nth.length;\n\n  if (nth.length !== nth) {\n    return nth;\n  }\n  else",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.21739130434782608,
+        "unique_token_ratio": 0.34375
+      },
+      {
+        "docstring": "Check whether a string is a palindrome.",
+        "generated_text": "\n  return s.charCodeAt(s.length, s.name);\n}",
+        "candidate": "function isPalindrome(s) {\n  return s.charCodeAt(s.length, s.name);\n}",
+        "eos_hit": true,
+        "generated_token_count": 16,
+        "syntax_valid": true,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.0,
+        "unique_token_ratio": 0.8125
+      },
+      {
+        "docstring": "Merge two sorted arrays into one sorted array.",
+        "generated_text": "\n  var b = a.length\n  if (b == 0 || b == 0 ) {\n    return b\n  }\n\n  var a = b.length\n  var b = b.length\n  var a = b.length\n  var b = b.length\n  var b = b.length\n  var b = b",
+        "candidate": "function mergeSorted(a, b) {\n  var b = a.length\n  if (b == 0 || b == 0 ) {\n    return b\n  }\n\n  var a = b.length\n  var b = b.length\n  var a = b.length\n  var b = b.length\n  var b = b.length\n  var b = b",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.2,
+        "repeated_4gram_ratio": 0.47368421052631576,
+        "unique_token_ratio": 0.296875
+      },
+      {
+        "docstring": "Binary search on a sorted array.",
+        "generated_text": "\n  var split = split.split(this, split).split()[2];\n  var tmpIndex = split[0];\n\n  for (i = 0; i < len; i++) {\n    var i = arr[i];\n    var index = arr[i];\n    var index = arr[index];\n   ",
+        "candidate": "function binarySearch(arr, target) {\n  var split = split.split(this, split).split()[2];\n  var tmpIndex = split[0];\n\n  for (i = 0; i < len; i++) {\n    var i = arr[i];\n    var index = arr[i];\n    var index = arr[index];\n   ",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.14814814814814814,
+        "unique_token_ratio": 0.5
+      },
+      {
+        "docstring": "Return the nth prime number.",
+        "generated_text": "\n  var nth = n;\n  if (nth > 0) {\n    nth = nth[nth];\n  }\n  return nth;\n}",
+        "candidate": "function nthPrime(n) {\n  var nth = n;\n  if (nth > 0) {\n    nth = nth[nth];\n  }\n  return nth;\n}",
+        "eos_hit": true,
+        "generated_token_count": 35,
+        "syntax_valid": true,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.0,
+        "unique_token_ratio": 0.5714285714285714
+      },
+      {
+        "docstring": "Reverse a string.",
+        "generated_text": "\n  var s = s.replace(/[0-9]+)\\\\i+([^]+)/g, function (s) {\n    return s.replace(/[0-9]+\\\\i+([^]+)/g, function (s) {\n      return s.replace(/[0-9]+|\\\\",
+        "candidate": "function reverseString(s) {\n  var s = s.replace(/[0-9]+)\\\\i+([^]+)/g, function (s) {\n    return s.replace(/[0-9]+\\\\i+([^]+)/g, function (s) {\n      return s.replace(/[0-9]+|\\\\",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.18181818181818182,
+        "unique_token_ratio": 0.46875
+      },
+      {
+        "docstring": "Check if two strings are anagrams.",
+        "generated_text": "\n  var s2 = s2.length, s2 = s2.length;\n  if (s2.length === s2.length) {\n    return s2.length;\n  }\n  return s2.length;\n}",
+        "candidate": "function isAnagram(s1, s2) {\n  var s2 = s2.length, s2 = s2.length;\n  if (s2.length === s2.length) {\n    return s2.length;\n  }\n  return s2.length;\n}",
+        "eos_hit": true,
+        "generated_token_count": 50,
+        "syntax_valid": true,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.0,
+        "unique_token_ratio": 0.4
+      },
+      {
+        "docstring": "Compute the greatest common divisor.",
+        "generated_text": "\n  var c = a.b.c, a.name = a.name;\n  if (c.length === 64) {\n    return true;\n  }\n\n  for (let b in a.b.values()) {\n    var o = a.b.key;\n    // Check for any other variables",
+        "candidate": "function gcd(a, b) {\n  var c = a.b.c, a.name = a.name;\n  if (c.length === 64) {\n    return true;\n  }\n\n  for (let b in a.b.values()) {\n    var o = a.b.key;\n    // Check for any other variables",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.0,
+        "unique_token_ratio": 0.5625
+      },
+      {
+        "docstring": "Format a date from YYYY-MM-DD to DD/MM/YYYY.",
+        "generated_text": "\n  var date = dateStr.format(dateStr).trim();\n  if (dateStr.length) {\n    dateStr.length = dateStr.substring(0, dateStr.length);\n    start = dateStr.slice(1, dateStr.length);\n  } else {\n    dateStr.",
+        "candidate": "function formatDate(dateStr) {\n  var date = dateStr.format(dateStr).trim();\n  if (dateStr.length) {\n    dateStr.length = dateStr.substring(0, dateStr.length);\n    start = dateStr.slice(1, dateStr.length);\n  } else {\n    dateStr.",
+        "eos_hit": false,
+        "generated_token_count": 64,
+        "syntax_valid": false,
+        "repeated_line_ratio": 0.0,
+        "repeated_4gram_ratio": 0.0,
+        "unique_token_ratio": 0.421875
+      }
+    ],
+    "repetition_penalty": "unsupported: model.generate does not accept repetition_penalty"
+  }
+}
